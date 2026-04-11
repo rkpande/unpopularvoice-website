@@ -1,12 +1,10 @@
 import Link from 'next/link'
 
-const FOOTER_LINKS = ['Fintech', 'SaaS', 'D2C', 'EV', 'Edtech', 'Reality Check Index']
-
 export default function Footer() {
   return (
     <footer className="bg-black border-t-[3px] border-brand-red">
       <div className="max-w-7xl mx-auto px-8 py-12">
-        <div className="flex flex-col md:flex-row justify-between gap-8">
+        <div className="flex flex-col md:flex-row justify-between items-start gap-8">
           <div>
             <p className="font-serif font-bold text-white text-xl mb-2">UnpopularVoice</p>
             <p className="text-white/50 text-sm font-sans">Financial intelligence for everyone.</p>
@@ -15,16 +13,19 @@ export default function Footer() {
             </p>
           </div>
 
-          <div className="flex flex-wrap gap-x-6 gap-y-2">
-            {FOOTER_LINKS.map((link) => (
-              <Link
-                key={link}
-                href="#"
-                className="text-white/50 text-sm font-sans hover:text-white/80 transition-colors"
-              >
-                {link}
-              </Link>
-            ))}
+          <div className="flex items-center gap-6">
+            <Link
+              href="/articles"
+              className="text-white/50 text-sm font-sans hover:text-white/80 transition-colors"
+            >
+              Browse Articles
+            </Link>
+            <Link
+              href="/subscribe"
+              className="text-white/50 text-sm font-sans hover:text-white/80 transition-colors"
+            >
+              Subscribe
+            </Link>
           </div>
         </div>
 

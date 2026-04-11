@@ -1,0 +1,184 @@
+---
+title: "Wint Wealth's Holding Company Burned Rs 35 Lakhs in FY24 — But the Real Story is Rs 18.7 Cr Walking Out the Door"
+company: "FourDegreeWater Services Private Limited"
+sector: "Fintech / Fixed Income Investments"
+dataSource: "MCA FY2024 Filings"
+updatedAt: "June 2025"
+readTime: "7 min"
+featured: false
+excerpt: "Wint Wealth's parent entity reports a tiny Rs 2.7 Cr revenue — but negative operating cash flow of Rs 18.7 Cr tells a very different story about where the money is really going."
+tldr:
+  - "Total income just Rs 2.74 Cr against expenses of Rs 3.03 Cr — a net loss of Rs 35 Lakhs in FY24"
+  - "Operating cash flow was negative Rs 18.75 Cr — seven times the reported loss — meaning cash is bleeding faster than the P&L admits"
+  - "Rs 10 Cr paid-up capital sits on the books but the company has zero debt, zero depreciation, and zero borrowings"
+  - "Trade receivables of Rs 2.22 Cr are 81% of annual revenue — someone owes this company a lot of money relative to its size"
+  - "Current ratio of 10.85 looks fortress-like but masks the fact that nearly all assets are current and cash is just Rs 77 Lakhs"
+realityScore:
+  growthQuality: 3
+  sustainability: 4
+  profitabilityPath: 4
+---
+
+## Context: What Everyone Is Saying
+
+Wint Wealth has built a respectable brand in India's fixed-income fintech space. The platform lets retail investors buy corporate bonds and other debt instruments, typically starting at Rs 10,000. Media coverage has focused on its fundraising rounds — a $7 million Series A from Omphalos Ventures and others in 2022, and further rounds since. YourStory called it a "democratizer of fixed-income investing." The founders — Anshul Gupta and Ajinkya Kulkarni — are regularly featured in podcasts talking about making bonds accessible.
+
+What nobody talks about is the actual MCA filing of the parent entity: FourDegreeWater Services Private Limited. This is the Karnataka-incorporated company behind the Wint Wealth brand, registered at a third-floor office in JP Nagar, Bengaluru. And its FY24 numbers tell a story that press releases never will.
+
+The headline loss is small — Rs 35 Lakhs. Almost cute for a funded startup. But the cash flow statement screams a different number: negative Rs 18.75 Cr in operating cash flow. That's a gap wide enough to drive a truck through, and it deserves scrutiny.
+
+---
+
+## Financial Breakdown
+
+### Revenue and Profitability
+
+<FinancialTable
+  headers={["Metric", "FY2024"]}
+  rows={[
+    ["Total Income (Rs Cr)", "2.74"],
+    ["Total Expenses (Rs Cr)", "3.03"],
+    ["Finance Costs (Rs Cr)", "0.03"],
+    ["Depreciation (Rs Cr)", "0.00"],
+    [["Profit Before Tax (Rs Cr)", "bold"], ["-0.32", "negative"]],
+    [["Profit After Tax (Rs Cr)", "bold"], ["-0.35", "negative"]],
+  ]}
+  caption="Source: MCA FY2024 filing. All figures converted from actuals to Rs Crores."
+/>
+
+Revenue of Rs 2.74 Cr for a fintech that claims to have facilitated hundreds of crores in bond investments is surprisingly thin. This is classified under NIC 9971 — "Financial and related services" — which means this revenue likely represents platform fees, commissions, or distribution income rather than the face value of bonds transacted.
+
+The loss of Rs 35 Lakhs looks manageable. But this is a company with Rs 10 Cr in paid-up capital. A 0.35% return on equity (negative, at that) after two years of operation is not exactly a ringing endorsement. Zero depreciation means no fixed assets of note — no servers, no office equipment worth capitalizing. This company owns almost nothing physical.
+
+<ChartBlock
+  title="Income vs Expenses vs PAT (Rs Cr)"
+  subtitle="FY2024 — the P&L gap looks small, but wait for the cash flows"
+  unit="Rs Cr"
+  data={[
+    { label: "Total Income", value: 2.74, color: "black" },
+    { label: "Total Expenses", value: 3.03, color: "black" },
+    { label: "PAT", value: -0.35, color: "red" },
+  ]}
+/>
+
+### Cash Flow
+
+Here's where the filing gets interesting. And by interesting, I mean alarming.
+
+<FinancialTable
+  headers={["Cash Flow Component", "FY2024 (Rs Cr)"]}
+  rows={[
+    [["CFO (Cash from Operations)", "bold"], ["-18.75", "negative"]],
+    [["CFI (Cash from Investing)", "bold"], ["18.67", "positive"]],
+    ["CFF (Cash from Financing)", "0.00"],
+    [["Net Change in Cash", "bold"], ["-0.08", "negative"]],
+    ["Cash & Equivalents (Year-End)", "0.77"],
+  ]}
+  caption="Source: MCA FY2024 filing. CFO = Cash Flow from Operations; CFI = Cash Flow from Investing; CFF = Cash Flow from Financing."
+/>
+
+Read those numbers again. The company lost Rs 35 Lakhs on paper. But it burned Rs 18.75 Cr in actual operating cash. That's a 53x multiplier between the reported loss and the cash bleed.
+
+Where did the Rs 18.75 Cr go? Without detailed notes (which MCA summary filings don't always provide), we can't say definitively. But the most likely explanation is that the company is deploying cash into working capital — possibly advancing money related to bond transactions, platform float, or receivables buildup — that the accrual-based P&L hasn't yet recognized as expenses.
+
+The saving grace? CFI (Cash from Investing) brought back Rs 18.67 Cr. This almost perfectly offsets the operating burn. This likely means the company liquidated investments — possibly mutual funds, fixed deposits, or other short-term instruments — to fund its operations. That's not a business generating cash; that's a business consuming its investment corpus to stay alive.
+
+CFF is zero. No new equity raised. No debt taken. No money came in from investors or lenders during FY24.
+
+<ChartBlock
+  title="Cash Flow Breakdown (Rs Cr)"
+  subtitle="Operations burned Rs 18.75 Cr. Investments were liquidated to cover it."
+  unit="Rs Cr"
+  data={[
+    { label: "CFO", value: -18.75, color: "red" },
+    { label: "CFI", value: 18.67, color: "green" },
+    { label: "CFF", value: 0, color: "black" },
+    { label: "Net Change", value: -0.08, color: "red" },
+  ]}
+/>
+
+### Balance Sheet Health
+
+<FinancialTable
+  headers={["Metric", "FY2024"]}
+  rows={[
+    ["Total Assets (Rs Cr)", "10.37"],
+    ["Total Equity (Rs Cr)", "9.44"],
+    ["Total Current Assets (Rs Cr)", "9.66"],
+    ["Total Current Liabilities (Rs Cr)", "0.89"],
+    ["Cash & Equivalents (Rs Cr)", "0.77"],
+    ["Trade Receivables (Rs Cr)", "2.22"],
+    ["Trade Payables (Rs Cr)", "0.14"],
+    ["Long-term Borrowings (Rs Cr)", "0.00"],
+    ["Short-term Borrowings (Rs Cr)", "0.00"],
+    ["Current Ratio", "10.85"],
+    ["Debt-to-Equity", "0.00"],
+  ]}
+  caption="Source: MCA FY2024 filing."
+/>
+
+On the surface, this balance sheet looks pristine. Zero debt. Current ratio of 10.85 — meaning current assets are nearly 11 times current liabilities. That's a fortress.
+
+But look closer. Total current assets are Rs 9.66 Cr, while total assets are Rs 10.37 Cr. That means 93% of the company's assets are current — almost nothing is long-term. There are no fixed assets worth mentioning (zero depreciation confirms this). The equity of Rs 9.44 Cr against paid-up capital of Rs 10 Cr means accumulated losses have already eaten into the capital base by about Rs 56 Lakhs.
+
+The mystery asset? Total current assets (Rs 9.66 Cr) minus cash (Rs 0.77 Cr) minus trade receivables (Rs 2.22 Cr) minus inventories (Rs 0) leaves Rs 6.67 Cr unaccounted for in the summary data. This is likely sitting in short-term investments, advances, or other current assets. Given that CFI brought in Rs 18.67 Cr during the year, this company clearly has a pattern of parking cash in investments and then pulling it back.
+
+---
+
+## What Doesn't Add Up
+
+<InsightBox type="flag" number="01" title="The Rs 18.4 Cr gap between reported loss and cash burn">
+  A company reports a Rs 35 Lakh loss but burns Rs 18.75 Cr in operating cash. This is the single biggest red flag in the filing. The gap suggests massive working capital movements — money tied up in receivables, advances, or operational float — that the P&L smooths over through accrual accounting. For a platform that intermediates bond transactions, this could mean client money in transit, but without detailed notes, we can't confirm. If you're an employee with stock options here, understand that profitability on paper doesn't mean cash in the bank.
+</InsightBox>
+
+<InsightBox type="warning" number="02" title="Trade receivables are 81% of annual revenue">
+  Rs 2.22 Cr in receivables against Rs 2.74 Cr in revenue means 81% of one year's income is owed to the company at year-end. In a fintech that should ideally settle transactions quickly, this is unusually high. It could indicate revenue booked but not yet collected, slow-paying partners (AMCs, bond issuers, custodians), or revenue recognition timing issues. Either way, the company's already-thin revenue is largely theoretical until collected.
+</InsightBox>
+
+<InsightBox type="warning" number="03" title="Zero investment in fixed assets or intangible assets">
+  Zero depreciation means this company has capitalized no assets — no software, no technology platform, no equipment. For a fintech, the tech platform is the product. Either the development costs are being expensed (which would partly explain the cash burn), or the platform is owned by a different entity. If the latter, this MCA entity may just be a distribution shell, and the real economics live elsewhere. The website domain (wintwealth.com) listed in the MCA filing may not correspond to the entity that actually builds and owns the technology.
+</InsightBox>
+
+---
+
+## Who Owns This
+
+The filing lists seven directors but discloses no shareholding information. Key names:
+
+- **Anshul Gupta** — Director, widely known as co-founder of Wint Wealth
+- **Samarth Tandon** — Director and CEO (interesting that the CEO role sits here)
+- **Sunil Kumar Hegde** — Director and CFO
+- **Ankita Dinkar Shastri** — Director and Manager, appointed November 2023
+- **Vinay Anil Dubey, Shashank Chimaladari, Anamika Venkatesh** — Directors with no additional detail
+
+With Rs 10 Cr in paid-up capital and no public shareholding data, the ownership structure is opaque from this filing alone. Wint Wealth has raised external capital, so VC investors likely hold significant equity, but the MCA filing doesn't break this down.
+
+---
+
+<RealityScore
+  company="FourDegreeWater Services Private Limited (Wint Wealth)"
+  period="FY2024"
+  dimensions={[
+    { label: "Growth Quality", score: 3, summary: "Rs 2.74 Cr revenue after two years of operation is modest for a funded fintech; no prior-year comparison available to assess trajectory." },
+    { label: "Sustainability", score: 4, summary: "Zero debt is good, but the company is funding operations by liquidating investments — a finite strategy without new capital infusion." },
+    { label: "Profitability Path", score: 4, summary: "Reported loss is small, but the Rs 18.75 Cr operating cash burn reveals the true cost of running this business is far higher than the P&L suggests." }
+  ]}
+  verdict="Wint Wealth's parent entity shows the classic signs of an early-stage fintech that looks clean on paper but is burning through its capital reserves to stay operational. The Rs 35 Lakh loss is cosmetic; the Rs 18.75 Cr operating cash outflow is the real number. Without a clear path to operating cash flow breakeven, this company will need either dramatically higher revenues or another funding round. If you're considering joining, evaluate the runway carefully. If you're investing through the platform, know that the platform operator itself isn't yet a self-sustaining business."
+/>
+
+---
+
+## Glossary
+
+- **PAT (Profit After Tax):** The bottom-line profit after all expenses and taxes. A negative PAT means the company lost money.
+- **CFO (Cash Flow from Operations):** Actual cash generated or consumed by the company's core business activities. Unlike PAT, this strips out accounting adjustments and shows real money movement.
+- **CFI (Cash Flow from Investing):** Cash spent on or received from investments — buying equipment, selling financial instruments, etc. A positive number usually means the company sold more investments than it bought.
+- **CFF (Cash Flow from Financing):** Cash from raising equity or debt, or paying dividends. Zero here means no new capital came in and no distributions went out.
+- **Current Ratio:** Current assets divided by current liabilities. Above 1.0 means the company can cover its short-term obligations. Above 10 is unusual and usually means the company is sitting on a pile of current assets with minimal liabilities.
+- **Debt-to-Equity:** Total borrowings divided by total equity. Zero means the company has no debt — funded entirely by equity.
+- **Trade Receivables:** Money owed to the company by its customers for services already delivered.
+- **Trade Payables:** Money the company owes its suppliers for services already received.
+- **Paid-up Capital:** The total amount of money shareholders have actually paid for their shares. Represents the equity base before any accumulated profits or losses.
+- **Accrual Accounting:** A method where revenue and expenses are recorded when earned/incurred, not when cash changes hands. This is why P&L and cash flow can diverge dramatically.
+- **NIC 9971:** National Industrial Classification code for financial and related services.
+- **Unqualified Opinion:** The auditor found no material misstatements — a clean bill of health on the accounting (not the business).

@@ -12,10 +12,6 @@ import ChartBlock from '@/components/mdx/ChartBlock'
 
 const mdxComponents = { FinancialTable, RealityScore, InsightBox, ChartBlock }
 
-export async function generateStaticParams() {
-  return getAllArticles().map((a) => ({ slug: a.slug }))
-}
-
 export async function generateMetadata({
   params,
 }: {
@@ -90,7 +86,11 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
       {/* MDX content */}
       <div className="article-col pb-16">
         <div className="prose prose-lg max-w-none font-sans">
-          <MDXRemote source={article.content} components={mdxComponents} />
+          <MDXRemote
+              source={article.content}
+              components={mdxComponents}
+              options={{ blockJS: false }}
+            />
         </div>
       </div>
     </article>

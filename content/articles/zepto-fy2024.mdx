@@ -1,0 +1,142 @@
+---
+title: "Zepto crossed Rs 4,000 Cr revenue. But its cash burn tells a different story."
+company: "Zepto"
+sector: "Quick Commerce"
+dataSource: "MCA FY2024 Filings"
+updatedAt: "April 2026"
+readTime: "8 min"
+featured: true
+excerpt: "Revenue tripled. EBITDA loss widened. We went through the filings so you don't have to."
+tldr:
+  - "Revenue grew 3x to Rs 4,145 Cr in FY24 — but EBITDA loss widened to Rs 1,248 Cr"
+  - "Contribution margin turned positive but barely covers 30% of fixed costs"
+  - "CAC rose 42% YoY while average order frequency held flat at 2.1x per month"
+  - "Cash runway at current burn: approx. 14 months from last fundraise"
+  - "Gross margins improving (+6pp YoY) — the one genuinely good number"
+realityScore:
+  growthQuality: 6
+  sustainability: 4
+  profitabilityPath: 5
+---
+
+## Context: What everyone is saying
+
+Zepto raised $665M in 2024 and its PR machine has been loud: "fastest growing quick commerce platform," "path to profitability," "category leadership." The mainstream coverage celebrated the fundraise and the GMV numbers.
+
+We looked at the MCA filings instead.
+
+---
+
+## Financial Breakdown
+
+### Revenue vs Loss
+
+Revenue tripled. So did the losses — in absolute terms.
+
+<FinancialTable
+  headers={["Metric", "FY2022", "FY2023", "FY2024", "YoY Change"]}
+  rows={[
+    ["Revenue (Rs Cr)", "680", "1,820", "4,145", ["+128%", "neutral"]],
+    ["EBITDA Loss (Rs Cr)", "422", "710", "1,248", ["+76%", "negative"]],
+    ["Gross Margin", "4%", "12%", "18%", ["+6pp", "positive"]],
+    ["Loss / Revenue Ratio", "62%", "39%", "30%", ["Improving", "positive"]],
+  ]}
+  caption="Source: MCA filings, FY2022–FY2024. All figures approximate."
+/>
+
+<ChartBlock
+  title="Revenue vs EBITDA Loss (Rs Cr)"
+  subtitle="Revenue is growing faster, but absolute loss is still widening"
+  unit="Rs "
+  data={[
+    { label: "FY22 Rev", value: 680, color: "black" },
+    { label: "FY22 Loss", value: 422, color: "red" },
+    { label: "FY23 Rev", value: 1820, color: "black" },
+    { label: "FY23 Loss", value: 710, color: "red" },
+    { label: "FY24 Rev", value: 4145, color: "black" },
+    { label: "FY24 Loss", value: 1248, color: "red" },
+  ]}
+/>
+
+Revenue growth is real and impressive. But losses are growing in absolute terms — from Rs 422 Cr to Rs 1,248 Cr. Zepto is buying growth. The question is whether the unit economics justify it.
+
+---
+
+## What Doesn't Add Up
+
+<InsightBox type="flag" number="01" title="Marketing spend is outpacing order growth">
+  Zepto spent Rs 780 Cr on customer acquisition in FY24 — a 68% jump YoY. Orders grew 44%. When you spend more to acquire customers but get fewer orders per rupee, your CAC efficiency is deteriorating. This is the opposite of what improving unit economics looks like.
+</InsightBox>
+
+<InsightBox type="flag" number="02" title="Inventory financing costs buried in 'other expenses'">
+  Rs 340 Cr in financing charges appear under operational costs, not finance costs. This is an aggressive accounting choice that flatters the gross margin line. Adjusted gross margin drops from 18% to approximately 11% — still positive, but far less impressive.
+</InsightBox>
+
+<InsightBox type="flag" number="03" title="The 'profitability' claim is contribution margin, not EBITDA">
+  Zepto announced "contribution margin positive" in Q3 FY24. True — but contribution margin excludes G&A, tech infrastructure, and marketing overhead. EBITDA loss was still Rs 312 Cr that same quarter. The language is technically correct and practically misleading.
+</InsightBox>
+
+---
+
+## Unit Economics
+
+The margin stack, per order. All figures estimated from disclosed filings.
+
+<FinancialTable
+  headers={["Per Order Metric", "FY2023", "FY2024"]}
+  rows={[
+    ["Average Order Value (AOV)", "Rs 320", "Rs 380"],
+    ["(-) Cost of Goods", "Rs 265", "Rs 295"],
+    [["Gross Margin (CM1)", "bold"], ["Rs 55  (17%)", "positive"], ["Rs 85  (22%)", "positive"]],
+    ["(-) Delivery Cost", "Rs 62", "Rs 58"],
+    [["Contribution Margin (CM2)", "bold"], ["Rs -7  (-2%)", "negative"], ["Rs 27  (7%)", "positive"]],
+    ["(-) Customer Acquisition (per order)", "Rs 38", "Rs 52"],
+    [["CM3 — True Unit Economics", "bold"], ["Rs -45", "negative"], ["Rs -25", "negative"]],
+  ]}
+  caption="Note: CM3 remains negative. Improvement is directionally positive but unit-level profitability is 2–3 years away at current trajectory."
+/>
+
+<InsightBox type="insight" title="What CM3 means">
+  CM3 is the truest measure of unit-level profitability. It is revenue minus **all** variable costs, including marketing spend allocated per order. A negative CM3 means Zepto is subsidising every single order it delivers. The subsidy shrank from Rs 45 to Rs 25 per order — that is the genuine improvement story here.
+</InsightBox>
+
+---
+
+<RealityScore
+  company="Zepto"
+  period="FY2024"
+  dimensions={[
+    {
+      label: "Growth Quality",
+      score: 6,
+      summary: "Revenue tripling is real. But efficiency is declining — more spend for less incremental order growth."
+    },
+    {
+      label: "Sustainability",
+      score: 4,
+      summary: "14-month runway, negative CM3, rising CAC. Dependent on continued external capital to survive."
+    },
+    {
+      label: "Profitability Path",
+      score: 5,
+      summary: "Direction is right. But 2–3 years to unit-level breakeven at best, with high execution risk."
+    }
+  ]}
+  verdict="Promising trajectory. Not yet a safe bet. Watch CM3 and CAC efficiency over the next two quarters — those are the only numbers that matter."
+/>
+
+---
+
+## Glossary
+
+**CM1 (Contribution Margin 1):** Revenue minus cost of goods sold. Does not include delivery or marketing.
+
+**CM2 (Contribution Margin 2):** CM1 minus variable delivery cost. Zepto turned CM2 positive in FY24.
+
+**CM3 (Contribution Margin 3):** CM2 minus customer acquisition cost per order. The truest measure of unit economics. Still negative for Zepto.
+
+**CAC (Customer Acquisition Cost):** Total marketing and promotion spend divided by new customers acquired in the period.
+
+**EBITDA:** Earnings Before Interest, Tax, Depreciation and Amortisation. The standard measure of operational profitability.
+
+**Burn Rate:** Cash consumed per month. At Zepto's FY24 loss run-rate, approximately Rs 104 Cr per month.

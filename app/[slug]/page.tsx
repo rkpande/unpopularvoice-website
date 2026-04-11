@@ -1,6 +1,9 @@
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import { MDXRemote } from 'next-mdx-remote/rsc'
+
+// Render article pages on demand — avoids SSG prerender issues with complex MDX expressions
+export const dynamic = 'force-dynamic'
 import { getAllArticles, getArticleBySlug } from '@/lib/articles'
 import FinancialTable from '@/components/mdx/FinancialTable'
 import RealityScore from '@/components/mdx/RealityScore'

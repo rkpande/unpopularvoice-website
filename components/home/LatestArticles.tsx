@@ -2,26 +2,29 @@ import Link from 'next/link'
 import type { ArticleMeta } from '@/lib/articles'
 
 function ArticleThumb({ article }: { article: ArticleMeta }) {
-  const nums = article.heroNumbers?.slice(0, 2)
+  const top = article.heroNumbers?.[0]
 
-  if (!nums || nums.length === 0) {
+  if (!top) {
     return (
-      <div className="w-40 h-24 rounded-lg bg-gray-200 flex-shrink-0" />
+      <div className="flex-shrink-0 w-48 h-28 rounded-lg bg-gray-200" />
     )
   }
 
   return (
-    <Link href={`/${article.slug}`} className="flex-shrink-0 w-40 h-24 rounded-lg bg-black flex flex-col justify-between p-3 select-none hover:opacity-90 transition-opacity">
-      <span className="font-sans text-[8px] font-bold tracking-widest uppercase text-brand-red">
+    <Link
+      href={`/${article.slug}`}
+      className="flex-shrink-0 w-48 h-28 rounded-lg bg-black flex flex-col justify-between p-4 select-none hover:opacity-90 transition-opacity"
+    >
+      <span className="font-sans text-[10px] font-bold tracking-widest uppercase text-brand-red">
         UnpopularVoice
       </span>
-      <div className="space-y-1.5">
-        {nums.map(({ value, label }, i) => (
-          <div key={i} className="flex flex-col">
-            <span className="font-serif text-white text-sm font-bold leading-none">{value}</span>
-            <span className="font-sans text-white/40 text-[8px] uppercase tracking-wider leading-tight">{label}</span>
-          </div>
-        ))}
+      <div>
+        <p className="font-serif text-white text-2xl font-bold leading-none mb-1">
+          {top.value}
+        </p>
+        <p className="font-sans text-white/50 text-xs uppercase tracking-wide leading-tight">
+          {top.label}
+        </p>
       </div>
     </Link>
   )

@@ -16,18 +16,18 @@ function ArticleThumb({ article }: { article: ArticleMeta }) {
       href={`/${article.slug}`}
       className="flex-shrink-0 w-56 h-32 rounded-lg bg-black flex flex-col justify-between p-4 select-none hover:opacity-90 transition-opacity"
     >
-      <p className="font-sans text-[11px] font-semibold text-white/40 uppercase tracking-widest">
+      <p className="font-sans text-[11px] font-semibold text-white/70 uppercase tracking-widest">
         {article.company}
       </p>
       <div className="space-y-2">
         <div>
           <p className="font-serif text-white text-2xl font-bold leading-none">{top.value}</p>
-          <p className="font-sans text-white/60 text-[11px] uppercase tracking-wide mt-0.5">{top.label}</p>
+          <p className="font-sans text-white/80 text-[11px] uppercase tracking-wide mt-0.5">{top.label}</p>
         </div>
         {second && (
-          <div className="border-t border-white/10 pt-2">
+          <div className="border-t border-white/20 pt-2">
             <p className="font-serif text-brand-red text-base font-bold leading-none">{second.value}</p>
-            <p className="font-sans text-white/40 text-[11px] uppercase tracking-wide mt-0.5">{second.label}</p>
+            <p className="font-sans text-white/70 text-[11px] uppercase tracking-wide mt-0.5">{second.label}</p>
           </div>
         )}
       </div>

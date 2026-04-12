@@ -3,28 +3,33 @@ import type { ArticleMeta } from '@/lib/articles'
 
 function ArticleThumb({ article }: { article: ArticleMeta }) {
   const top = article.heroNumbers?.[0]
+  const second = article.heroNumbers?.[1]
 
   if (!top) {
     return (
-      <div className="flex-shrink-0 w-48 h-28 rounded-lg bg-gray-200" />
+      <div className="flex-shrink-0 w-56 h-32 rounded-lg bg-gray-200" />
     )
   }
 
   return (
     <Link
       href={`/${article.slug}`}
-      className="flex-shrink-0 w-48 h-28 rounded-lg bg-black flex flex-col justify-between p-4 select-none hover:opacity-90 transition-opacity"
+      className="flex-shrink-0 w-56 h-32 rounded-lg bg-black flex flex-col justify-between p-4 select-none hover:opacity-90 transition-opacity"
     >
-      <span className="font-sans text-[10px] font-bold tracking-widest uppercase text-brand-red">
-        UnpopularVoice
-      </span>
-      <div>
-        <p className="font-serif text-white text-2xl font-bold leading-none mb-1">
-          {top.value}
-        </p>
-        <p className="font-sans text-white/50 text-xs uppercase tracking-wide leading-tight">
-          {top.label}
-        </p>
+      <p className="font-sans text-[11px] font-semibold text-white/40 uppercase tracking-widest">
+        {article.company}
+      </p>
+      <div className="space-y-2">
+        <div>
+          <p className="font-serif text-white text-2xl font-bold leading-none">{top.value}</p>
+          <p className="font-sans text-white/60 text-[11px] uppercase tracking-wide mt-0.5">{top.label}</p>
+        </div>
+        {second && (
+          <div className="border-t border-white/10 pt-2">
+            <p className="font-serif text-brand-red text-base font-bold leading-none">{second.value}</p>
+            <p className="font-sans text-white/40 text-[11px] uppercase tracking-wide mt-0.5">{second.label}</p>
+          </div>
+        )}
       </div>
     </Link>
   )

@@ -3,6 +3,7 @@ type InsightType = 'flag' | 'positive' | 'insight' | 'warning'
 interface InsightBoxProps {
   type?: InsightType
   number?: string
+  label?: string
   title: string
   children: React.ReactNode
 }
@@ -34,8 +35,9 @@ const typeConfig: Record<InsightType, { border: string; badge: string; badgeText
   },
 }
 
-export default function InsightBox({ type = 'insight', number, title, children }: InsightBoxProps) {
+export default function InsightBox({ type = 'insight', number, label, title, children }: InsightBoxProps) {
   const config = typeConfig[type]
+  const displayLabel = label ?? config.badgeText
   return (
     <div className={`not-prose my-6 border-l-4 rounded-r-lg p-6 ${config.border}`}>
       <div className="flex items-start gap-4">
@@ -47,7 +49,7 @@ export default function InsightBox({ type = 'insight', number, title, children }
         <div className="flex-1">
           <div className="flex items-center gap-2 mb-2">
             <span className={`font-sans text-[10px] font-bold px-2 py-0.5 rounded tracking-wider uppercase ${config.badge}`}>
-              {config.icon} {config.badgeText}
+              {config.icon} {displayLabel}
             </span>
           </div>
           <p className="font-sans font-semibold text-black text-[15px] mb-2">{title}</p>

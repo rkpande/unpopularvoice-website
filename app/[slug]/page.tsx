@@ -14,6 +14,7 @@ import Assumptions from '@/components/mdx/Assumptions'
 import CenterpieceTable from '@/components/mdx/CenterpieceTable'
 import SignatureLine from '@/components/mdx/SignatureLine'
 import ArticleImage from '@/components/mdx/ArticleImage'
+import ArticleTimeline from '@/components/mdx/ArticleTimeline'
 
 const mdxComponents = {
   FinancialTable,
@@ -25,6 +26,7 @@ const mdxComponents = {
   CenterpieceTable,
   SignatureLine,
   ArticleImage,
+  ArticleTimeline,
 }
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://unpopularvoice.com'

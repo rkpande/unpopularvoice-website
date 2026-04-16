@@ -10,15 +10,22 @@ export interface RealityScoreData {
   profitabilityPath: number
 }
 
+export interface HeroNumber {
+  value: string
+  label: string
+}
+
 export interface ArticleMeta {
   slug: string
   title: string
   company: string
+  cin?: string
   sector: string
   dataSource: string
   updatedAt: string
   readTime: string
   tldr: string[]
+  heroNumbers?: HeroNumber[]
   realityScore: RealityScoreData
   featured?: boolean
   excerpt?: string
@@ -40,7 +47,11 @@ export function getAllArticles(): ArticleMeta[] {
       const { data } = matter(raw)
       return { slug, ...data } as ArticleMeta
     })
-    .sort((a, b) => (a.featured ? -1 : b.featured ? 1 : 0))
+    .sort((a, b) => {
+      if (a.featured && !b.featured) return -1
+      if (!a.featured && b.featured) return 1
+      return 0
+    })
 }
 
 export function getArticleBySlug(slug: string): Article | null {

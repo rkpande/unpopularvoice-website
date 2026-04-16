@@ -38,25 +38,27 @@ function ArticleThumb({ article }: { article: ArticleMeta }) {
 export default function LatestArticles({ articles }: { articles: ArticleMeta[] }) {
   return (
     <section id="latest" className="bg-gray-50 border-b border-gray-100">
-      <div className="max-w-7xl mx-auto px-8 py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 py-16">
         <p className="section-label mb-4">Latest Articles</p>
         <h2 className="font-serif text-black text-3xl font-bold mb-10">Latest Articles</h2>
 
         <div className="divide-y divide-gray-200">
           {articles.map((article) => (
-            <div key={article.slug} className="py-6 flex items-center gap-6 group">
-              <ArticleThumb article={article} />
+            <div key={article.slug} className="py-6 flex items-center gap-4 sm:gap-6 group">
+              <div className="hidden sm:block">
+                <ArticleThumb article={article} />
+              </div>
               <div className="flex-1 min-w-0">
-                <p className="font-sans font-semibold text-brand-red text-[10px] tracking-widest uppercase mb-1.5">
+                <p className="font-sans font-semibold text-brand-red text-[10px] tracking-widest uppercase mb-1.5 truncate">
                   {article.sector}
                 </p>
                 <Link href={`/${article.slug}`}>
-                  <h3 className="font-serif text-black text-lg font-bold leading-snug group-hover:text-brand-red transition-colors mb-1.5">
+                  <h3 className="font-serif text-black text-base sm:text-lg font-bold leading-snug group-hover:text-brand-red transition-colors mb-1.5">
                     {article.title}
                   </h3>
                 </Link>
                 {article.excerpt && (
-                  <p className="font-sans text-gray-500 text-sm">{article.excerpt}</p>
+                  <p className="font-sans text-gray-500 text-sm line-clamp-2 sm:line-clamp-none">{article.excerpt}</p>
                 )}
               </div>
               <Link

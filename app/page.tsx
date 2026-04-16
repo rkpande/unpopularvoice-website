@@ -8,7 +8,7 @@ import NewsletterCTA from '@/components/home/NewsletterCTA'
 export default function HomePage() {
   const all = getAllArticles()
   const featured = getFeaturedArticle()
-  const latest = all.filter((a) => !a.featured).slice(0, 6)
+  const latest = all.slice(0, 6)
 
   return (
     <>

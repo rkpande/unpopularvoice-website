@@ -30,10 +30,10 @@ export default function NewsletterCTA() {
     <section className="bg-red-50 border-b border-red-100">
       <div className="max-w-2xl mx-auto px-8 py-20 text-center">
         <h2 className="font-serif text-black text-4xl font-bold mb-3">
-          Get full breakdowns. No fluff.
+          Get filings-based startup breakdowns.
         </h2>
         <p className="font-sans text-gray-500 text-base mb-10">
-          Financial teardowns delivered to your inbox. One story. Deep analysis. Plain language.
+          One Indian startup. One MCA filing. The story the brand doesn&apos;t tell.
         </p>
 
         {status === 'success' ? (

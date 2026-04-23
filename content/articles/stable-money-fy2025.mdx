@@ -1,0 +1,258 @@
+---
+title: "Rs 104 Cr Revenue. Rs 3.6 Cr Retained. Rs 44.9 Cr Lost."
+company: "Stable Money"
+cin: "U74999KA2022PTC167343"
+sector: "Fintech / Fixed-Income Distribution Platform"
+dataSource: "Annual Filings FY2025"
+updatedAt: "12 April 2026"
+readTime: "10 min"
+featured: false
+published: true
+excerpt: "Stable Money reported Rs 104 Cr in consolidated revenue. The platform itself retained Rs 3.6 Cr. The gap tells you everything."
+tldr:
+  - "Reported revenue reflects transaction scale, not retained income. The platform kept Rs 3.58 Cr of every Rs 104 Cr reported."
+  - "The cost base is running at 14x retained revenue. Rs 13.90 in total expenses for every Re 1 earned from the platform."
+  - "Profitability path is not yet visible from the filings. At current burn, continued external funding appears likely."
+heroNumbers:
+  - value: "Rs 104.4 Cr"
+    label: "Reported revenue"
+  - value: "~Rs 3.6 Cr"
+    label: "Retained income"
+  - value: "Rs 44.9 Cr"
+    label: "Net loss"
+realityScore:
+  growthQuality: 3
+  sustainability: 4
+  profitabilityPath: 2
+---
+
+<CenterpieceTable
+  rows={[
+    ["Revenue", "Rs 104.4 Cr", "Flow-through"],
+    ["Net Revenue", "Rs 3.58 Cr", "Actual income"],
+    ["Net Loss", "Rs 44.85 Cr", "Burn"],
+    ["Cost per Re 1 Earned", "Rs 13.90", "14x retained revenue"],
+  ]}
+/>
+
+## Rs 104 Cr Revenue. Rs 3.6 Cr Retained. The Gap Is the Story.
+
+While reported revenue crossed Rs 104 Cr, filings suggest only a small portion reflects retained income, with the standalone entity recording just Rs 3.58 Cr in revenue from operations in FY2025.
+
+<SignatureLine text="This appears to be a ~Rs 3.58 Cr retained income business with Rs 104.4 Cr in transaction throughput." />
+
+<KeyMetrics
+  period="FY2025"
+  metrics={[
+    { label: "Reported Revenue", value: "Rs 104.4 Cr", sub: "consolidated", type: "neutral" },
+    { label: "Retained Income", value: "Rs 3.58 Cr", sub: "standalone platform fees", type: "neutral" },
+    { label: "Net Loss", value: "−Rs 44.9 Cr", sub: "consolidated", type: "negative" },
+    { label: "Cost per Re 1 Earned", value: "Rs 13.90", sub: "total standalone expenses ÷ standalone revenue", type: "negative" },
+    { label: "Cash on Hand", value: "Rs 55.1 Cr", sub: "consolidated, ~4-5 quarters runway", type: "warning" },
+    { label: "Employee Costs", value: "Rs 21.5 Cr", sub: "standalone, 6x platform revenue", type: "negative" },
+  ]}
+/>
+
+---
+
+## What the Numbers Show
+
+<ChartBlock
+  title="Consolidated vs Standalone Revenue (Rs Cr)"
+  subtitle="The gap that opened in FY2025 is the story"
+  unit="Rs "
+  data={[
+    { label: "FY24 Consolidated", value: 1.28, color: "gray" },
+    { label: "FY25 Consolidated", value: 104.43, color: "black" },
+    { label: "FY24 Standalone", value: 0.35, color: "gray" },
+    { label: "FY25 Standalone", value: 3.58, color: "green" },
+  ]}
+/>
+
+Stable Money, the fixed-deposit and bond distribution platform founded in late 2022 by Saurabh Jain and Harish Reddy, filed its third set of financials for FY2025. The consolidated picture looks like a rocketship.
+
+<FinancialTable
+  headers={["Metric", "Oct 2022 - Mar 2023", "FY2024", "FY2025"]}
+  rows={[
+    ["Consolidated Revenue from Ops (Rs Cr)", "0", "1.28", "104.43"],
+    ["Consolidated Other Income (Rs Cr)", "0.32", "2.67", "7.63"],
+    ["Consolidated Total Income (Rs Cr)", "0.32", "3.95", "112.07"],
+    [["Consolidated Net Loss (Rs Cr)", "bold"], ["-2.12", "negative"], ["-12.78", "negative"], ["-44.85", "negative"]],
+    ["Consolidated Total Assets (Rs Cr)", "39.00", "30.45", "119.77"],
+    ["Cash & Equivalents (Rs Cr)", "6.30", "18.96", "55.12"],
+  ]}
+  caption="Source: Annual filings with Registrar of Companies. Figures in Rs Crores. First period is a stub (Oct 2022 to Mar 2023)."
+/>
+
+Revenue jumped from Rs 1.28 Cr to Rs 104.43 Cr at the consolidated level. That is an 81x increase in a single year. Losses also scaled, from Rs 12.78 Cr in FY2024 to Rs 44.85 Cr in FY2025, a 3.5x increase. The narrative writes itself: explosive growth, losses under control relative to top-line expansion, a model reaching escape velocity.
+
+But the narrative breaks when you separate the consolidated entity from the standalone parent.
+
+---
+
+## What the Numbers Actually Mean
+
+The standalone parent entity (the holding company behind Stable Money, excluding its subsidiary) reported Rs 3.58 Cr in revenue from operations in FY2025, up from Rs 0.35 Cr in FY2024. That is 10x standalone growth, which is genuinely impressive. But it means the remaining Rs 100.85 Cr of consolidated revenue from operations flows through the subsidiary.
+
+Based on available disclosures and typical marketplace structures, the subsidiary appears to be recording gross transaction values rather than net fees. This has not been explicitly broken out in the filed disclosures. Stable Money operates as a distribution platform for fixed deposits and bonds. When a user invests Rs 1 lakh through the platform, the full amount likely flows through the subsidiary's books. The platform's actual economic interest is a commission or fee, which is what the standalone entity captures.
+
+The subsidiary also carries Rs 16.39 Cr of inventories on its balance sheet at the consolidated level. Public filings do not specify what these represent, but the amount may be consistent with fixed-income or related positions held as part of the distribution flow.
+
+<ChartBlock
+  title="Standalone Revenue vs Standalone Total Expenses (Rs Cr)"
+  subtitle="The gap that defines the business"
+  unit="Rs "
+  data={[
+    { label: "FY24 Revenue", value: 0.35, color: "black" },
+    { label: "FY25 Revenue", value: 3.58, color: "green" },
+    { label: "FY24 Expenses", value: 15.14, color: "red" },
+    { label: "FY25 Expenses", value: 49.85, color: "red" },
+  ]}
+/>
+
+<InsightBox type="flag" number="01" title="Rs 15.58 Cr on employees to earn Rs 3.58 Cr in platform fees">
+  The standalone entity spent Rs 15.58 Cr on employee benefits in FY2025, which is 4.4x the platform's entire revenue from operations. At the consolidated level, employee costs balloon to Rs 21.54 Cr, meaning the business spends roughly Rs 6 on salaries alone for every Re 1 of retained fee income. This is not unusual for early-stage platforms building teams ahead of revenue, but the gap is stark. A job seeker evaluating this employer should understand the company's path to covering its own headcount costs from organic revenue remains long.
+</InsightBox>
+
+<InsightBox type="flag" number="02" title="Other expenses at Rs 32.3 Cr, likely dominated by customer acquisition">
+  Standalone other expenses (a catch-all line that typically includes marketing, technology, legal, and operational costs) were Rs 32.31 Cr in FY2025, up from Rs 6.5 Cr in FY2024, a 5x increase. Marketing spend appears high relative to net revenue, which may indicate significant upfront customer acquisition investment typical of platform businesses at this stage. For context, Rs 32.31 Cr in other expenses against Rs 3.58 Cr in platform revenue means the company spends Rs 9 in this category alone for every Re 1 it retains.
+</InsightBox>
+
+<InsightBox type="flag" number="03" title="Other income of Rs 6.54 Cr exceeds revenue from operations by 1.8x">
+  The standalone entity earned Rs 6.54 Cr in other income (typically interest on deposits and investments) in FY2025, nearly double its core operating revenue. When a company's treasury income outpaces the fees from its actual business, it reveals how early the core monetisation is. The platform's deposits and fund balances are generating more income than the platform's own product. This pattern is consistent with a business that has raised significant capital and parked it in interest-bearing instruments while the core model scales.
+</InsightBox>
+
+<InsightBox type="insight" number="04" title="This Is a Pattern, Not an Exception">
+  Stable Money is not unique. Across Indian fintech, fixed-income distribution platforms, mutual fund marketplaces, and lending aggregators, the same structure appears: gross transaction values flowing through the P&L as revenue while the business earns a thin commission. High throughput combined with a thin take rate produces a revenue headline that flatters. In Stable Money's case, the implied take rate (Rs 3.58 Cr retained on Rs 104.4 Cr throughput) is approximately 0.34%, which is consistent with typical fixed-deposit distribution commissions. The filing knows the difference. Most headlines don't.
+</InsightBox>
+
+---
+
+## Why This Moment Matters
+
+The cash flow statement reveals the real dynamics. In FY2025, the standalone entity burned Rs 46.99 Cr through operating activities (cash flow from operations, the cash actually consumed by running the business). Investing activities consumed another Rs 77.15 Cr, which appears to include deployment into the subsidiary and financial instruments. The entire operation was funded by Rs 123.57 Cr raised through financing activities (equity infusions).
+
+The company's cap table confirms a significant fundraise took place. Lightspeed India Partners and Matrix Partners India are both present across multiple share tranches, alongside RTP Capital, Dezerv Innovation Fund, and AL Trust. Kunal Bahl and Rohit Bansal (Snapdeal co-founders) also hold equity. The FY2025 standalone equity jumped from Rs 28.97 Cr to Rs 117.92 Cr, a net increase of roughly Rs 89 Cr, confirming a substantial funding round during the year.
+
+With Rs 55.12 Cr in consolidated cash at year-end and a standalone operating burn of Rs 46.99 Cr in FY2025, the math is tight. At the current burn rate — a simplistic estimate that excludes future raises or revenue changes — continued external funding appears likely unless monetisation improves materially. The FY2025 financing inflow of Rs 123.57 Cr suggests the company raised well ahead of this cliff, but the most recent quarter's burn may have already consumed a significant portion.
+
+<ChartBlock
+  title="Cash Flow Pattern, Standalone FY2025 (Rs Cr)"
+  subtitle="Raised Rs 123.6 Cr, burned Rs 46.9 Cr from operations, deployed Rs 77.1 Cr"
+  unit="Rs "
+  data={[
+    { label: "Operating", value: -46.99, color: "red" },
+    { label: "Investing", value: -77.15, color: "red" },
+    { label: "Financing", value: 123.57, color: "green" },
+    { label: "Net Change", value: -0.56, color: "gray" },
+  ]}
+/>
+
+The loss trajectory also demands attention. Consolidated net losses went from Rs 2.12 Cr in the initial stub period to Rs 12.78 Cr in FY2024 to Rs 44.85 Cr in FY2025. EPS (earnings per share, the loss divided by total shares outstanding) deteriorated from Rs -176 to Rs -1,065 to Rs -3,738. Each round of funding dilutes the per-share loss further while the absolute loss balloons. For anyone holding stock options, this trajectory matters: the company needs to demonstrate that revenue growth (specifically retained revenue growth) can outpace cost escalation.
+
+---
+
+## Who Holds the Keys
+
+Founders Saurabh Jain and Harish Reddy hold 60,000 shares each, appearing to be the largest individual shareholders. Lightspeed India Partners III holds approximately 48,425 shares across two tranches, while Matrix Partners India holds roughly 47,425 shares across four entities, making them broadly equal institutional co-investors. RTP Capital holds 33,877 shares, and Dezerv Innovation Fund holds 904 shares. The presence of Kunal Bahl and Rohit Bansal (990 shares each) signals angel-level strategic backing. Exact percentage stakes are not disclosed in the filing, but the institutional holders collectively appear to control a significant portion of the company.
+
+<RealityScore
+  company="Stable Money"
+  period="FY2025"
+  dimensions={[
+    { label: "Growth Quality", score: 3, summary: "81x consolidated growth is almost entirely throughput. Standalone revenue grew 10x to Rs 3.58 Cr, which is real but tiny against costs." },
+    { label: "Sustainability", score: 4, summary: "Rs 55 Cr cash against Rs 47 Cr annual standalone operating burn gives roughly 4 to 5 quarters of runway, assuming no further fundraise." },
+    { label: "Profitability Path", score: 2, summary: "At current scale, profitability is not evident from filings alone. The 0.34% implied take rate means the platform needs to facilitate thousands of crores in transactions just to cover its cost base." }
+  ]}
+  verdict="Stable Money is building a distribution platform in fixed-income products with credible institutional backing. At Rs 3.58 Cr in retained revenue against Rs 49.85 Cr in standalone expenses, the business is spending Rs 13.90 for every Re 1 it earns — a ratio that reflects the pre-profitability stage of a platform at scale. Prospective employees should recognise this remains a high-investment, early-stage operation where continued external funding is part of the business plan. Whether the 0.34% take rate can sustain the cost base being built on top of it is the central open question for anyone evaluating this company — as an employer, an investor, or a benchmark."
+/>
+
+<EmployerScore
+  jobSecurity={3}
+  growthOpportunity={4}
+  payCredibility={2}
+  missionViability={3}
+  verdict="watch"
+  filingPeriod="FY2025"
+  summary="Stable Money raised $25M at a $175M valuation in February 2026, clearing its near-term runway concern. The product is real and AUM is growing toward Rs 4,000 Cr. But the platform retained only Rs 3.58 Cr of Rs 104 Cr in reported revenue — a 0.34% take rate. Pay credibility is constrained by that math. Strong choice for distribution and product roles; equity upside is uncertain until take-rate economics improve meaningfully."
+/>
+
+<Predictions
+  asOf="FY2025 filings, filed October 2024"
+  predictions={[
+    {
+      text: "Will require fresh capital within 12 months — runway was estimated at 4-5 quarters at filing date",
+      probability: "high",
+      status: "validated",
+      category: "fundraise",
+      outcome: "Raised $25M Pre-Series C at $175M valuation, February 2026 — Peak XV Partners, Z47, RTP Global, Fundamentum"
+    },
+    {
+      text: "AUM will continue growing significantly as distribution flywheel compounds",
+      probability: "high",
+      status: "validated",
+      category: "growth",
+      outcome: "AUM reached Rs 4,000 Cr across 1.25 lakh deposits by late 2025"
+    },
+    {
+      text: "Retained revenue growth will lag AUM growth — take rate will remain under 1%",
+      probability: "high",
+      status: "pending",
+      category: "cost"
+    },
+    {
+      text: "Will expand into adjacent fixed-income products (corporate bonds, REITs, SGBs) to diversify",
+      probability: "medium",
+      status: "pending",
+      category: "growth"
+    }
+  ]}
+/>
+
+---
+
+## Share This
+
+**On X:**
+> Stable Money reported Rs 104 Cr revenue. The platform retained Rs 3.58 Cr. It lost Rs 44.85 Cr. Rs 13.90 spent for every Re 1 earned. We read the actual RoC filings.
+
+**On Reddit / communities:**
+> Stable Money's FY2025 financials are a masterclass in understanding throughput vs retained revenue in fintech. Consolidated revenue: Rs 104 Cr. Standalone revenue (what the platform actually keeps): Rs 3.58 Cr. That's a 0.34% take rate. Thread in the article breaks down the full picture.
+
+**For LinkedIn:**
+> A recurring pattern across Indian fintech: gross transaction values reported as revenue, while the platform retains a thin commission. Stable Money's FY2025 filing shows Rs 104 Cr consolidated vs Rs 3.58 Cr standalone. Neither number is wrong. But only one tells you the size of the business.
+
+---
+
+<Assumptions
+  items={[
+    { claim: "Rs 3.58 Cr standalone revenue from operations in FY2025", status: "fact", basis: "Filed standalone P&L with Registrar of Companies, FY2025" },
+    { claim: "Rs 104.43 Cr consolidated revenue from operations in FY2025", status: "fact", basis: "Filed consolidated P&L with Registrar of Companies, FY2025" },
+    { claim: "Rs 44.85 Cr consolidated net loss in FY2025", status: "fact", basis: "Filed consolidated P&L with Registrar of Companies, FY2025" },
+    { claim: "Rs 100.85 Cr revenue gap flows through the subsidiary", status: "inference", basis: "Difference between consolidated and standalone revenue from operations; consistent with a subsidiary recording gross transaction values" },
+    { claim: "Subsidiary records gross transaction values rather than net fees", status: "inference", basis: "Based on available disclosures and typical marketplace accounting structures. Not explicitly broken out in filings. Consistent with fixed-deposit and bond distribution model" },
+    { claim: "Implied take rate of approximately 0.34%", status: "estimate", basis: "Standalone revenue from operations (Rs 3.58 Cr) divided by consolidated revenue from operations (Rs 104.43 Cr) as a proxy for commission on throughput" },
+    { claim: "Approximately 4 to 5 quarters of runway at current burn", status: "estimate", basis: "Consolidated cash balance (Rs 55.12 Cr) divided by FY2025 standalone operating cash outflow (Rs 46.99 Cr)" },
+    { claim: "Approximately Rs 89 Cr raised in FY2025", status: "estimate", basis: "Change in standalone total equity from Rs 28.97 Cr to Rs 117.92 Cr, net of accumulated losses" },
+    { claim: "Rs 16.39 Cr inventories may represent fixed-income or related positions", status: "inference", basis: "Consolidated balance sheet shows inventories only at subsidiary level; public filings do not specify the composition. Amount is consistent with a distribution model but this is not explicitly disclosed" },
+  ]}
+/>
+
+## A Note on This Data
+
+The financial figures in this article are sourced from annual statements that the company filed with the Registrar of Companies (RoC) under the Ministry of Corporate Affairs, public documents accessible to any Indian citizen under the Companies Act, 2013. Figures are presented as filed and may have been rounded for readability. Where consolidated and standalone figures differ, the article notes which set it is using.
+
+This analysis is based on publicly available information and reasonable interpretation of the filed data. It does not reproduce original documents. Where disclosures are limited, the article includes analytical inferences, these are clearly flagged in the "Transparency Layer" above and with language such as "appears to be", "the filing suggests", or "based on available disclosures and typical marketplace structures."
+
+This article is for informational purposes only. It is not investment advice, not a recommendation to buy or sell any security, and not a report of any SEBI-registered research analyst. UnpopularVoice is an independent publication. Readers should conduct their own due diligence before making any financial or employment decisions.
+
+<RelatedArticles
+  articles={[
+    { title: "Jar FY2025: ₹188.78 Cr Revenue. ₹13.17 Cr Profit. First Year in the Black.", href: "/jar-fy2025", label: "Fintech" },
+    { title: "Dezerv FY2025: 9 Paise from Breakeven in FY2023. ₹111.90 Cr Loss in FY2025.", href: "/dezerv-fy2025", label: "Wealth Tech" },
+    { title: "CRED: ₹945.05 Cr Lost in 3 Years. ₹455 Cr Just Raised. The Full Journey.", href: "/cred-fy2025", label: "Fintech" },
+    { title: "Scapia FY2025: Revenue Grew 67%. Losses Narrowed. The Gap Remains.", href: "/scapia-fy2025", label: "Fintech" },
+  ]}
+/>
+
+<SignatureLine text="From the filing. Not the press release." />

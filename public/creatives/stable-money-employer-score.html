@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Stable Money — Employer Score</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700;800&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    width: 1200px;
+    height: 675px;
+    overflow: hidden;
+    background: #fff;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .card {
+    width: 1200px;
+    height: 675px;
+    display: grid;
+    grid-template-columns: 420px 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* ── LEFT PANEL — dark, company identity ── */
+  .left {
+    background: #0d0d0d;
+    padding: 52px 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* red slash accent on left panel */
+  .left::before {
+    content: '';
+    position: absolute;
+    bottom: -60px;
+    left: -40px;
+    width: 200px;
+    height: 400px;
+    background: #B22222;
+    transform: rotate(-20deg);
+    opacity: 0.12;
+  }
+
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(178,34,34,0.15);
+    border: 1px solid rgba(178,34,34,0.3);
+    padding: 6px 12px;
+    width: fit-content;
+  }
+  .tag-dot {
+    width: 6px;
+    height: 6px;
+    background: #B22222;
+    border-radius: 50%;
+  }
+  .tag-text {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #B22222;
+  }
+
+  .company {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 24px 0;
+  }
+  .company-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 58px;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.0;
+    letter-spacing: -0.02em;
+  }
+  .company-name .red { color: #B22222; }
+  .company-fy {
+    margin-top: 10px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.25);
+  }
+  .company-sector {
+    margin-top: 6px;
+    font-size: 11px;
+    color: rgba(255,255,255,0.2);
+    letter-spacing: 0.05em;
+  }
+
+  .left-bottom {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.25);
+  }
+  .brand span { color: rgba(178,34,34,0.6); }
+
+  /* ── RIGHT PANEL — white, scores ── */
+  .right {
+    background: #fff;
+    padding: 44px 52px 44px 56px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-left: 1px solid #f0f0f0;
+  }
+
+  .right-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 32px;
+  }
+  .right-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #999;
+  }
+  .verdict-badge {
+    background: #FFF7ED;
+    border: 1px solid #F59E0B;
+    color: #92400E;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 5px 10px;
+  }
+
+  /* Score rows */
+  .scores { display: flex; flex-direction: column; gap: 0; flex: 1; }
+
+  .row {
+    display: grid;
+    grid-template-columns: 170px 1fr 72px;
+    align-items: center;
+    padding: 14px 0;
+    border-bottom: 1px solid #f5f5f5;
+  }
+  .row:first-child { border-top: 1px solid #f5f5f5; }
+
+  .row-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #555;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .bar-wrap {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 0 20px 0 0;
+  }
+  .seg {
+    flex: 1;
+    height: 28px;
+    border-radius: 2px;
+    background: #f0f0f0;
+    transition: background 0.2s;
+  }
+  .seg.filled { background: #B22222; }
+  .seg.filled.top { background: #8B0000; }
+
+  /* Highlight row — highest score */
+  .row.best .row-label { color: #000; font-weight: 700; }
+  .row.best .seg.filled { background: #B22222; }
+  .row.best .num { color: #B22222; }
+
+  .num {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: #111;
+    line-height: 1;
+    text-align: right;
+  }
+  .num sub {
+    font-size: 14px;
+    color: #bbb;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    vertical-align: baseline;
+    bottom: 0;
+  }
+
+  /* Bottom note */
+  .bottom-note {
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .note-text {
+    font-size: 11px;
+    color: #aaa;
+    line-height: 1.5;
+    max-width: 480px;
+  }
+  .note-text strong { color: #555; font-weight: 600; }
+  .source {
+    font-size: 9px;
+    color: #ccc;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-align: right;
+    flex-shrink: 0;
+    margin-left: 20px;
+  }
+</style>
+</head>
+<body>
+<div class="card">
+
+  <!-- LEFT -->
+  <div class="left">
+    <div class="tag">
+      <div class="tag-dot"></div>
+      <div class="tag-text">Employer Score</div>
+    </div>
+
+    <div class="company">
+      <div class="company-name">Stable<br><span class="red">Money</span></div>
+      <div class="company-fy">FY 2025</div>
+      <div class="company-sector">Fintech · Fixed-Income Distribution</div>
+    </div>
+
+    <div class="left-bottom">
+      <div class="brand"><span>Unpopular</span>Voice</div>
+    </div>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="right">
+    <div class="right-header">
+      <div class="right-title">Should you work here?</div>
+      <div class="verdict-badge">⚠ Watch</div>
+    </div>
+
+    <div class="scores">
+
+      <!-- Job Security 4/10 -->
+      <div class="row">
+        <div class="row-label">Job Security</div>
+        <div class="bar-wrap">
+          <div class="seg filled"></div>
+          <div class="seg filled"></div>
+          <div class="seg filled"></div>
+          <div class="seg filled"></div>
+          <div class="seg"></div>
+          <div class="seg"></div>
+          <div class="seg"></div>
+          <div class="seg"></div>
+          <div class="seg"></div>
+          <div class="seg"></div>
+        </div>
+        <div class="num">4<sub>/10</sub></div>
+      </div>
+
+      <!-- Growth Potential 7/10 — BEST -->
+      <div class="row best">
+        <div class="row-label">Growth Potential</div>
+        <div class="bar-wrap">
+          <div class="seg filled top"></div>
+          <div class="seg filled top"></div>
+          <div class="seg filled top"></div>
+          <div class="seg filled top"></div>
+          <div class="seg filled top"></div>
+          <div class="seg filled top"></div>
+          <div class="seg filled top"></div>
+          <div class="seg"></div>
+          <div class="seg"></div>
+          <div class="seg"></div>
+        </div>
+        <div class="num">7<sub>/10</sub></div>
+      </div>
+
+      <!-- Pay Credibility 5/10 -->
+      <div class="row">
+        <div class="row-label">Pay Credibility</div>
+        <div class="bar-wrap">
+          <div class="seg filled"></div>
+          <div class="seg filled"></div>
+          <div class="seg filled"></div>
+          <div class="seg filled"></div>
+          <div class="seg filled"></div>
+          <div class="seg"></div>
+          <div class="seg"></div>
+          <div class="seg"></div>
+          <div class="seg"></div>
+          <div class="seg"></div>
+        </div>
+        <div class="num">5<sub>/10</sub></div>
+      </div>
+
+      <!-- Mission Viability 6/10 -->
+      <div class="row">
+        <div class="row-label">Mission Viability</div>
+        <div class="bar-wrap">
+          <div class="seg filled"></div>
+          <div class="seg filled"></div>
+          <div class="seg filled"></div>
+          <div class="seg filled"></div>
+          <div class="seg filled"></div>
+          <div class="seg filled"></div>
+          <div class="seg"></div>
+          <div class="seg"></div>
+          <div class="seg"></div>
+          <div class="seg"></div>
+        </div>
+        <div class="num">6<sub>/10</sub></div>
+      </div>
+
+    </div>
+
+    <div class="bottom-note">
+      <div class="note-text">
+        Platform retained only <strong>Rs 3.58 Cr of Rs 104 Cr</strong> in revenue.
+        Strong on growth &amp; mission. Pay credibility constrained by a 0.34% take rate.
+      </div>
+      <div class="source">RoC Filing · MCA<br>unpopularvoice.com</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

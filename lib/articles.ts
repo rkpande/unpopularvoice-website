@@ -4,6 +4,20 @@ import matter from 'gray-matter'
 
 const ARTICLES_DIR = path.join(process.cwd(), 'content/articles')
 
+// Parses "21 April 2026", "April 2026", "17 April 2026", or ISO strings
+function parseArticleDate(s: string): number {
+  if (!s) return 0
+  // "DD Month YYYY"
+  const full = s.match(/^(\d{1,2})\s+(\w+)\s+(\d{4})$/)
+  if (full) return new Date(`${full[2]} ${full[1]}, ${full[3]}`).getTime()
+  // "Month YYYY"
+  const monthYear = s.match(/^(\w+)\s+(\d{4})$/)
+  if (monthYear) return new Date(`${monthYear[1]} 1, ${monthYear[2]}`).getTime()
+  // ISO or anything else
+  const d = new Date(s)
+  return isNaN(d.getTime()) ? 0 : d.getTime()
+}
+
 export interface RealityScoreData {
   growthQuality: number
   sustainability: number
@@ -15,9 +29,15 @@ export interface HeroNumber {
   label: string
 }
 
+export interface FaqItem {
+  q: string
+  a: string
+}
+
 export interface ArticleMeta {
   slug: string
   title: string
+  seoTitle?: string
   company: string
   cin?: string
   sector: string
@@ -28,7 +48,9 @@ export interface ArticleMeta {
   heroNumbers?: HeroNumber[]
   realityScore: RealityScoreData
   featured?: boolean
+  published?: boolean
   excerpt?: string
+  faqItems?: FaqItem[]
 }
 
 export interface Article extends ArticleMeta {
@@ -47,11 +69,8 @@ export function getAllArticles(): ArticleMeta[] {
       const { data } = matter(raw)
       return { slug, ...data } as ArticleMeta
     })
-    .sort((a, b) => {
-      if (a.featured && !b.featured) return -1
-      if (!a.featured && b.featured) return 1
-      return 0
-    })
+    .filter((a) => a.published !== false)
+    .sort((a, b) => parseArticleDate(b.updatedAt) - parseArticleDate(a.updatedAt))
 }
 
 export function getArticleBySlug(slug: string): Article | null {
@@ -60,7 +79,9 @@ export function getArticleBySlug(slug: string): Article | null {
 
   const raw = fs.readFileSync(filepath, 'utf-8')
   const { data, content } = matter(raw)
-  return { slug, ...data, content } as Article
+  const article = { slug, ...data, content } as Article
+  if (article.published === false) return null
+  return article
 }
 
 export function getFeaturedArticle(): ArticleMeta | null {

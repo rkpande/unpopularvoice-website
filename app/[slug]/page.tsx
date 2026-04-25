@@ -1,6 +1,8 @@
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import { MDXRemote } from 'next-mdx-remote/rsc'
+import rehypeSlug from 'rehype-slug'
+import ArticleTOC from '@/components/mdx/ArticleTOC'
 
 // Render article pages on demand — avoids SSG prerender issues with complex MDX expressions
 export const dynamic = 'force-dynamic'
@@ -15,6 +17,10 @@ import CenterpieceTable from '@/components/mdx/CenterpieceTable'
 import SignatureLine from '@/components/mdx/SignatureLine'
 import ArticleImage from '@/components/mdx/ArticleImage'
 import ArticleTimeline from '@/components/mdx/ArticleTimeline'
+import PullQuote from '@/components/mdx/PullQuote'
+import RelatedArticles from '@/components/mdx/RelatedArticles'
+import EmployerScore from '@/components/mdx/EmployerScore'
+import Predictions from '@/components/mdx/Predictions'
 
 const mdxComponents = {
   FinancialTable,
@@ -27,6 +33,10 @@ const mdxComponents = {
   SignatureLine,
   ArticleImage,
   ArticleTimeline,
+  PullQuote,
+  RelatedArticles,
+  EmployerScore,
+  Predictions,
 }
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://unpopularvoice.com'
@@ -43,7 +53,7 @@ export async function generateMetadata({
   const canonicalUrl = `${SITE_URL}/${article.slug}`
 
   return {
-    title: article.title,
+    title: article.seoTitle ?? article.title,
     description: article.excerpt || article.tldr[0],
     alternates: { canonical: canonicalUrl },
     openGraph: {
@@ -69,6 +79,16 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
   const article = getArticleBySlug(params.slug)
   if (!article) notFound()
 
+  const breadcrumbLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+      { '@type': 'ListItem', position: 2, name: article.sector.split('/')[0].trim(), item: `${SITE_URL}/sector/${encodeURIComponent(article.sector.split('/')[0].trim())}` },
+      { '@type': 'ListItem', position: 3, name: article.company, item: `${SITE_URL}/${article.slug}` },
+    ],
+  }
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -92,8 +112,28 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
     <article>
       <script
         type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
+      <script
+        type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      {article.faqItems && article.faqItems.length > 0 && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'FAQPage',
+              mainEntity: article.faqItems.map((item) => ({
+                '@type': 'Question',
+                name: item.q,
+                acceptedAnswer: { '@type': 'Answer', text: item.a },
+              })),
+            }),
+          }}
+        />
+      )}
       {/* Metadata strip */}
       <div className="bg-gray-50 border-b border-gray-200 border-l-4 border-l-brand-red">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 py-3 flex flex-wrap items-center gap-x-2 gap-y-1 font-sans text-xs text-gray-400">
@@ -139,13 +179,16 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
         </div>
       </div>
 
+      {/* Sticky TOC — floats on right, desktop only */}
+      <ArticleTOC />
+
       {/* MDX content — CenterpieceTable black header continues right off the author bar */}
       <div className="article-col pb-16 pt-0">
         <div className="prose prose-lg max-w-none font-sans">
           <MDXRemote
             source={article.content}
             components={mdxComponents}
-            options={{ blockJS: false }}
+            options={{ blockJS: false, mdxOptions: { rehypePlugins: [rehypeSlug] } }}
           />
         </div>
       </div>

@@ -1,0 +1,44 @@
+# UnpopularVoice
+
+> Financial teardowns of Indian startups from MCA filings. Revenue, PAT, debt and cash flow — audited numbers only. No press releases.
+
+## About
+
+UnpopularVoice publishes financial analysis of Indian startups built from MCA (Ministry of Corporate Affairs) annual filings and XBRL data. Each article extracts FY2025 revenue, PAT, operating cash flow, total debt, and employee costs directly from audited standalone filings. Data is sourced from AOC-4 XBRL submissions. No estimates, no analyst projections.
+
+## Coverage
+
+Indian startups across fintech, logistics, mobility, e-commerce, and consumer sectors. FY2025 filings (April 2024 - March 2025) are the primary dataset.
+
+## Articles
+
+- [Zerodha FY2025: Revenue ₹8,810 Cr, PAT ₹4,232 Cr, 48% Net Margin](https://unpopularvoice.com/zerodha-fy2025)
+- [Razorpay FY2025: Payments Business Profitable, ₹879 Cr Write-Down Drives Headline Loss](https://unpopularvoice.com/razorpay-fy2025)
+- [PhonePe FY2025: Revenue ₹6,544 Cr, OCF +₹1,903 Cr, ₹2,017 Cr ESOP Charge](https://unpopularvoice.com/phonepe-fy2025)
+- [Porter FY2025: Revenue ₹4,287 Cr, First Full-Year Profit +₹131 Cr, Zero Debt](https://unpopularvoice.com/porter-fy2025)
+- [Rapido FY2025: Revenue ₹910 Cr, Losses Cut 64% in Two Years, Zero Debt](https://unpopularvoice.com/rapido-fy2025)
+- [OYO FY2025: Revenue ₹6,253 Cr, PAT +₹233 Cr (DTA-driven)](https://unpopularvoice.com/oyo-fy2025)
+- [Zepto FY2024: Revenue ₹4,455 Cr, PAT -₹1,249 Cr](https://unpopularvoice.com/zepto-fy2024)
+- [boAt FY2025: Revenue ₹3,063 Cr, PAT +₹64 Cr, Zero Long-Term Debt](https://unpopularvoice.com/boat-fy2025)
+- [Scapia FY2025](https://unpopularvoice.com/scapia-fy2025)
+- [Navi FY2025](https://unpopularvoice.com/navi-fy2025)
+- [CRED FY2024](https://unpopularvoice.com/cred-fy2024)
+- [Dezerv FY2025](https://unpopularvoice.com/dezerv-fy2025)
+- [Jar FY2025](https://unpopularvoice.com/jar-fy2025)
+- [Kiwi FY2025](https://unpopularvoice.com/kiwi-fy2025)
+- [SuperMoney FY2025](https://unpopularvoice.com/supermoney-fy2025)
+- [Stable Money FY2025](https://unpopularvoice.com/stable-money-fy2025)
+- [Sugar Cosmetics FY2025](https://unpopularvoice.com/sugar-fy2025)
+- [Upstox FY2024](https://unpopularvoice.com/upstox-fy2024)
+- [BharatPe FY2025: Revenue ₹1,667 Cr, Losses Cut 82% — But OCF Worsened to -₹440 Cr](https://unpopularvoice.com/bharatpe-fy2025)
+- [Chaayos FY2025: Revenue ₹305 Cr (+23%), Losses Halved, OCF Positive](https://unpopularvoice.com/chaayos-fy2025)
+- [Chai Point FY2025: Revenue ₹208 Cr, Net Worth ₹20 Cr, Cash ₹14.50 Cr](https://unpopularvoice.com/chaipoint-fy2025)
+- [Slice Small Finance Bank FY2025: ₹604 Cr Income, ₹317 Cr Loss, ₹2,905 Cr Loan Book in Year One](https://unpopularvoice.com/slice-fy2025)
+
+## Data Methodology
+
+All financial figures are sourced from MCA AOC-4 XBRL filings. Values are in Indian Rupees Crores (1 Crore = 10 million). Standalone filings are used unless otherwise stated. FY2025 refers to the financial year ending March 31, 2025.
+
+## Contact
+
+https://unpopularvoice.com

@@ -45,10 +45,11 @@ Indian startups across fintech, logistics, mobility, e-commerce, and consumer se
 - [Blue Tokai Coffee FY2025: Blue Tokai Scaled for Years. Losses Fell Only Now.](https://unpopularvoice.com/bluetokai-fy2025)
 - [Noise FY2025: Made ₹2 Cr Profit. Generated ₹176 Cr Cash. Revenue Fell 24%.](https://unpopularvoice.com/noise-fy2025)
 - [UltraHuman FY2025: Made ₹106 Cr Profit. Revenue Grew 5x. Employee Costs Were ₹37 Cr.](https://unpopularvoice.com/ultrahuman-fy2025)
+- [Plum FY2025: Lost ₹14 Cr. Revenue Grew 62%. The Insurance Broker Is Almost Profitable.](https://unpopularvoice.com/plum-fy2025)
 
 ## Data Methodology
 
-All financial figures are sourced from MCA AOC-4 XBRL filings. Values are in Indian Rupees Crores (1 Crore = 10 million). Standalone filings are used unless otherwise stated. FY2025 refers to the financial year ending March 31, 2025.
+All financial figures are sourced from audited annual filings submitted to India's Ministry of Corporate Affairs. Values are in Indian Rupees Crores (1 Crore = 10 million). Standalone filings are used unless otherwise stated. FY2025 refers to the financial year ending March 31, 2025.
 
 ## Contact
 

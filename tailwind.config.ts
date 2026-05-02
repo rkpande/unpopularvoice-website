@@ -19,6 +19,15 @@ const config: Config = {
         serif: ['var(--font-playfair)', 'Georgia', 'serif'],
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
       },
+      animation: {
+        ticker: 'ticker 55s linear infinite',
+      },
+      keyframes: {
+        ticker: {
+          from: { transform: 'translateX(0)' },
+          to: { transform: 'translateX(-50%)' },
+        },
+      },
       typography: {
         DEFAULT: {
           css: {

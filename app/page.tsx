@@ -45,9 +45,9 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-8 py-16">
           <div className="flex items-center justify-between mb-8">
             <div>
-              <h2 className="font-serif text-black text-3xl font-bold">FY2025 MCA Filing Analysis</h2>
+              <h2 className="font-serif text-black text-3xl font-bold">Indian Startup Financials</h2>
               <p className="font-sans text-gray-400 text-sm mt-1">
-                {all.length} Indian startups — revenue, PAT, and debt from audited filings
+                {all.length} companies — revenue, profit, and debt from audited annual filings
               </p>
             </div>
             <Link

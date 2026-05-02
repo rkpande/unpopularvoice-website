@@ -8,8 +8,8 @@ import NewsletterCTA from '@/components/home/NewsletterCTA'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'FY2025 Indian Startup Revenue & Profit | UnpopularVoice',
-  description: 'FY2025 revenue, PAT and debt for 30+ Indian startups from audited MCA filings. Zerodha ₹4,232 Cr profit, PhonePe, Porter, Razorpay. No press releases.',
+  title: 'Indian Startup Revenue & Profit (From Filings, Not PR)',
+  description: 'FY2025 data for 30+ Indian startups from audited MCA filings. Zerodha ₹4,232 Cr profit, plus PhonePe, Razorpay, Porter. Real numbers, not press releases.',
 }
 
 export default function HomePage() {

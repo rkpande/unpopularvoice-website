@@ -29,9 +29,9 @@ export default function NewsletterCTA() {
   return (
     <section className="bg-red-50 border-b border-red-100">
       <div className="max-w-2xl mx-auto px-8 py-20 text-center">
-        <h2 className="font-serif text-black text-4xl font-bold mb-3">
+        <p className="font-serif text-black text-4xl font-bold mb-3">
           Get filings-based startup breakdowns.
-        </h2>
+        </p>
         <p className="font-sans text-gray-500 text-base mb-10">
           One Indian startup. One MCA filing. The story the brand doesn&apos;t tell.
         </p>

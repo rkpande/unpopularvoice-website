@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { getAllArticles } from '@/lib/articles'
+import { getAllArticles, formatDisplayDate } from '@/lib/articles'
 
 export const metadata: Metadata = {
   title: 'Reality Check Index',
@@ -108,7 +108,7 @@ export default function RealityCheckPage() {
                           {a.realityScore.profitabilityPath}/10
                         </span>
                       </td>
-                      <td className="px-6 py-4 text-center text-gray-400 text-xs">{a.updatedAt}</td>
+                      <td className="px-6 py-4 text-center text-gray-400 text-xs">{formatDisplayDate(a.updatedAt)}</td>
                       <td className="px-6 py-4 text-right">
                         <Link href={`/${a.slug}`} className="font-semibold text-brand-red text-xs hover:underline">
                           Full report →

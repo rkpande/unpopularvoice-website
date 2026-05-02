@@ -39,7 +39,6 @@ export default function LatestArticles({ articles }: { articles: ArticleMeta[] }
   return (
     <section id="latest" className="bg-gray-50 border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-8 py-16">
-        <p className="section-label mb-4">Latest Articles</p>
         <h2 className="font-serif text-black text-3xl font-bold mb-10">Latest Articles</h2>
 
         <div className="divide-y divide-gray-200">
@@ -49,9 +48,12 @@ export default function LatestArticles({ articles }: { articles: ArticleMeta[] }
                 <ArticleThumb article={article} />
               </div>
               <div className="flex-1 min-w-0">
-                <p className="font-sans font-semibold text-brand-red text-[10px] tracking-widest uppercase mb-1.5 truncate">
+                <Link
+                  href={`/sector/${encodeURIComponent(article.sector.split('/')[0].trim())}`}
+                  className="font-sans font-semibold text-brand-red text-[10px] tracking-widest uppercase mb-1.5 truncate block hover:underline"
+                >
                   {article.sector}
-                </p>
+                </Link>
                 <Link href={`/${article.slug}`}>
                   <h3 className="font-serif text-black text-base sm:text-lg font-bold leading-snug group-hover:text-brand-red transition-colors mb-1.5">
                     {article.title}
@@ -63,12 +65,22 @@ export default function LatestArticles({ articles }: { articles: ArticleMeta[] }
               </div>
               <Link
                 href={`/${article.slug}`}
+                aria-label={`Read ${article.company} analysis`}
                 className="flex-shrink-0 font-sans font-semibold text-brand-red text-sm hover:underline"
               >
                 Read →
               </Link>
             </div>
           ))}
+        </div>
+
+        <div className="mt-8 flex justify-end">
+          <Link
+            href="/articles"
+            className="font-sans font-semibold text-brand-red text-sm hover:underline"
+          >
+            View all articles →
+          </Link>
         </div>
       </div>
     </section>

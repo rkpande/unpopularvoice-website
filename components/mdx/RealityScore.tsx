@@ -4,6 +4,8 @@ interface ScoreDimension {
   summary: string
 }
 
+import Link from 'next/link'
+
 interface RealityScoreProps {
   company: string
   period: string
@@ -58,6 +60,12 @@ export default function RealityScore({ company, period, dimensions, verdict }: R
           <span className="text-white font-semibold">Verdict: </span>
           {verdict}
         </p>
+        <Link
+          href="/methodology"
+          className="inline-block mt-3 font-sans text-white/30 text-xs hover:text-white/60 transition-colors"
+        >
+          How we score →
+        </Link>
       </div>
     </div>
   )

@@ -4,13 +4,16 @@ import Link from 'next/link'
 import { getAllArticles } from '@/lib/articles'
 
 const VALID_SECTORS: Record<string, string> = {
-  fintech: 'Fintech',
-  saas: 'SaaS',
-  d2c: 'D2C',
-  ev: 'EV',
-  edtech: 'Edtech',
-  logistics: 'Logistics',
+  fintech:          'Fintech',
+  nbfc:             'NBFC',
+  consumer:         'Consumer',
+  saas:             'SaaS',
+  d2c:              'D2C',
+  ev:               'EV',
+  edtech:           'Edtech',
+  logistics:        'Logistics',
   'quick-commerce': 'Quick Commerce',
+  'wealth-management': 'Wealth Management',
 }
 
 export async function generateMetadata({
@@ -32,10 +35,12 @@ export default function SectorPage({ params }: { params: { sector: string } }) {
   if (!label) notFound()
 
   const all = getAllArticles()
-  const articles = all.filter(
-    (a) => a.sector.toLowerCase().replace(/\s+/g, '-') === key ||
-           a.sector.toLowerCase() === label.toLowerCase()
-  )
+  const articles = all.filter((a) => {
+    const s = a.sector.toLowerCase()
+    return s === label.toLowerCase() ||
+           s.startsWith(label.toLowerCase() + ' /') ||
+           s.startsWith(label.toLowerCase() + '/')
+  })
 
   return (
     <div className="min-h-[calc(100vh-72px)]">

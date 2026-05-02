@@ -19,6 +19,18 @@ export default function Nav() {
             Browse Articles
           </Link>
           <Link
+            href="/employer-check"
+            className="hidden sm:block font-sans text-white/70 text-sm font-medium hover:text-white transition-colors"
+          >
+            Employer Check
+          </Link>
+          <Link
+            href="/methodology"
+            className="hidden sm:block font-sans text-white/70 text-sm font-medium hover:text-white transition-colors"
+          >
+            How we score
+          </Link>
+          <Link
             href="/subscribe"
             className="bg-brand-red text-white font-sans font-semibold text-xs px-4 py-2 rounded hover:bg-red-800 transition-colors"
           >

@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import type { ArticleMeta } from '@/lib/articles'
+import { formatDisplayDate } from '@/lib/articles'
 
 export default function FeaturedArticle({ article }: { article: ArticleMeta }) {
   const nums = article.heroNumbers
@@ -58,7 +59,7 @@ export default function FeaturedArticle({ article }: { article: ArticleMeta }) {
             <p className="font-sans text-gray-400 text-xs mb-3">
               {article.sector.toUpperCase()}&nbsp;&nbsp;·&nbsp;&nbsp;
               {article.dataSource}&nbsp;&nbsp;·&nbsp;&nbsp;
-              {article.updatedAt}
+              {formatDisplayDate(article.updatedAt)}
             </p>
 
             <Link href={`/${article.slug}`}>

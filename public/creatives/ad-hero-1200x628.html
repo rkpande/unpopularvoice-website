@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>UnpopularVoice — Hero Ad 1200×628</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700;800&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    width: 1200px;
+    height: 628px;
+    overflow: hidden;
+    background: #0d0d0d;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .card {
+    width: 1200px;
+    height: 628px;
+    background: #0d0d0d;
+    display: grid;
+    grid-template-columns: 1fr 480px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* background texture lines */
+  .card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      -55deg,
+      transparent,
+      transparent 60px,
+      rgba(255,255,255,0.015) 60px,
+      rgba(255,255,255,0.015) 61px
+    );
+    pointer-events: none;
+  }
+
+  /* red accent bar */
+  .card::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    background: #B22222;
+  }
+
+  /* LEFT */
+  .left {
+    padding: 58px 60px 52px 72px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+  }
+
+  .label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    width: fit-content;
+  }
+  .label-dot { width: 6px; height: 6px; background: #B22222; border-radius: 50%; }
+  .label-text {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(178,34,34,0.8);
+  }
+
+  .headline {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 0;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 62px;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+  h1 .red { color: #B22222; }
+
+  .sub {
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.6;
+    max-width: 480px;
+  }
+
+  .cta {
+    margin-top: 36px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #B22222;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 14px 28px;
+    width: fit-content;
+  }
+  .cta-arrow { font-size: 14px; }
+
+  .brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.2);
+  }
+  .brand span { color: rgba(178,34,34,0.5); }
+
+  /* RIGHT — stat cards */
+  .right {
+    padding: 52px 52px 52px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .stat-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.07);
+    padding: 20px 24px;
+  }
+  .stat-company {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+    margin-bottom: 6px;
+  }
+  .stat-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 34px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1;
+  }
+  .stat-value.red { color: #B22222; }
+  .stat-label {
+    margin-top: 4px;
+    font-size: 11px;
+    color: rgba(255,255,255,0.35);
+    line-height: 1.4;
+  }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="left">
+    <div class="label">
+      <div class="label-dot"></div>
+      <div class="label-text">Independent Research · MCA Filings</div>
+    </div>
+
+    <div class="headline">
+      <h1>From the filing.<br>Not the <span class="red">press release.</span></h1>
+      <p class="sub">We read Indian startup MCA filings — revenue, losses, burn, founders — so you don't have to.</p>
+      <div class="cta">Read the analysis <span class="cta-arrow">→</span></div>
+    </div>
+
+    <div class="brand"><span>Unpopular</span>Voice</div>
+  </div>
+
+  <div class="right">
+    <div class="stat-card">
+      <div class="stat-company">Kiwi · FY2025</div>
+      <div class="stat-value red">−₹64 Cr</div>
+      <div class="stat-label">lost on ₹3.83 Cr revenue.<br>13 months of runway.</div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-company">Dezerv · FY2025</div>
+      <div class="stat-value red">−₹112 Cr</div>
+      <div class="stat-label">₹111 Cr on salaries.<br>9 paise from breakeven two years prior.</div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-company">Jar · FY2025</div>
+      <div class="stat-value" style="color:#16a34a;">+₹13 Cr</div>
+      <div class="stat-label">first-ever profit.<br>₹188.78 Cr revenue.</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

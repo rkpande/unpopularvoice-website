@@ -2,11 +2,12 @@ import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import rehypeSlug from 'rehype-slug'
+import remarkGfm from 'remark-gfm'
 import ArticleTOC from '@/components/mdx/ArticleTOC'
 
-// Render article pages on demand — avoids SSG prerender issues with complex MDX expressions
-export const dynamic = 'force-dynamic'
-import { getAllArticles, getArticleBySlug } from '@/lib/articles'
+// ISR: generate on first request, cache for 24h — avoids SSG build-time MDX issues while still serving from CDN
+export const revalidate = 86400
+import { getAllArticles, getArticleBySlug, formatDisplayDate } from '@/lib/articles'
 import FinancialTable from '@/components/mdx/FinancialTable'
 import RealityScore from '@/components/mdx/RealityScore'
 import InsightBox from '@/components/mdx/InsightBox'
@@ -41,6 +42,13 @@ const mdxComponents = {
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://unpopularvoice.com'
 
+function metaDesc(raw: string): string {
+  if (raw.length <= 155) return raw
+  const cut = raw.slice(0, 152)
+  const lastSpace = cut.lastIndexOf(' ')
+  return (lastSpace > 100 ? cut.slice(0, lastSpace) : cut) + '…'
+}
+
 export async function generateMetadata({
   params,
 }: {
@@ -51,14 +59,15 @@ export async function generateMetadata({
 
   const ogImageUrl = `${SITE_URL}/og?title=${encodeURIComponent(article.title)}&company=${encodeURIComponent(article.company)}&sector=${encodeURIComponent(article.sector)}`
   const canonicalUrl = `${SITE_URL}/${article.slug}`
+  const desc = metaDesc(article.excerpt || article.tldr[0])
 
   return {
     title: article.seoTitle ?? article.title,
-    description: article.excerpt || article.tldr[0],
+    description: desc,
     alternates: { canonical: canonicalUrl },
     openGraph: {
       title: article.title,
-      description: article.excerpt || article.tldr[0],
+      description: desc,
       url: canonicalUrl,
       type: 'article',
       publishedTime: article.updatedAt,
@@ -69,7 +78,7 @@ export async function generateMetadata({
     twitter: {
       card: 'summary_large_image',
       title: article.title,
-      description: article.excerpt || article.tldr[0],
+      description: desc,
       images: [ogImageUrl],
     },
   }
@@ -142,16 +151,19 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
           <span className="truncate max-w-[180px] sm:max-w-none">{article.sector.toUpperCase()}</span>
           <span className="hidden sm:inline">/</span>
           <span className="hidden sm:inline">Source: {article.dataSource}</span>
-          <span className="ml-auto shrink-0">Updated: {article.updatedAt}</span>
+          <span className="ml-auto shrink-0">Updated: {formatDisplayDate(article.updatedAt)}</span>
         </div>
       </div>
 
       {/* Headline block — fused with hero numbers into one unit */}
       <div className="article-col pt-14 pb-0">
         <div className="w-12 h-1 bg-brand-red mb-8" />
-        <h1 className="font-serif text-black text-5xl font-bold leading-[1.1] mb-8">
+        <h1 className="font-serif text-black text-5xl font-bold leading-[1.1] mb-3">
           {article.title}
         </h1>
+        <p className="font-sans text-sm text-gray-400 mb-8">
+          {article.company} revenue, PAT, debt and cash flow — from the {article.dataSource}.
+        </p>
 
         {/* Hero numbers — part of the headline, not a separate section */}
         {article.heroNumbers && article.heroNumbers.length > 0 && (
@@ -177,6 +189,34 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
             {article.readTime} read &nbsp;·&nbsp; Financial deep dive
           </span>
         </div>
+
+        <div className="flex items-center gap-4 pt-4 border-t border-gray-100 mt-4">
+          <span className="font-sans text-xs text-gray-400 uppercase tracking-wider">Share</span>
+          <a
+            href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(`${SITE_URL}/${article.slug}`)}&text=${encodeURIComponent(article.title)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-sans text-xs font-semibold text-gray-500 hover:text-black transition-colors"
+          >
+            X / Twitter
+          </a>
+          <a
+            href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`${SITE_URL}/${article.slug}`)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-sans text-xs font-semibold text-gray-500 hover:text-black transition-colors"
+          >
+            LinkedIn
+          </a>
+          <a
+            href={`https://api.whatsapp.com/send?text=${encodeURIComponent(`${article.title} ${SITE_URL}/${article.slug}`)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-sans text-xs font-semibold text-gray-500 hover:text-black transition-colors"
+          >
+            WhatsApp
+          </a>
+        </div>
       </div>
 
       {/* Sticky TOC — floats on right, desktop only */}
@@ -188,7 +228,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
           <MDXRemote
             source={article.content}
             components={mdxComponents}
-            options={{ blockJS: false, mdxOptions: { rehypePlugins: [rehypeSlug] } }}
+            options={{ blockJS: false, mdxOptions: { remarkPlugins: [remarkGfm], rehypePlugins: [rehypeSlug] } }}
           />
         </div>
       </div>

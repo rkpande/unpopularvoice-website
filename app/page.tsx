@@ -29,7 +29,7 @@ export default function HomePage() {
             {[
               { value: `${all.length}`, label: 'Startups covered' },
               { value: 'FY2025', label: 'Primary dataset' },
-              { value: 'AOC-4 XBRL', label: 'Data source' },
+              { value: 'MCA filings', label: 'Source' },
               { value: 'Zero', label: 'Press releases used' },
             ].map(({ value, label }) => (
               <div key={label} className="border-l-2 border-brand-red pl-4">

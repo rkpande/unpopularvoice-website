@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "border-accent-on-rounded",
+        "value": "*",
+        "files": [
+          "components/mdx/RealityScore.tsx"
+        ],
+        "createdAt": "2026-11-14T15:29:27.885Z",
+        "reason": "Claude, from DESIGN.md: red top border on dark panels is a documented system motif (Dark hero card, stripe on dark panels)"
+      }
+    ]
+  }
+}

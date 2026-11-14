@@ -10,45 +10,25 @@ function isFigure(value: string): boolean {
     /^[\s(~≈+\-−]*₹/.test(value)
 }
 
-export default function CenterpieceTable({
-  rows,
-  title = 'What the numbers actually say',
-}: CenterpieceTableProps) {
+export default function CenterpieceTable({ rows, title }: CenterpieceTableProps) {
+  // The black lid appears only when an article names its table. A fixed default
+  // title repeated on every page made ~90 articles open with an identical block.
   return (
     <div className="not-prose my-10">
-      {/* Black header bar, owns the space */}
-      <div className="bg-black px-5 sm:px-6 py-4 rounded-t-xl flex items-center justify-between gap-4">
-        <span className="font-sans text-[10px] font-bold tracking-widest uppercase text-white/60">
-          {title}
-        </span>
-        <span className="font-sans text-[10px] text-white/50 uppercase tracking-widest whitespace-nowrap">
-          {rows.length} metrics
-        </span>
-      </div>
+      {title && (
+        <div className="bg-black px-5 sm:px-6 py-4 rounded-t-xl">
+          <span className="font-sans text-[10px] font-bold tracking-widest uppercase text-white/60">{title}</span>
+        </div>
+      )}
 
-      <div className="border border-t-0 border-gray-200 rounded-b-xl overflow-hidden">
-        {/* Phones: each row is a short stack (label, filed figure, what it means),
-            so the interpretation is never clipped off the right edge. */}
-        <dl className="sm:hidden divide-y divide-gray-100">
-          {rows.map(([metric, reported, meaning], i) => (
-            <div key={i} className="px-5 py-4">
-              <dt className="font-sans text-[12px] font-semibold text-gray-600 leading-snug">{metric}</dt>
-              <dd
-                className={`mt-1.5 font-serif text-[1.35rem] font-bold text-black leading-tight ${
-                  isFigure(reported) ? 'whitespace-nowrap' : ''
-                }`}
-              >
-                {reported}
-              </dd>
-              <dd className="mt-2 font-sans text-[13px] font-medium text-gray-800 leading-snug">{meaning}</dd>
-            </div>
-          ))}
-        </dl>
-
-        {/* Tablet and up: the three-column comparison */}
-        <table className="hidden sm:table w-full border-collapse">
-          <caption className="sr-only">{title}</caption>
-          <thead>
+      <div className={`border border-gray-200 overflow-hidden ${title ? 'border-t-0 rounded-b-xl' : 'rounded-xl'}`}>
+        {/* One table, two layouts: on phones each row restyles into a short stack
+            (label, filed figure, what it means) so nothing is clipped; from 640px it
+            is the three-column comparison. Single markup, so every figure appears
+            once in the page source. */}
+        <table className="block sm:table w-full border-collapse">
+          <caption className="sr-only">{title ?? 'Key figures from the audited accounts'}</caption>
+          <thead className="hidden sm:table-header-group">
             <tr className="bg-gray-50 border-b-2 border-gray-200">
               <th scope="col" className="text-left font-sans text-[10px] font-bold uppercase tracking-wider text-gray-500 px-4 py-3 w-[28%]">
                 Metric
@@ -61,27 +41,30 @@ export default function CenterpieceTable({
               </th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="block sm:table-row-group divide-y divide-gray-100 sm:divide-y-0">
             {rows.map(([metric, reported, meaning], i) => (
               <tr
                 key={i}
-                className={`border-b border-gray-100 last:border-0 ${
-                  i % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'
+                className={`block sm:table-row px-5 py-4 sm:p-0 sm:border-b sm:border-gray-100 sm:last:border-0 ${
+                  i % 2 === 0 ? 'sm:bg-white' : 'sm:bg-gray-50/50'
                 }`}
               >
-                <th scope="row" className="text-left px-4 py-4 font-sans text-[13px] font-semibold text-gray-600 leading-snug">
+                <th
+                  scope="row"
+                  className="block sm:table-cell text-left sm:px-4 sm:py-4 font-sans text-[12px] sm:text-[13px] font-semibold text-gray-600 leading-snug"
+                >
                   {metric}
                 </th>
                 {/* Reported: large bold serif, the "headline number" */}
                 <td
-                  className={`px-4 py-4 font-serif text-[1.4rem] font-bold text-black leading-tight ${
+                  className={`block sm:table-cell mt-1.5 sm:mt-0 sm:px-4 sm:py-4 font-serif text-[1.35rem] sm:text-[1.4rem] font-bold text-black leading-tight ${
                     isFigure(reported) ? 'whitespace-nowrap' : ''
                   }`}
                 >
                   {reported}
                 </td>
-                {/* What it means: context for the reported figure, visually distinct column */}
-                <td className="px-4 py-4 font-sans text-[13px] font-medium text-gray-800 leading-snug bg-black/[0.02] border-l-2 border-black/10">
+                {/* What it means: context for the reported figure */}
+                <td className="block sm:table-cell mt-2 sm:mt-0 sm:px-4 sm:py-4 font-sans text-[13px] font-medium text-gray-800 leading-snug sm:bg-black/[0.02] sm:border-l-2 sm:border-black/10">
                   {meaning}
                 </td>
               </tr>

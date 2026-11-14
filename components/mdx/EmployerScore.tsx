@@ -76,11 +76,10 @@ export default function EmployerScore({
 
  {/* Dimensions */}
  <div className="bg-white divide-y divide-gray-100">
- {dimensions.map(({ key, label, what }) => (
- <div key={key} className="px-6 py-3.5 flex items-center justify-between gap-4">
+ {dimensions.map(({ key, label }) => (
+ <div key={key} className="px-6 py-3 flex items-center justify-between gap-4">
  <div className="min-w-0">
  <p className="font-sans text-sm font-semibold text-black">{label}</p>
- <p className="font-sans text-xs text-gray-400 mt-0.5 leading-snug">{what}</p>
  </div>
  <div className="flex-shrink-0">
  <LabelChip dimension={key} value={values[key]} />
@@ -125,11 +124,9 @@ export default function EmployerScore({
 
  {/* Disclaimer */}
  <div className="px-6 py-3.5 bg-yellow-50 border-t border-yellow-100">
- <p className="font-sans text-[11px] text-yellow-800 leading-relaxed">
- <span className="font-bold">Disclaimer: </span>
-  This signal is derived from audited financial filings only. It does not assess culture, management quality, career growth environment, team dynamics, or working conditions.
-  A strong signal means the financial floor is solid. A weak signal means financial risk is present. Neither replaces your own due diligence.{' '}
- <Link href="/methodology" className="underline hover:text-yellow-900">Scoring methodology →</Link>
+ <p className="font-sans text-xs text-yellow-900 leading-relaxed">
+  Financial signals from the audited filing only, not culture or management.{' '}
+ <Link href="/methodology" className="underline underline-offset-2 hover:text-black">What each rating means</Link>
  </p>
  </div>
 

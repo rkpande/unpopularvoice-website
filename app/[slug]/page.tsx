@@ -196,12 +196,9 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
       {/* Headline block, fused with hero numbers into one unit */}
       <div className="article-col pt-14 pb-0">
         <div className="w-12 h-1 bg-brand-red mb-8" />
-        <h1 className="font-serif text-black text-5xl font-bold leading-[1.1] mb-3">
+        <h1 className="font-serif text-black text-[2.5rem] sm:text-5xl font-bold leading-[1.1] mb-8">
           {article.title}
         </h1>
-        <p className="font-sans text-sm text-gray-400 mb-8">
-          {article.company} revenue, PAT, debt and cash flow, from the {article.dataSource}.
-        </p>
 
         {/* Hero numbers, part of the headline, not a separate section */}
         {article.heroNumbers && article.heroNumbers.length > 0 && (
@@ -212,12 +209,14 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
             {article.heroNumbers.map(({ value, label }, i) => (
               <div
                 key={i}
-                className={`${i < article.heroNumbers!.length - 1 ? 'md:border-r md:border-gray-100 md:pr-6' : ''}`}
+                className={`${i < article.heroNumbers!.length - 1 ? 'md:border-r md:border-gray-100 md:pr-6' : ''} ${
+                  i === 0 && article.heroNumbers!.length % 2 === 1 ? 'col-span-2 md:col-span-1' : ''
+                }`}
               >
                 <div className="font-serif text-[1.75rem] md:text-[2rem] font-bold text-black leading-none mb-2 break-words">
                   {value}
                 </div>
-                <div className="font-sans text-xs text-gray-400 uppercase tracking-wider leading-snug">
+                <div className="font-sans text-xs text-gray-500 uppercase tracking-wider leading-snug">
                   {label}
                 </div>
               </div>
@@ -225,8 +224,16 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
           </div>
         )}
 
-        <div className="flex items-center justify-between border-t border-gray-100 pt-4 pb-0">
-          <span className="font-sans text-sm text-gray-500" rel="author">
+        {article.tldr && article.tldr.length > 0 && (
+          <ul className="border-t border-gray-100 pt-6 pb-7 space-y-3 list-disc pl-5 marker:text-gray-400 font-sans text-[1.0625rem] leading-relaxed text-gray-800">
+            {article.tldr.map((point, i) => (
+              <li key={i}>{point}</li>
+            ))}
+          </ul>
+        )}
+
+        <div className="flex items-center justify-between gap-4 border-t border-gray-100 pt-4 pb-6">
+          <span className="font-sans text-sm text-gray-600" rel="author">
             By{' '}
             <Link
               href={`/author/${author.slug}`}
@@ -235,38 +242,9 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
               {author.name}
             </Link>
           </span>
-          <span className="font-sans text-gray-400 text-sm">
-            {article.readTime} read &nbsp;·&nbsp; Financial deep dive
-          </span>
+          <span className="font-sans text-gray-500 text-sm whitespace-nowrap">{article.readTime} read</span>
         </div>
 
-        <div className="flex items-center gap-4 pt-4 border-t border-gray-100 mt-4">
-          <span className="font-sans text-xs text-gray-400 uppercase tracking-wider">Share</span>
-          <a
-            href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(`${SITE_URL}/${article.slug}`)}&text=${encodeURIComponent(article.title)}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-sans text-xs font-semibold text-gray-500 hover:text-black transition-colors"
-          >
-            X / Twitter
-          </a>
-          <a
-            href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`${SITE_URL}/${article.slug}`)}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-sans text-xs font-semibold text-gray-500 hover:text-black transition-colors"
-          >
-            LinkedIn
-          </a>
-          <a
-            href={`https://api.whatsapp.com/send?text=${encodeURIComponent(`${article.title} ${SITE_URL}/${article.slug}`)}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-sans text-xs font-semibold text-gray-500 hover:text-black transition-colors"
-          >
-            WhatsApp
-          </a>
-        </div>
       </div>
 
       {/* Sticky TOC, floats on right, desktop only */}
@@ -281,35 +259,35 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
             options={{ blockJS: false, mdxOptions: { remarkPlugins: [remarkGfm], rehypePlugins: [rehypeSlug] } }}
           />
         </div>
-      </div>
-
-      {/* Key Takeaways, interpretation layer, after full article */}
-      {article.tldr && article.tldr.length > 0 && (
-        <div className="border-t border-gray-100 bg-gray-50">
-          <div className="article-col py-10">
-            <div className="border border-gray-200 rounded-xl overflow-hidden">
-              <div className="bg-black px-6 py-3 flex items-center gap-3">
-                <span className="font-sans text-[10px] font-bold tracking-widest uppercase text-white/60">
-                  Key Takeaways
-                </span>
-                <span className="font-sans text-[11px] text-white/30">
-                  {article.tldr.length} points
-                </span>
-              </div>
-              <div className="divide-y divide-gray-100">
-                {article.tldr.map((point, i) => (
-                  <div key={i} className="flex items-start gap-3 px-6 py-4 bg-white">
-                    <span className="font-serif text-brand-red font-bold text-lg leading-none mt-0.5 shrink-0">
-                      {i + 1}
-                    </span>
-                    <span className="font-sans text-sm text-gray-700 leading-snug">{point}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
+        <div className="not-prose flex flex-wrap items-center gap-x-6 gap-y-2 pt-6 mt-12 border-t border-gray-200">
+          <span className="font-sans text-sm font-semibold text-black">Share this teardown</span>
+          <a
+            href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(`${SITE_URL}/${article.slug}`)}&text=${encodeURIComponent(article.title)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center min-h-[44px] font-sans text-sm font-semibold text-gray-600 underline-offset-4 hover:text-black hover:underline transition-colors"
+          >
+            X / Twitter
+          </a>
+          <a
+            href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`${SITE_URL}/${article.slug}`)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center min-h-[44px] font-sans text-sm font-semibold text-gray-600 underline-offset-4 hover:text-black hover:underline transition-colors"
+          >
+            LinkedIn
+          </a>
+          <a
+            href={`https://api.whatsapp.com/send?text=${encodeURIComponent(`${article.title} ${SITE_URL}/${article.slug}`)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center min-h-[44px] font-sans text-sm font-semibold text-gray-600 underline-offset-4 hover:text-black hover:underline transition-colors"
+          >
+            WhatsApp
+          </a>
         </div>
-      )}
+
+      </div>
 
       {/* About the author, E-E-A-T signal + secondary internal link to author page */}
       <div className="border-t border-gray-100 bg-white">

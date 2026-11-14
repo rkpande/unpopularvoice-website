@@ -23,7 +23,7 @@ const statusConfig = {
     label: 'Validated',
     bg: 'bg-green-50',
     border: 'border-green-200',
-    iconColor: 'text-green-600',
+    iconColor: 'text-green-700',
     textColor: 'text-green-700',
   },
   pending: {
@@ -39,8 +39,8 @@ const statusConfig = {
     label: 'Incorrect',
     bg: 'bg-red-50',
     border: 'border-red-200',
-    iconColor: 'text-red-500',
-    textColor: 'text-red-700',
+    iconColor: 'text-red-600',
+    textColor: 'text-red-600',
   },
 }
 
@@ -68,7 +68,7 @@ export default function Predictions({ predictions, asOf }: PredictionsProps) {
           </span>
         </div>
         {validated > 0 && (
-          <span className="font-sans text-[10px] text-green-400">
+          <span className="font-sans text-[10px] text-green-700">
             {validated}/{predictions.length} validated
           </span>
         )}
@@ -90,7 +90,7 @@ export default function Predictions({ predictions, asOf }: PredictionsProps) {
                 </span>
 
                 <div className="flex-1 min-w-0">
-                  {/* Category tag — own line above text */}
+                  {/* Category tag, own line above text */}
                   {p.category && p.category !== 'other' && (
                     <div className="font-sans text-[9px] font-bold tracking-widest uppercase text-gray-400 mb-1">
                       {categoryLabel[p.category]}
@@ -111,7 +111,7 @@ export default function Predictions({ predictions, asOf }: PredictionsProps) {
                       </span>
                       {p.outcome && (
                         <span className={`font-sans text-xs ${stat.textColor} ml-1.5`}>
-                          — {p.outcome}
+                         , {p.outcome}
                         </span>
                       )}
                     </div>

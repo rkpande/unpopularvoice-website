@@ -124,7 +124,7 @@ export default function ComparePanel({ companies }: Props) {
   function handleShare() {
     const url = shareUrl()
     if (typeof navigator.share !== 'undefined') {
-      navigator.share({ title: `${companyA?.company} vs ${companyB?.company} — Employer Check`, url }).catch(() => {})
+      navigator.share({ title: `${companyA?.company} vs ${companyB?.company}, Employer Check`, url }).catch(() => {})
     } else {
       navigator.clipboard.writeText(url).catch(() => {})
     }
@@ -276,7 +276,7 @@ export default function ComparePanel({ companies }: Props) {
               className="flex items-center gap-1.5 font-sans text-xs text-gray-400 hover:text-gray-700 transition-colors"
             >
               {copied ? (
-                <span className="text-green-600 font-semibold">Copied link!</span>
+                <span className="text-green-700 font-semibold">Copied link!</span>
               ) : (
                 <>
                   <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -20,7 +20,7 @@ export default function Assumptions({ items }: AssumptionsProps) {
   return (
     <div className="not-prose my-10">
       <p className="font-sans text-[10px] font-bold tracking-widest uppercase text-gray-400 mb-3">
-        Transparency Layer — What We Know vs. What We Infer
+        Transparency Layer, What We Know vs. What We Infer
       </p>
       <div className="border border-gray-200 rounded-xl overflow-hidden">
         <table className="w-full text-sm border-collapse">

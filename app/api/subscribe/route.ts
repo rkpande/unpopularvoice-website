@@ -19,7 +19,7 @@ export async function POST(request: NextRequest) {
 
   // If Resend is not configured, log and return success so the UX works
   if (!apiKey || !audienceId) {
-    console.warn('[subscribe] RESEND_API_KEY or RESEND_AUDIENCE_ID not set — skipping email capture')
+    console.warn('[subscribe] RESEND_API_KEY or RESEND_AUDIENCE_ID not set, skipping email capture')
     return NextResponse.json({ ok: true })
   }
 

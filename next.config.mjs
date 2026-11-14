@@ -17,6 +17,12 @@ const nextConfig = {
         destination: '/stable-money-fy2025',
         permanent: true,
       },
+      // Renamed slugs (year-anchored → event-anchored)
+      {
+        source: '/goodglamm-fy2023',
+        destination: '/goodglamm-cirp',
+        permanent: true,
+      },
     ]
   },
 }

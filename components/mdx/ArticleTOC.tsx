@@ -14,7 +14,9 @@ export default function ArticleTOC() {
   const [items, setItems] = useState<TocItem[]>([])
   const [activeId, setActiveId] = useState<string>('')
   const [visible, setVisible] = useState(false)
+  const [footerInView, setFooterInView] = useState(false)
   const observerRef = useRef<IntersectionObserver | null>(null)
+  const footerObserverRef = useRef<IntersectionObserver | null>(null)
 
   useEffect(() => {
     // Build TOC from h2 headings in the article
@@ -49,13 +51,30 @@ export default function ArticleTOC() {
       if (el) observerRef.current?.observe(el)
     })
 
+    // Watch the footer so we can hide the TOC when it comes into view (prevents overlay)
+    const footerEl = document.getElementById('site-footer')
+    if (footerEl) {
+      footerObserverRef.current = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            setFooterInView(entry.isIntersecting)
+          }
+        },
+        { rootMargin: '0px 0px 0px 0px', threshold: 0 }
+      )
+      footerObserverRef.current.observe(footerEl)
+    }
+
     return () => {
       window.removeEventListener('scroll', onScroll)
       observerRef.current?.disconnect()
+      footerObserverRef.current?.disconnect()
     }
   }, [])
 
   if (items.length < 3) return null
+
+  const showToc = visible && !footerInView
 
   return (
     <nav
@@ -65,7 +84,7 @@ export default function ArticleTOC() {
         fixed top-1/2 -translate-y-1/2 right-6 2xl:right-12
         w-48 z-40
         transition-opacity duration-300
-        ${visible ? 'opacity-100' : 'opacity-0 pointer-events-none'}
+        ${showToc ? 'opacity-100' : 'opacity-0 pointer-events-none'}
       `}
     >
       <p className="font-sans text-[9px] font-bold tracking-widest uppercase text-gray-300 mb-3">

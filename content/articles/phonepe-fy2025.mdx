@@ -34,6 +34,8 @@ employerScore:
   careerUpside: "High"
   verdict: "watch"
   notes: "Revenue +33%, OCF +₹1,903 Cr, zero debt. The accounting loss is driven by ESOP (₹2,017 Cr) - a real cost to the company but non-cash at the P&L level. Operating loss before exceptional is narrowing. PAT profitability requires ESOP to reduce as grants normalize."
+runwayMonths: 111
+employeeCostGrowthPct: null
 faqItems:
   - q: "Is PhonePe profitable?"
     a: "Not on a PAT basis as of FY2025. PhonePe Limited reported -₹1,264.52 Cr loss, including ₹420.50 Cr exceptional write-down. Excluding the exceptional, the operating loss was -₹844.02 Cr (narrowing from -₹1,166 Cr in FY2024). However, operating cash flow was +₹1,903.03 Cr - the business generates significant cash. The gap is driven by ₹2,017 Cr in ESOP and ₹1,146 Cr in depreciation, both largely non-cash."
@@ -44,13 +46,22 @@ faqItems:
   - q: "What is PhonePe's valuation?"
     a: "PhonePe's last disclosed valuation was approximately $12 billion following its $350M raise in January 2023 (FY2023). The FY2025 financials show revenue of ₹6,544 Cr and strongly positive OCF. No new external funding was raised in FY2025, so the $12B mark remains the latest disclosed reference."
   - q: "Who owns PhonePe?"
-    a: "Walmart is the majority owner of PhonePe (acquired through Flipkart). Other investors include General Atlantic, Tiger Global, Ribbit Capital, and TVS Capital. The MCA filing shows 37.15 million shares (out of 44.27 million total) held by the holding company, reflecting Walmart's dominant stake."
+    a: "Walmart is the majority owner of PhonePe (acquired through Flipkart). Other investors include General Atlantic, Tiger Global, Ribbit Capital, and TVS Capital. The public filing shows 37.15 million shares (out of 44.27 million total) held by the holding company, reflecting Walmart's dominant stake."
   - q: "Who founded PhonePe?"
     a: "PhonePe was founded in 2015 by Sameer Nigam (CEO), Rahul Chari, and Burzin Engineer, formerly of Flipkart. It was acquired by Flipkart shortly after founding and later spun off as a standalone company in 2022 when Walmart completed the Flipkart acquisition."
   - q: "What is PhonePe's ESOP charge?"
     a: "PhonePe's FY2025 employee costs included ₹2,017.20 Cr in ESOP - ₹1,429.92 Cr equity-settled (non-cash, hits P&L but no cash outflow) and ₹587.28 Cr cash-settled (real cash). This ESOP charge is the primary driver of accounting losses. Total employee costs were ₹3,402.01 Cr; cash salaries were ₹1,250.16 Cr."
   - q: "What is the exceptional item in PhonePe's FY2025 accounts?"
     a: "PhonePe recorded a ₹420.50 Cr exceptional item in FY2025 - a provision for diminution in value of non-current investments (write-down of an investment in a subsidiary). This is non-cash but reduces reported PAT. Without this, the operating PBT loss was -₹844.02 Cr."
+financials:
+  period: "FY2025"
+  basis: "standalone"
+  entityCin: "U67190KA2012PLC176031"
+  source: "XBRL_XML"
+  revenueCr: 6543.84
+  patCr: -1264.52
+  prevPatCr: -1166.02
+  netWorthCr: 11710.74
 ---
 
 <CenterpieceTable
@@ -70,7 +81,7 @@ PhonePe's FY2025 headlines read: revenue ₹6,544 Cr, loss -₹1,265 Cr. The los
 
 But the operating cash flow was +₹1,903 Cr.
 
-The gap between -₹1,265 Cr PAT and +₹1,903 Cr OCF - a swing of ₹3,168 Cr - needs an explanation, because it is the entire story.
+The gap between -₹1,265 Cr profit after tax (PAT) and +₹1,903 Cr OCF - a swing of ₹3,168 Cr - needs an explanation, because it is the entire story.
 
 <SignatureLine text="PhonePe reports a ₹1,265 Cr loss and generates ₹1,903 Cr in cash from operations. Both are true. The difference is ESOP." />
 
@@ -103,13 +114,13 @@ No equity raised in FY2025. PhonePe's last raise was ₹1,639 Cr in FY2024 (Walm
 
 ## The ESOP Explanation
 
-PhonePe's employee costs were ₹3,402.01 Cr in FY2025. Of that, cash salaries and PF were ₹1,250.16 Cr + ₹32.42 Cr = ₹1,283 Cr. The remaining ₹2,017.20 Cr was ESOP.
+PhonePe's employee costs were ₹3,402.01 Cr in FY2025. Of that, cash salaries and PF were ₹1,250.16 Cr + ₹32.42 Cr = ₹1,283 Cr. The remaining ₹2,017.20 Cr was employee stock option plan (ESOP).
 
 Within the ESOP:
 - **Equity-settled ESOP: ₹1,429.92 Cr** - shares granted to employees, valued at fair value on grant date. No cash leaves PhonePe. It hits the P&L as an expense, but the actual dilution is in equity, not cash.
 - **Cash-settled ESOP: ₹587.28 Cr** - phantom options settled in cash. This IS real cash outflow.
 
-The equity-settled ESOP (₹1,430 Cr) is the primary driver of the accounting loss. Add it back to the operating loss: -₹844 Cr + ₹1,430 Cr = +₹586 Cr before equity ESOP. Add depreciation (₹1,146 Cr, mostly right-of-use assets): cash EBITDA is deeply positive.
+The equity-settled ESOP (₹1,430 Cr) is the primary driver of the accounting loss. Add it back to the operating loss: -₹844 Cr + ₹1,430 Cr = +₹586 Cr before equity ESOP. Add depreciation (₹1,146 Cr, mostly right-of-use assets): cash operating earnings (EBITDA) is deeply positive.
 
 This is why OCF is +₹1,903 Cr while PAT is -₹1,265 Cr. ESOP creates the gap.
 
@@ -117,7 +128,7 @@ The cash-settled ESOP (₹587 Cr) is a real cost. PhonePe is paying out nearly �
 
 ## The Exceptional Item
 
-FY2025 PBT was -₹1,264.52 Cr but operating PBT before the exceptional was -₹844.02 Cr. The ₹420.50 Cr difference is a write-down of an investment in a subsidiary.
+FY2025 profit before tax (PBT) was -₹1,264.52 Cr but operating PBT before the exceptional was -₹844.02 Cr. The ₹420.50 Cr difference is a write-down of an investment in a subsidiary.
 
 The provision for diminution in value of non-current investments signals that at least one subsidiary is materially underperforming. PhonePe's subsidiaries include insurance distribution, lending, and wealth management verticals. The filing does not identify which subsidiary triggered the write-down.
 

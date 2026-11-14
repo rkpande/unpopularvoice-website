@@ -1,0 +1,551 @@
+Company,Legal Entity,Sector,Sub-sector,Status,Slug,Priority,Notes
+Zerodha,Zerodha Broking Ltd,Fintech,Broking,Published,zerodha-fy2025,,
+Razorpay,Razorpay Software Pvt Ltd,Fintech,Payments,Published,razorpay-fy2025,,
+PhonePe,PhonePe Pvt Ltd,Fintech,Payments,Published,phonepe-fy2025,,
+Google Pay,Google India Digital Services Pvt Ltd,Fintech,Payments,Published,googlepay-fy2025,,
+CRED,Dreamplug Technologies Pvt Ltd,Fintech,Payments/CC,Published,cred-fy2024,,FY25 refresh candidate
+Upstox,RKSV Securities Pvt Ltd,Fintech,Broking,Published,upstox-fy2024,,FY25 refresh candidate
+Dhan,Raise Financial Services,Fintech,Broking,Published,dhan-fy2025,,
+Navi,Navi Technologies Ltd,Fintech,Lending/NBFC,Published,navi-fy2025,,
+Slice,Garagepreneurs Internet Pvt Ltd,Fintech,CC/SFB,Published,slice-fy2025,,
+Kissht,Onemi Technology Solutions Pvt Ltd,Fintech,Lending,Published,kissht-fy2025,,
+BharatPe,Resilient Innovations Pvt Ltd,Fintech,Payments,Published,bharatpe-fy2025,,
+Jar,MyJar Technologies Pvt Ltd,Fintech,Savings,Published,jar-fy2025,,
+Scapia,Scapia Technologies Pvt Ltd,Fintech,CC,Published,scapia-fy2025,,
+Kiwi,Kiwi Technologies India Pvt Ltd,Fintech,CC,Published,kiwi-fy2025,,
+OneCard,FPL Technologies Pvt Ltd,Fintech,CC,Published,onecard-fy2025,,
+FamPay,Trio Technologies Pvt Ltd,Fintech,Teen CC,Published,fampay-fy2025,,
+CheQ,Cheq Digital Pvt Ltd,Fintech,CC Repayment,Published,cheq-fy2025,,
+Faircent,Faircent Technologies India Pvt Ltd,Fintech,P2P,Published,faircent-fy2025,,
+Stashfin,EZ Credit Digitalfin Pvt Ltd,Fintech,Lending,Published,stashfin-fy2025,,
+LendenClub,Innofin Solutions Pvt Ltd,Fintech,P2P,Published,lendenclub-fy2025,,
+MoneyView,Whizdm Innovations Pvt Ltd,Fintech,Lending,Published,moneyview-fy2025,,
+Snapmint,Snapmint Financial Services,Fintech,BNPL,Published,snapmint-fy2025,,
+INDmoney,IND Money Pvt Ltd,Fintech,Wealth,Published,indmoney-fy2025,,
+Dezerv,Dezerv Investments Pvt Ltd,Fintech,Wealth,Published,dezerv-fy2025,,
+Stable Money,Fintech Products Innovations,Fintech,Wealth,Published,stable-money-fy2025,,
+WintWealth,FourDegreeWater Capital,Fintech,Wealth/Bonds,Published,wintwealth-fy2025,,
+InCred,InCred Financial Services,Fintech,Wealth/NBFC,Published,incred-fy2025,,
+SuperMoney,SuperMoney Fintech Pvt Ltd,Fintech,Payments,Published,supermoney-fy2025,,
+CashKaro,Pouring Pounds India Pvt Ltd,Fintech,Cashback/Affiliate,Published,cashkaro-fy2025,,
+Acko,Acko Technology & Services Pvt Ltd,Insurance,Insurtech,Published,acko-fy2025,,
+MyGate,Vivish Technologies Pvt Ltd,SaaS,Community,Published,mygate-fy2025,,
+Zeta,Better Finance Technologies Pvt Ltd,Fintech,BaaS,Published,zeta-fy2025,,
+Amazon,Amazon Seller Services Pvt Ltd,E-commerce,Marketplace,Published,amazon-fy2025,,
+Myntra,Myntra Designs Pvt Ltd,E-commerce,Fashion,Published,myntra-fy2025,,
+Zepto,KiranaKart Technologies Pvt Ltd,Quick Commerce,Grocery,Published,zepto-fy2024,,FY25 refresh candidate
+Purplle,Manash Lifestyle Pvt Ltd,E-commerce,Beauty,Published,purplle-fy2025,,
+Sugar Cosmetics,Vellvette Lifestyle Pvt Ltd,D2C,Beauty,Published,sugar-fy2025,,
+mCaffeine,Pep Technologies Pvt Ltd,D2C,Beauty,Published,mcaffeine-fy2025,,
+Pilgrim,Discovery Sciences Pvt Ltd,D2C,Beauty,Published,pilgrim-fy2025,,
+Renee Cosmetics,Deepvue Consumer Ventures Pvt Ltd,D2C,Beauty,Published,renee-fy2025,,
+Pureplay Skin Sciences,Pureplay Skin Sciences,D2C,Beauty,Published,pureplay-fy2025,,
+boAt,Imagine Marketing Ltd,D2C,Audio,Published,boat-fy2025,,
+Noise,Nexxbase Marketing Pvt Ltd,D2C,Wearables,Published,noise-fy2025,,
+UltraHuman,Ultrahuman Healthcare Pvt Ltd,D2C,Wearables,Published,ultrahuman-fy2025,,
+Snitch,Snitch Apparels Pvt Ltd,D2C,Fashion,Published,snitch-fy2025,,
+BlissClub,Blissclub Fitness Pvt Ltd,D2C,Activewear,Published,blissclub-fy2025,,
+UpperCase,Muvin Prints Pvt Ltd,D2C,Luggage,Published,uppercase-fy2025,,
+GIVA,GIVA Ventures Pvt Ltd,D2C,Jewellery,Published,giva-fy2025,,
+Furlenco,House of Kieraya Pvt Ltd,D2C,Furniture Rental,Published,furlenco-fy2025,,
+Rentomojo,Edunetwork Pvt Ltd,D2C,Furniture Rental,Published,rentomojo-fy2025,,
+Country Delight,Beejapuri Dairy Pvt Ltd,D2C,Dairy,Published,countrydelight-fy2023,,FY24/FY25 refresh candidate
+BRNDme,Brnd Me India Pvt Ltd,D2C,Group,Published,brndme-fy2025,,
+Licious,Delightful Gourmet Pvt Ltd,D2C,Meat,Published,licious-fy2025,,
+Captain Fresh,Captain Fresh Holdings,D2C,Seafood,Published,captainfresh-fy2025,,
+Fresh2Home,Fresh To Home Foods Pvt Ltd,D2C,Meat/Seafood,Published,fresh2home-fy2025,,
+Rozana,Rozana.in Retail Pvt Ltd,D2C,Grocery,Published,rozana-fy2025,,
+SuperTails,SuperTails Pvt Ltd,D2C,Pets,Published,supertails-fy2025,,
+Chaayos,Sunshine Teahouse Pvt Ltd,F&B,Chai QSR,Published,chaayos-fy2025,,
+Chai Point,Mountain Trail Foods Pvt Ltd,F&B,Chai QSR,Published,chaipoint-fy2025,,
+Blue Tokai,Blue Tokai Coffee Roasters Pvt Ltd,F&B,Coffee,Published,bluetokai-fy2025,,
+Third Wave Coffee,Heisetasse Beverages Pvt Ltd,F&B,Coffee,Published,thirdwave-fy2025,,
+Swish,Munchmart Technologies Pvt Ltd,F&B,Quick Commerce,Published,swish-fy2025,,
+Uber,Uber India Systems Pvt Ltd,Mobility,Ride-hailing,Published,uber-fy2025,,
+Ola,ANI Technologies Pvt Ltd,Mobility,Ride-hailing,Published,ola-fy2025,,
+Rapido,Roppen Transportation Services,Mobility,Ride-hailing,Published,rapido-fy2025,,
+Porter,Resilient Vision Pvt Ltd,Logistics,Intra-city,Published,porter-fy2025,,
+Spinny,Valuedrive Technologies Pvt Ltd,Auto,Used Cars,Published,spinny-fy2025,,
+CarDekho,Girnar Software Pvt Ltd,Auto,Marketplace,Published,cardekho-fy2025,,
+OYO,Oravel Stays Ltd,Travel,Hospitality,Published,oyo-fy2025,,
+Infra.Market,Hella Infra Market Pvt Ltd,B2B,Construction,Published,inframarket-fy2025,,
+Zetwerk,Zetwerk Manufacturing Businesses,B2B,Manufacturing,Published,zetwerk-fy2025,,
+Unacademy,Sorting Hat Technologies Pvt Ltd,Edtech,Test Prep,Published,unacademy-fy2025,,
+Scaler,InterviewBit Software Services,Edtech,Upskilling,Published,scaler-fy2025,,
+upGrad,UpGrad Education Pvt Ltd,Edtech,Higher Ed,Published,upgrad-fy2025,,
+Vedantu,Vedantu Innovations Pvt Ltd,Edtech,K-12,Published,vedantu-fy2025,,
+KukuFM,Kuku FM Pvt Ltd,Media,Audio,Published,kukufm-fy2025,,
+PocketFM,Pocket FM Pvt Ltd,Media,Audio,Published,pocketfm-fy2025,,
+ShareChat,Mohalla Tech Pvt Ltd,Media,Social,Published,sharechat-fy2025,,
+BookMyShow,Big Tree Entertainment Pvt Ltd,Entertainment,Ticketing,Published,bookmyshow-fy2025,,
+Tata 1mg,Tata 1mg Technologies Pvt Ltd,Healthtech,Pharmacy,Published,tata1mg-fy2025,,
+PharmEasy,API Holdings Ltd,Healthtech,Pharmacy,Published,pharmeasy-fy2025,,
+Healthians,Healthians.com Pvt Ltd,Healthtech,Diagnostics,Published,healthians-fy2025,,
+Redcliffe Labs,Redcliffe Lifesciences Pvt Ltd,Healthtech,Diagnostics,Published,redcliffelabs-fy2025,,
+Orange Health,Orange Health Labs,Healthtech,Diagnostics,Published,orangehealth-fy2025,,
+HealthifyMe,HealthifyMe Wellness Pvt Ltd,Healthtech,Nutrition,Published,healthifyme-fy2025,,
+Plum,SAB Insurance Pvt Ltd,Insurance,Broker,Published,plum-fy2025,,
+Sahi,Sahi App Fintech Solutions,Fintech,Investing,Published,sahi-fy2025,,
+Groww,Nextbillion Technology Pvt Ltd,Fintech,Broking,Pending,,Tier 1,US-to-India flip mechanics, pre-IPO, top-3 broker
+Pine Labs,Pine Labs Pvt Ltd,Fintech,Payments Infra,Pending,,Tier 1,Pre-IPO POS + issuing, cross-border restructuring
+Mobikwik,One MobiKwik Systems Ltd,Fintech,Payments/Wallet,Pending,,Tier 2,Listed FY25 available
+Paytm,One 97 Communications Ltd,Fintech,Payments,Pending,,Tier 2,Listed but PPBL reclassification story
+Cashfree,Cashfree Payments India Pvt Ltd,Fintech,Payments Infra,Pending,,Tier 2,RBI PA licence
+Juspay,Juspay Technologies Pvt Ltd,Fintech,Payments Infra,Pending,,Tier 1,Payments orchestration, rumored profitable
+Signzy,Signzy Technologies Pvt Ltd,Fintech,RegTech,Pending,,Tier 3,Video KYC
+KreditBee,Finnov Pvt Ltd,Fintech,NBFC,Pending,,Tier 1,Large NBFC ecosystem
+Fibe,Social Worth Technologies Pvt Ltd,Fintech,Lending,Pending,,Tier 2,Formerly EarlySalary
+CredAvenue (Yubi),Credavenue Pvt Ltd,Fintech,B2B Debt,Pending,,Tier 1,$137M raised
+NiYO,NiYO Solutions Pvt Ltd,Fintech,Neobank,Pending,,Tier 2,Salary card focus
+Jupiter Money,Amica Financial Technologies Pvt Ltd,Fintech,Neobank,Pending,,Tier 2,SBM-linked; funding challenges
+Fi Money,Epifi Technologies Pvt Ltd,Fintech,Neobank,Pending,,Tier 2,Federal Bank partner
+Freo,MWYN Tech Pvt Ltd,Fintech,Neobank/Lending,Pending,,Tier 2,MoneyTap parent
+BankBazaar,Bankbazaar.com,Fintech,Marketplace,Pending,,Tier 2,Pre-IPO
+Instamojo,Instamojo Technologies Pvt Ltd,Fintech,SMB Payments,Pending,,Tier 3,
+Rupifi,Rupifi Technology Solutions Pvt Ltd,Fintech,B2B Credit,Pending,,Tier 3,
+Refyne,Refyne India Financing Pvt Ltd,Fintech,Earned Wage,Pending,,Tier 3,
+Progcap,Progcap Fintech Pvt Ltd,Fintech,Supply-chain,Pending,,Tier 3,
+Zolve,Zolve Financial Services India,Fintech,Cross-border,Pending,,Tier 3,
+Aye Finance,Aye Finance Pvt Ltd,Fintech,MSME NBFC,Pending,,Tier 2,₹500 Cr+ book
+NeoGrowth,NeoGrowth Credit Pvt Ltd,Fintech,Merchant Finance,Pending,,Tier 2,SIDBI-backed
+Vivriti Capital,Vivriti Capital Pvt Ltd,Fintech,NBFC,Pending,,Tier 2,Twin entity forensic potential
+Aavas Financiers,Aavas Financiers Ltd,Fintech,Housing NBFC,Pending,,Tier 3,Listed
+UGRO Capital,UGRO Capital Ltd,Fintech,NBFC,Pending,,Tier 3,Listed, D2C arm
+Cashe,Bhanix Finance & Investment,Fintech,Payday Loans,Pending,,Tier 3,
+LazyPay,PayU Finance India Pvt Ltd,Fintech,BNPL,Pending,,Tier 2,PayU arm
+Ring,Datasigns Technologies Pvt Ltd,Fintech,Lending,Pending,,Tier 3,Kissht competitor
+Groww Mutual Fund,Groww Asset Management Ltd,Fintech,AMC,Pending,,Tier 2,Separate from broker
+Angel One (subs),Angel Fincap / Angel Digital,Fintech,Broking,Pending,,Tier 3,Non-listed arms
+Smallcase,Smallcase Technologies Pvt Ltd,Fintech,Investing,Pending,,Tier 2,Thematic investing
+Streak,Streak Fintech Solutions Pvt Ltd,Fintech,Algo Trading,Pending,,Tier 3,Zerodha arm, separate CIN
+INDwealth,Scripbox India Pvt Ltd,Fintech,Wealth,Pending,,Tier 2,
+Nuvama Wealth,Nuvama Wealth Management,Fintech,Wealth,Pending,,Tier 3,Post-Edelweiss demerger
+Univest,Univest India Pvt Ltd,Fintech,Wealth SEBI RA,Pending,,Tier 3,
+Digit Insurance,Go Digit General Insurance,Insurance,GI,Pending,,Tier 2,Listed but subs interesting
+Turtlemint,Invictus Insurance Broking Services,Insurance,Broker,Pending,,Tier 3,~$120M raised
+RenewBuy,D2C Insurance Broking Pvt Ltd,Insurance,POSP,Pending,,Tier 3,
+Onsurity,On Insurance Broking Services Pvt Ltd,Insurance,SMB Health,Pending,,Tier 3,
+Loop Health,Alyve Health Pvt Ltd,Insurance,Corporate Health,Pending,,Tier 3,
+Coverfox,Coverfox Insurance Broking,Insurance,Broker,Pending,,Tier 3,Restructured
+Meesho,Fashnear Technologies Pvt Ltd,E-commerce,Social,Pending,,Tier 1,Pre-IPO ₹6500 Cr revenue, loss compression story
+Nykaa (subs),Nykaa E-Retail Pvt Ltd,E-commerce,Beauty,Pending,,Tier 2,Nykaa Man / eB2B subs
+Ajio,Reliance Retail Ventures Ajio,E-commerce,Fashion,Pending,,Tier 2,Ajio Ecom entity
+Bigbasket,Innovative Retail Concepts Pvt Ltd,E-commerce,Grocery,Pending,,Tier 1,Tata Digital arm
+BB Now,Innovative Retail Concepts,Quick Commerce,Grocery,Pending,,Tier 2,Sub-entity
+Blinkit (Grofers India),Grofers India Pvt Ltd,Quick Commerce,Grocery,Pending,,Tier 1,Zomato arm, legacy entity
+Zomato,Zomato Ltd,Foodtech,Delivery,Pending,,Tier 1,Listed but Hyperpure/Payments subs
+Swiggy,Bundl Technologies Pvt Ltd,Foodtech,Delivery,Pending,,Tier 1,Listed FY25
+Snapdeal,Jasper Infotech Pvt Ltd,E-commerce,Value,Pending,,Tier 3,Restart, pre-IPO
+DealShare,Mad Retail Pvt Ltd,E-commerce,Social,Pending,,Tier 3,Funding drop
+Trell,Trell Experiences Pvt Ltd,E-commerce,Social,Pending,,Tier 3,Restructured
+The Good Glamm Group,MyGlamm Pvt Ltd,D2C,Beauty,Pending,,Tier 1,Cash-crunch forensic gold
+Mamaearth,Honasa Consumer Ltd,D2C,Beauty,Pending,,Tier 1,Listed but standalone-vs-consolidated
+Wow Skin Science,Body Cupid Pvt Ltd,D2C,Beauty,Pending,,Tier 2,Haircare
+The Whole Truth,Wholesome Habits Pvt Ltd,D2C,Food,Pending,,Tier 3,Clean food
+Slurrp Farm,Wholsum Foods Pvt Ltd,D2C,Food,Pending,,Tier 3,Kids food
+Nua,Nua Woman Pvt Ltd,D2C,Health,Pending,,Tier 3,Women's health
+Bombay Shaving Company,Visage Lines Personal Care Pvt Ltd,D2C,Grooming,Pending,,Tier 2,Pre-IPO
+Beardo,ZED Lifestyle Pvt Ltd,D2C,Grooming,Pending,,Tier 3,Marico subsidiary
+The Souled Store,The Souled Store Pvt Ltd,D2C,Fashion,Pending,,Tier 2,Pop-culture
+Bewakoof,Bewakoof Brands Pvt Ltd,D2C,Fashion,Pending,,Tier 2,₹300 Cr revenue
+FabAlley,High Street Essentials Pvt Ltd,D2C,Fashion,Pending,,Tier 3,
+Zivame,Actoserba Active Wholesale,D2C,Innerwear,Pending,,Tier 3,Reliance-acquired
+Bluestone,Bluestone Jewellery & Lifestyle,D2C,Jewellery,Pending,,Tier 1,Pre-IPO working-capital heavy
+Melorra,Melorra Design & Retail Pvt Ltd,D2C,Jewellery,Pending,,Tier 3,Funding crunch
+Wakefit,Wakefit Innovations Pvt Ltd,D2C,Furniture,Pending,,Tier 1,Pre-IPO profitable
+The Sleep Company,Sleepy Owl Coffee (Sleepycat parent),D2C,Mattress,Pending,,Tier 2,Aggressive marketing
+Livspace,Home Interior Designs Pvt Ltd,Home,Interiors,Pending,,Tier 1,Big burn ₹1200 Cr revenue
+HomeLane,Bhoomi Impex Pvt Ltd,Home,Interiors,Pending,,Tier 2,
+Pepperfry,Trendsutra Platform Services Pvt Ltd,E-commerce,Furniture,Pending,,Tier 3,Pre-IPO restructured
+Duroflex,Duroflex Pvt Ltd,D2C,Mattress,Pending,,Tier 3,
+Wonderchef,Wonderchef Home Appliances Pvt Ltd,D2C,Appliances,Pending,,Tier 3,
+Rebel Foods,Rebel Foods Pvt Ltd,F&B,Cloud Kitchens,Pending,,Tier 1,Faasos/Behrouz/Oven Story
+Curefoods,Cure Foods India Pvt Ltd,F&B,Cloud Kitchens,Pending,,Tier 2,Competitor to Rebel
+HungerBox,HungerBox Technologies Pvt Ltd,F&B,B2B Meals,Pending,,Tier 3,
+Wow Momo,Wow Momo Foods Pvt Ltd,F&B,QSR,Pending,,Tier 3,Chain restaurant
+BBQ Nation,Barbeque-Nation Hospitality Ltd,F&B,QSR,Pending,,Tier 3,Listed
+Devyani International,Devyani International Ltd,F&B,QSR,Pending,,Tier 3,Listed but Yum India sub
+HealthKart,Bright Lifecare Pvt Ltd,D2C,Nutrition,Pending,,Tier 2,Protein/supplements
+Cult.Fit,Curefit Healthcare Pvt Ltd,Fitness,Consumer,Pending,,Tier 1,Near-profitable
+Byjus,Think & Learn Pvt Ltd,Edtech,K-12,Pending,,Tier 1,Insolvency filings + intercompany
+Aakash,Aakash Educational Services Ltd,Edtech,Test Prep,Pending,,Tier 1,Byju sub, contested
+Whitehat Jr,Whitehat Education Technology Pvt Ltd,Edtech,K-12,Pending,,Tier 2,Byju sub
+Physicswallah,PhysicsWallah Pvt Ltd,Edtech,Test Prep,Pending,,Tier 1,Profitable, pre-IPO
+Emeritus,Eruditus Executive Education,Edtech,Exec Ed,Pending,,Tier 2,HEC/exec-ed
+Simplilearn,Simplilearn Solutions Pvt Ltd,Edtech,Upskilling,Pending,,Tier 2,Blackstone-owned, pre-IPO
+Great Learning,Great Learning Education Pvt Ltd,Edtech,Upskilling,Pending,,Tier 2,Byju divested
+Coding Ninjas,Coding Ninjas India Pvt Ltd,Edtech,Coding,Pending,,Tier 3,Naukri acquired, separate legal
+Doubtnut,Doubtnut Study Pvt Ltd,Edtech,K-12,Pending,,Tier 3,Allen acquired
+Practo,Practo Technologies Pvt Ltd,Healthtech,Marketplace,Pending,,Tier 1,Doctor booking
+Pristyn Care,Pristyn Care Pvt Ltd,Healthtech,Surgery,Pending,,Tier 1,Surgical care
+HexaHealth,HexaHealth Technologies Pvt Ltd,Healthtech,Surgery,Pending,,Tier 2,Pristyn competitor
+MediBuddy,MediBuddy Technologies Pvt Ltd,Healthtech,Telemedicine,Pending,,Tier 2,DocsApp/MFine merged
+Ekincare,Kincaring Technologies Pvt Ltd,Healthtech,Corporate,Pending,,Tier 3,
+Portea Medical,Health Vista India Pvt Ltd,Healthtech,Home Health,Pending,,Tier 3,Pre-IPO
+BeatO,HealthArx Technologies Pvt Ltd,Healthtech,Diabetes,Pending,,Tier 3,
+Thyrocare,Thyrocare Technologies Ltd,Healthtech,Diagnostics,Pending,,Tier 2,PharmEasy sub, listed separately
+Innovacer,Innovaccer Analytics Pvt Ltd,Healthtech,Data,Pending,,Tier 3,US HQ, India entity
+Lybrate,Lybrate India Pvt Ltd,Healthtech,Doctor booking,Pending,,Tier 3,
+Ola Electric,Ola Electric Mobility Ltd,Auto,EV,Pending,,Tier 1,Listed but subs matter
+Ather Energy,Ather Energy Ltd,Auto,EV,Pending,,Tier 1,Listed subsidiary reads
+Simple Energy,Simple Energy Pvt Ltd,Auto,EV,Pending,,Tier 3,
+Bounce,Wicked Ride Adventures Pvt Ltd,Mobility,Scooter Rental,Pending,,Tier 3,Restructured
+Yulu,Yulu Bikes Pvt Ltd,Mobility,Micromobility,Pending,,Tier 2,
+BluSmart,BluSmart Mobility Pvt Ltd,Mobility,EV Ride-hailing,Pending,,Tier 1,
+Chalo,Zophop Technologies Pvt Ltd,Mobility,Bus Tech,Pending,,Tier 3,
+Delhivery,Delhivery Ltd,Logistics,3PL,Pending,,Tier 1,Listed but subs interesting
+Ecom Express,Ecom Express Ltd,Logistics,3PL,Pending,,Tier 1,Pre-IPO
+Xpressbees,Busy Bees Logistics Solutions Pvt Ltd,Logistics,3PL,Pending,,Tier 2,
+Shadowfax,Shadowfax Technologies Pvt Ltd,Logistics,Last-mile,Pending,,Tier 2,
+Loadshare,Loadshare Networks Pvt Ltd,Logistics,B2B,Pending,,Tier 3,
+Blackbuck,Zinka Logistics Solutions Ltd,Logistics,Trucking,Pending,,Tier 2,Listed
+Rivigo,Rivigo Services Pvt Ltd,Logistics,Trucking,Pending,,Tier 3,Mahindra acquired
+Cars24,CARS24 Services Pvt Ltd,Auto,Used Cars,Pending,,Tier 1,Pre-IPO huge burn
+Droom,Droom Technology Pvt Ltd,Auto,Used Cars,Pending,,Tier 3,Restructured
+Freshworks India,Freshworks Technologies Pvt Ltd,SaaS,Enterprise,Pending,,Tier 1,Transfer pricing goldmine
+Zoho India,Zoho Corporation Pvt Ltd,SaaS,Enterprise,Pending,,Tier 1,Private, notoriously opaque
+Postman India,Postman Technologies India Pvt Ltd,SaaS,DevTools,Pending,,Tier 2,
+Chargebee India,Chargebee Technologies Pvt Ltd,SaaS,Subscription,Pending,,Tier 2,
+Zenoti,Konetic Technologies Pvt Ltd,SaaS,Spa,Pending,,Tier 2,US HQ + India entity
+Amagi,Amagi Media Labs Pvt Ltd,SaaS,Broadcast,Pending,,Tier 1,Pre-IPO
+BrowserStack,BrowserStack Software Pvt Ltd,SaaS,Testing,Pending,,Tier 1,
+Whatfix,Whatfix Software Solutions Pvt Ltd,SaaS,Adoption,Pending,,Tier 2,
+MoEngage,MoEngage Software Pvt Ltd,SaaS,Engagement,Pending,,Tier 2,
+Kissflow,Orangescape Technologies Pvt Ltd,SaaS,Workflow,Pending,,Tier 3,
+Clevertap,CleverTap India Pvt Ltd,SaaS,Engagement,Pending,,Tier 2,Singapore HQ + India
+Icertis India,Icertis Solutions Pvt Ltd,SaaS,Contracts,Pending,,Tier 2,
+HighRadius,HighRadius Technologies Pvt Ltd,SaaS,Treasury,Pending,,Tier 2,
+Druva India,Druva Data Solutions Pvt Ltd,SaaS,Data Protection,Pending,,Tier 3,
+Netcore Cloud,Netcore Cloud Pvt Ltd,SaaS,Engagement,Pending,,Tier 2,Pre-IPO
+Yellow.ai,Bitonic Technology Labs Pvt Ltd,SaaS,Conversational AI,Pending,,Tier 2,
+Uniphore India,Uniphore Software Systems Pvt Ltd,SaaS,Voice AI,Pending,,Tier 3,
+Sarvam AI,Sarvam Systems Pvt Ltd,AI,Indic LLM,Pending,,Tier 2,Deep tech
+Krutrim,Krutrim SI Designs Pvt Ltd,AI,Foundation Model,Pending,,Tier 1,Ola arm
+Fractal Analytics,Fractal Analytics Pvt Ltd,AI,Services,Pending,,Tier 1,Pre-IPO
+Skyroot Aerospace,Skyroot Aerospace Pvt Ltd,DeepTech,Space,Pending,,Tier 2,
+Agnikul Cosmos,Agnikul Cosmos Pvt Ltd,DeepTech,Space,Pending,,Tier 2,
+Pixxel,Syzygy Space Technologies Pvt Ltd,DeepTech,Earth Obs,Pending,,Tier 2,
+Digantara,Digantara Research and Technologies,DeepTech,Space,Pending,,Tier 3,
+Dhruva Space,Dhruva Space Pvt Ltd,DeepTech,Space,Pending,,Tier 3,
+Log9 Materials,Log9 Materials Scientific Pvt Ltd,DeepTech,Batteries,Pending,,Tier 3,
+Attero Recycling,Attero Recycling Pvt Ltd,GreenTech,E-waste,Pending,,Tier 3,
+Ideaforge,Ideaforge Technology Ltd,DeepTech,Drones,Pending,,Tier 3,Listed
+Nazara,Nazara Technologies Ltd,Gaming,Content,Pending,,Tier 2,Listed but Nodwin/Sportskeeda subs
+Games24x7,Play Games24x7 Pvt Ltd,Gaming,RMG,Pending,,Tier 1,RummyCircle/My11Circle
+Dream11,Sporta Technologies Pvt Ltd,Gaming,Fantasy,Pending,,Tier 1,Huge
+MPL,Galactus Funware Technology Pvt Ltd,Gaming,RMG,Pending,,Tier 1,
+WinZO,Tic Tac Learn Pvt Ltd,Gaming,Casual,Pending,,Tier 2,
+Junglee Games,Jungle Rummy Games Pvt Ltd,Gaming,RMG,Pending,,Tier 2,Flutter arm
+Rooter,Auto Fantasy Gaming Pvt Ltd,Gaming,Streaming,Pending,,Tier 3,
+Moj,Mohalla Tech Pvt Ltd,Media,Short Video,Pending,,Tier 2,ShareChat parent, but Moj as brand
+Josh,Verse Innovation Pvt Ltd,Media,Short Video,Pending,,Tier 1,DailyHunt parent
+Chingari,OpenApp Technology Pvt Ltd,Media,Short Video,Pending,,Tier 3,
+Roposo,Glance InMobi Pte Ltd (India entity),Media,Short Video,Pending,,Tier 3,
+Inshorts,Inshorts Medialabs Pvt Ltd,Media,News,Pending,,Tier 3,Pre-IPO restructured
+DailyHunt,Ver Se Innovation Pvt Ltd,Media,News,Pending,,Tier 2,Josh parent
+The Ken,Ken Innovations Pvt Ltd,Media,Subscription,Pending,,Tier 3,Forensic-friendly
+NoBroker,NoBroker Technologies Solutions Pvt Ltd,Proptech,Marketplace,Pending,,Tier 1,Pre-IPO
+NestAway,IBibo Web Pvt Ltd,Proptech,Rental,Pending,,Tier 3,Aurum PropTech acquired
+Square Yards,Square Yards Consulting Pvt Ltd,Proptech,Marketplace,Pending,,Tier 2,Pre-IPO
+Awfis,Awfis Space Solutions Ltd,Proptech,Coworking,Pending,,Tier 3,Listed
+Smartworks,Smartworks Coworking Spaces Pvt Ltd,Proptech,Coworking,Pending,,Tier 2,Pre-IPO
+IndiQube,IndiQube Global Workspaces Pvt Ltd,Proptech,Coworking,Pending,,Tier 3,
+99acres,Info Edge (India) Ltd,Proptech,Marketplace,Pending,,Tier 3,Naukri arm
+Housing.com,REA India Pte Ltd (India entity),Proptech,Marketplace,Pending,,Tier 3,
+PropTiger,REA India Pte Ltd (India entity),Proptech,Marketplace,Pending,,Tier 3,
+Ninjacart,Nanocart Pvt Ltd,Agritech,B2B Fresh,Pending,,Tier 1,
+DeHaat,Green AgRevolution Pvt Ltd,Agritech,Marketplace,Pending,,Tier 1,Farmer marketplace
+Waycool,Waycool Foods and Products Pvt Ltd,Agritech,B2B Fresh,Pending,,Tier 1,
+Otipy,Crofarm Agriproducts Pvt Ltd,Agritech,D2C Produce,Pending,,Tier 2,
+AgroStar,Agrostar India Pvt Ltd,Agritech,Inputs,Pending,,Tier 2,
+Cropin,Cropin Technology Solutions Pvt Ltd,Agritech,SaaS,Pending,,Tier 3,
+Absolute,Inficold-parent group,Agritech,Biosciences,Pending,,Tier 3,
+Karbon Card,Karbon Financial Innovations Pvt Ltd,Fintech,Startup CC,Pending,,Tier 3,
+Volopay,Volopay Technologies Pvt Ltd,Fintech,Spend,Pending,,Tier 3,
+RazorpayX Payroll,Opfin Technologies Pvt Ltd,Fintech,Payroll,Pending,,Tier 3,Separate from Razorpay
+Sprinto,Sprinto Financial Services Pvt Ltd,SaaS,Compliance,Pending,,Tier 3,
+Turing,Turing Enterprises India Pvt Ltd,HRTech,Talent,Pending,,Tier 3,
+Uplers,Uplers Technologies Pvt Ltd,HRTech,Talent,Pending,,Tier 3,
+Vahdam Teas,Vahdam India Pvt Ltd,D2C,Tea,Pending,,Tier 3,Export D2C
+Udaan,Hiveloop Technology Pvt Ltd,B2B,Wholesale,Pending,,Tier 1,$1B+ raised, largest B2B commerce
+OfBusiness,OFB Tech Pvt Ltd,B2B,SME Procurement,Pending,,Tier 1,Highly profitable pre-IPO
+Oxyzo,Oxyzo Financial Services Pvt Ltd,Fintech,SME Lending,Pending,,Tier 1,OfBusiness NBFC arm
+Jumbotail,Jumbotail Technologies Pvt Ltd,B2B,Kirana,Pending,,Tier 2,B2B grocery
+ArzooO,ArzooO India Pvt Ltd,B2B,Electronics,Pending,,Tier 2,B2B retail electronics
+Bijnis,Digivriddhi Technologies Pvt Ltd,B2B,Wholesale,Pending,,Tier 3,SME B2B
+FloBiz,BizAnalyst Pvt Ltd,SaaS,SMB,Pending,,Tier 3,MyBillBook maker
+KhataBook,Kyte Technologies Pvt Ltd,SaaS,SMB Ledger,Pending,,Tier 2,
+OKCredit,OK Credit Fintech Pvt Ltd,SaaS,SMB Ledger,Pending,,Tier 2,
+Vyapar,Simply Vyapar Apps Pvt Ltd,SaaS,SMB,Pending,,Tier 2,GST/billing SMB
+Rupeek,Rupeek Fintech Pvt Ltd,Fintech,Gold Loans,Pending,,Tier 2,
+Indifi,Indifi Technologies Pvt Ltd,Fintech,SME Lending,Pending,,Tier 2,
+Lendingkart,Lendingkart Finance Ltd,Fintech,SME NBFC,Pending,,Tier 2,
+Capital Float,Zen Lefin Pvt Ltd,Fintech,SME Lending,Pending,,Tier 2,
+FlexiLoans,Epimoney Pvt Ltd,Fintech,SME Lending,Pending,,Tier 3,
+Perfios,Perfios Software Solutions Pvt Ltd,Fintech,Data Infra,Pending,,Tier 2,Account aggregator infra
+Setu,Setu Technologies Pvt Ltd,Fintech,API Infra,Pending,,Tier 3,Pine Labs acquired
+Kaleidofin,Kaleidofin Financial Services Pvt Ltd,Fintech,Rural Wealth,Pending,,Tier 3,
+Arya.ag,Arya Collateral Warehousing,Fintech,Agri Finance,Pending,,Tier 3,
+Open,Open Financial Technologies Pvt Ltd,Fintech,SMB Neobank,Pending,,Tier 2,
+Recur Club,Recur Technologies Pvt Ltd,Fintech,Revenue-based Finance,Pending,,Tier 3,
+Klub,Klub Works Pvt Ltd,Fintech,Revenue-based Finance,Pending,,Tier 3,
+GetVantage,Vantage Fintech Pvt Ltd,Fintech,Revenue-based Finance,Pending,,Tier 3,
+FundsIndia,Wealth India Financial Services Pvt Ltd,Fintech,Wealth,Pending,,Tier 2,
+Vested Finance,Vested Ventures India Pvt Ltd,Fintech,US Stocks,Pending,,Tier 3,
+CreditMantri,Creditmantri Finserve Pvt Ltd,Fintech,Credit Score,Pending,,Tier 3,
+Fyle,Fyle Technologies Pvt Ltd,Fintech,Expense Mgmt,Pending,,Tier 3,
+CashFlo,CashFlo Technologies Pvt Ltd,Fintech,SME Working Cap,Pending,,Tier 3,
+Fusion Micro Finance,Fusion Micro Finance Ltd,Fintech,MFI,Pending,,Tier 3,Listed
+Belstar Microfinance,Belstar Microfinance Ltd,Fintech,MFI,Pending,,Tier 3,
+Spandana Sphoorty,Spandana Sphoorty Financial Ltd,Fintech,MFI,Pending,,Tier 3,Listed
+FirstCry,Brainbees Solutions Ltd,E-commerce,Kids,Pending,,Tier 1,Listed FY25 subs interesting
+Nykaa Man,Nykaa Fashion Pvt Ltd,E-commerce,Men,Pending,,Tier 3,
+Dunzo,Dunzo Digital Pvt Ltd,Quick Commerce,Hyperlocal,Pending,,Tier 1,Reliance-backed, restructured
+Urban Company,Urbanclap Technologies India Pvt Ltd,Services,Home Services,Pending,,Tier 1,Pre-IPO
+Housejoy,Sensasia Services Pvt Ltd,Services,Home Services,Pending,,Tier 3,
+Yes Madam,Yes Madam Beauty Services Pvt Ltd,Services,At-Home Beauty,Pending,,Tier 3,
+Shaadi.com,People Interactive (India) Pvt Ltd,Consumer,Matrimony,Pending,,Tier 3,
+BharatMatrimony,Matrimony.com Ltd,Consumer,Matrimony,Pending,,Tier 3,Listed
+WedMeGood,WedMeGood Innovations Pvt Ltd,Consumer,Weddings,Pending,,Tier 3,
+Sleepy Owl,Rage Coffee Pvt Ltd,F&B,Coffee,Pending,,Tier 3,D2C coffee
+Rage Coffee,Rage Coffee Pvt Ltd,F&B,Coffee,Pending,,Tier 3,
+Epigamia,Drums Food International Pvt Ltd,F&B,Yoghurt,Pending,,Tier 2,Danone acquired
+Wingreens Farms,Wingreens Farms Pvt Ltd,F&B,Food,Pending,,Tier 2,
+Nourish You,Nourish You Innovations Pvt Ltd,F&B,Food,Pending,,Tier 3,Quinoa
+BluBet,BLU Digital Entertainment Pvt Ltd,Gaming,RMG,Pending,,Tier 3,
+Baazi Games,Baazi Networks Pvt Ltd,Gaming,Poker,Pending,,Tier 3,
+Zupee,Cashgrail Pvt Ltd,Gaming,Ludo,Pending,,Tier 2,
+KheloMore,KheloMore Sports Pvt Ltd,Sports,Booking,Pending,,Tier 3,
+FITTR,Squats Nutrition Pvt Ltd,Fitness,App,Pending,,Tier 3,
+GOQii,GOQii Technologies Pvt Ltd,Fitness,Wearables,Pending,,Tier 3,
+Traya Health,Vinsfert Pvt Ltd,D2C,Hair,Pending,,Tier 2,
+Man Matters,Bombay Shaving Company arm,D2C,Grooming,Pending,,Tier 3,Mars by GHC
+Kapiva,Ayuh Wellness Pvt Ltd,D2C,Ayurveda,Pending,,Tier 2,
+Damensch,Damensch Pvt Ltd,D2C,Innerwear,Pending,,Tier 3,
+Bombay Shirt Company,Bombay Shirt Company Pvt Ltd,D2C,Shirts,Pending,,Tier 3,
+Suta,Suta Bombay Pvt Ltd,D2C,Sarees,Pending,,Tier 3,
+StyleCracker,Stylecracker Fashion Pvt Ltd,D2C,Fashion,Pending,,Tier 3,
+FableStreet,FableStreet Fashion Pvt Ltd,D2C,Women's Fashion,Pending,,Tier 3,
+Colorbar,Roomtowers Pvt Ltd,D2C,Beauty,Pending,,Tier 3,
+Iba Cosmetics,Ecotrail Personal Care Pvt Ltd,D2C,Beauty,Pending,,Tier 3,Halal beauty
+Faces Cosmetics,LiOA Beauty Pvt Ltd,D2C,Beauty,Pending,,Tier 3,
+Plum Goodness,Pureplay Skin Sciences,D2C,Beauty,Pending,,Tier 2,Not to confuse with Plum insurance
+Adda247,Metis Learning Solutions Pvt Ltd,Edtech,Test Prep,Pending,,Tier 2,
+Filo,Filo EdTech Pvt Ltd,Edtech,Q&A,Pending,,Tier 3,
+Testbook,Testbook Edu Solutions Pvt Ltd,Edtech,Test Prep,Pending,,Tier 2,
+Cuemath,Cuelearn Pvt Ltd,Edtech,K-12 Math,Pending,,Tier 2,
+Extramarks,Extramarks Education India Pvt Ltd,Edtech,K-12,Pending,,Tier 3,
+Masai School,Masai School Pvt Ltd,Edtech,Coding,Pending,,Tier 3,
+Newton School,Techcirq Pvt Ltd,Edtech,Coding,Pending,,Tier 3,
+GeeksforGeeks,SanchhayaEducation Pvt Ltd,Edtech,Coding,Pending,,Tier 3,
+Almabetter,AlmaBetter Innovations Pvt Ltd,Edtech,Data Science,Pending,,Tier 3,
+Lido Learning,Zoomm Learning Solutions Pvt Ltd,Edtech,K-12,Pending,,Tier 3,Restructured
+Camp K12,Better Way2 Learn Pvt Ltd,Edtech,K-12 Coding,Pending,,Tier 3,
+Nightingales,Medwell Ventures Pvt Ltd,Healthtech,Home Health,Pending,,Tier 3,
+HealthPlix,HealthPlix Technologies Pvt Ltd,Healthtech,Physician SaaS,Pending,,Tier 2,
+MedGenome,MedGenome Labs Ltd,Healthtech,Genomics,Pending,,Tier 2,
+Neuberg Diagnostics,Neuberg Diagnostics Pvt Ltd,Healthtech,Diagnostics,Pending,,Tier 3,
+Doceree,Doceree Health Pvt Ltd,Healthtech,Physician Ads,Pending,,Tier 3,
+Wysa,Touchkin eServices Pvt Ltd,Healthtech,Mental Health AI,Pending,,Tier 3,
+Molbio Diagnostics,Molbio Diagnostics Pvt Ltd,Healthtech,Diagnostics,Pending,,Tier 2,
+Wellthy Therapeutics,Wellthy Therapeutics Pvt Ltd,Healthtech,Chronic Care,Pending,,Tier 3,
+Netradyne,Netradyne Technology Pvt Ltd,DeepTech,AI Cameras,Pending,,Tier 2,US HQ + India entity
+Observe.AI,Observe.AI Software Pvt Ltd,SaaS,Contact Center AI,Pending,,Tier 2,US HQ + India entity
+Cleartax,Defmacro Software Pvt Ltd,SaaS,Tax,Pending,,Tier 2,Now Clear
+Signeasy,Signeasy Software Pvt Ltd,SaaS,eSign,Pending,,Tier 3,
+LeadSquared,LeadSquared Technologies Pvt Ltd,SaaS,Sales CRM,Pending,,Tier 2,
+Locus,Locus IT Services Pvt Ltd,SaaS,Route Optimization,Pending,,Tier 3,
+SirionLabs,SirionLabs Pvt Ltd,SaaS,Contract Lifecycle,Pending,,Tier 3,
+Airmeet,Airmeet Technologies Pvt Ltd,SaaS,Virtual Events,Pending,,Tier 3,
+InVideo,ShipRocket Video Pvt Ltd,SaaS,Video Creation,Pending,,Tier 2,
+Rocketium,Rocketium Software Pvt Ltd,SaaS,Creative Automation,Pending,,Tier 3,
+Zluri,Zluri Technologies Pvt Ltd,SaaS,SaaS Management,Pending,,Tier 3,
+Toplyne,Toplyne Technologies Pvt Ltd,SaaS,Product Growth,Pending,,Tier 3,
+Betterhalf,Betterhalf Matrimony Pvt Ltd,Consumer,Matrimony,Pending,,Tier 3,
+Everest Fleet,Everest Fleet Pvt Ltd,Mobility,Fleet,Pending,,Tier 3,Uber-linked
+MoveInSync,MoveInSync Technologies Pvt Ltd,Mobility,Corporate,Pending,,Tier 3,
+LetsTransport,Enigma Automobiles Solutions Pvt Ltd,Logistics,Intra-city,Pending,,Tier 3,
+Zypp Electric,Mobycy Tech Pvt Ltd,Mobility,EV Rental,Pending,,Tier 2,
+Euler Motors,Euler Motors Pvt Ltd,Auto,EV Commercial,Pending,,Tier 2,
+Revolt Motors,Revolt Intellicorp Pvt Ltd,Auto,EV 2W,Pending,,Tier 3,RattanIndia acquired
+Ampere,Ampere Electric Vehicles Pvt Ltd,Auto,EV 2W,Pending,,Tier 3,Greaves Cotton sub
+Public App,IndianAppGuy Technology Pvt Ltd,Media,Local Video,Pending,,Tier 3,
+LoveLocal,Lovelocal Technologies Pvt Ltd,Local,Kirana,Pending,,Tier 3,
+Storytel India,Storytel India Pvt Ltd,Media,Audiobooks,Pending,,Tier 3,
+Newslaundry,Newslaundry Media Pvt Ltd,Media,Subscription,Pending,,Tier 3,
+The Print,Printline Media Pvt Ltd,Media,Digital News,Pending,,Tier 3,
+CoinDCX,Neblio Technologies Pvt Ltd,Crypto,Exchange,Pending,,Tier 2,
+CoinSwitch,Bitcipher Labs Pvt Ltd,Crypto,Exchange,Pending,,Tier 2,Kuber
+WazirX,Zanmai Labs Pvt Ltd,Crypto,Exchange,Pending,,Tier 3,
+ZebPay,ZebIT Services Pvt Ltd,Crypto,Exchange,Pending,,Tier 3,
+Polygon Labs,Polygon Technology Pvt Ltd,Crypto,L2 Blockchain,Pending,,Tier 2,India roots
+Instadapp,Instadapp Software Pvt Ltd,Crypto,DeFi,Pending,,Tier 3,
+Reserve Rights,Reserve Protocol Pvt Ltd,Crypto,Stablecoin,Pending,,Tier 3,
+Treebo,Ruptub Solutions Pvt Ltd,Travel,Budget Hotels,Pending,,Tier 3,
+FabHotels,Casa2Stays Pvt Ltd,Travel,Budget Hotels,Pending,,Tier 3,
+The Postcard Hotel,The Postcard Hotel Pvt Ltd,Travel,Boutique Hotels,Pending,,Tier 3,
+ixigo,Le Travenues Technology Ltd,Travel,OTA,Pending,,Tier 3,Listed
+Cleartrip,Flipkart Cleartrip Pvt Ltd,Travel,OTA,Pending,,Tier 3,Flipkart owned
+easemytrip,Easy Trip Planners Ltd,Travel,OTA,Pending,,Tier 3,Listed
+Yatra,Yatra Online Ltd,Travel,OTA,Pending,,Tier 3,Listed
+Yatra Freight,Yatra Freight Pvt Ltd,Logistics,Freight,Pending,,Tier 3,
+Bijak,Rocketboy Retail Pvt Ltd,Agritech,Marketplace,Pending,,Tier 3,
+BharatAgri,BharatAgri Technologies Pvt Ltd,Agritech,Advisory,Pending,,Tier 3,
+Stellapps,Stellapps Technologies Pvt Ltd,Agritech,Dairy Tech,Pending,,Tier 3,
+Fyllo,Fyllo Systems Pvt Ltd,Agritech,IoT,Pending,,Tier 3,
+Fasal,Wolkus Technology Solutions Pvt Ltd,Agritech,IoT,Pending,,Tier 3,
+Apna,Apna Time Doon Pvt Ltd,HRTech,Jobs,Pending,,Tier 1,Blue-collar jobs, unicorn
+Job Hai,Info Edge (India) Ltd JobHai,HRTech,Jobs,Pending,,Tier 3,Naukri sub
+Awign,Awign Enterprises Pvt Ltd,HRTech,Gig Work,Pending,,Tier 3,
+Betterplace,Betterplace Safety Solutions Pvt Ltd,HRTech,Blue-collar HR,Pending,,Tier 3,
+Vahan,Vahan Inc India,HRTech,Gig Onboarding,Pending,,Tier 3,
+Trackier,ARK Infosoft Systems Pvt Ltd,SaaS,Mobile Marketing,Pending,,Tier 3,
+Nexval,Nexval Infotech Pvt Ltd,SaaS,Mortgage BPO,Pending,,Tier 3,
+Freshfresh,Freshfresh Fresh Pvt Ltd,D2C,Fresh Foods,Pending,,Tier 3,
+Tamara Leaf,Tamara Leaf Pvt Ltd,D2C,Fresh Foods,Pending,,Tier 3,
+Freshworks Foods,Freshworks Foods Pvt Ltd,D2C,Fresh Foods,Pending,,Tier 3,
+Portronics,Portronics Digital Pvt Ltd,D2C,Electronics,Pending,,Tier 3,
+Ambrane,Ambrane India Pvt Ltd,D2C,Electronics,Pending,,Tier 3,
+Zebronics,Top Notch Infotronix (India) Pvt Ltd,D2C,Electronics,Pending,,Tier 3,
+Boult Audio,Boult Audio Products Pvt Ltd,D2C,Audio,Pending,,Tier 2,
+Fire-Boltt,Torqus Systems Pvt Ltd,D2C,Wearables,Pending,,Tier 2,
+Nazara subs Nodwin,Nodwin Gaming Pvt Ltd,Gaming,Esports,Pending,,Tier 2,
+Nazara subs Sportskeeda,Absolute Sports Pvt Ltd,Media,Sports,Pending,,Tier 2,
+Tata Digital,Tata Digital Pvt Ltd,B2B,Digital Group,Pending,,Tier 1,Cash-burn story, holds Tata Neu
+Reliance Retail,Reliance Retail Ltd,E-commerce,Retail,Pending,,Tier 1,Unlisted, huge private co
+Reliance Jio Platforms,Jio Platforms Ltd,Telecom,Digital,Pending,,Tier 1,Private mega-cap
+Nykaa E-Retail,Nykaa E-Retail Pvt Ltd,E-commerce,Beauty,Pending,,Tier 2,Nykaa sub
+Rebel Foods brands,Rebel Foods Pvt Ltd,F&B,Cloud Kitchens,Pending,,Tier 1,Faasos/Behrouz/Oven Story/EatSure
+The Better India,The Better India Media Pvt Ltd,Media,Impact News,Pending,,Tier 3,
+YourStory,YourStory Media Pvt Ltd,Media,Startup News,Pending,,Tier 3,
+Inc42,Meshugah Media Pvt Ltd,Media,Startup News,Pending,,Tier 3,
+Moneycontrol,Web18 Software Services Ltd,Media,Finance,Pending,,Tier 3,Network18 sub
+ETMoney,Times Internet Ltd ETMoney,Fintech,MF Distribution,Pending,,Tier 3,Times sub
+Bharat Serums,Bharat Serums and Vaccines Ltd,Biotech,Pharma,Pending,,Tier 3,Advent-backed
+Suraasa,Suraasa Digital Pvt Ltd,Edtech,Teacher Training,Pending,,Tier 3,
+Vernacular.ai,Skit.ai India Pvt Ltd,SaaS,Voice AI,Pending,,Tier 3,
+Aisle,Aisle Network Pvt Ltd,Consumer,Dating,Pending,,Tier 3,
+Truly Madly,Trulymadly Matchmakers Pvt Ltd,Consumer,Dating,Pending,,Tier 3,
+QuackQuack,QuackQuack Online Services Pvt Ltd,Consumer,Dating,Pending,,Tier 3,
+Bumble India,Bumble India Pvt Ltd,Consumer,Dating,Pending,,Tier 3,
+Fitso,Fitternity Health-E-Tech Pvt Ltd,Fitness,Booking,Pending,,Tier 3,Zomato owned
+Cure.Fit brands,Curefit Healthcare Pvt Ltd,Fitness,Consumer,Pending,,Tier 1,Cult/Eat/Mind
+Xeno,Xeno Enterprises Pvt Ltd,SaaS,CDP,Pending,,Tier 3,
+LimeChat,Limechat Technologies Pvt Ltd,SaaS,Conversational Commerce,Pending,,Tier 3,
+Junio,Junio Pvt Ltd,Fintech,Teen CC,Pending,,Tier 3,FamPay competitor
+Slonkit,Sloan Financial Services Pvt Ltd,Fintech,Teen Money,Pending,,Tier 3,
+Kabira Mobility,Kabira Mobility Pvt Ltd,Auto,EV,Pending,,Tier 3,
+Bolt.Earth,Bolt Auto Corp Pvt Ltd,Auto,EV Charging,Pending,,Tier 3,
+Statiq,Statiq Charging Solutions Pvt Ltd,Auto,EV Charging,Pending,,Tier 3,
+ChargeZone,ChargeZone Electric Vehicles Pvt Ltd,Auto,EV Charging,Pending,,Tier 3,
+GoodBox,GoodBox Technologies Pvt Ltd,D2C,Grocery,Pending,,Tier 3,
+PhoolCards,Phool.co (Sustainable Alternatives),D2C,Sustainable,Pending,,Tier 3,
+Phool.co,Sustainable Alternatives Pvt Ltd,D2C,Sustainable,Pending,,Tier 3,
+XYXX,Sports Tech Enterprises Pvt Ltd,D2C,Innerwear,Pending,,Tier 3,
+Redington,Redington India Ltd,B2B,IT Distribution,Pending,,Tier 3,Listed
+Rezolve.AI,Rezolve.AI Pvt Ltd,SaaS,Employee AI,Pending,,Tier 3,
+JIFFY.ai,Jiffy AI Pvt Ltd,SaaS,Enterprise AI,Pending,,Tier 3,
+Turms,Turms Fashion Pvt Ltd,D2C,Fashion,Pending,,Tier 3,Defunct
+Peppertap,Nuvo Logistics Pvt Ltd,Quick Commerce,Grocery,Pending,,Tier 3,Defunct
+Housr,Housr Technologies Pvt Ltd,Proptech,Managed Living,Pending,,Tier 3,
+Colive,Colive Homes Pvt Ltd,Proptech,Co-living,Pending,,Tier 3,
+Stanza Living,Dtwelve Spaces Pvt Ltd,Proptech,Student Housing,Pending,,Tier 1,Large co-living raised $200M+
+Zolo Stays,Zostel Hospitality Pvt Ltd,Proptech,Co-living,Pending,,Tier 2,
+Your-Space,Your-Space Coliving Pvt Ltd,Proptech,Student Housing,Pending,,Tier 3,
+UrbanPiper,UrbanPiper Technology Pvt Ltd,SaaS,Restaurant Tech,Pending,,Tier 2,
+Petpooja,Prodigal Technologies India Pvt Ltd,SaaS,Restaurant POS,Pending,,Tier 2,
+Rista Apps,Rista Apps Pvt Ltd,SaaS,Restaurant POS,Pending,,Tier 3,
+Torqus,Torqus Systems Pvt Ltd,SaaS,Restaurant Tech,Pending,,Tier 3,
+DotPe,DotPe Payments Pvt Ltd,Fintech,Merchant Payments,Pending,,Tier 2,
+Perfios AA,Perfios AA Services Pvt Ltd,Fintech,Account Aggregator,Pending,,Tier 3,
+Anumati,Anumati AA Services Pvt Ltd,Fintech,Account Aggregator,Pending,,Tier 3,
+OneMoney,FinSec AA Solutions Pvt Ltd,Fintech,Account Aggregator,Pending,,Tier 3,
+Finvu,Cookiejar Technologies Pvt Ltd,Fintech,Account Aggregator,Pending,,Tier 3,
+Kirloskar Vayu,Kirloskar Vayu Pvt Ltd,Auto,EV,Pending,,Tier 3,
+Ola Fleet,Ola Fleet Technologies Pvt Ltd,Mobility,Fleet,Pending,,Tier 3,Ola sub
+Ola Financial,Ola Financial Services Pvt Ltd,Fintech,Payments,Pending,,Tier 3,Ola sub
+Ola Foods,Ola Foods Pvt Ltd,F&B,Delivery,Pending,,Tier 3,Ola sub
+Practo Providers,Practo Providers Pvt Ltd,Healthtech,Physician SaaS,Pending,,Tier 3,Practo sub
+InVideo AI,ShipRocket Video Pvt Ltd,SaaS,Video AI,Pending,,Tier 2,
+Shiprocket,Kartrocket Ecommerce Pvt Ltd,SaaS,Shipping Aggregator,Pending,,Tier 1,Pre-IPO
+Nimbus Post,Nimbuspost Pvt Ltd,SaaS,Shipping,Pending,,Tier 3,
+Pickrr,Pickrr Technologies Pvt Ltd,SaaS,Shipping,Pending,,Tier 3,Shiprocket acquired
+EasyEcom,Easy Ecommerce Solutions Pvt Ltd,SaaS,Ecom Ops,Pending,,Tier 3,
+Unicommerce,Unicommerce eSolutions Ltd,SaaS,Ecom Ops,Pending,,Tier 3,Listed
+Housr Renting,Housr Renting Pvt Ltd,Proptech,Rental,Pending,,Tier 3,
+Anarock,ANAROCK Property Consultants Pvt Ltd,Proptech,Services,Pending,,Tier 3,
+NoBroker Insurance,NoBroker Insurance Broking Pvt Ltd,Insurance,Broker,Pending,,Tier 3,
+NoBroker Pay,NoBroker Pay Pvt Ltd,Fintech,Rent Payments,Pending,,Tier 3,
+Zaggle,Zaggle Prepaid Ocean Services Ltd,Fintech,Corporate Cards,Pending,,Tier 3,Listed
+Kredx,Minions Ventures Pvt Ltd,Fintech,Invoice Discounting,Pending,,Tier 3,
+TReDS RXIL,Receivables Exchange of India Ltd,Fintech,Invoice Discounting,Pending,,Tier 3,
+NoBroker Society,NoBroker Society Services Pvt Ltd,Proptech,Society Mgmt,Pending,,Tier 3,
+ADDA Society,3Five8 Technologies Pvt Ltd,SaaS,Society Mgmt,Pending,,Tier 3,
+Doselect,DoSelect Technologies Pvt Ltd,HRTech,Hiring,Pending,,Tier 3,
+HackerRank,HackerRank India Pvt Ltd,HRTech,Coding Tests,Pending,,Tier 2,
+CodeChef Directi,Codechef Enterprises Pvt Ltd,Edtech,Coding Contest,Pending,,Tier 3,
+Winuall,Winuall Info Solutions Pvt Ltd,Edtech,Tutor SaaS,Pending,,Tier 3,
+HeyCoach,HeyCoach Learning Solutions Pvt Ltd,Edtech,Interview Prep,Pending,,Tier 3,
+Toothsi,Makeo Technologies Pvt Ltd,Healthtech,Dental Aligners,Pending,,Tier 2,
+Skinnsi,Skinnsi Aesthetics Pvt Ltd,Healthtech,Dermatology,Pending,,Tier 3,
+The Man Company,Helios Lifestyle Pvt Ltd,D2C,Grooming,Pending,,Tier 3,
+Ustraa Grooming,Happily Unmarried Marketing Pvt Ltd,D2C,Grooming,Pending,,Tier 3,VLCC acquired
+Nykaa Fashion,Nykaa Fashion Pvt Ltd,E-commerce,Fashion,Pending,,Tier 3,Nykaa sub
+Meesho Superstore,Meesho Grocery Pvt Ltd,E-commerce,Grocery,Pending,,Tier 3,
+Real11,Real11 Fantasy Sports Pvt Ltd,Gaming,Fantasy,Pending,,Tier 3,
+CredR,CredR Bikes Pvt Ltd,Auto,Used 2W,Pending,,Tier 3,
+Delhivery Freight,Delhivery Freight Services Pvt Ltd,Logistics,Freight,Pending,,Tier 3,Delhivery sub
+Delhivery Direct,Delhivery Direct Pvt Ltd,Logistics,D2C Fulfilment,Pending,,Tier 3,Delhivery sub
+Cityflo,Cityflo Technologies Pvt Ltd,Mobility,Corporate Bus,Pending,,Tier 3,
+Shell Recharge,Shell Recharge Solutions India Pvt Ltd,Auto,EV Charging,Pending,,Tier 3,
+Adva Systems,Adva Systems Pvt Ltd,DeepTech,Networking,Pending,,Tier 3,
+Garuda Aerospace,Garuda Aerospace Pvt Ltd,DeepTech,Drones,Pending,,Tier 2,
+BluJ Aerospace,BluJ Aerospace Pvt Ltd,DeepTech,Drones,Pending,,Tier 3,
+ePlane Company,The ePlane Company Pvt Ltd,DeepTech,eVTOL,Pending,,Tier 3,IIT Madras
+Ola Cell,Ola Cell Technologies Pvt Ltd,DeepTech,Batteries,Pending,,Tier 2,Ola sub
+Ather Grid,Ather Energy Ltd,Auto,EV Charging,Pending,,Tier 2,Ather sub
+Reliance Industries EV Batt,Reliance New Energy Battery Ltd,DeepTech,Batteries,Pending,,Tier 3,Reliance sub
+Exide Neo,Exide Neo Batteries Ltd,DeepTech,Batteries,Pending,,Tier 3,
+Zomato Payments,Zomato Payments Pvt Ltd,Fintech,Payments,Pending,,Tier 2,Zomato sub
+Zomato Hyperpure,Hyperpure Wholesale Pvt Ltd,B2B,Restaurant Supply,Pending,,Tier 2,Zomato sub
+Zomato Blinkit,Grofers India Pvt Ltd,Quick Commerce,Grocery,Pending,,Tier 1,Zomato/Eternal sub
+Swiggy Instamart,Bundl Technologies Pvt Ltd,Quick Commerce,Grocery,Pending,,Tier 1,Swiggy sub
+Swiggy Dineout,Dineout Foodtech Pvt Ltd,F&B,Restaurant Booking,Pending,,Tier 3,Swiggy sub
+Swiggy Genie,Bundl Technologies Pvt Ltd,Quick Commerce,Delivery,Pending,,Tier 3,Swiggy sub
+Swiggy Minis,Swiggy Minis Pvt Ltd,SaaS,SMB Storefront,Pending,,Tier 3,Swiggy sub
+Tata Neu,Tata Digital Pvt Ltd,E-commerce,Super App,Pending,,Tier 1,Tata Digital sub
+Croma,Infiniti Retail Ltd,E-commerce,Electronics,Pending,,Tier 3,Tata Trent sub
+Star Bazaar,Trent Ltd,E-commerce,Grocery,Pending,,Tier 3,Trent sub
+Zudio,Trent Ltd,E-commerce,Value Fashion,Pending,,Tier 3,Trent sub
+BigBasket Now,Innovative Retail Concepts,Quick Commerce,Grocery,Pending,,Tier 2,BB sub
+BB Daily,Innovative Retail Concepts,D2C,Subscription Grocery,Pending,,Tier 2,BB sub
+Curefit Cult,Curefit Healthcare Pvt Ltd,Fitness,Consumer,Pending,,Tier 1,Cult subscription
+Curefit Eat,Curefit Healthcare Pvt Ltd,F&B,Healthy Meals,Pending,,Tier 2,Cure sub
+FirstCry Xpressbees,Brainbees Solutions Ltd,Logistics,3PL,Pending,,Tier 2,FC sub
+Nykaa Superstore,Nykaa E-Retail Pvt Ltd,B2B,Beauty Distribution,Pending,,Tier 2,Nykaa sub
+Airtel Payments Bank,Airtel Payments Bank Ltd,Fintech,Payments Bank,Pending,,Tier 3,
+Jio Money,Reliance Payment Solutions Ltd,Fintech,Wallet,Pending,,Tier 3,Jio sub
+Kotak Cherry,Kotak Investment Advisors Ltd,Fintech,Wealth,Pending,,Tier 3,
+Angel Bee,Angel Bee Technologies Pvt Ltd,Fintech,Wealth,Pending,,Tier 3,Angel One sub
+Fisdom,Finwizard Technology Pvt Ltd,Fintech,Wealth,Pending,,Tier 3,
+Kuvera,Kuvera Fintech Pvt Ltd,Fintech,MF Investing,Pending,,Tier 3,
+CoinGabbar,CoinGabbar Media Pvt Ltd,Crypto,News/Analytics,Pending,,Tier 3,
+LimeRoad,Limeroad Fashion Pvt Ltd,E-commerce,Fashion,Pending,,Tier 3,
+Simsim,Simsim Videos Pvt Ltd,E-commerce,Live Commerce,Pending,,Tier 3,YouTube acquired
+Mensa Brands,Mensa Retail Brands Pvt Ltd,D2C,Brand Aggregator,Pending,,Tier 1,Global thrasio-style
+Globalbees,Globalbees Brands Pvt Ltd,D2C,Brand Aggregator,Pending,,Tier 2,FirstCry sub, Thrasio-style
+Evenflow,Evenflow Brands Pvt Ltd,D2C,Brand Aggregator,Pending,,Tier 3,
+Powerhouse91,Powerhouse91 Retail Pvt Ltd,D2C,Brand Aggregator,Pending,,Tier 3,
+Upscalio,Upscalio Retail Solutions Pvt Ltd,D2C,Brand Aggregator,Pending,,Tier 3,
+10Club,10Club Retail Pvt Ltd,D2C,Brand Aggregator,Pending,,Tier 3,
+Aris Infra,Aris Infra Solutions Ltd,B2B,Construction,Pending,,Tier 3,
+Moglix,Mogli Labs Pvt Ltd,B2B,Industrial,Pending,,Tier 2,
+IndustryBuying,IndustryBuying.com Pvt Ltd,B2B,Industrial,Pending,,Tier 3,
+Amazon Business,Amazon Wholesale India Pvt Ltd,B2B,Wholesale,Pending,,Tier 3,
+Retailio,Retailio Health Pvt Ltd,B2B,Pharmacy Distribution,Pending,,Tier 3,
+CashRich,CashRich Payments Pvt Ltd,Fintech,Rewards,Pending,,Tier 3,
+Magicpin,Samast Technologies Pvt Ltd,Local,Hyperlocal Rewards,Pending,,Tier 2,
+NearBuy,NearBuy India Pvt Ltd,Local,Deals,Pending,,Tier 3,Paytm arm
+Little,Little Internet Pvt Ltd,Local,Deals,Pending,,Tier 3,defunct
+Nazara PublishMe,Publishme Games Pvt Ltd,Gaming,Publisher,Pending,,Tier 3,
+Perpetuity Health,Perpetuity Technologies Pvt Ltd,Healthtech,Chronic Care,Pending,,Tier 3,

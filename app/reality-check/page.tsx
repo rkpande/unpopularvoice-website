@@ -5,11 +5,14 @@ import { getAllArticles, formatDisplayDate } from '@/lib/articles'
 export const metadata: Metadata = {
   title: 'Reality Check Index',
   description:
-    'All startup scores in one place. Growth quality, sustainability, profitability path — rated independently.',
+    'All startup scores in one place. Growth quality, sustainability, profitability path, rated independently.',
+  alternates: {
+    canonical: 'https://unpopularvoice.com/reality-check',
+  },
 }
 
 function scoreColor(score: number) {
-  if (score >= 7) return 'text-green-600'
+  if (score >= 7) return 'text-green-700'
   if (score >= 5) return 'text-yellow-600'
   return 'text-brand-red'
 }
@@ -52,7 +55,7 @@ export default function RealityCheckPage() {
             Score key:
           </p>
           {[
-            { range: '8–10', label: 'Strong', color: 'text-green-600' },
+            { range: '8-10', label: 'Strong', color: 'text-green-700' },
             { range: '5–7', label: 'Watch', color: 'text-yellow-600' },
             { range: '1–4', label: 'Concern', color: 'text-brand-red' },
           ].map((item) => (

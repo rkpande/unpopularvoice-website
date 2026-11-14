@@ -9,7 +9,7 @@ export default function CenterpieceTable({
 }: CenterpieceTableProps) {
   return (
     <div className="not-prose my-10">
-      {/* Black header bar — owns the space */}
+      {/* Black header bar, owns the space */}
       <div className="bg-black px-6 py-4 rounded-t-xl flex items-center justify-between">
         <span className="font-sans text-[10px] font-bold tracking-widest uppercase text-white/50">
           {title}
@@ -53,11 +53,11 @@ export default function CenterpieceTable({
                 <td className="px-4 py-4 font-sans text-[12px] sm:text-[13px] font-semibold text-gray-500 leading-snug">
                   {metric}
                 </td>
-                {/* Reported: large bold serif — the "headline number" */}
+                {/* Reported: large bold serif, the "headline number" */}
                 <td className="px-4 py-4 font-serif text-[1.2rem] sm:text-[1.4rem] font-bold text-black leading-none">
                   {reported}
                 </td>
-                {/* Economic Reality: the answer — visually distinct column */}
+                {/* Economic Reality: the answer, visually distinct column */}
                 <td className="px-4 py-4 font-sans text-[12px] sm:text-[13px] font-medium text-gray-800 leading-snug bg-black/[0.02] border-l-2 border-black/10">
                   {meaning}
                 </td>

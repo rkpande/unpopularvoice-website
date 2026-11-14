@@ -16,7 +16,7 @@ interface KeyMetricsProps {
 const typeColor: Record<MetricType, string> = {
   neutral:  'text-black',
   negative: 'text-brand-red',
-  positive: 'text-green-600',
+  positive: 'text-green-700',
   warning:  'text-yellow-600',
 }
 

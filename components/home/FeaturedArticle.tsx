@@ -16,14 +16,9 @@ export default function FeaturedArticle({ article }: { article: ArticleMeta }) {
             <div className="bg-black rounded-xl aspect-[16/10] flex flex-col justify-between p-8 select-none">
               {/* Header */}
               <div className="flex items-center justify-between">
-                <div>
-                  <p className="font-sans text-[10px] font-bold tracking-widest uppercase text-white/80">
-                    {article.company}
-                  </p>
-                  <p className="font-sans text-[10px] tracking-widest uppercase text-white/50 mt-0.5">
-                    {article.dataSource}
-                  </p>
-                </div>
+                <p className="font-sans text-[10px] font-bold tracking-widest uppercase text-white/80">
+                  {article.company} · Forensic Read
+                </p>
                 <span className="font-sans text-[10px] font-bold tracking-widest uppercase text-brand-red">
                   UnpopularVoice
                 </span>
@@ -58,7 +53,6 @@ export default function FeaturedArticle({ article }: { article: ArticleMeta }) {
           <div>
             <p className="font-sans text-gray-400 text-xs mb-3">
               {article.sector.toUpperCase()}&nbsp;&nbsp;·&nbsp;&nbsp;
-              {article.dataSource}&nbsp;&nbsp;·&nbsp;&nbsp;
               {formatDisplayDate(article.updatedAt)}
             </p>
 
@@ -69,19 +63,21 @@ export default function FeaturedArticle({ article }: { article: ArticleMeta }) {
             </Link>
 
             {/* TL;DR */}
-            <div className="bg-red-50 border border-brand-red/20 rounded-lg p-5 mb-6">
-              <p className="font-sans font-bold text-brand-red text-xs tracking-widest uppercase mb-3">
-                TL;DR
-              </p>
-              <ul className="space-y-1.5">
-                {article.tldr.slice(0, 3).map((point, i) => (
-                  <li key={i} className="font-sans text-[13px] text-gray-700 flex gap-2">
-                    <span className="text-brand-red mt-0.5">–</span>
-                    {point}
-                  </li>
-                ))}
-              </ul>
-            </div>
+            {article.tldr && article.tldr.length > 0 && (
+              <div className="bg-red-50 border border-brand-red/20 rounded-lg p-5 mb-6">
+                <p className="font-sans font-bold text-brand-red text-xs tracking-widest uppercase mb-3">
+                  TL;DR
+                </p>
+                <ul className="space-y-1.5">
+                  {article.tldr.slice(0, 3).map((point, i) => (
+                    <li key={i} className="font-sans text-[13px] text-gray-700 flex gap-2">
+                      <span className="text-brand-red mt-0.5">–</span>
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
 
             <Link
               href={`/${article.slug}`}

@@ -28,6 +28,35 @@ export function parseUpdatedAt(s: string): Date {
   return ts ? new Date(ts) : new Date()
 }
 
+// Return the first sentence of a string, capped at maxLen chars.
+// Falls back to a hard cut at maxLen if no sentence break is found.
+export function firstSentence(text: string, maxLen = 155): string {
+  if (!text) return ''
+  const trimmed = text.trim()
+  // Find sentence end: period, question, or exclamation followed by space or end.
+  const m = trimmed.match(/^(.+?[.?!])(?:\s|$)/)
+  const candidate = m ? m[1] : trimmed
+  if (candidate.length <= maxLen) return candidate
+  // Hard truncate at last space before maxLen - 1 for the ellipsis
+  const cut = candidate.slice(0, maxLen - 1)
+  const lastSpace = cut.lastIndexOf(' ')
+  return (lastSpace > 80 ? cut.slice(0, lastSpace) : cut) + '…'
+}
+
+// Best meta description for an article: prefer hand-crafted metaDescription
+// if it's already SERP-length, else derive from first sentence of excerpt or tldr[0].
+export function bestMetaDescription(article: {
+  metaDescription?: string
+  excerpt?: string
+  tldr?: string[]
+}): string {
+  if (article.metaDescription && article.metaDescription.length <= 165) {
+    return article.metaDescription
+  }
+  const source = article.excerpt || article.tldr?.[0] || article.metaDescription || ''
+  return firstSentence(source, 155)
+}
+
 export interface RealityScoreData {
   growthQuality: number
   sustainability: number
@@ -58,6 +87,8 @@ export interface ArticleMeta {
   slug: string
   title: string
   seoTitle?: string
+  metaDescription?: string
+  author?: string // optional author slug; falls back to primary author
   company: string
   cin?: string
   sector: string
@@ -68,6 +99,9 @@ export interface ArticleMeta {
   heroNumbers?: HeroNumber[]
   realityScore: RealityScoreData
   employerScore?: EmployerScoreData
+  runwayMonths?: number | null
+  employeeCostGrowthPct?: number | null
+  financials?: import('./financials').Financials
   featured?: boolean
   published?: boolean
   excerpt?: string

@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-14T00:00:00Z",
+  "title": "Design System: UnpopularVoice",
+  "extensions": {
+    "colorMeta": {
+      "auditors-red": { "role": "primary", "displayName": "Auditor's Red", "canonical": "#B22222", "tonalRamp": ["#3B0B0B", "#5C1111", "#7F1818", "#B22222", "#D24A4A", "#E68585", "#F3C0C0", "#FBEAEA"] },
+      "auditors-red-deep": { "role": "primary", "displayName": "Auditor's Red Deep", "canonical": "#991B1B" },
+      "masthead-black": { "role": "neutral", "displayName": "Masthead Black", "canonical": "#000000", "tonalRamp": ["#000000", "#0D0D0D", "#1F2937", "#374151", "#6B7280", "#9CA3AF", "#E5E7EB", "#F9FAFB"] },
+      "ink-panel": { "role": "neutral", "displayName": "Ink Panel", "canonical": "#0D0D0D" },
+      "newsprint-white": { "role": "neutral", "displayName": "Newsprint White", "canonical": "#FFFFFF" },
+      "warm-cream": { "role": "neutral", "displayName": "Warm Cream", "canonical": "#FAF6EF", "tonalRamp": ["#3A3326", "#5E5440", "#8A7D63", "#B8AA8C", "#DDD2BB", "#EDE5D5", "#F5EFE3", "#FAF6EF"] },
+      "panel-gray": { "role": "neutral", "displayName": "Panel Gray", "canonical": "#F9FAFB" },
+      "hairline": { "role": "neutral", "displayName": "Hairline", "canonical": "#F3F4F6" },
+      "rule-gray": { "role": "neutral", "displayName": "Rule Gray", "canonical": "#E5E7EB" },
+      "muted-ink": { "role": "neutral", "displayName": "Muted Ink", "canonical": "#9CA3AF" },
+      "caption-ink": { "role": "neutral", "displayName": "Caption Ink", "canonical": "#6B7280" },
+      "body-ink": { "role": "neutral", "displayName": "Body Ink", "canonical": "#374151" },
+      "gain-green": { "role": "tertiary", "displayName": "Gain Green", "canonical": "#15803D", "tonalRamp": ["#052E16", "#14532D", "#15803D", "#16A34A", "#22C55E", "#86EFAC", "#BBF7D0", "#F0FDF4"] },
+      "loss-red": { "role": "tertiary", "displayName": "Loss Red", "canonical": "#DC2626", "tonalRamp": ["#450A0A", "#7F1D1D", "#B91C1C", "#DC2626", "#EF4444", "#FCA5A5", "#FECACA", "#FEF2F2"] },
+      "verdict-watch-text": { "role": "tertiary", "displayName": "Watch Amber", "canonical": "#B45309", "tonalRamp": ["#451A03", "#78350F", "#B45309", "#D97706", "#F59E0B", "#FCD34D", "#FDE68A", "#FFFBEB"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Homepage hero headline only." },
+      "headline": { "displayName": "Headline", "purpose": "Article titles." },
+      "pullout": { "displayName": "Pullout", "purpose": "TakeawayCard and SignatureLine statements; the screenshot line." },
+      "figure": { "displayName": "Figure", "purpose": "Headline numbers: article hero numbers and card lead figures." },
+      "title": { "displayName": "Title", "purpose": "Section and card headings; prose h2/h3." },
+      "body": { "displayName": "Body", "purpose": "Article prose within the 760px column." },
+      "ui": { "displayName": "UI", "purpose": "Nav, buttons, inputs, share links." },
+      "label": { "displayName": "Label", "purpose": "Uppercase tracked eyebrows, captions, metadata." }
+    },
+    "shadows": [
+      { "name": "resting-card", "value": "0 1px 2px 0 rgba(0,0,0,0.05)", "purpose": "Self-contained instruments (EmployerScore, newsletter form)." },
+      { "name": "hover-lift", "value": "0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1)", "purpose": "Some browse cards on hover only." },
+      { "name": "menu", "value": "0 25px 50px -12px rgba(0,0,0,0.25), 0 0 0 1px rgba(0,0,0,0.1)", "purpose": "Nav dropdown, the only floating layer." }
+    ],
+    "motion": [
+      { "name": "color-transition", "value": "color, background-color, border-color 150ms cubic-bezier(0.4, 0, 0.2, 1)", "purpose": "All hover states; the system animates color only." },
+      { "name": "menu-close-delay", "value": "120ms", "purpose": "Grace period before a nav dropdown closes on mouse leave." },
+      { "name": "ticker", "value": "translateX(0 to -50%) 300s linear infinite", "purpose": "Homepage stats ticker." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Subscribe and primary calls to action.",
+      "html": "<button class=\"ds-btn-primary\">Subscribe</button>",
+      "css": ".ds-btn-primary { background: #B22222; color: #fff; font-family: Inter, system-ui, sans-serif; font-weight: 600; font-size: 14px; padding: 12px 24px; border: none; border-radius: 4px; cursor: pointer; transition: background-color 150ms cubic-bezier(0.4,0,0.2,1); } .ds-btn-primary:hover { background: #991B1B; } .ds-btn-primary:focus-visible { outline: 2px solid #B22222; outline-offset: 2px; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Quiet actions such as loading more articles.",
+      "html": "<button class=\"ds-btn-secondary\">Show all articles</button>",
+      "css": ".ds-btn-secondary { background: #fff; color: #4B5563; font-family: Inter, system-ui, sans-serif; font-weight: 600; font-size: 14px; padding: 10px 24px; border: 1px solid #E5E7EB; border-radius: 4px; cursor: pointer; transition: border-color 150ms; } .ds-btn-secondary:hover { border-color: #9CA3AF; } .ds-btn-secondary:focus-visible { outline: 2px solid #000; outline-offset: 2px; }"
+    },
+    {
+      "name": "Email Signup",
+      "kind": "input",
+      "refersTo": "input-email",
+      "description": "Email field joined flush to the primary button.",
+      "html": "<form class=\"ds-signup\"><input class=\"ds-input\" type=\"email\" placeholder=\"you@example.com\"><button class=\"ds-signup-btn\" type=\"button\">Subscribe</button></form>",
+      "css": ".ds-signup { display: flex; max-width: 28rem; box-shadow: 0 1px 2px rgba(0,0,0,0.05); } .ds-input { flex: 1; padding: 14px 16px; font-family: Inter, system-ui, sans-serif; font-size: 14px; border: 1px solid #D1D5DB; border-right: none; border-radius: 6px 0 0 6px; outline: none; transition: border-color 150ms; } .ds-input:focus { border-color: #B22222; } .ds-signup-btn { background: #B22222; color: #fff; font-family: Inter, system-ui, sans-serif; font-weight: 600; font-size: 14px; padding: 14px 24px; border: none; border-radius: 0 6px 6px 0; cursor: pointer; transition: background-color 150ms; } .ds-signup-btn:hover { background: #991B1B; }"
+    },
+    {
+      "name": "Navigation Bar",
+      "kind": "nav",
+      "refersTo": "nav-bar",
+      "description": "Sticky black masthead with serif wordmark and Subscribe.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-wordmark\" href=\"#\">UnpopularVoice</a><div class=\"ds-nav-items\"><a class=\"ds-nav-link\" href=\"#\">Articles</a><a class=\"ds-nav-link\" href=\"#\">Compare</a><a class=\"ds-nav-link\" href=\"#\">Indexes</a><a class=\"ds-nav-cta\" href=\"#\">Subscribe</a></div></nav>",
+      "css": ".ds-nav { background: #000; height: 72px; padding: 0 32px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.1); } .ds-wordmark { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 22px; letter-spacing: -0.025em; color: #fff; text-decoration: none; transition: color 150ms; } .ds-wordmark:hover { color: #B22222; } .ds-nav-items { display: flex; align-items: center; gap: 4px; } .ds-nav-link { font-family: Inter, system-ui, sans-serif; font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.7); padding: 8px 12px; border-radius: 4px; text-decoration: none; transition: color 150ms; } .ds-nav-link:hover, .ds-nav-link:focus-visible { color: #fff; background: rgba(255,255,255,0.05); } .ds-nav-cta { margin-left: 4px; background: #B22222; color: #fff; font-family: Inter, system-ui, sans-serif; font-weight: 600; font-size: 12px; padding: 10px 16px; border-radius: 4px; text-decoration: none; transition: background-color 150ms; } .ds-nav-cta:hover { background: #991B1B; }"
+    },
+    {
+      "name": "Filter Chips",
+      "kind": "chip",
+      "refersTo": "chip-filter",
+      "description": "Sector and spectrum filters; the active chip inverts to black.",
+      "html": "<div class=\"ds-chips\"><button class=\"ds-chip ds-chip-active\">All</button><button class=\"ds-chip\">Fintech</button><button class=\"ds-chip\">D2C</button></div>",
+      "css": ".ds-chips { display: flex; gap: 8px; flex-wrap: wrap; } .ds-chip { font-family: Inter, system-ui, sans-serif; font-size: 12px; font-weight: 600; padding: 6px 12px; border-radius: 9999px; border: 1px solid #E5E7EB; background: #fff; color: #6B7280; cursor: pointer; transition: border-color 150ms, color 150ms; } .ds-chip:hover { border-color: #9CA3AF; color: #374151; } .ds-chip-active, .ds-chip-active:hover { background: #000; color: #fff; border-color: #000; } .ds-chip:focus-visible { outline: 2px solid #000; outline-offset: 2px; }"
+    },
+    {
+      "name": "Verdict Chips",
+      "kind": "chip",
+      "refersTo": "chip-verdict-solid",
+      "description": "Solid / Watch / Caution verdict pills with a status dot.",
+      "html": "<div class=\"ds-verdicts\"><span class=\"ds-verdict ds-v-solid\"><i></i>Solid financial footing</span><span class=\"ds-verdict ds-v-watch\"><i></i>Worth watching</span><span class=\"ds-verdict ds-v-caution\"><i></i>Proceed with caution</span></div>",
+      "css": ".ds-verdicts { display: flex; gap: 8px; flex-wrap: wrap; } .ds-verdict { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 9999px; border: 1px solid; font-family: Inter, system-ui, sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; } .ds-verdict i { width: 6px; height: 6px; border-radius: 9999px; } .ds-v-solid { background: #F0FDF4; border-color: #BBF7D0; color: #15803D; } .ds-v-solid i { background: #22C55E; } .ds-v-watch { background: #FFFBEB; border-color: #FDE68A; color: #B45309; } .ds-v-watch i { background: #F59E0B; } .ds-v-caution { background: #FEF2F2; border-color: #FECACA; color: #B91C1C; } .ds-v-caution i { background: #EF4444; }"
+    },
+    {
+      "name": "Article Card",
+      "kind": "card",
+      "refersTo": "card-article",
+      "description": "Index card led by a serif figure pair.",
+      "html": "<a class=\"ds-card\" href=\"#\"><div class=\"ds-card-top\"><span class=\"ds-eyebrow\">Fintech</span><span class=\"ds-date\">27 Apr 2026</span></div><div class=\"ds-figs\"><div><p class=\"ds-fig\">₹8,810 Cr</p><p class=\"ds-cap\">Revenue</p></div><div class=\"ds-fig2\"><p class=\"ds-fig ds-fig-sm ds-gain\">+₹4,232 Cr</p><p class=\"ds-cap\">Profit</p></div></div><h3 class=\"ds-card-title\">Zerodha Made ₹4,232 Cr. On ₹8,810 Cr of Revenue.</h3><span class=\"ds-read\">Read →</span></a>",
+      "css": ".ds-card { display: flex; flex-direction: column; max-width: 360px; background: #fff; border: 1px solid #F3F4F6; border-radius: 8px; padding: 20px; text-decoration: none; transition: border-color 150ms; } .ds-card:hover { border-color: #D1D5DB; } .ds-card:focus-visible { outline: 2px solid #000; outline-offset: 2px; } .ds-card-top { display: flex; justify-content: space-between; margin-bottom: 12px; } .ds-eyebrow { font-family: Inter, system-ui, sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #B22222; } .ds-date { font-family: Inter, system-ui, sans-serif; font-size: 10px; color: #D1D5DB; } .ds-figs { display: flex; gap: 20px; padding-bottom: 16px; margin-bottom: 16px; border-bottom: 1px solid #F9FAFB; } .ds-fig2 { border-left: 1px solid #F3F4F6; padding-left: 20px; } .ds-fig { margin: 0; font-family: 'Playfair Display', Georgia, serif; font-size: 24px; font-weight: 700; line-height: 1; color: #000; } .ds-fig-sm { font-size: 18px; } .ds-gain { color: #15803D; } .ds-cap { margin: 4px 0 0; font-family: Inter, system-ui, sans-serif; font-size: 9px; letter-spacing: 0.05em; text-transform: uppercase; color: #9CA3AF; } .ds-card-title { margin: 0 0 16px; font-family: 'Playfair Display', Georgia, serif; font-size: 14px; font-weight: 700; line-height: 1.35; color: #000; transition: color 150ms; } .ds-card:hover .ds-card-title { color: #B22222; } .ds-read { font-family: Inter, system-ui, sans-serif; font-size: 12px; font-weight: 600; color: #B22222; }"
+    },
+    {
+      "name": "TakeawayCard",
+      "kind": "custom",
+      "refersTo": "panel-dark",
+      "description": "Black pull-out panel for the section's thesis; light variant on warm cream.",
+      "html": "<aside class=\"ds-takeaway\"><span class=\"ds-bar\"></span><p class=\"ds-tk-eyebrow\">The structural read</p><p class=\"ds-tk-head\">Profit survived. Scale didn't.</p><p class=\"ds-tk-body\">Revenue fell for a second year while the cost base fell faster.</p></aside><aside class=\"ds-takeaway-light\"><p class=\"ds-tk-eyebrow\">Takeaway</p><p class=\"ds-tk-head-dark\">The cash side has not yet caught up.</p></aside>",
+      "css": ".ds-takeaway { position: relative; overflow: hidden; background: #000; border-radius: 16px; padding: 40px; margin-bottom: 24px; } .ds-bar { position: absolute; top: 0; left: 0; width: 48px; height: 4px; background: #B22222; } .ds-tk-eyebrow { margin: 0 0 16px; font-family: Inter, system-ui, sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: #B22222; } .ds-tk-head { margin: 0 0 16px; font-family: 'Playfair Display', Georgia, serif; font-size: 36px; font-weight: 700; line-height: 1.1; color: #fff; } .ds-tk-body { margin: 0; font-family: Inter, system-ui, sans-serif; font-size: 16px; line-height: 1.6; color: rgba(255,255,255,0.7); } .ds-takeaway-light { background: #FAF6EF; border-left: 6px solid #B22222; border-radius: 0 12px 12px 0; padding: 32px; } .ds-tk-head-dark { margin: 0; font-family: 'Playfair Display', Georgia, serif; font-size: 30px; font-weight: 700; line-height: 1.15; color: #000; }"
+    },
+    {
+      "name": "VersusBlock",
+      "kind": "custom",
+      "refersTo": "card-article",
+      "description": "Two-pane evidence comparison with direction glyphs and toned serif values.",
+      "html": "<div class=\"ds-vs\"><p class=\"ds-vs-metric\">Net loss</p><div class=\"ds-vs-panes\"><div class=\"ds-vs-pane ds-vs-left\"><p class=\"ds-vs-label\">FY2024</p><p class=\"ds-vs-val ds-loss\"><span>▼</span>-₹110 Cr</p></div><div class=\"ds-vs-pane\"><p class=\"ds-vs-label\">FY2025</p><p class=\"ds-vs-val ds-gain\"><span>▲</span>-₹38 Cr</p></div></div></div>",
+      "css": ".ds-vs { border: 1px solid #E5E7EB; border-radius: 12px; overflow: hidden; max-width: 640px; } .ds-vs-metric { margin: 0; padding: 12px 20px; font-family: Inter, system-ui, sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #6B7280; border-bottom: 1px solid #E5E7EB; } .ds-vs-panes { display: grid; grid-template-columns: 1fr 1fr; } .ds-vs-pane { padding: 24px; background: #fff; } .ds-vs-left { background: rgba(249,250,251,0.4); border-right: 1px solid #E5E7EB; } .ds-vs-label { margin: 0 0 8px; font-family: Inter, system-ui, sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #6B7280; } .ds-vs-val { margin: 0; display: flex; align-items: baseline; gap: 8px; font-family: 'Playfair Display', Georgia, serif; font-size: 30px; font-weight: 700; line-height: 1; } .ds-vs-val span { font-size: 16px; } .ds-loss { color: #DC2626; } .ds-gain { color: #15803D; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Broadsheet Exposé",
+    "overview": "UnpopularVoice is set like the front page of a serious newspaper running an investigation. A black masthead, heavy serif headlines, white newsprint, and one red rule that says \"this is the story.\" The numbers are the headlines: revenue and losses are set in the same display serif as the titles, large and black, so a reader can screenshot a figure and it still reads as reporting, not marketing.\n\nDensity is editorial, not dashboard. Article pages hold a single 760px reading column with generous vertical spacing; index pages open into a 1280px grid of quiet white cards. Drama comes from contrast (pure black panels interrupting white pages) rather than from color, gradients, or imagery. There is no photography in the system and no illustration; the figures and the type carry the page.\n\nRed is the masthead ink. It marks the brand, the call to subscribe, and the eyebrow of a section. It never marks a loss. Losses and gains have their own semantic reds and greens, kept deliberately distinct from the brand.",
+    "keyCharacteristics": [
+      "Serif display (Playfair Display) for headlines and every headline figure; sans (Inter) for prose, UI, and labels.",
+      "Black, white, and Auditor's Red as the identity; greys for structure; green and red only for data.",
+      "Short red accent bar (48px by 4px) as the recurring masthead mark above headlines and dark panels.",
+      "Black pull-out panels for the one line meant to be screenshotted.",
+      "Tiny uppercase tracked labels as the eyebrow vocabulary.",
+      "Flat surfaces; hairline borders do the structural work."
+    ],
+    "rules": [
+      { "name": "The Masthead Ink Rule", "body": "Auditor's Red is identity, never data. A loss figure in Auditor's Red is a bug; it must be Loss Red.", "section": "colors" },
+      { "name": "The Two Reds Rule", "body": "Brand red (#B22222, darker, brick) and loss red (#DC2626, brighter) must never sit adjacent as if interchangeable. If a reader could confuse \"brand accent\" with \"this number is bad,\" change one of them.", "section": "colors" },
+      { "name": "The Monochrome Ground Rule", "body": "Pages are black and white first. Color appears as a mark (bar, eyebrow, chip, value), never as a large tinted surface, with two exceptions: the pale newsletter band and the cream takeaway panel.", "section": "colors" },
+      { "name": "The Figures Are Headlines Rule", "body": "Any number the article is about is set in the display serif at Figure size or larger. Numbers in Inter are supporting data only.", "section": "typography" },
+      { "name": "The Whisper Label Rule", "body": "Eyebrows and captions are tiny, uppercase, widely tracked, and grey or red. They never compete with the serif above or below them.", "section": "typography" },
+      { "name": "The Single Column Rule", "body": "Article bodies never go multi-column. Comparison components (VersusBlock, SplitView) may split into two panes inside the column, and collapse to stacked panes below sm.", "section": "layout" },
+      { "name": "The Inversion Over Shadow Rule", "body": "To make something stand out, turn it black. Don't raise it.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do put the 48px by 4px Auditor's Red bar above every page-level headline and at the top-left of dark panels.",
+      "Do set every headline figure in Playfair Display at Figure size or larger, with Gain Green or Loss Red only when the value carries a direction.",
+      "Do use Masthead Black panels for the single line the reader should remember, at most one or two per article.",
+      "Do keep article prose at 1.0625rem / 1.75 in Body Ink within the 760px column.",
+      "Do use tiny uppercase tracked labels (10px, 0.25em) for eyebrows and captions.",
+      "Do use the verdict triplets exactly (green / amber / red background, border, text) for Solid / Watch / Caution."
+    ],
+    "donts": [
+      "Don't use Auditor's Red (#B22222) for a negative number; negatives are Loss Red (#DC2626).",
+      "Don't use em dashes anywhere in UI copy, labels, or placeholders; use a comma, or a hyphen for empty-value placeholders.",
+      "Don't add gradients, photography, illustration, or large tinted surfaces; contrast does the work.",
+      "Don't lift elements with heavy shadows; invert them to black instead.",
+      "Don't set article bodies in more than one column.",
+      "Don't introduce a second accent hue for identity; Auditor's Red is the only brand color."
+    ]
+  }
+}

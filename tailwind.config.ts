@@ -20,7 +20,7 @@ const config: Config = {
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
       },
       animation: {
-        ticker: 'ticker 55s linear infinite',
+        ticker: 'ticker 300s linear infinite',
       },
       keyframes: {
         ticker: {

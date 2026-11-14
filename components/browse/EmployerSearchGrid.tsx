@@ -112,7 +112,7 @@ function CompanyCard({
               className="flex items-center gap-1 text-gray-400 hover:text-gray-600 transition-colors"
             >
               {copied
-                ? <span className="font-sans text-green-600 font-semibold text-[11px]">Copied!</span>
+                ? <span className="font-sans text-green-700 font-semibold text-[11px]">Copied!</span>
                 : <ShareIcon />
               }
             </button>
@@ -372,7 +372,7 @@ export default function EmployerSearchGrid({ companies }: Props) {
               <div className="flex items-center gap-3 mb-5">
                 <span className="w-3 h-3 rounded-full bg-green-500 flex-shrink-0" />
                 <h2 className="font-serif text-black text-2xl font-bold">Solid Financial Footing</h2>
-                <span className="font-sans text-gray-400 text-sm hidden sm:block">— strong signals from the filing</span>
+                <span className="font-sans text-gray-400 text-sm hidden sm:block">, strong signals from the filing</span>
               </div>
               {renderGrid(solid)}
             </div>
@@ -382,7 +382,7 @@ export default function EmployerSearchGrid({ companies }: Props) {
               <div className="flex items-center gap-3 mb-5">
                 <span className="w-3 h-3 rounded-full bg-amber-400 flex-shrink-0" />
                 <h2 className="font-serif text-black text-2xl font-bold">Worth Watching</h2>
-                <span className="font-sans text-gray-400 text-sm hidden sm:block">— mixed signals; read the notes carefully</span>
+                <span className="font-sans text-gray-400 text-sm hidden sm:block">, mixed signals; read the notes carefully</span>
               </div>
               {renderGrid(watch)}
             </div>
@@ -392,7 +392,7 @@ export default function EmployerSearchGrid({ companies }: Props) {
               <div className="flex items-center gap-3 mb-5">
                 <span className="w-3 h-3 rounded-full bg-red-500 flex-shrink-0" />
                 <h2 className="font-serif text-black text-2xl font-bold">Proceed with Caution</h2>
-                <span className="font-sans text-gray-400 text-sm hidden sm:block">— financial risk flags in the filing</span>
+                <span className="font-sans text-gray-400 text-sm hidden sm:block">, financial risk flags in the filing</span>
               </div>
               {renderGrid(caution)}
             </div>

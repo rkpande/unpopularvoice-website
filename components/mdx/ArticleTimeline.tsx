@@ -20,7 +20,7 @@ const dotColor: Record<string, string> = {
 const yearColor: Record<string, string> = {
   neutral: 'text-gray-500',
   negative: 'text-brand-red',
-  positive: 'text-green-600',
+  positive: 'text-green-700',
   pivot: 'text-black',
 }
 

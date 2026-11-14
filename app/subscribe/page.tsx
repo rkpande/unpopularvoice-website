@@ -57,7 +57,7 @@ export default function SubscribePage() {
               <span className="text-brand-red">No fluff.</span>
             </h1>
             <p className="font-sans text-gray-500 text-lg mb-10 leading-relaxed">
-              Financial teardowns of Indian startups — delivered to your inbox.
+              Financial teardowns of Indian startups, delivered to your inbox.
               One story. Deep analysis. Every technical term explained.
             </p>
 
@@ -89,7 +89,7 @@ export default function SubscribePage() {
 
             <div className="mt-16 grid grid-cols-3 gap-8 text-left border-t border-gray-100 pt-12">
               {[
-                { label: 'What you get', body: 'One deep financial teardown per week. Not news — analysis.' },
+                { label: 'What you get', body: 'One deep financial teardown per week. Not news, analysis.' },
                 { label: "Who it's for", body: 'Job seekers, investors, employers, and anyone who wants to understand startups beyond the headlines.' },
                 { label: "What we don't do", body: 'No fundraise announcements. No founder profiles. No PR repackaging.' },
               ].map((item) => (

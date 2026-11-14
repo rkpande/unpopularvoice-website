@@ -14,7 +14,7 @@ interface RealityScoreProps {
 }
 
 function scoreColor(score: number): string {
-  if (score >= 7) return 'text-green-600'
+  if (score >= 7) return 'text-green-700'
   if (score >= 5) return 'text-yellow-600'
   return 'text-brand-red'
 }

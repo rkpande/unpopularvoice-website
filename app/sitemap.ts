@@ -1,15 +1,18 @@
 import { getAllArticles, parseUpdatedAt } from '@/lib/articles'
+import { getAllComparisons } from '@/lib/comparisons'
+import { getAllSectors } from '@/lib/sectors'
+import { getAllAuthors } from '@/lib/authors'
 import type { MetadataRoute } from 'next'
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://unpopularvoice.com'
 
-// Most recent article date — used as lastModified for index pages
 function mostRecentDate(articles: ReturnType<typeof getAllArticles>): Date {
   return articles.length ? parseUpdatedAt(articles[0].updatedAt) : new Date()
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const articles = getAllArticles()
+  const comparisons = getAllComparisons()
   const latest = mostRecentDate(articles)
 
   return [
@@ -24,6 +27,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: latest,
       changeFrequency: 'weekly',
       priority: 0.9,
+    },
+    {
+      url: `${SITE_URL}/compare`,
+      lastModified: latest,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${SITE_URL}/employer-check`,
+      lastModified: latest,
+      changeFrequency: 'weekly',
+      priority: 0.85,
+    },
+    {
+      url: `${SITE_URL}/startup-jobs`,
+      lastModified: latest,
+      changeFrequency: 'weekly',
+      priority: 0.85,
     },
     {
       url: `${SITE_URL}/reality-check`,
@@ -42,6 +63,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: parseUpdatedAt(article.updatedAt),
       changeFrequency: 'monthly' as const,
       priority: 0.8,
+    })),
+    ...comparisons.map((cmp) => ({
+      url: `${SITE_URL}/compare/${cmp.slug}`,
+      lastModified: parseUpdatedAt(cmp.updatedAt),
+      changeFrequency: 'monthly' as const,
+      priority: 0.85,
+    })),
+    ...getAllSectors().map((sector) => ({
+      url: `${SITE_URL}/sector/${sector.slug}`,
+      lastModified: latest,
+      changeFrequency: 'weekly' as const,
+      priority: 0.75,
+    })),
+    ...getAllAuthors().map((a) => ({
+      url: `${SITE_URL}/author/${a.slug}`,
+      lastModified: latest,
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
     })),
   ]
 }

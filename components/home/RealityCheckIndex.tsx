@@ -2,7 +2,7 @@ import Link from 'next/link'
 import type { ArticleMeta } from '@/lib/articles'
 
 function scoreColor(score: number) {
-  if (score >= 7) return 'text-green-400'
+  if (score >= 7) return 'text-green-700'
   if (score >= 5) return 'text-yellow-400'
   return 'text-brand-red'
 }

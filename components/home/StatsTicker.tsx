@@ -18,17 +18,17 @@ export default function StatsTicker({ articles }: { articles: ArticleMeta[] }) {
         style={{ width: 'max-content' }}
       >
         {doubled.map((item, i) => (
-          <span key={i} className="inline-flex items-baseline gap-2 px-5 py-2.5 flex-shrink-0">
-            <span className="font-sans text-[10px] font-bold text-brand-red uppercase tracking-widest">
+          <span key={i} className="inline-flex items-baseline gap-3 px-8 py-4 flex-shrink-0">
+            <span className="font-sans text-[12px] font-bold text-brand-red uppercase tracking-widest">
               {item.company}
             </span>
-            <span className="font-serif text-white text-sm font-bold">
+            <span className="font-serif text-white text-lg font-bold">
               {item.value}
             </span>
-            <span className="font-sans text-white/40 text-[9px] uppercase tracking-wider">
+            <span className="font-sans text-white/75 text-[11px] uppercase tracking-wider">
               {item.label}
             </span>
-            <span className="text-brand-red/60 mx-2 text-[10px]">·</span>
+            <span className="text-white/30 mx-3 text-xs">·</span>
           </span>
         ))}
       </div>

@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node scripts/check-financials.mjs",
     "build": "next build",
+    "check:financials": "node scripts/check-financials.mjs",
     "start": "next start",
     "lint": "next lint"
   },

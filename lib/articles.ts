@@ -94,6 +94,7 @@ export interface ArticleMeta {
   sector: string
   dataSource: string
   updatedAt: string
+  corrections?: import('./corrections').Correction[]
   readTime: string
   tldr: string[]
   heroNumbers?: HeroNumber[]

@@ -35,7 +35,7 @@ export default function Footer() {
  <p className="text-white/30 text-xs font-sans mt-4 leading-relaxed">
   All financial data comes from annual audited filings submitted to India&apos;s Ministry of Corporate Affairs,
   the same documents that go to the Registrar of Companies. These filings contain independently audited
-  balance sheets, P&amp;L statements, and cash flow statements. No estimates. No analyst projections. No press releases.
+  balance sheets, P&amp;L statements, and cash flow statements. No analyst projections. No press releases. Any estimate is labelled as one.
  </p>
  </div>
 
@@ -54,6 +54,12 @@ export default function Footer() {
  </Link>
  <Link href="/methodology" className="block py-2 text-white/50 text-sm font-sans hover:text-white/80 transition-colors">
   Methodology
+ </Link>
+ <Link href="/editorial-standards" className="block py-2 text-white/50 text-sm font-sans hover:text-white/80 transition-colors">
+  Editorial Standards
+ </Link>
+ <Link href="/corrections" className="block py-2 text-white/50 text-sm font-sans hover:text-white/80 transition-colors">
+  Corrections
  </Link>
  <Link href="/subscribe" className="block py-2 text-white/50 text-sm font-sans hover:text-white/80 transition-colors">
   Subscribe

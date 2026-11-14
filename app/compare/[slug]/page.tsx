@@ -10,6 +10,8 @@ export const revalidate = 86400
 import { getAllComparisons, getComparisonBySlug } from '@/lib/comparisons'
 import { formatDisplayDate, parseUpdatedAt, firstSentence } from '@/lib/articles'
 import { getPrimaryAuthor, getAuthor } from '@/lib/authors'
+import { lastModified, sortedCorrections } from '@/lib/corrections'
+import CorrectionsNote from '@/components/CorrectionsNote'
 
 import FinancialTable from '@/components/mdx/FinancialTable'
 import InsightBox from '@/components/mdx/InsightBox'
@@ -67,7 +69,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       url: canonicalUrl,
       type: 'article',
       publishedTime: parseUpdatedAt(cmp.updatedAt).toISOString(),
-      modifiedTime: parseUpdatedAt(cmp.updatedAt).toISOString(),
+      modifiedTime: lastModified(cmp.updatedAt, cmp.corrections).toISOString(),
       authors: [getPrimaryAuthor().name],
       tags: [cmp.category, 'startup comparison', 'Indian startups'],
     },
@@ -90,6 +92,8 @@ export default function ComparisonPage({ params }: { params: { slug: string } })
   const ogImage = `${SITE_URL}/og?title=${encodeURIComponent(cmp.title)}&company=${encodeURIComponent(cmp.category)}&sector=${encodeURIComponent(cmp.category)}`
   const companies = [cmp.metaA, cmp.metaB, cmp.metaC].filter(Boolean) as Array<{ company: string; slug: string }>
   const isoDate = parseUpdatedAt(cmp.updatedAt).toISOString()
+  const modifiedIso = lastModified(cmp.updatedAt, cmp.corrections).toISOString()
+  const latestCorrection = sortedCorrections(cmp.corrections)[0]
 
   const breadcrumbLd = {
     '@context': 'https://schema.org',
@@ -116,7 +120,7 @@ export default function ComparisonPage({ params }: { params: { slug: string } })
     },
     publisher: { '@id': `${SITE_URL}/#organization` },
     datePublished: isoDate,
-    dateModified: isoDate,
+    dateModified: modifiedIso,
     url: canonical,
     mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
     about: companies.map((c) => ({
@@ -157,7 +161,15 @@ export default function ComparisonPage({ params }: { params: { slug: string } })
               </Link>
             </span>
             <span className="text-white/20">·</span>
-            <p className="font-sans text-white/40 text-xs">{formatDisplayDate(cmp.updatedAt)}</p>
+            <p className="font-sans text-white/60 text-xs">
+              {latestCorrection ? (
+                <a href="#corrections" className="hover:text-white underline-offset-4 hover:underline">
+                  Corrected <time dateTime={modifiedIso}>{latestCorrection[0]}</time>
+                </a>
+              ) : (
+                <time dateTime={isoDate}>{formatDisplayDate(cmp.updatedAt)}</time>
+              )}
+            </p>
             <span className="text-white/20">·</span>
             <p className="font-sans text-white/40 text-xs">{cmp.readTime}</p>
           </div>
@@ -181,6 +193,7 @@ export default function ComparisonPage({ params }: { params: { slug: string } })
             }}
           />
         </div>
+        <CorrectionsNote corrections={cmp.corrections} />
       </article>
 
       {/* Other comparisons */}

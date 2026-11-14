@@ -16,6 +16,7 @@ export interface ComparisonMeta {
   category: string                // e.g. "Discount Brokers"
   thesis: string                  // short one-liner used in cards / OG
   updatedAt: string
+  corrections?: import('./corrections').Correction[]
   readTime: string
   featured?: boolean
   published?: boolean

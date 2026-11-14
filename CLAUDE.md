@@ -282,6 +282,17 @@ Every index page reads ONLY the `financials:` frontmatter block. It never parses
 3. **Reconcile before publishing.** The article's headline revenue, PAT and net worth must match the exported block. If they differ, the filing wins: fix the article, not the block.
 4. **One company, one block.** Follow-up pieces (debt registers, group maps, founder comp) get no block, so the company is counted once. Add their slug to `SECONDARY` in `dataextraction/export_financials.py`. The prebuild check fails if two articles of the same company carry a block.
 
+## Corrections: never change a published figure silently
+
+When a published article's figure, label or headline turns out to be wrong, fix it AND add a dated entry to its frontmatter (articles and comparisons alike):
+
+```yaml
+corrections:
+  - ["14 November 2026", "An earlier version gave X as ₹A Cr. The audited figure is ₹B Cr. The headline was updated."]
+```
+
+Say what was wrong and what the accounts show, in one or two plain sentences (no filing jargon, no em dashes). The note renders at the foot of the article, the byline date becomes "Corrected: <date>", dateModified and the sitemap move to that date, and the entry is listed on /corrections automatically. Wording or layout changes that alter no fact are not corrections. Policy text lives on /editorial-standards; don't add promises there that the site doesn't keep.
+
 Definitions used by every index: profitable = `patCr > 0`; net worth = equity attributable to owners where filed; balance-sheet buffer = net worth / annual loss (a ratio at year-end, not a forecast; foreign parents' support does not count because it is not in Indian filings).
 
 ## Spectrum thinking

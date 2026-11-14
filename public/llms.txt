@@ -4,7 +4,13 @@
 
 ## About
 
-UnpopularVoice publishes financial analysis of Indian startups built from MCA (Ministry of Corporate Affairs) annual filings and XBRL data. Each article extracts FY2025 revenue, PAT, operating cash flow, total debt, and employee costs directly from audited standalone filings. Data is sourced from AOC-4 XBRL submissions. No estimates, no analyst projections.
+UnpopularVoice publishes financial analysis of Indian startups built from MCA (Ministry of Corporate Affairs) annual filings and XBRL data. Each article extracts FY2025 revenue, PAT, operating cash flow, total debt, and employee costs directly from the audited financial statements, standalone or consolidated as each article states. Data is sourced from AOC-4 XBRL submissions. No analyst projections; any estimate (such as runway) is labelled as one.
+
+## Standards
+
+- [Editorial standards](https://unpopularvoice.com/editorial-standards): sources, checking, fact / inference / estimate labels, corrections policy
+- [Corrections](https://unpopularvoice.com/corrections): every correction to a published figure
+- [Methodology](https://unpopularvoice.com/methodology): how Reality Check and Employer Check scores are built
 
 ## Coverage
 

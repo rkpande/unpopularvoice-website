@@ -10,6 +10,8 @@ export const revalidate = 86400
 import { getAllArticles, getArticleBySlug, formatDisplayDate, parseUpdatedAt, bestMetaDescription } from '@/lib/articles'
 import { sectorSlug, primarySector, getArticlesBySector } from '@/lib/sectors'
 import { getAuthor, getPrimaryAuthor } from '@/lib/authors'
+import { lastModified, sortedCorrections } from '@/lib/corrections'
+import CorrectionsNote from '@/components/CorrectionsNote'
 import Link from 'next/link'
 import FinancialTable from '@/components/mdx/FinancialTable'
 import RealityScore from '@/components/mdx/RealityScore'
@@ -77,7 +79,7 @@ export async function generateMetadata({
       url: canonicalUrl,
       type: 'article',
       publishedTime: parseUpdatedAt(article.updatedAt).toISOString(),
-      modifiedTime: parseUpdatedAt(article.updatedAt).toISOString(),
+      modifiedTime: lastModified(article.updatedAt, article.corrections).toISOString(),
       authors: [((article.author && getAuthor(article.author)) || getPrimaryAuthor()).name],
       tags: [article.sector, article.company, 'Indian startups', 'financial analysis'],
       images: [{ url: ogImageUrl, width: 1200, height: 630, alt: article.title }],
@@ -109,6 +111,8 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
   const ogImage = `${SITE_URL}/og?title=${encodeURIComponent(article.title)}&company=${encodeURIComponent(article.company)}&sector=${encodeURIComponent(article.sector)}`
   const sectorName = primarySector(article.sector)
   const isoDate = parseUpdatedAt(article.updatedAt).toISOString()
+  const modifiedIso = lastModified(article.updatedAt, article.corrections).toISOString()
+  const latestCorrection = sortedCorrections(article.corrections)[0]
 
   // Auto-generated "More from this sector" — 4 most-recent articles in same sector, excluding this one
   const relatedArticles = getArticlesBySector(sectorName)
@@ -132,7 +136,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
     },
     publisher: { '@id': `${SITE_URL}/#organization` },
     datePublished: isoDate,
-    dateModified: isoDate,
+    dateModified: modifiedIso,
     url: canonical,
     mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
     about: { '@type': 'Organization', name: article.company },
@@ -188,7 +192,13 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
           <li className="hidden sm:inline" aria-hidden="true"><span>/</span></li>
           <li className="hidden sm:inline">Source: {article.dataSource}</li>
           <li className="ml-auto shrink-0">
-            Updated: <time dateTime={isoDate}>{formatDisplayDate(article.updatedAt)}</time>
+            {latestCorrection ? (
+              <a href="#corrections" className="hover:text-black underline-offset-4 hover:underline">
+                Corrected: <time dateTime={modifiedIso}>{latestCorrection[0]}</time>
+              </a>
+            ) : (
+              <>Updated: <time dateTime={isoDate}>{formatDisplayDate(article.updatedAt)}</time></>
+            )}
           </li>
         </ol>
       </nav>
@@ -259,6 +269,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
             options={{ blockJS: false, mdxOptions: { remarkPlugins: [remarkGfm], rehypePlugins: [rehypeSlug] } }}
           />
         </div>
+        <CorrectionsNote corrections={article.corrections} />
         <div className="not-prose flex flex-wrap items-center gap-x-6 gap-y-2 pt-6 mt-12 border-t border-gray-200">
           <span className="font-sans text-sm font-semibold text-black">Share this teardown</span>
           <a

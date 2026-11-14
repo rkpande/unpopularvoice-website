@@ -78,6 +78,8 @@ const organizationLd = {
   sameAs: ['https://x.com/UnpopularV83586', 'https://www.linkedin.com/in/unpopular-voice/'],
   description: 'Financial teardowns of Indian startups based on actual public financial filings.',
   foundingDate: '2026',
+  publishingPrinciples: 'https://unpopularvoice.com/editorial-standards',
+  correctionsPolicy: 'https://unpopularvoice.com/editorial-standards#corrections',
   areaServed: 'IN',
   knowsLanguage: 'en',
 }

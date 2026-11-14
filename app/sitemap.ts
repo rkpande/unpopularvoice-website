@@ -2,6 +2,7 @@ import { getAllArticles, parseUpdatedAt } from '@/lib/articles'
 import { getAllComparisons } from '@/lib/comparisons'
 import { getAllSectors } from '@/lib/sectors'
 import { getAllAuthors } from '@/lib/authors'
+import { lastModified } from '@/lib/corrections'
 import type { MetadataRoute } from 'next'
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://unpopularvoice.com'
@@ -53,6 +54,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${SITE_URL}/methodology`,
+      lastModified: latest,
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: `${SITE_URL}/editorial-standards`,
+      lastModified: new Date('2026-11-14'),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: `${SITE_URL}/corrections`,
+      lastModified: latest,
+      changeFrequency: 'weekly',
+      priority: 0.5,
+    },
+    {
       url: `${SITE_URL}/subscribe`,
       lastModified: new Date('2026-01-01'),
       changeFrequency: 'yearly',
@@ -60,13 +79,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     ...articles.map((article) => ({
       url: `${SITE_URL}/${article.slug}`,
-      lastModified: parseUpdatedAt(article.updatedAt),
+      lastModified: lastModified(article.updatedAt, article.corrections),
       changeFrequency: 'monthly' as const,
       priority: 0.8,
     })),
     ...comparisons.map((cmp) => ({
       url: `${SITE_URL}/compare/${cmp.slug}`,
-      lastModified: parseUpdatedAt(cmp.updatedAt),
+      lastModified: lastModified(cmp.updatedAt, cmp.corrections),
       changeFrequency: 'monthly' as const,
       priority: 0.85,
     })),

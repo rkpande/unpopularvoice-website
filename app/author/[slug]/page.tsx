@@ -1,8 +1,9 @@
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { getAuthor, getAllAuthors, authorJsonLd } from '@/lib/authors'
+import { getAuthor, getAllAuthors, authorJsonLd, PRIMARY_AUTHOR_SLUG } from '@/lib/authors'
 import { getAllArticles } from '@/lib/articles'
+import { getAllComparisons } from '@/lib/comparisons'
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://unpopularvoice.com'
 
@@ -36,7 +37,15 @@ export default function AuthorPage({ params }: { params: { slug: string } }) {
   if (!author) notFound()
 
   const canonical = `${SITE_URL}/author/${author.slug}`
-  const articles = getAllArticles()
+  // Only pieces this author wrote; an article with no author field is the primary author's.
+  const byThisAuthor = (slug?: string) => (slug || PRIMARY_AUTHOR_SLUG) === author.slug
+  const articles = getAllArticles().filter((a) => byThisAuthor(a.author))
+  const pieces = [
+    ...articles.map((a) => ({ href: `/${a.slug}`, kicker: a.company, title: a.title, readTime: a.readTime })),
+    ...getAllComparisons()
+      .filter((c) => byThisAuthor(c.author))
+      .map((c) => ({ href: `/compare/${c.slug}`, kicker: `Comparison · ${c.category}`, title: c.title, readTime: c.readTime })),
+  ]
 
   const personLd = authorJsonLd(author, SITE_URL)
   const breadcrumbLd = {
@@ -93,18 +102,18 @@ export default function AuthorPage({ params }: { params: { slug: string } }) {
               Articles by {author.name.split(' ')[0]}
             </p>
             <h2 className="font-serif text-black text-2xl font-bold">
-              {articles.length} audited teardowns
+              {pieces.length} {pieces.length === 1 ? 'audited piece' : 'audited pieces'}
             </h2>
           </div>
         </div>
         <div className="divide-y divide-gray-100">
-          {articles.map((article) => (
-            <div key={article.slug} className="py-6 flex items-start justify-between gap-6 group">
+          {pieces.map((article) => (
+            <div key={article.href} className="py-6 flex items-start justify-between gap-6 group">
               <div className="min-w-0">
                 <p className="font-sans text-[10px] tracking-[0.2em] uppercase font-bold text-brand-red mb-2">
-                  {article.company}
+                  {article.kicker}
                 </p>
-                <Link href={`/${article.slug}`}>
+                <Link href={article.href}>
                   <h3 className="font-serif text-black text-lg font-bold leading-snug group-hover:text-brand-red transition-colors">
                     {article.title}
                   </h3>

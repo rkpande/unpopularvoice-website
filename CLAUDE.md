@@ -265,6 +265,24 @@ Before publishing, confirm:
 8. **Five-fix self-pass.** Title, opening, viral line, section trim, closing punch. If any flunks, fix before deploying.
 9. **`relatedArticles` slugs exist.** Verify against `content/articles/` filenames.
 10. **Deployment verification.** After `vercel --prod`, look for `readyState: READY` AND `Aliased: https://unpopularvoice.com` in the output. The JSON tail alone doesn't confirm a successful deploy. Curl-verify the live page after.
+11. **Index data exported from the database.** A new teardown is NOT counted or ranked in the Profitability Index, Jobs Index, Employer Check or home stats until its `financials` block exists. Load the filing into the database and run the export (see "Index data: database to article" below). `npm run build` prints `warn <slug>: not in the indexes yet` until this is done; treat that warning as a publish blocker for primary teardowns.
+
+## Index data: database to article
+
+Every index page reads ONLY the `financials:` frontmatter block. It never parses heroNumbers, prose or tables. The block is generated, never hand-typed:
+
+1. **Load the filing into the database** (PostgreSQL `unpopularvoice`, from the parent repo with the venv active):
+   - Put the company's zips in `data/<Brand>/<date>/`. AOC-4 PDFs embed the XBRL instance (sometimes UTF-16); unpack the latest year's instance into `data/<Brand>/<date>/extracted/zip_<N>/`, then `python -m dataextraction.main scan` and `python -m dataextraction.main process-one <Brand>`.
+   - If no XBRL exists locally, FileSure can serve the filed figures (unlock only when AOC-4 years are listed); load them with `python -m dataextraction.pipeline.filesure_loader <dir-of-json>`.
+   - Check the row: `select * from v_financials_canonical where entity_cin = '<CIN>' order by period_end;`
+2. **Export into the article** (frontmatter only; nothing else changes):
+   - New article: `python -m dataextraction.export_financials --add <slug>:<FY2025>:<standalone|consolidated> --write`, using the year and basis the article leads with.
+   - Refresh all articles after any database change: `python -m dataextraction.export_financials --write`.
+   - The article's `cin` must be the filing entity's CIN (or add an `ENTITY_OVERRIDE` entry in the export script for articles without one).
+3. **Reconcile before publishing.** The article's headline revenue, PAT and net worth must match the exported block. If they differ, the filing wins: fix the article, not the block.
+4. **One company, one block.** Follow-up pieces (debt registers, group maps, founder comp) get no block, so the company is counted once. Add their slug to `SECONDARY` in `dataextraction/export_financials.py`. The prebuild check fails if two articles of the same company carry a block.
+
+Definitions used by every index: profitable = `patCr > 0`; net worth = equity attributable to owners where filed; balance-sheet buffer = net worth / annual loss (a ratio at year-end, not a forecast; foreign parents' support does not count because it is not in Indian filings).
 
 ## Spectrum thinking
 
@@ -295,8 +313,13 @@ All require flat string props or tuple arrays (object literals don't parse in MD
 After every article change:
 
 ```sh
+# 1. New teardown only: put its figures in the indexes (from the parent repo, venv active)
+python -m dataextraction.export_financials --add <slug>:<FY2025>:<standalone|consolidated> --write
+# 2. Build (prebuild runs scripts/check-financials.mjs) and deploy
 npm run build && vercel --prod
 ```
+
+The build must not print `warn <slug>: not in the indexes yet` for the article you are publishing.
 
 Then update `public/llms.txt` with the new entry (slug + title).
 

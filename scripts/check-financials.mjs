@@ -11,6 +11,7 @@ const DIR = path.join(process.cwd(), 'content/articles')
 const errors = []
 const warnings = []
 const byCompany = new Map()
+const withoutBlock = [] // published teardowns not yet exported from the database
 
 const isNum = (v) => typeof v === 'number' && Number.isFinite(v)
 
@@ -19,7 +20,10 @@ for (const file of fs.readdirSync(DIR).filter((f) => f.endsWith('.mdx'))) {
   const { data } = matter(fs.readFileSync(path.join(DIR, file), 'utf-8'))
   if (data.published === false) continue
   const f = data.financials
-  if (!f) continue
+  if (!f) {
+    if (data.employerScore) withoutBlock.push({ slug, company: String(data.company || '').trim().toLowerCase() })
+    continue
+  }
 
   const where = `${slug}: financials`
   if (!/^FY20\d\d$/.test(f.period ?? '')) errors.push(`${where}.period must look like "FY2025" (got ${JSON.stringify(f.period)})`)
@@ -42,6 +46,15 @@ for (const file of fs.readdirSync(DIR).filter((f) => f.endsWith('.mdx'))) {
 for (const [company, slugs] of byCompany) {
   if (slugs.length > 1) {
     errors.push(`"${company}" has financials in ${slugs.length} articles (${slugs.join(', ')}). Keep it on the primary teardown only, so the company is counted once.`)
+  }
+}
+
+// A teardown whose company has no `financials` anywhere is missing from every index.
+// (Follow-up pieces about an already-counted company are expected to have none.)
+for (const { slug, company } of withoutBlock) {
+  if (!byCompany.has(company)) {
+    warnings.push(`${slug}: not in the indexes yet. Load its filing into the database, then run ` +
+      `\`python -m dataextraction.export_financials --add ${slug}:FY20XX:<standalone|consolidated> --write\` (see CLAUDE.md)`)
   }
 }
 

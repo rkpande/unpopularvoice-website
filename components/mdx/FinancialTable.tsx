@@ -4,13 +4,21 @@ type CellStyle = 'positive' | 'negative' | 'neutral' | 'bold'
 
 interface FinancialTableProps {
   headers: string[]
-  rows: (string | [string, CellStyle])[][]
+  rows: Cell[][]
   caption?: string
 }
 
-function cellStyle(cell: string | [string, CellStyle]): { value: string; style: CellStyle } {
-  if (Array.isArray(cell)) return { value: cell[0], style: cell[1] }
-  return { value: cell, style: 'neutral' }
+type Cell = string | [Cell, CellStyle]
+
+// Cells may nest, e.g. [["-₹1,645.63", "negative"], "bold"]: unwrap to the
+// string and keep the strongest meaning (negative/positive beat bold).
+function cellStyle(cell: Cell): { value: string; style: CellStyle } {
+  if (!Array.isArray(cell)) return { value: String(cell ?? ''), style: 'neutral' }
+  const inner = cellStyle(cell[0])
+  const outer = cell[1]
+  const style: CellStyle =
+    inner.style === 'negative' || inner.style === 'positive' ? inner.style : outer ?? inner.style
+  return { value: inner.value, style }
 }
 
 const styleMap: Record<CellStyle, string> = {
@@ -21,7 +29,9 @@ const styleMap: Record<CellStyle, string> = {
 }
 
 // Figures never break mid-number ("₹52.58 Cr" stays on one line).
-function isFigure(value: string): boolean {
+// Cells can arrive as numbers or elements from MDX; only plain strings are tested.
+function isFigure(value: unknown): boolean {
+  if (typeof value !== 'string') return false
   return /^[\s(~≈+\-−]*[₹$]?\s?[\d.,]+\s*(%|x|Cr|Lakh|bn|mn)?\.?$/i.test(value.trim()) ||
     /^[\s(~≈+\-−]*₹/.test(value)
 }

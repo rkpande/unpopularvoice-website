@@ -5,7 +5,9 @@ interface CenterpieceTableProps {
 
 // A figure like "₹8,809.94 Cr", "-₹111.98 Cr", "48%" or "2.5x" must never
 // break across lines; descriptive text in the same slot may wrap.
-function isFigure(value: string): boolean {
+// Cells can arrive as numbers or elements from MDX; only plain strings are tested.
+function isFigure(value: unknown): boolean {
+  if (typeof value !== 'string') return false
   return /^[\s(~≈+\-−]*[₹$]?\s?[\d.,]+\s*(%|x|Cr|Lakh|bn|mn)?\.?$/i.test(value.trim()) ||
     /^[\s(~≈+\-−]*₹/.test(value)
 }

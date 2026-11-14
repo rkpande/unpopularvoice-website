@@ -5,24 +5,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import type { ArticleMeta } from '@/lib/articles'
 import { formatDisplayDate } from '@/lib/date-utils'
-
-const labelStyle: Record<string, string> = {
-  'Strong':          'bg-green-100 text-green-700 border-green-200',
-  'Achieved':        'bg-green-100 text-green-700 border-green-200',
-  'Low':             'bg-green-100 text-green-700 border-green-200',
-  'High':            'bg-green-100 text-green-700 border-green-200',
-  'Moderate':        'bg-amber-50 text-amber-700 border-amber-200',
-  'Improving':       'bg-amber-50 text-amber-700 border-amber-200',
-  'Near Break-even': 'bg-amber-50 text-amber-700 border-amber-200',
-  'High Variance':   'bg-amber-50 text-amber-700 border-amber-200',
-  'Stretched':       'bg-orange-50 text-orange-700 border-orange-200',
-  'Weak':            'bg-orange-50 text-orange-700 border-orange-200',
-  'Limited':         'bg-orange-50 text-orange-700 border-orange-200',
-  'Critical':        'bg-red-50 text-red-700 border-red-200',
-  'Loss-Deepening':  'bg-red-50 text-red-700 border-red-200',
-  'Declining':       'bg-red-50 text-red-700 border-red-200',
-  'Uncertain':       'bg-gray-100 text-gray-500 border-gray-200',
-}
+import { toneClass, toneFor, type EmployerDimension } from '@/lib/employerTone'
 
 const verdictConfig = {
   solid:   { label: 'Solid',   bar: 'bg-green-500',  badge: 'bg-green-50 border-green-200 text-green-700'  },
@@ -38,8 +21,8 @@ const dimensions: { key: keyof NonNullable<ArticleMeta['employerScore']>; label:
   { key: 'careerUpside',      label: 'Career Upside'      },
 ]
 
-function LabelChip({ value }: { value: string }) {
-  const cls = labelStyle[value] ?? 'bg-gray-100 text-gray-500 border-gray-200'
+function LabelChip({ dimension, value }: { dimension: EmployerDimension; value: string }) {
+  const cls = toneClass[toneFor(dimension, value)]
   return (
     <span className={`border rounded-full px-2 py-0.5 font-sans text-[10px] font-bold tracking-wide uppercase ${cls}`}>
       {value}
@@ -92,7 +75,7 @@ function CompanyCard({
           {dimensions.map(({ key, label }) => (
             <div key={key} className="flex items-center justify-between gap-2">
               <span className="font-sans text-xs text-gray-500 flex-shrink-0 w-32">{label}</span>
-              <LabelChip value={es[key] as string} />
+              <LabelChip dimension={key as EmployerDimension} value={es[key] as string} />
             </div>
           ))}
         </div>

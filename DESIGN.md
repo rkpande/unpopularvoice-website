@@ -253,7 +253,7 @@ Restrained and solid.
 ### Chips
 - **Filter chips:** pill, white with Rule Gray border and Caption Ink text; the active chip inverts to black with white text.
 - **Verdict chips:** pill with a 6px colored dot and an uppercase 10px label, using the verdict triplet for its state.
-- **Label chips** (EmployerScore dimensions): pill, color by tier (green / amber / orange / red).
+- **Label chips** (EmployerScore dimensions): pill, colored by what the label means for that dimension (green / amber / orange / red), never by the word alone: "High" is green for Career Upside but orange for Funding Dependence. One source: `lib/employerTone.ts`, shared by the article scorecard, Employer Check and Compare.
 
 ### Cards / Containers
 - **Article card:** white, 8px radius, Hairline border that darkens on hover, 20px padding. Order: red company eyebrow, grey date, then a serif figure pair split by a vertical hairline (second figure toned gain/loss), serif title that turns red on hover, and a red "Read →" footer.

@@ -12,14 +12,14 @@ interface ArticleTimelineProps {
 
 const dotColor: Record<string, string> = {
   neutral: 'bg-gray-400',
-  negative: 'bg-brand-red',
+  negative: 'bg-red-600',
   positive: 'bg-green-600',
   pivot: 'bg-black',
 }
 
 const yearColor: Record<string, string> = {
   neutral: 'text-gray-500',
-  negative: 'text-brand-red',
+  negative: 'text-red-600',
   positive: 'text-green-700',
   pivot: 'text-black',
 }

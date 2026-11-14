@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { toneClass, toneFor, type EmployerDimension } from '@/lib/employerTone'
 
 interface EmployerScoreProps {
   company: string
@@ -20,34 +21,9 @@ const verdictConfig = {
   solid: { label: 'Solid financial footing', bg: 'bg-green-50', border: 'border-green-200', text: 'text-green-700', dot: 'bg-green-500' },
 }
 
-// Map label text → Tailwind classes. All classes must be in full form (no dynamic concat).
-const labelStyle: Record<string, string> = {
- // Green
- 'Strong': 'bg-green-100 text-green-700 border-green-200',
- 'Achieved': 'bg-green-100 text-green-700 border-green-200',
- 'Low': 'bg-green-100 text-green-700 border-green-200',
- 'High': 'bg-green-100 text-green-700 border-green-200',
- // Amber
- 'Moderate': 'bg-amber-50 text-amber-700 border-amber-200',
- 'Improving': 'bg-amber-50 text-amber-700 border-amber-200',
- 'Near Break-even': 'bg-amber-50 text-amber-700 border-amber-200',
- 'High Variance': 'bg-amber-50 text-amber-700 border-amber-200',
- // Orange
- 'Stretched': 'bg-orange-50 text-orange-700 border-orange-200',
- 'Weak': 'bg-orange-50 text-orange-700 border-orange-200',
- 'Limited': 'bg-orange-50 text-orange-700 border-orange-200',
- // Red
- 'Critical': 'bg-red-50 text-red-700 border-red-200',
- 'Loss-Deepening': 'bg-red-50 text-red-700 border-red-200',
- 'Declining': 'bg-red-50 text-red-700 border-red-200',
- // Gray
- 'Uncertain': 'bg-gray-100 text-gray-600 border-gray-200',
-}
-
-function LabelChip({ value }: { value: string }) {
-  const cls = labelStyle[value] ?? 'bg-gray-100 text-gray-600 border-gray-200'
+function LabelChip({ dimension, value }: { dimension: EmployerDimension; value: string }) {
   return (
- <span className={`inline-block border rounded-full px-2.5 py-0.5 font-sans text-xs font-semibold ${cls}`}>
+ <span className={`inline-block border rounded-full px-2.5 py-0.5 font-sans text-xs font-semibold ${toneClass[toneFor(dimension, value)]}`}>
  {value}
  </span>
  )
@@ -107,7 +83,7 @@ export default function EmployerScore({
  <p className="font-sans text-xs text-gray-400 mt-0.5 leading-snug">{what}</p>
  </div>
  <div className="flex-shrink-0">
- <LabelChip value={values[key]} />
+ <LabelChip dimension={key} value={values[key]} />
  </div>
  </div>
  ))}
@@ -140,7 +116,7 @@ export default function EmployerScore({
  <ul className="space-y-1.5">
  {risks.map((r, i) => (
  <li key={i} className="flex gap-2 font-sans text-xs text-gray-600">
- <span className="text-brand-red font-bold flex-shrink-0">–</span>{r}
+ <span className="text-red-600 font-bold flex-shrink-0">–</span>{r}
  </li>
  ))}
  </ul>

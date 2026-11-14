@@ -15,8 +15,8 @@ interface ChartBlockProps {
 }
 
 const colorMap: Record<string, string> = {
-  red: '#B22222',
-  green: '#16a34a',
+  red: '#DC2626', // Loss Red (DESIGN.md loss-red); brand red is identity only
+  green: '#15803D', // Gain Green
   gray: '#9ca3af',
   black: '#111111',
 }

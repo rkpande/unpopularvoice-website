@@ -12,8 +12,8 @@ interface AssumptionsProps {
 
 const statusConfig: Record<AssumptionStatus, { label: string; bg: string }> = {
   fact:      { label: 'Filed Fact',  bg: 'bg-black text-white' },
-  inference: { label: 'Inference',   bg: 'bg-yellow-500 text-white' },
-  estimate:  { label: 'Estimate',    bg: 'bg-gray-400 text-white' },
+  inference: { label: 'Inference',   bg: 'bg-amber-50 text-amber-800 ring-1 ring-inset ring-amber-300' },
+  estimate:  { label: 'Estimate',    bg: 'bg-gray-100 text-gray-700 ring-1 ring-inset ring-gray-300' },
 }
 
 export default function Assumptions({ items }: AssumptionsProps) {

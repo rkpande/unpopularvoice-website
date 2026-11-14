@@ -10,14 +10,14 @@ interface InsightBoxProps {
 
 const typeConfig: Record<InsightType, { border: string; badge: string; badgeText: string; icon: string }> = {
   flag: {
-    border: 'border-l-brand-red bg-red-50',
-    badge: 'bg-brand-red text-white',
+    border: 'border-l-red-600 bg-red-50',
+    badge: 'bg-red-600 text-white',
     badgeText: 'Red Flag',
     icon: '⚑',
   },
   warning: {
-    border: 'border-l-yellow-500 bg-yellow-50',
-    badge: 'bg-yellow-500 text-white',
+    border: 'border-l-amber-500 bg-amber-50',
+    badge: 'bg-amber-700 text-white',
     badgeText: 'Watch',
     icon: '⚠',
   },

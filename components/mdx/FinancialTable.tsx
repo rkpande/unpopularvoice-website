@@ -13,7 +13,7 @@ function cellStyle(cell: string | [string, CellStyle]): { value: string; style: 
 
 const styleMap: Record<CellStyle, string> = {
   positive: 'text-green-700 font-semibold',
-  negative: 'text-brand-red font-semibold',
+  negative: 'text-red-600 font-semibold',
   neutral: 'text-gray-700',
   bold: 'text-black font-semibold',
 }

@@ -15,14 +15,14 @@ interface RealityScoreProps {
 
 function scoreColor(score: number): string {
   if (score >= 7) return 'text-green-700'
-  if (score >= 5) return 'text-yellow-600'
-  return 'text-brand-red'
+  if (score >= 5) return 'text-amber-500'
+  return 'text-red-600'
 }
 
 function scoreBorder(score: number): string {
   if (score >= 7) return 'border-t-green-600'
-  if (score >= 5) return 'border-t-yellow-500'
-  return 'border-t-brand-red'
+  if (score >= 5) return 'border-t-amber-500'
+  return 'border-t-red-600'
 }
 
 export default function RealityScore({ company, period, dimensions, verdict }: RealityScoreProps) {
@@ -33,7 +33,7 @@ export default function RealityScore({ company, period, dimensions, verdict }: R
           Reality Check Score
         </p>
         <h3 className="font-serif text-white text-2xl font-bold">
-          {company} &mdash; {period}
+          {company}, {period}
         </h3>
         <p className="text-white/40 font-sans text-sm mt-1">
           Three dimensions. Independent analysis. No affiliation.

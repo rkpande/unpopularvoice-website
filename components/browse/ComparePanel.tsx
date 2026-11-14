@@ -4,32 +4,7 @@ import { useState, useEffect } from 'react'
 import { useSearchParams, useRouter } from 'next/navigation'
 import Link from 'next/link'
 import type { ArticleMeta } from '@/lib/articles'
-
-const labelStyle: Record<string, string> = {
-  'Strong':          'bg-green-100 text-green-700 border-green-200',
-  'Achieved':        'bg-green-100 text-green-700 border-green-200',
-  'Low':             'bg-green-100 text-green-700 border-green-200',
-  'High':            'bg-green-100 text-green-700 border-green-200',
-  'Moderate':        'bg-amber-50 text-amber-700 border-amber-200',
-  'Improving':       'bg-amber-50 text-amber-700 border-amber-200',
-  'Near Break-even': 'bg-amber-50 text-amber-700 border-amber-200',
-  'High Variance':   'bg-amber-50 text-amber-700 border-amber-200',
-  'Stretched':       'bg-orange-50 text-orange-700 border-orange-200',
-  'Weak':            'bg-orange-50 text-orange-700 border-orange-200',
-  'Limited':         'bg-orange-50 text-orange-700 border-orange-200',
-  'Critical':        'bg-red-50 text-red-700 border-red-200',
-  'Loss-Deepening':  'bg-red-50 text-red-700 border-red-200',
-  'Declining':       'bg-red-50 text-red-700 border-red-200',
-  'Uncertain':       'bg-gray-100 text-gray-500 border-gray-200',
-}
-
-const labelTier: Record<string, number> = {
-  'Strong': 5, 'Achieved': 5, 'Low': 5, 'High': 5,
-  'Moderate': 4, 'Improving': 4, 'Near Break-even': 4,
-  'High Variance': 3, 'Uncertain': 3,
-  'Stretched': 2, 'Weak': 2, 'Limited': 2,
-  'Critical': 1, 'Loss-Deepening': 1, 'Declining': 1,
-}
+import { toneClass, toneFor, toneRank, type EmployerDimension } from '@/lib/employerTone'
 
 const verdictConfig = {
   solid:   { label: 'Solid',   bar: 'bg-green-500',  badge: 'bg-green-50 border-green-200 text-green-700'  },
@@ -45,8 +20,8 @@ const dimensions: { key: keyof NonNullable<ArticleMeta['employerScore']>; label:
   { key: 'careerUpside',      label: 'Career Upside',      sub: 'Growth + payroll + ESOP signals'   },
 ]
 
-function LabelChip({ value, highlight }: { value: string; highlight?: 'better' | 'worse' | 'equal' }) {
-  const cls = labelStyle[value] ?? 'bg-gray-100 text-gray-500 border-gray-200'
+function LabelChip({ dimension, value, highlight }: { dimension: EmployerDimension; value: string; highlight?: 'better' | 'worse' | 'equal' }) {
+  const cls = toneClass[toneFor(dimension, value)]
   return (
     <span className={`border rounded-full px-2.5 py-0.5 font-sans text-[11px] font-bold tracking-wide uppercase ${cls} ${
       highlight === 'better' ? 'ring-2 ring-offset-1 ring-black/20' : ''
@@ -227,8 +202,8 @@ export default function ComparePanel({ companies }: Props) {
           {dimensions.map(({ key, label, sub }) => {
             const vA = companyA.employerScore![key] as string
             const vB = companyB.employerScore![key] as string
-            const tA = labelTier[vA] ?? 3
-            const tB = labelTier[vB] ?? 3
+            const tA = toneRank[toneFor(key as EmployerDimension, vA)]
+            const tB = toneRank[toneFor(key as EmployerDimension, vB)]
             const highlightA = tA > tB ? 'better' : tA < tB ? 'worse' : 'equal'
             const highlightB = tB > tA ? 'better' : tB < tA ? 'worse' : 'equal'
 
@@ -238,14 +213,14 @@ export default function ComparePanel({ companies }: Props) {
                 className="grid grid-cols-[1fr_1fr_1fr] border-b border-gray-100 last:border-0 divide-x divide-gray-100"
               >
                 <div className="px-5 py-3.5 flex items-center">
-                  <LabelChip value={vA} highlight={highlightA} />
+                  <LabelChip dimension={key as EmployerDimension} value={vA} highlight={highlightA} />
                 </div>
                 <div className="px-4 py-3.5 flex flex-col items-center justify-center text-center">
                   <p className="font-sans text-xs font-semibold text-black">{label}</p>
                   <p className="font-sans text-[10px] text-gray-400 mt-0.5">{sub}</p>
                 </div>
                 <div className="px-5 py-3.5 flex items-center justify-end">
-                  <LabelChip value={vB} highlight={highlightB} />
+                  <LabelChip dimension={key as EmployerDimension} value={vB} highlight={highlightB} />
                 </div>
               </div>
             )

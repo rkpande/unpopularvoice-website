@@ -7,7 +7,7 @@ import { getAllComparisons } from '@/lib/comparisons'
 import ComparePanel from '@/components/browse/ComparePanel'
 
 export const metadata: Metadata = {
-  title: 'Indian Startup Comparisons: Side by Side from Audited Filings | UnpopularVoice',
+  title: 'Indian Startup Comparisons: Side by Side from Audited Filings',
   description:
  'Editorial matchups of two Indian startups in the same category, compared on audited public filings. Plus a side-by-side picker for any pair across the index.',
   alternates: {

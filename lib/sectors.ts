@@ -26,13 +26,23 @@ export function primarySector(sector: string): string {
 // Enumerate every sector present in the published corpus with article counts.
 // Sorted by count desc, then alphabetically.
 export function getAllSectors(): SectorInfo[] {
-  const counts = new Map<string, number>()
+  // Group by slug, not by raw label: "EdTech" and "Edtech" are one sector with
+  // one URL. The most common spelling becomes the display label.
+  const bySlug = new Map<string, { count: number; labels: Map<string, number> }>()
   for (const a of getAllArticles()) {
-    const p = primarySector(a.sector)
-    counts.set(p, (counts.get(p) || 0) + 1)
+    const label = primarySector(a.sector)
+    const slug = sectorSlug(label)
+    const entry = bySlug.get(slug) || { count: 0, labels: new Map<string, number>() }
+    entry.count += 1
+    entry.labels.set(label, (entry.labels.get(label) || 0) + 1)
+    bySlug.set(slug, entry)
   }
-  return Array.from(counts.entries())
-    .map(([label, count]) => ({ slug: sectorSlug(label), label, count }))
+  return Array.from(bySlug.entries())
+    .map(([slug, { count, labels }]) => ({
+      slug,
+      label: Array.from(labels.entries()).sort((x, y) => y[1] - x[1] || x[0].localeCompare(y[0]))[0][0],
+      count,
+    }))
     .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label))
 }
 

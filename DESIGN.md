@@ -174,7 +174,7 @@ Monochrome newsprint with one masthead red, plus a strictly separated data palet
 - **Masthead Black** (`masthead-black`): the nav, footer, hero, and every dark panel (TakeawayCard, SignatureLine, EmployerScore header). Also headline text on white.
 - **Ink Panel** (`ink-panel`): a near-black used sparingly for nested surfaces on black.
 - **Newsprint White** (`newsprint-white`): the page and card ground.
-- **Warm Cream** (`warm-cream`): the light TakeawayCard ground; the only warm neutral in the system. Not yet defined in `tailwind.config.ts` (the component references `bg-cream`); add it as `cream` before relying on it.
+- **Warm Cream** (`warm-cream`): the light TakeawayCard ground; the only warm neutral in the system. Defined in `tailwind.config.ts` as `cream`.
 - **Panel Gray** (`panel-gray`): breadcrumb bar, notes rows, the left pane of a VersusBlock, the "key points" band.
 - **Hairline** (`hairline`) and **Rule Gray** (`rule-gray`): card borders, dividers, table rules. Hairline inside cards, Rule Gray around containers.
 - **Muted Ink** (`muted-ink`): metadata, figure labels, dates. **Caption Ink** (`caption-ink`): secondary UI text and inactive chips. **Body Ink** (`body-ink`): article prose.

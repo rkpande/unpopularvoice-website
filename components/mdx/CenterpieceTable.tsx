@@ -31,13 +31,10 @@ export default function CenterpieceTable({
                 <span className="font-sans text-[10px] font-bold uppercase tracking-wider text-gray-400">
                   Reported
                 </span>
-                <span className="font-sans text-[9px] text-gray-300 ml-1 normal-case tracking-normal">
-                  (Narrative)
-                </span>
               </th>
               <th className="text-left px-4 py-3 bg-black/[0.03] border-l-2 border-black/10">
                 <span className="font-sans text-[10px] font-bold uppercase tracking-wider text-black">
-                  Economic Reality
+                  What it means
                 </span>
               </th>
             </tr>
@@ -57,7 +54,7 @@ export default function CenterpieceTable({
                 <td className="px-4 py-4 font-serif text-[1.2rem] sm:text-[1.4rem] font-bold text-black leading-none">
                   {reported}
                 </td>
-                {/* Economic Reality: the answer, visually distinct column */}
+                {/* What it means: context for the reported figure, visually distinct column */}
                 <td className="px-4 py-4 font-sans text-[12px] sm:text-[13px] font-medium text-gray-800 leading-snug bg-black/[0.02] border-l-2 border-black/10">
                   {meaning}
                 </td>

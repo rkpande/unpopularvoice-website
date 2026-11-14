@@ -14,6 +14,8 @@ const config: Config = {
           red: '#B22222',
           white: '#FFFFFF',
         },
+        // Warm Cream: light TakeawayCard ground (DESIGN.md `warm-cream`)
+        cream: '#FAF6EF',
       },
       fontFamily: {
         serif: ['var(--font-playfair)', 'Georgia', 'serif'],

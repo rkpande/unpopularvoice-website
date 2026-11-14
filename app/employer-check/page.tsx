@@ -5,7 +5,7 @@ import { onePerCompany } from '@/lib/financials'
 import EmployerSearchGrid from '@/components/browse/EmployerSearchGrid'
 
 export const metadata: Metadata = {
-  title: 'Startup Employer Health Check, Before You Join | UnpopularVoice',
+  title: 'Startup Employer Health Check, Before You Join',
   description:
  'Read the public filing before signing the offer. Growth momentum, stability, profitability, funding dependence, career upside, scored from audited data only.',
   alternates: {

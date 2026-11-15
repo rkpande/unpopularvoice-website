@@ -11,6 +11,7 @@ import { getAllArticles, getArticleBySlug, formatDisplayDate, parseUpdatedAt, be
 import { sectorSlug, primarySector, getArticlesBySector } from '@/lib/sectors'
 import { getAuthor, getPrimaryAuthor } from '@/lib/authors'
 import { lastModified, sortedCorrections } from '@/lib/corrections'
+import { signTone, toneText } from '@/lib/tone'
 import CorrectionsNote from '@/components/CorrectionsNote'
 import Link from 'next/link'
 import FinancialTable from '@/components/mdx/FinancialTable'
@@ -225,7 +226,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
                   i === 0 && article.heroNumbers!.length % 2 === 1 ? 'col-span-2 md:col-span-1' : ''
                 }`}
               >
-                <div className="font-serif text-[1.75rem] md:text-[2rem] font-bold text-black leading-none mb-2 break-words">
+                <div className={`font-serif text-[1.75rem] md:text-[2rem] font-bold leading-none mb-2 break-words ${toneText[signTone(value, label)]}`}>
                   {value}
                 </div>
                 <div className="font-sans text-xs text-gray-500 uppercase tracking-wider leading-snug">

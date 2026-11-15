@@ -1,3 +1,6 @@
+import { signTone, toneText } from '@/lib/tone'
+
+// Kept so existing articles still parse; colour now comes from the value's sign.
 type MetricType = 'neutral' | 'negative' | 'positive' | 'warning'
 
 interface Metric {
@@ -13,12 +16,6 @@ interface KeyMetricsProps {
   title?: string
 }
 
-const typeColor: Record<MetricType, string> = {
-  neutral:  'text-black',
-  negative: 'text-red-600',
-  positive: 'text-green-700',
-  warning:  'text-amber-700',
-}
 
 // The last tile stretches across whatever its row leaves empty, so an odd count
 // never ends on a lone tile beside blank cells (2 columns on phones, 3 from md).
@@ -46,7 +43,7 @@ export default function KeyMetrics({ metrics, period, title = 'Key Metrics' }: K
             <p className="font-sans text-[10px] text-gray-500 uppercase tracking-wider mb-1.5 leading-none">
               {m.label}
             </p>
-            <p className={`font-serif text-[1.6rem] font-bold leading-none ${typeColor[m.type ?? 'neutral']}`}>
+            <p className={`font-serif text-[1.6rem] font-bold leading-none ${toneText[signTone(m.value, m.label)]}`}>
               {m.value}
             </p>
             {m.sub && (

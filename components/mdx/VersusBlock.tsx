@@ -1,3 +1,5 @@
+import { signTone } from '@/lib/tone'
+
 type Tone = 'good' | 'bad' | 'neutral'
 type Direction = 'up' | 'down' | 'flat'
 
@@ -28,12 +30,6 @@ const DIRECTION_GLYPH: Record<Direction, string> = {
   flat: '-',
 }
 
-const DIRECTION_TONE_CLS: Record<Tone, string> = {
-  good: 'text-green-700',
-  bad: 'text-red-600',
-  neutral: 'text-gray-500',
-}
-
 function Pane({
   position,
   label,
@@ -41,7 +37,9 @@ function Pane({
   sub,
   direction,
   tone,
+  metric = '',
 }: {
+  metric?: string
   position: 'left' | 'right'
   label: string
   value: string
@@ -49,7 +47,10 @@ function Pane({
   direction?: Direction
   tone?: Tone
 }) {
-  const t: Tone = tone ?? 'neutral'
+  // The figure's colour follows its sign; the authored tone is no longer used.
+  void tone
+  const st = signTone(value, `${metric} ${label}`)
+  const t: Tone = st === 'loss' ? 'bad' : st === 'gain' ? 'good' : 'neutral'
   return (
     <div
       className={`p-5 sm:p-6 ${position === 'left' ? 'border-b sm:border-b-0 sm:border-r border-gray-200 bg-gray-50/40' : 'bg-white'}`}
@@ -59,7 +60,7 @@ function Pane({
       </p>
       <div className="flex items-baseline gap-2">
         {direction && (
-          <span className={`text-base ${DIRECTION_TONE_CLS[t]} leading-none`}>
+          <span className="text-base text-gray-700 leading-none">
             {DIRECTION_GLYPH[direction]}
           </span>
         )}
@@ -83,6 +84,7 @@ export default function VersusBlock(props: VersusBlockProps) {
       <div className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm">
         <div className="grid grid-cols-1 sm:grid-cols-2">
           <Pane
+            metric={props.metric}
             position="left"
             label={props.aLabel}
             value={props.aValue}
@@ -91,6 +93,7 @@ export default function VersusBlock(props: VersusBlockProps) {
             tone={props.aTone}
           />
           <Pane
+            metric={props.metric}
             position="right"
             label={props.bLabel}
             value={props.bValue}

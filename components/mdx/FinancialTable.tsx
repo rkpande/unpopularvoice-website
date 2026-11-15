@@ -1,4 +1,5 @@
 import type React from 'react'
+import { signTone } from '@/lib/tone'
 
 type CellStyle = 'positive' | 'negative' | 'neutral' | 'bold'
 
@@ -21,11 +22,14 @@ function cellStyle(cell: Cell): { value: string; style: CellStyle } {
   return { value: inner.value, style }
 }
 
-const styleMap: Record<CellStyle, string> = {
-  positive: 'text-green-700 font-semibold',
-  negative: 'text-red-600 font-semibold',
-  neutral: 'text-gray-700',
-  bold: 'text-black font-semibold',
+// Colour follows the figure's sign (lib/tone.ts), read with its row and column
+// labels; the authored style only decides weight.
+function cellClass(value: string, style: CellStyle, context: string): string {
+  const tone = signTone(value, context)
+  const weight = style === 'neutral' ? '' : 'font-semibold'
+  if (tone === 'loss') return `text-red-600 font-semibold`
+  if (tone === 'gain') return `text-green-700 font-semibold`
+  return style === 'neutral' ? 'text-gray-700' : `text-black ${weight}`
 }
 
 // Figures never break mid-number ("₹52.58 Cr" stays on one line).
@@ -91,7 +95,7 @@ export default function FinancialTable({ headers, rows, caption }: FinancialTabl
                   ) : (
                     <td
                       key={ci}
-                      className={`px-4 sm:px-5 py-3 ${styleMap[style]} ${isFigure(value) ? 'whitespace-nowrap' : ''}`}
+                      className={`px-4 sm:px-5 py-3 ${cellClass(value, style, `${cellStyle(row[0]).value} ${headers[ci] ?? ''}`)} ${isFigure(value) ? 'whitespace-nowrap' : ''}`}
                     >
                       {value}
                     </td>

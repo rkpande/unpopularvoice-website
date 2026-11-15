@@ -1,7 +1,11 @@
+import { signTone, toneFill } from '@/lib/tone'
+
 interface DataPoint {
   label: string
   value: number
-  color?: 'red' | 'green' | 'gray' | 'black'
+  // Emphasis only: 'gray' de-emphasises a comparison bar. Red and green are
+  // never chosen here; they follow the value's sign (lib/tone.ts).
+  color?: 'red' | 'green' | 'gray' | 'black' | 'orange'
 }
 
 interface ChartBlockProps {
@@ -14,11 +18,10 @@ interface ChartBlockProps {
   alt?: string
 }
 
-const colorMap: Record<string, string> = {
-  red: '#DC2626', // Loss Red (DESIGN.md loss-red); brand red is identity only
-  green: '#15803D', // Gain Green
-  gray: '#9ca3af',
-  black: '#111111',
+function barFill(d: DataPoint): string {
+  const tone = signTone(d.value, d.label)
+  if (tone !== 'neutral') return toneFill[tone]
+  return d.color === 'gray' ? '#9ca3af' : toneFill.neutral
 }
 
 export default function ChartBlock({
@@ -62,13 +65,17 @@ export default function ChartBlock({
       <div aria-hidden="true" className="flex items-stretch gap-3 mt-4">
         {data.map((d, i) => {
           const h = Math.max(3, (Math.abs(d.value) / span) * chartHeight)
-          const color = colorMap[d.color ?? 'black']
+          const color = barFill(d)
           const bar = (
             <div className="w-full rounded-sm" style={{ height: h, backgroundColor: color, minWidth: 12, maxWidth: barWidth }} />
           )
           return (
             <div key={i} className="flex flex-col items-center flex-1 min-w-0">
-              <span className="font-sans text-xs font-semibold text-gray-700 mb-1 whitespace-nowrap">{fmt(d.value)}</span>
+              <span className="font-sans text-xs font-semibold text-gray-700 mb-1 text-center leading-tight max-w-full">
+                {/* The signed figure never splits; a line may break only before the unit. */}
+                <span className="whitespace-nowrap">{`${d.value < 0 ? '−' : ''}${unit}${Math.abs(d.value).toLocaleString('en-IN')}`}</span>
+                {unitSuffix && <> <span className="whitespace-nowrap">{unitSuffix.trim()}</span></>}
+              </span>
               {maxPos > 0 && (
                 <div className="w-full flex flex-col items-center justify-end" style={{ height: upH }}>
                   {d.value >= 0 && bar}

@@ -32,7 +32,7 @@ export default function ContradictionCards({ articles }: { articles: ArticleMeta
               <div>
                 <p
                   className={`font-sans text-[10px] tracking-[0.25em] uppercase font-semibold mb-4 ${
-                    i === 0 ? 'text-white/60' : 'text-gray-400'
+                    i === 0 ? 'text-white/60' : 'text-gray-500'
                   }`}
                 >
                   {a.company}
@@ -50,7 +50,7 @@ export default function ContradictionCards({ articles }: { articles: ArticleMeta
                   i === 0 ? 'text-white/80' : 'text-brand-red'
                 } group-hover:underline`}
               >
-                Read the breakdown →
+                Read the breakdown <span aria-hidden="true">→</span>
               </p>
             </Link>
           ))}

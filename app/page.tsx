@@ -74,7 +74,7 @@ export default function HomePage() {
   href="/compare"
   className="font-sans font-semibold text-brand-red text-sm hover:underline hidden sm:block"
  >
-  All matchups →
+  All matchups <span aria-hidden="true">→</span>
  </Link>
  </div>
  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -84,7 +84,7 @@ export default function HomePage() {
   href={`/compare/${c.slug}`}
   className="group block bg-white border border-gray-200 rounded-xl p-5 hover:border-black hover:shadow-md transition-all"
  >
- <p className="font-sans text-[10px] tracking-[0.2em] uppercase font-semibold text-gray-400 mb-3">
+ <p className="font-sans text-[10px] tracking-[0.2em] uppercase font-semibold text-gray-500 mb-3">
  {c.category}
  </p>
  <p className="font-serif text-black text-xl font-bold leading-snug mb-3 group-hover:text-brand-red transition-colors">
@@ -94,14 +94,14 @@ export default function HomePage() {
  {c.thesis}
  </p>
  <p className="font-sans text-brand-red text-xs font-semibold mt-4 group-hover:underline">
-  Read the comparison →
+  Read the comparison <span aria-hidden="true">→</span>
  </p>
  </Link>
  ))}
  </div>
  <div className="mt-6 sm:hidden">
  <Link href="/compare" className="font-sans font-semibold text-brand-red text-sm hover:underline">
-  All matchups →
+  All matchups <span aria-hidden="true">→</span>
  </Link>
  </div>
  </div>
@@ -125,7 +125,7 @@ export default function HomePage() {
  ].map(({ value, label }) => (
  <div key={label} className="border-l-2 border-brand-red pl-4">
  <p className="font-serif text-black text-3xl sm:text-4xl font-bold">{value}</p>
- <p className="font-sans text-gray-400 text-xs uppercase tracking-widest mt-1">{label}</p>
+ <p className="font-sans text-gray-500 text-xs uppercase tracking-widest mt-1">{label}</p>
  </div>
  ))}
  </div>

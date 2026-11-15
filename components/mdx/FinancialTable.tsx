@@ -54,7 +54,7 @@ const scrollShadows: React.CSSProperties = {
 export default function FinancialTable({ headers, rows, caption }: FinancialTableProps) {
   return (
     <div className="my-8 rounded-lg border border-gray-100 shadow-sm not-prose overflow-hidden">
-      <div className="overflow-x-auto" style={scrollShadows}>
+      <div className="overflow-x-auto" style={scrollShadows} tabIndex={0} role="region" aria-label={caption || 'Financial table'}>
         <table className="w-full text-sm font-sans">
           {caption && <caption className="sr-only">{caption}</caption>}
           <thead>

@@ -28,7 +28,7 @@ export default function StatsTicker({ articles }: { articles: ArticleMeta[] }) {
             <span className="font-sans text-white/75 text-[11px] uppercase tracking-wider">
               {item.label}
             </span>
-            <span className="text-white/30 mx-3 text-xs">·</span>
+            <span aria-hidden="true" className="text-white/30 mx-3 text-xs">·</span>
           </span>
         ))}
       </div>

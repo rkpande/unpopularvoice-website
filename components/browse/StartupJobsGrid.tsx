@@ -25,9 +25,9 @@ function bufferLabel(article: ArticleMeta): Buffer {
   if (months >= 36)
     return { text: `${months}mo`, sub: 'net worth / annual loss', color: 'text-green-700', profitable: false, thin: false, months, known: true }
   if (months >= 18)
-    return { text: `${months}mo`, sub: 'net worth / annual loss', color: 'text-amber-600', profitable: false, thin: false, months, known: true }
+    return { text: `${months}mo`, sub: 'net worth / annual loss', color: 'text-amber-700', profitable: false, thin: false, months, known: true }
   if (months >= THIN_BUFFER_MONTHS)
-    return { text: `${months}mo`, sub: 'net worth / annual loss', color: 'text-orange-600', profitable: false, thin: false, months, known: true }
+    return { text: `${months}mo`, sub: 'net worth / annual loss', color: 'text-orange-700', profitable: false, thin: false, months, known: true }
   return { text: `${months}mo`, sub: 'thin buffer, read the filing', color: 'text-red-600', profitable: false, thin: true, months, known: true }
 }
 
@@ -45,7 +45,7 @@ function profitabilityTrend(profitability: string | undefined): { text: string; 
   if (p.includes('achieved') || p.includes('profitable') || p.includes('thin'))
     return { text: 'Profitable', color: 'text-green-700' }
   if (p.includes('narrowing') || p.includes('improving') || p.includes('near'))
-    return { text: 'Improving', color: 'text-amber-600' }
+    return { text: 'Improving', color: 'text-amber-700' }
   if (p.includes('deepening') || p.includes('weak'))
     return { text: 'Worsening', color: 'text-red-600' }
   return { text: 'Stable', color: 'text-gray-500' }
@@ -54,9 +54,9 @@ function profitabilityTrend(profitability: string | undefined): { text: string; 
 // ── Employee cost growth ─────────────────────────────────────────────────────
 
 function empGrowthLabel(pct: number | null | undefined): { text: string; color: string } {
-  if (pct === null || pct === undefined) return { text: 'N/A', color: 'text-gray-400' }
+  if (pct === null || pct === undefined) return { text: 'N/A', color: 'text-gray-500' }
   const sign = pct >= 0 ? '+' : ''
-  const color = pct >= 20 ? 'text-green-700' : pct >= 0 ? 'text-amber-600' : 'text-red-600'
+  const color = pct >= 20 ? 'text-green-700' : pct >= 0 ? 'text-amber-700' : 'text-red-600'
   return { text: `${sign}${pct.toFixed(1)}%`, color }
 }
 
@@ -128,38 +128,38 @@ function JobsCard({ article }: { article: ArticleMeta }) {
             </span>
           )}
         </div>
-        <p className="font-sans text-[11px] text-gray-400 mb-4">
+        <p className="font-sans text-[11px] text-gray-500 mb-4">
           {article.sector} · {formatDisplayDate(article.updatedAt)}
         </p>
 
         {/* Three metrics */}
         <div className="grid grid-cols-3 gap-2 mb-4">
           <div className="bg-gray-50 rounded-lg p-2.5">
-            <p className="font-sans text-[9px] text-gray-400 uppercase tracking-widest mb-1">Buffer</p>
+            <p className="font-sans text-[9px] text-gray-500 uppercase tracking-widest mb-1">Buffer</p>
             <p className={`font-serif text-base font-bold leading-tight ${runway.color}`}>{runway.text}</p>
-            <p className="font-sans text-[9px] text-gray-400 mt-0.5 leading-tight">{runway.sub}</p>
+            <p className="font-sans text-[9px] text-gray-500 mt-0.5 leading-tight">{runway.sub}</p>
           </div>
           <div className="bg-gray-50 rounded-lg p-2.5">
-            <p className="font-sans text-[9px] text-gray-400 uppercase tracking-widest mb-1">Profitability</p>
-            <p className={`font-serif text-base font-bold leading-tight ${trend?.color ?? 'text-gray-400'}`}>
+            <p className="font-sans text-[9px] text-gray-500 uppercase tracking-widest mb-1">Profitability</p>
+            <p className={`font-serif text-base font-bold leading-tight ${trend?.color ?? 'text-gray-500'}`}>
               {trend?.text ?? 'N/A'}
             </p>
-            <p className="font-sans text-[9px] text-gray-400 mt-0.5 leading-tight">trajectory</p>
+            <p className="font-sans text-[9px] text-gray-500 mt-0.5 leading-tight">trajectory</p>
           </div>
           <div className="bg-gray-50 rounded-lg p-2.5">
-            <p className="font-sans text-[9px] text-gray-400 uppercase tracking-widest mb-1">Payroll</p>
+            <p className="font-sans text-[9px] text-gray-500 uppercase tracking-widest mb-1">Payroll</p>
             <p className={`font-serif text-base font-bold leading-tight ${growth.color}`}>{growth.text}</p>
-            <p className="font-sans text-[9px] text-gray-400 mt-0.5 leading-tight">cost YoY</p>
+            <p className="font-sans text-[9px] text-gray-500 mt-0.5 leading-tight">cost YoY</p>
           </div>
         </div>
 
         {/* Career upside */}
         {upside && (
           <div className="flex items-center justify-between gap-2 border-t border-gray-100 pt-3 mb-3">
-            <span className="font-sans text-xs text-gray-400">Career upside</span>
+            <span className="font-sans text-xs text-gray-500">Career upside</span>
             <div className="text-right">
               <span className="font-sans text-xs font-semibold text-gray-700">{upside}</span>
-              {upsideSub && <p className="font-sans text-[10px] text-gray-400">{upsideSub}</p>}
+              {upsideSub && <p className="font-sans text-[10px] text-gray-500">{upsideSub}</p>}
             </div>
           </div>
         )}
@@ -168,7 +168,7 @@ function JobsCard({ article }: { article: ArticleMeta }) {
           href={`/${article.slug}#employer`}
           className="block w-full text-center font-sans text-brand-red text-xs font-semibold hover:underline border-t border-gray-100 pt-3"
         >
-          Full filing + employer breakdown →
+          Full filing + employer breakdown <span aria-hidden="true">→</span>
         </Link>
       </div>
     </div>
@@ -226,7 +226,7 @@ export default function StartupJobsGrid({ companies }: Props) {
       {/* Search */}
       <div className="relative mb-5">
         <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none">
-          <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
           </svg>
         </div>
@@ -235,10 +235,10 @@ export default function StartupJobsGrid({ companies }: Props) {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Check your offer before accepting it. Search a company..."
-          className="w-full pl-11 pr-4 py-4 font-sans text-base text-black placeholder-gray-400 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-black transition-colors bg-white"
+          className="w-full pl-11 pr-4 py-4 font-sans text-base text-black placeholder-gray-500 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-black transition-colors bg-white"
         />
         {query && (
-          <button onClick={() => setQuery('')} className="absolute inset-y-0 right-4 flex items-center text-gray-400 hover:text-gray-600">✕</button>
+          <button onClick={() => setQuery('')} className="absolute inset-y-0 right-4 flex items-center text-gray-500 hover:text-gray-600">✕</button>
         )}
       </div>
 
@@ -251,7 +251,7 @@ export default function StartupJobsGrid({ companies }: Props) {
           </FilterChip>
         ))}
         <div className="w-px h-4 bg-gray-200 mx-0.5" />
-        <span className="font-sans text-xs text-gray-400">Sort:</span>
+        <span className="font-sans text-xs text-gray-500">Sort:</span>
         {([
           ['recent',      'Recent'],
           ['runway-desc', 'Safest first'],
@@ -280,7 +280,7 @@ export default function StartupJobsGrid({ companies }: Props) {
               <div className="flex items-center gap-3 mb-2">
                 <span className="w-3 h-3 rounded-full bg-red-600 flex-shrink-0" />
                 <h2 className="font-serif text-black text-2xl font-bold">Thin Buffer</h2>
-                <span className="font-sans text-gray-400 text-sm hidden sm:block">net worth covers under 12 months of the latest loss</span>
+                <span className="font-sans text-gray-500 text-sm hidden sm:block">net worth covers under 12 months of the latest loss</span>
               </div>
               <p className="font-sans text-xs text-red-600 mb-5 ml-6">
                 A ratio at the last year-end, not a forecast. Ask about funding raised since, and read the article for parent support.
@@ -293,9 +293,9 @@ export default function StartupJobsGrid({ companies }: Props) {
               <div className="flex items-center gap-3 mb-2">
                 <span className="w-3 h-3 rounded-full bg-amber-400 flex-shrink-0" />
                 <h2 className="font-serif text-black text-2xl font-bold">Loss-Making, Buffer in Place</h2>
-                <span className="font-sans text-gray-400 text-sm hidden sm:block">net worth covers 12 to 36 months of losses, or the ratio is not stated</span>
+                <span className="font-sans text-gray-500 text-sm hidden sm:block">net worth covers 12 to 36 months of losses, or the ratio is not stated</span>
               </div>
-              <p className="font-sans text-xs text-amber-600 mb-5 ml-6">
+              <p className="font-sans text-xs text-amber-700 mb-5 ml-6">
                 Still reporting a loss after tax. Reaching profit or raising capital decides the next few years.
               </p>
               {renderGrid(moderate)}
@@ -306,7 +306,7 @@ export default function StartupJobsGrid({ companies }: Props) {
               <div className="flex items-center gap-3 mb-2">
                 <span className="w-3 h-3 rounded-full bg-green-500 flex-shrink-0" />
                 <h2 className="font-serif text-black text-2xl font-bold">Profitable or Well Buffered</h2>
-                <span className="font-sans text-gray-400 text-sm hidden sm:block">profit after tax, or net worth covering 3+ years of losses</span>
+                <span className="font-sans text-gray-500 text-sm hidden sm:block">profit after tax, or net worth covering 3+ years of losses</span>
               </div>
               <p className="font-sans text-xs text-green-700 mb-5 ml-6">
                 The latest audited filing shows no near-term balance-sheet constraint.

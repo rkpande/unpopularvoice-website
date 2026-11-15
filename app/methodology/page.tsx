@@ -15,7 +15,7 @@ function ScaleRow({ range, label, description }: { range: string; label: string;
   range.startsWith('9') || range.startsWith('8')
  ? 'text-green-700'
  : range.startsWith('7') || range.startsWith('6') || range.startsWith('5')
- ? 'text-yellow-600'
+ ? 'text-yellow-700'
  : 'text-brand-red'
 
   return (
@@ -204,13 +204,13 @@ export default function MethodologyPage() {
  <div>
  <p className="font-sans text-brand-red text-xs font-bold tracking-widest uppercase mb-1">Worked Example</p>
  <h3 className="font-serif text-white text-2xl font-bold">Jar (Changejar Technologies), FY2025</h3>
- <p className="font-sans text-white/40 text-sm mt-1">Source: Audited annual filings</p>
+ <p className="font-sans text-white/60 text-sm mt-1">Source: Audited annual filings</p>
  </div>
  <Link
   href="/jar-fy2025"
   className="font-sans text-brand-red text-xs font-semibold hover:underline flex-shrink-0 mt-1"
  >
-  Full article →
+  Full article <span aria-hidden="true">→</span>
  </Link>
  </div>
  </div>
@@ -254,9 +254,9 @@ export default function MethodologyPage() {
  },
  ].map(({ dim, score, color, points }) => (
  <div key={dim} className="bg-[#0d0d0d] p-6">
- <p className="font-sans text-white/40 text-[10px] uppercase tracking-widest mb-1">{dim}</p>
+ <p className="font-sans text-white/60 text-[10px] uppercase tracking-widest mb-1">{dim}</p>
  <p className={`font-serif font-bold text-5xl mb-4 ${color}`}>
- {score}<span className="text-white/20 text-2xl">/10</span>
+ {score}<span className="text-white/60 text-2xl">/10</span>
  </p>
  <ul className="space-y-2">
  {points.map((p, i) => (
@@ -288,7 +288,7 @@ export default function MethodologyPage() {
  <div className="space-y-6 mb-12">
 
  {/* Dimension table */}
- <div className="overflow-x-auto">
+ <div className="overflow-x-auto" tabIndex={0} role="region" aria-label="Employer Check dimensions">
  <table className="w-full text-sm border-collapse">
  <thead>
  <tr className="bg-black text-white">
@@ -389,7 +389,7 @@ export default function MethodologyPage() {
  <span className={`inline-block border rounded-full px-2 py-0.5 font-sans text-[10px] font-bold tracking-wide uppercase mb-2 ${color}`}>
  {label.split(' / ')[0]}
  </span>
- <p className="font-sans text-[10px] text-gray-400 font-semibold uppercase tracking-wide mb-1.5">{label}</p>
+ <p className="font-sans text-[10px] text-gray-500 font-semibold uppercase tracking-wide mb-1.5">{label}</p>
  <p className="font-sans text-xs text-gray-500 leading-relaxed">{meaning}</p>
  </div>
  ))}
@@ -489,7 +489,7 @@ export default function MethodologyPage() {
   href="/articles"
   className="flex-shrink-0 bg-brand-red text-white font-sans font-semibold text-sm px-6 py-3 rounded hover:bg-red-800 transition-colors"
  >
-  Browse all teardowns →
+  Browse all teardowns <span aria-hidden="true">→</span>
  </Link>
  </section>
 

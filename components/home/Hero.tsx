@@ -22,7 +22,7 @@ export default function Hero({ topArticles }: HeroProps) {
   href="#browse"
   className="inline-block bg-brand-red text-white font-sans font-semibold text-base px-6 py-3 rounded hover:bg-red-800 transition-colors"
  >
-  Read Latest →
+  Read Latest <span aria-hidden="true">→</span>
  </Link>
  </div>
 
@@ -45,7 +45,7 @@ export default function Hero({ topArticles }: HeroProps) {
  <p className="font-serif text-white text-2xl font-bold leading-none">
  {a.heroNumbers[0].value}
  </p>
- <p className="font-sans text-white/35 text-[9px] mt-1 uppercase tracking-wider leading-tight">
+ <p className="font-sans text-white/60 text-[9px] mt-1 uppercase tracking-wider leading-tight">
  {a.heroNumbers[0].label}
  </p>
  </div>
@@ -56,7 +56,7 @@ export default function Hero({ topArticles }: HeroProps) {
  }`}>
  {a.heroNumbers[1].value}
  </p>
- <p className="font-sans text-white/35 text-[9px] mt-1 uppercase tracking-wider leading-tight">
+ <p className="font-sans text-white/60 text-[9px] mt-1 uppercase tracking-wider leading-tight">
  {a.heroNumbers[1].label}
  </p>
  </div>
@@ -69,7 +69,7 @@ export default function Hero({ topArticles }: HeroProps) {
   a.realityScore.sustainability +
   a.realityScore.profitabilityPath) / 3
  )}
- <span className="text-white/20 text-xl">/10</span>
+ <span className="text-white/60 text-xl">/10</span>
  </p>
  )}
  </Link>

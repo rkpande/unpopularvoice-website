@@ -174,7 +174,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
       )}
       {/* Visible breadcrumb — mirrors BreadcrumbList JSON-LD for Google rich-result compliance */}
       <nav aria-label="Breadcrumb" className="bg-gray-50 border-b border-gray-200 border-l-4 border-l-brand-red">
-        <ol className="max-w-7xl mx-auto px-4 sm:px-8 py-3 flex flex-wrap items-center gap-x-2 gap-y-1 font-sans text-xs text-gray-400">
+        <ol className="max-w-7xl mx-auto px-4 sm:px-8 py-3 flex flex-wrap items-center gap-x-2 gap-y-1 font-sans text-xs text-gray-500">
           <li>
             <a href="/" className="hover:text-black transition-colors">Home</a>
           </li>
@@ -235,7 +235,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
         )}
 
         {article.tldr && article.tldr.length > 0 && (
-          <ul className="border-t border-gray-100 pt-6 pb-7 space-y-3 list-disc pl-5 marker:text-gray-400 font-sans text-[1.0625rem] leading-relaxed text-gray-800">
+          <ul className="border-t border-gray-100 pt-6 pb-7 space-y-3 list-disc pl-5 marker:text-gray-500 font-sans text-[1.0625rem] leading-relaxed text-gray-800">
             {article.tldr.map((point, i) => (
               <li key={i}>{point}</li>
             ))}
@@ -331,7 +331,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
                 href={`/sector/${sectorSlug(sectorName)}`}
                 className="font-sans text-sm font-semibold text-brand-red hover:underline shrink-0"
               >
-                All {sectorName} articles →
+                All {sectorName} articles <span aria-hidden="true">→</span>
               </Link>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -347,7 +347,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
                   <p className="font-serif text-black text-base font-bold leading-snug mb-2 group-hover:text-brand-red transition-colors line-clamp-3">
                     {rel.title}
                   </p>
-                  <p className="font-sans text-xs text-gray-400">{rel.readTime} read</p>
+                  <p className="font-sans text-xs text-gray-500">{rel.readTime} read</p>
                 </Link>
               ))}
             </div>

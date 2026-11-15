@@ -58,14 +58,14 @@ export default function IndexesPanel() {
               <p className="font-serif text-2xl text-black font-bold leading-snug mb-2 group-hover:text-brand-red transition-colors">
                 {c.question}
               </p>
-              <p className="font-sans text-[11px] tracking-[0.2em] uppercase font-semibold text-gray-400 mb-4">
+              <p className="font-sans text-[11px] tracking-[0.2em] uppercase font-semibold text-gray-500 mb-4">
                 {c.product}
               </p>
               <p className="font-sans text-gray-600 text-[14px] leading-relaxed">
                 {c.description}
               </p>
               <p className="font-sans text-brand-red text-[12px] font-semibold mt-5 group-hover:underline">
-                {c.cta} →
+                {c.cta} <span aria-hidden="true">→</span>
               </p>
             </Link>
           ))}

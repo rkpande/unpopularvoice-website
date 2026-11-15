@@ -15,7 +15,7 @@ interface RealityScoreProps {
 
 function scoreColor(score: number): string {
   if (score >= 7) return 'text-green-700'
-  if (score >= 5) return 'text-amber-500'
+  if (score >= 5) return 'text-amber-700'
   return 'text-red-600'
 }
 
@@ -35,7 +35,7 @@ export default function RealityScore({ company, period, dimensions, verdict }: R
         <h3 className="font-serif text-white text-2xl font-bold">
           {company}, {period}
         </h3>
-        <p className="text-white/40 font-sans text-sm mt-1">
+        <p className="text-white/60 font-sans text-sm mt-1">
           Three dimensions. Independent analysis. No affiliation.
         </p>
       </div>
@@ -48,7 +48,7 @@ export default function RealityScore({ company, period, dimensions, verdict }: R
             </p>
             <p className={`font-serif text-5xl font-bold ${scoreColor(dim.score)}`}>
               {dim.score}
-              <span className="text-white/20 text-2xl">/10</span>
+              <span className="text-white/60 text-2xl">/10</span>
             </p>
             <p className="text-white/50 font-sans text-xs mt-3 leading-relaxed">{dim.summary}</p>
           </div>
@@ -62,9 +62,9 @@ export default function RealityScore({ company, period, dimensions, verdict }: R
         </p>
         <Link
           href="/methodology"
-          className="inline-block mt-3 font-sans text-white/30 text-xs hover:text-white/60 transition-colors"
+          className="inline-block mt-3 font-sans text-white/60 text-xs hover:text-white transition-colors"
         >
-          How we score →
+          How we score <span aria-hidden="true">→</span>
         </Link>
       </div>
     </div>

@@ -32,7 +32,7 @@ export default function Footer() {
  </svg>
  </a>
  </div>
- <p className="text-white/30 text-xs font-sans mt-4 leading-relaxed">
+ <p className="text-white/60 text-xs font-sans mt-4 leading-relaxed">
   All financial data comes from annual audited filings submitted to India&apos;s Ministry of Corporate Affairs,
   the same documents that go to the Registrar of Companies. These filings contain independently audited
   balance sheets, P&amp;L statements, and cash flow statements. No analyst projections. No press releases. Any estimate is labelled as one.
@@ -74,13 +74,13 @@ export default function Footer() {
  </div>
 
  <div className="mt-8 pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between gap-3 items-start md:items-center">
- <p className="text-white/30 text-xs font-sans">unpopularvoice.com</p>
+ <p className="text-white/60 text-xs font-sans">unpopularvoice.com</p>
  <div className="flex items-center gap-5 flex-wrap">
  <a
   href="https://www.linkedin.com/in/unpopular-voice/"
   target="_blank"
   rel="noopener noreferrer"
-  className="block py-2 text-white/30 text-xs font-sans hover:text-white/70 transition-colors"
+  className="block py-2 text-white/60 text-xs font-sans hover:text-white transition-colors"
  >
   LinkedIn
  </a>
@@ -88,7 +88,7 @@ export default function Footer() {
   href="https://x.com/UnpopularV83586"
   target="_blank"
   rel="noopener noreferrer"
-  className="block py-2 text-white/30 text-xs font-sans hover:text-white/70 transition-colors"
+  className="block py-2 text-white/60 text-xs font-sans hover:text-white transition-colors"
  >
   X (Twitter)
  </a>
@@ -108,7 +108,7 @@ export default function Footer() {
   loading="lazy"
  />
  </a>
- <p className="text-white/30 text-xs font-sans">
+ <p className="text-white/60 text-xs font-sans">
   Not affiliated with any startup. Independent analysis only.
  </p>
  </div>

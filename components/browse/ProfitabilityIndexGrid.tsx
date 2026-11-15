@@ -92,7 +92,7 @@ function FilterChip({ active, onClick, children, count }: {
     >
       {children}
       {typeof count === 'number' && (
-        <span className={`ml-1.5 ${active ? 'text-white/60' : 'text-gray-400'}`}>{count}</span>
+        <span className={`ml-1.5 ${active ? 'text-white/60' : 'text-gray-500'}`}>{count}</span>
       )}
     </button>
   )
@@ -122,7 +122,7 @@ function Card({ article }: { article: ArticleMeta }) {
             <span className={`inline-block w-1.5 h-1.5 rounded-full ${cfg.ring}`} />
             {cfg.label}
           </div>
-          <span className="font-sans text-[10px] text-gray-400 uppercase tracking-widest truncate max-w-[40%] text-right">
+          <span className="font-sans text-[10px] text-gray-500 uppercase tracking-widest truncate max-w-[40%] text-right">
             {sector}
           </span>
         </div>
@@ -131,7 +131,7 @@ function Card({ article }: { article: ArticleMeta }) {
         <h3 className="font-serif text-black text-xl font-bold leading-tight mb-1 group-hover:text-brand-red transition-colors">
           {article.company}
         </h3>
-        <p className="font-sans text-gray-400 text-xs mb-5 leading-snug line-clamp-2">
+        <p className="font-sans text-gray-500 text-xs mb-5 leading-snug line-clamp-2">
           {cfg.description}
         </p>
 
@@ -155,8 +155,8 @@ function Card({ article }: { article: ArticleMeta }) {
 
         {/* Read indicator */}
         <div className="pt-3 border-t border-gray-100 flex items-center justify-between">
-          <span className="font-sans text-gray-400 text-[11px]">{getFinancials(article)?.period ?? 'Latest'} audited</span>
-          <span className="font-sans text-brand-red text-[11px] font-semibold group-hover:underline">Read analysis →</span>
+          <span className="font-sans text-gray-500 text-[11px]">{getFinancials(article)?.period ?? 'Latest'} audited</span>
+          <span className="font-sans text-brand-red text-[11px] font-semibold group-hover:underline">Read analysis <span aria-hidden="true">→</span></span>
         </div>
       </div>
     </Link>
@@ -213,7 +213,7 @@ export default function ProfitabilityIndexGrid({ companies }: { companies: Artic
       <div className="flex flex-col gap-4 mb-6">
         <div className="flex items-center justify-between">
           <h2 className="font-serif text-black text-2xl font-bold">The full index</h2>
-          <span className="font-sans text-gray-400 text-xs">
+          <span className="font-sans text-gray-500 text-xs">
             Showing {filtered.length} of {companies.length} companies
           </span>
         </div>
@@ -233,11 +233,13 @@ export default function ProfitabilityIndexGrid({ companies }: { companies: Artic
           <input
             type="text"
             placeholder="Search company or sector…"
+            aria-label="Search company or sector"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             className="flex-1 px-4 py-3 min-h-[44px] font-sans text-base sm:text-sm border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-red/20 focus:border-brand-red"
           />
           <select
+            aria-label="Sort companies"
             value={sort}
             onChange={(e) => setSort(e.target.value as 'recent' | 'name')}
             className="px-4 py-3 min-h-[44px] font-sans text-base sm:text-sm border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-red/20 focus:border-brand-red bg-white"

@@ -142,8 +142,8 @@ export default function ComparisonPage({ params }: { params: { slug: string } })
       <div className="bg-black">
         <div className="max-w-4xl mx-auto px-4 sm:px-8 pt-16 pb-12">
           <div className="flex items-center gap-3 mb-6">
-            <Link href="/compare" className="font-sans text-white/40 text-xs hover:text-white/70 transition-colors">
-              ← All comparisons
+            <Link href="/compare" className="font-sans text-white/60 text-xs hover:text-white transition-colors">
+              <span aria-hidden="true">←</span> All comparisons
             </Link>
           </div>
           <p className="font-sans text-brand-red text-xs tracking-[0.25em] uppercase mb-4">{cmp.category}</p>
@@ -160,7 +160,7 @@ export default function ComparisonPage({ params }: { params: { slug: string } })
                 {author.name}
               </Link>
             </span>
-            <span className="text-white/20">·</span>
+            <span aria-hidden="true" className="text-white/30">·</span>
             <p className="font-sans text-white/60 text-xs">
               {latestCorrection ? (
                 <a href="#corrections" className="hover:text-white underline-offset-4 hover:underline">
@@ -170,8 +170,8 @@ export default function ComparisonPage({ params }: { params: { slug: string } })
                 <time dateTime={isoDate}>{formatDisplayDate(cmp.updatedAt)}</time>
               )}
             </p>
-            <span className="text-white/20">·</span>
-            <p className="font-sans text-white/40 text-xs">{cmp.readTime}</p>
+            <span aria-hidden="true" className="text-white/30">·</span>
+            <p className="font-sans text-white/60 text-xs">{cmp.readTime}</p>
           </div>
         </div>
       </div>
@@ -209,7 +209,7 @@ export default function ComparisonPage({ params }: { params: { slug: string } })
                   href={`/compare/${c.slug}`}
                   className="group block bg-white border border-gray-200 rounded-xl p-5 hover:border-black transition-colors"
                 >
-                  <p className="font-sans text-[10px] tracking-[0.2em] uppercase font-semibold text-gray-400 mb-2">{c.category}</p>
+                  <p className="font-sans text-[10px] tracking-[0.2em] uppercase font-semibold text-gray-500 mb-2">{c.category}</p>
                   <p className="font-serif text-black text-lg font-bold leading-snug mb-2 group-hover:text-brand-red transition-colors">{c.title}</p>
                   <p className="font-sans text-gray-500 text-xs leading-relaxed line-clamp-3">{c.thesis}</p>
                 </Link>
@@ -221,9 +221,9 @@ export default function ComparisonPage({ params }: { params: { slug: string } })
 
       {/* Disclaimer */}
       <div className="max-w-4xl mx-auto px-4 sm:px-8 py-10">
-        <p className="font-sans text-gray-400 text-xs border-t border-gray-100 pt-6">
+        <p className="font-sans text-gray-500 text-xs border-t border-gray-100 pt-6">
           All numbers are from the most recent audited annual financial statements at the legal entity that operates each brand. Where a company operates through both a parent and a subsidiary, the underlying article specifies which entity the numbers cover.{' '}
-          <Link href="/methodology" className="text-brand-red hover:underline">Full methodology →</Link>
+          <Link href="/methodology" className="text-brand-red underline underline-offset-4 hover:text-black">Full methodology <span aria-hidden="true">→</span></Link>
         </p>
       </div>
     </div>

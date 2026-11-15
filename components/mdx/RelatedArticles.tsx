@@ -27,7 +27,7 @@ export default function RelatedArticles({ articles, slugs }: RelatedArticlesProp
 
   return (
     <div className="not-prose my-10 border-t border-gray-100 pt-8">
-      <p className="font-sans text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-4">
+      <p className="font-sans text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-4">
         Related Articles
       </p>
       <div className="flex flex-col gap-3">
@@ -37,10 +37,10 @@ export default function RelatedArticles({ articles, slugs }: RelatedArticlesProp
             href={article.href}
             className="group flex items-start gap-3 hover:no-underline"
           >
-            <span className="font-sans text-brand-red text-sm mt-0.5 select-none">→</span>
+            <span aria-hidden="true" className="font-sans text-brand-red text-sm mt-0.5 select-none">→</span>
             <div>
               {article.label && (
-                <span className="font-sans text-[10px] font-semibold text-gray-400 uppercase tracking-widest block mb-0.5">
+                <span className="font-sans text-[10px] font-semibold text-gray-500 uppercase tracking-widest block mb-0.5">
                   {article.label}
                 </span>
               )}

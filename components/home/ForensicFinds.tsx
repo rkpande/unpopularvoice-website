@@ -55,7 +55,7 @@ export default function ForensicFinds({ articles }: { articles: ArticleMeta[] })
                   {hook}
                 </p>
                 <p className="font-sans text-brand-red text-[11px] font-semibold mt-4 group-hover:underline">
-                  Read the breakdown →
+                  Read the breakdown <span aria-hidden="true">→</span>
                 </p>
               </Link>
             )

@@ -14,7 +14,7 @@ interface PredictionsProps {
 const probabilityConfig = {
   high:   { label: 'HIGH',   bg: 'bg-gray-900',  text: 'text-white' },
   medium: { label: 'MEDIUM', bg: 'bg-gray-200',  text: 'text-gray-700' },
-  low:    { label: 'LOW',    bg: 'bg-gray-100',  text: 'text-gray-500' },
+  low:    { label: 'LOW',    bg: 'bg-gray-100',  text: 'text-gray-700' },
 }
 
 const statusConfig = {
@@ -31,7 +31,7 @@ const statusConfig = {
     label: 'Pending',
     bg: 'bg-amber-50',
     border: 'border-amber-200',
-    iconColor: 'text-amber-500',
+    iconColor: 'text-amber-700',
     textColor: 'text-amber-700',
   },
   incorrect: {
@@ -63,7 +63,7 @@ export default function Predictions({ predictions, asOf }: PredictionsProps) {
           <span className="font-sans text-[10px] font-bold tracking-widest uppercase text-white/60">
             Predictions
           </span>
-          <span className="font-sans text-[11px] text-white/30">
+          <span className="font-sans text-[11px] text-white/60">
             {asOf ?? 'derived from filing analysis'}
           </span>
         </div>
@@ -92,7 +92,7 @@ export default function Predictions({ predictions, asOf }: PredictionsProps) {
                 <div className="flex-1 min-w-0">
                   {/* Category tag, own line above text */}
                   {p.category && p.category !== 'other' && (
-                    <div className="font-sans text-[9px] font-bold tracking-widest uppercase text-gray-400 mb-1">
+                    <div className="font-sans text-[9px] font-bold tracking-widest uppercase text-gray-500 mb-1">
                       {categoryLabel[p.category]}
                     </div>
                   )}
@@ -104,7 +104,7 @@ export default function Predictions({ predictions, asOf }: PredictionsProps) {
 
                   {/* Status + outcome */}
                   <div className={`mt-2 inline-flex items-start gap-1.5 px-3 py-1.5 rounded-lg border ${stat.bg} ${stat.border}`}>
-                    <span className={`text-xs ${stat.iconColor} shrink-0 mt-px`}>{stat.icon}</span>
+                    <span aria-hidden="true" className={`text-xs ${stat.iconColor} shrink-0 mt-px`}>{stat.icon}</span>
                     <div>
                       <span className={`font-sans text-[10px] font-bold uppercase tracking-wide ${stat.textColor}`}>
                         {stat.label}
@@ -125,7 +125,7 @@ export default function Predictions({ predictions, asOf }: PredictionsProps) {
 
       {/* Footer */}
       <div className="px-6 py-3 bg-gray-50 border-t border-gray-100">
-        <p className="font-sans text-[10px] text-gray-400">
+        <p className="font-sans text-[10px] text-gray-500">
           Predictions are editorial assessments based on public filings. Validated outcomes are based on publicly available information after the filing date.
         </p>
       </div>

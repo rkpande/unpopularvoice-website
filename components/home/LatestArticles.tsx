@@ -68,7 +68,7 @@ export default function LatestArticles({ articles }: { articles: ArticleMeta[] }
                 aria-label={`Read ${article.company} analysis`}
                 className="flex-shrink-0 font-sans font-semibold text-brand-red text-sm hover:underline"
               >
-                Read →
+                Read <span aria-hidden="true">→</span>
               </Link>
             </div>
           ))}
@@ -79,7 +79,7 @@ export default function LatestArticles({ articles }: { articles: ArticleMeta[] }
             href="/articles"
             className="font-sans font-semibold text-brand-red text-sm hover:underline"
           >
-            View all articles →
+            View all articles <span aria-hidden="true">→</span>
           </Link>
         </div>
       </div>

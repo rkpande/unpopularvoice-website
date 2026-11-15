@@ -110,7 +110,7 @@ export default function SectorPage({ params }: { params: { sector: string } }) {
                   : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
               }`}
             >
-              {s.label} <span className="opacity-60">({s.count})</span>
+              {s.label} <span className="font-normal">({s.count})</span>
             </Link>
           ))}
         </div>
@@ -135,12 +135,12 @@ export default function SectorPage({ params }: { params: { sector: string } }) {
                 )}
               </div>
               <div className="flex-shrink-0 text-right">
-                <p className="font-sans text-xs text-gray-400 mb-1">{article.readTime} read</p>
+                <p className="font-sans text-xs text-gray-500 mb-1">{article.readTime} read</p>
                 <Link
                   href={`/${article.slug}`}
                   className="font-sans font-semibold text-brand-red text-sm hover:underline"
                 >
-                  Read →
+                  Read <span aria-hidden="true">→</span>
                 </Link>
               </div>
             </div>

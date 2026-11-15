@@ -87,12 +87,12 @@ export default function ComparePage() {
   href={`/compare/${c.slug}`}
   className="group block bg-white border border-gray-200 rounded-xl p-5 hover:border-black hover:shadow-md transition-all"
  >
- <p className="font-sans text-[10px] tracking-[0.2em] uppercase font-semibold text-gray-400 mb-3">{c.category}</p>
+ <p className="font-sans text-[10px] tracking-[0.2em] uppercase font-semibold text-gray-500 mb-3">{c.category}</p>
  <p className="font-serif text-black text-xl font-bold leading-snug mb-3 group-hover:text-brand-red transition-colors">
  {c.title}
  </p>
  <p className="font-sans text-gray-500 text-sm leading-relaxed line-clamp-3">{c.thesis}</p>
- <p className="font-sans text-brand-red text-xs font-semibold mt-4 group-hover:underline">Read the comparison →</p>
+ <p className="font-sans text-brand-red text-xs font-semibold mt-4 group-hover:underline">Read the comparison <span aria-hidden="true">→</span></p>
  </Link>
  ))}
  </div>
@@ -112,7 +112,7 @@ export default function ComparePage() {
  </div>
  <Suspense fallback={
  <div className="text-center py-16">
- <p className="font-sans text-gray-400 text-sm">Loading…</p>
+ <p className="font-sans text-gray-500 text-sm">Loading…</p>
  </div>
  }>
  <ComparePanel companies={companies} />
@@ -121,9 +121,9 @@ export default function ComparePage() {
 
  {/* Disclaimer */}
  <div className="max-w-4xl mx-auto px-4 sm:px-8 pb-16">
- <p className="font-sans text-gray-400 text-xs border-t border-gray-100 pt-6">
+ <p className="font-sans text-gray-500 text-xs border-t border-gray-100 pt-6">
   Labels are derived from audited public filings only. A highlighted label indicates a stronger signal in that dimension compared to the other company. It does not constitute a hiring recommendation.{' '}
- <Link href="/methodology" className="text-brand-red hover:underline">Full methodology →</Link>
+ <Link href="/methodology" className="text-brand-red underline underline-offset-4 hover:text-black">Full methodology <span aria-hidden="true">→</span></Link>
  </p>
  </div>
  </div>

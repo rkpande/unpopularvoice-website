@@ -49,7 +49,7 @@ export default function WordmarkGrid({ articles }: { articles: ArticleMeta[] }) 
               <p className="font-serif text-black text-[15px] sm:text-base font-bold leading-tight group-hover:text-brand-red transition-colors">
                 {a.company}
               </p>
-              <p className="font-sans text-gray-400 text-[10px] tracking-widest uppercase mt-2">
+              <p className="font-sans text-gray-500 text-[10px] tracking-widest uppercase mt-2">
                 {(() => {
                   const fyMatch = a.slug.match(/fy(\d{4})/i)
                   return fyMatch ? `FY${fyMatch[1].slice(-2)}` : 'FY25'

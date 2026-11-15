@@ -35,12 +35,12 @@ export default function ArticleImage({
       {(caption || credit) && (
         <figcaption className="mt-3 flex items-start justify-between gap-4">
           {caption && (
-            <span className="font-sans text-[12px] text-gray-400 leading-snug">
+            <span className="font-sans text-[12px] text-gray-500 leading-snug">
               {caption}
             </span>
           )}
           {credit && (
-            <span className="font-sans text-[11px] text-gray-300 whitespace-nowrap shrink-0">
+            <span className="font-sans text-[11px] text-gray-500 whitespace-nowrap shrink-0">
               {creditUrl ? (
                 <a
                   href={creditUrl}

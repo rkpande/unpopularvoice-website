@@ -54,7 +54,7 @@ function Card({
       <div className="p-5 flex flex-col gap-3 flex-1">
         <p className="font-serif text-black text-xl font-bold leading-tight">{name}</p>
         {primary && (
-          <p className="font-sans text-[11px] uppercase tracking-wider text-gray-400 leading-snug">
+          <p className="font-sans text-[11px] uppercase tracking-wider text-gray-500 leading-snug">
             {primary}
           </p>
         )}
@@ -63,7 +63,7 @@ function Card({
         )}
         {outside && (
           <div className="mt-auto pt-3 border-t border-gray-100">
-            <p className="font-sans text-[10px] uppercase tracking-widest text-gray-400 mb-1">
+            <p className="font-sans text-[10px] uppercase tracking-widest text-gray-500 mb-1">
               {outsideLabel}
             </p>
             <p className="font-sans text-gray-600 text-[12px] leading-relaxed">{outside}</p>

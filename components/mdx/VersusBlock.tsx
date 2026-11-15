@@ -31,7 +31,7 @@ const DIRECTION_GLYPH: Record<Direction, string> = {
 const DIRECTION_TONE_CLS: Record<Tone, string> = {
   good: 'text-green-700',
   bad: 'text-red-600',
-  neutral: 'text-gray-400',
+  neutral: 'text-gray-500',
 }
 
 function Pane({

@@ -32,7 +32,7 @@ export default function NewsletterCTA() {
  <p className="font-serif text-black text-4xl font-bold mb-3">
   Get filings-based startup breakdowns.
  </p>
- <p className="font-sans text-gray-500 text-base mb-10">
+ <p className="font-sans text-red-950/70 text-base mb-10">
   One Indian startup. One public filing. The story the brand doesn&apos;t tell.
  </p>
 
@@ -62,7 +62,7 @@ export default function NewsletterCTA() {
  <p className="font-sans text-red-600 text-xs mt-3">Something went wrong. Please try again.</p>
  )}
  {status !== 'error' && (
- <p className="font-sans text-gray-400 text-xs mt-3">No spam. Unsubscribe anytime.</p>
+ <p className="font-sans text-red-950/70 text-xs mt-3">No spam. Unsubscribe anytime.</p>
  )}
  </>
  )}

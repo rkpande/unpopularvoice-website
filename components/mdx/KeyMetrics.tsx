@@ -28,20 +28,20 @@ export default function KeyMetrics({ metrics, period, title = 'Key Metrics' }: K
           {title}
         </span>
         {period && (
-          <span className="font-sans text-[11px] text-white/40">{period}</span>
+          <span className="font-sans text-[11px] text-white/60">{period}</span>
         )}
       </div>
       <div className="grid grid-cols-2 md:grid-cols-3 divide-x divide-y divide-gray-100">
         {metrics.map((m, i) => (
           <div key={i} className="p-5 bg-white">
-            <p className="font-sans text-[10px] text-gray-400 uppercase tracking-wider mb-1.5 leading-none">
+            <p className="font-sans text-[10px] text-gray-500 uppercase tracking-wider mb-1.5 leading-none">
               {m.label}
             </p>
             <p className={`font-serif text-[1.6rem] font-bold leading-none ${typeColor[m.type ?? 'neutral']}`}>
               {m.value}
             </p>
             {m.sub && (
-              <p className="font-sans text-[11px] text-gray-400 mt-1.5 leading-snug">{m.sub}</p>
+              <p className="font-sans text-[11px] text-gray-500 mt-1.5 leading-snug">{m.sub}</p>
             )}
           </div>
         ))}

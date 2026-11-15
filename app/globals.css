@@ -12,6 +12,58 @@
     background-color: #B22222;
     color: #fff;
   }
+
+  /* One visible focus ring for keyboard users everywhere, in the ink colour.
+     On black grounds it flips to white so it never disappears. */
+  :focus-visible {
+    outline: 2px solid #000;
+    outline-offset: 2px;
+  }
+  .bg-black :focus-visible,
+  footer :focus-visible,
+  nav :focus-visible {
+    outline-color: #fff;
+  }
+  /* White panels inside dark chrome (the nav dropdown) go back to ink. */
+  nav .bg-white :focus-visible,
+  .bg-black .bg-white :focus-visible {
+    outline-color: #000;
+  }
+
+  /* Colour on dark grounds. Auditor's Red (#B22222) and the profit/loss pair
+     (green-700, red-600) are tuned for paper; on black they drop below 4.5:1.
+     Inside any dark ground they switch to tints of the same hues, so meaning
+     stays and contrast holds (all >= 4.9:1 on #000-#1d2432). A light panel or
+     pale chip nested in dark chrome gets the paper colours back. */
+  .bg-black .text-brand-red,
+  .bg-gray-900 .text-brand-red {
+    color: #eb6b6b;
+  }
+  .bg-black .text-red-600,
+  .bg-gray-900 .text-red-600 {
+    color: #f87171;
+  }
+  .bg-black .text-green-700,
+  .bg-gray-900 .text-green-700 {
+    color: #4ade80;
+  }
+  .bg-black :is(.bg-white, .bg-gray-50, .bg-cream, .bg-red-50, .bg-green-50, .bg-amber-50, .bg-yellow-50, .bg-orange-50) .text-brand-red,
+  .bg-black .text-brand-red:is(.bg-white, .bg-gray-50, .bg-cream, .bg-red-50, .bg-green-50, .bg-amber-50, .bg-yellow-50, .bg-orange-50) {
+    color: #b22222;
+  }
+  .bg-black :is(.bg-white, .bg-gray-50, .bg-cream, .bg-red-50, .bg-green-50, .bg-amber-50, .bg-yellow-50, .bg-orange-50) .text-red-600,
+  .bg-black .text-red-600:is(.bg-white, .bg-gray-50, .bg-cream, .bg-red-50, .bg-green-50, .bg-amber-50, .bg-yellow-50, .bg-orange-50) {
+    color: #dc2626;
+  }
+  .bg-black :is(.bg-white, .bg-gray-50, .bg-cream, .bg-red-50, .bg-green-50, .bg-amber-50, .bg-yellow-50, .bg-orange-50) .text-green-700,
+  .bg-black .text-green-700:is(.bg-white, .bg-gray-50, .bg-cream, .bg-red-50, .bg-green-50, .bg-amber-50, .bg-yellow-50, .bg-orange-50) {
+    color: #15803d;
+  }
+
+  /* Scrollable tables take focus so keyboard users can scroll them. */
+  [role='region'][tabindex='0']:focus-visible {
+    outline-offset: -2px;
+  }
 }
 
 @layer components {

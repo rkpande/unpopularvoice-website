@@ -72,13 +72,13 @@ export default function ArticleGrid({ articles, pageSize }: Props) {
  <span className="font-sans text-[10px] font-semibold text-brand-red uppercase tracking-widest">
  {topSector(article.sector)}
  </span>
- <span className="font-sans text-gray-300 text-[10px]">
+ <span className="font-sans text-gray-500 text-[10px]">
  {formatDisplayDate(article.updatedAt)}
  </span>
  </div>
 
  {/* Company name */}
- <p className="font-sans text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">
+ <p className="font-sans text-xs font-bold text-gray-500 uppercase tracking-widest mb-3">
  {article.company}
  </p>
 
@@ -89,7 +89,7 @@ export default function ArticleGrid({ articles, pageSize }: Props) {
  <p className="font-serif text-black text-2xl font-bold leading-none">
  {article.heroNumbers[0].value}
  </p>
- <p className="font-sans text-gray-400 text-[9px] mt-1 uppercase tracking-wider leading-tight">
+ <p className="font-sans text-gray-500 text-[9px] mt-1 uppercase tracking-wider leading-tight">
  {article.heroNumbers[0].label}
  </p>
  </div>
@@ -100,7 +100,7 @@ export default function ArticleGrid({ articles, pageSize }: Props) {
  }`}>
  {article.heroNumbers[1].value}
  </p>
- <p className="font-sans text-gray-400 text-[9px] mt-1 uppercase tracking-wider leading-tight">
+ <p className="font-sans text-gray-500 text-[9px] mt-1 uppercase tracking-wider leading-tight">
  {article.heroNumbers[1].label}
  </p>
  </div>
@@ -111,16 +111,16 @@ export default function ArticleGrid({ articles, pageSize }: Props) {
  )}
 
  {/* Title, the contradiction/hook */}
- <h3 className="font-serif text-black text-sm font-bold leading-snug group-hover:text-brand-red transition-colors flex-1">
+<h2 className="font-serif text-black text-sm font-bold leading-snug group-hover:text-brand-red transition-colors flex-1">
  {article.title}
- </h3>
+ </h2>
 
  {/* Read link */}
  <div className="mt-4 pt-3 border-t border-gray-50 flex items-center justify-between">
- <span className="font-sans text-gray-300 text-[9px] uppercase tracking-wider">
+ <span className="font-sans text-gray-500 text-[9px] uppercase tracking-wider">
   From audited public filing
  </span>
- <span className="font-sans text-brand-red text-xs font-semibold">Read →</span>
+ <span className="font-sans text-brand-red text-xs font-semibold">Read <span aria-hidden="true">→</span></span>
  </div>
  </Link>
  ))}
@@ -139,7 +139,7 @@ export default function ArticleGrid({ articles, pageSize }: Props) {
  )}
 
  {filtered.length === 0 && (
- <p className="font-sans text-gray-400 text-sm py-12 text-center">
+ <p className="font-sans text-gray-500 text-sm py-12 text-center">
   No articles in this sector yet.
  </p>
  )}

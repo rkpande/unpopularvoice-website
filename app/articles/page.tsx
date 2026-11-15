@@ -85,7 +85,7 @@ export default function ArticlesPage({ searchParams }: PageProps) {
  : `${all.length} Indian startups. Revenue, profit, debt, and cash flow from audited public filings. Not press releases. Not founder interviews. Not analyst estimates.`}
  </p>
  {activeBucket && (
- <p className="font-sans text-white/35 text-sm mt-3">
+ <p className="font-sans text-white/60 text-sm mt-3">
   Showing {articles.length} of {all.length} articles.{' '}
  <Link href="/articles" className="text-brand-red hover:underline">
   Clear filter

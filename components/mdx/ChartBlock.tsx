@@ -41,7 +41,7 @@ export default function ChartBlock({
       aria-label={alt ?? title}
     >
       <p className="font-sans font-semibold text-black text-sm mb-0.5">{title}</p>
-      {subtitle && <p className="font-sans text-gray-400 text-xs mb-4">{subtitle}</p>}
+      {subtitle && <p className="font-sans text-gray-500 text-xs mb-4">{subtitle}</p>}
 
       <div className="flex items-end gap-3 mt-4" style={{ height: chartHeight + 32 }}>
         {data.map((d, i) => {

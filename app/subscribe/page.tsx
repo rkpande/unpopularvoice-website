@@ -84,7 +84,7 @@ export default function SubscribePage() {
               <p className="font-sans text-red-600 text-xs mt-3">{errorMsg}</p>
             )}
             {status !== 'error' && (
-              <p className="font-sans text-gray-400 text-xs mt-3">No spam. Unsubscribe anytime.</p>
+              <p className="font-sans text-gray-500 text-xs mt-3">No spam. Unsubscribe anytime.</p>
             )}
 
             <div className="mt-16 grid grid-cols-3 gap-8 text-left border-t border-gray-100 pt-12">

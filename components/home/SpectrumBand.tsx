@@ -21,8 +21,8 @@ export default function SpectrumBand({ articles }: { articles: ArticleMeta[] }) 
             Working models, scaling models, in-progress, restructuring, broken. The audited
             filings sort companies into one of five categories. Pick a column to see who fits.
           </p>
-          <p className="font-sans text-gray-400 text-[11px] mt-3 sm:hidden">
-            Swipe to see all five →
+          <p className="font-sans text-gray-500 text-[11px] mt-3 sm:hidden">
+            Swipe to see all five <span aria-hidden="true">→</span>
           </p>
         </div>
 
@@ -36,7 +36,7 @@ export default function SpectrumBand({ articles }: { articles: ArticleMeta[] }) 
                 className={`flex-shrink-0 w-[82%] sm:w-auto snap-start bg-white border-t-4 ${bucket.borderClass} border-x border-b border-gray-200 rounded-b-lg flex flex-col`}
               >
                 <div className="px-4 pt-4 pb-3 border-b border-gray-100">
-                  <p className="font-sans text-[10px] tracking-[0.2em] uppercase font-semibold text-gray-400 mb-1">
+                  <p className="font-sans text-[10px] tracking-[0.2em] uppercase font-semibold text-gray-500 mb-1">
                     {bucket.shortLabel}
                   </p>
                   <p className="font-serif text-black text-lg font-bold leading-snug">
@@ -48,7 +48,7 @@ export default function SpectrumBand({ articles }: { articles: ArticleMeta[] }) 
                 </div>
                 <ul className="px-4 py-3 space-y-2 flex-1">
                   {items.length === 0 ? (
-                    <li className="font-sans text-[12px] text-gray-400 italic">
+                    <li className="font-sans text-[12px] text-gray-500 italic">
                       No articles yet.
                     </li>
                   ) : (
@@ -58,7 +58,7 @@ export default function SpectrumBand({ articles }: { articles: ArticleMeta[] }) 
                           href={`/${a.slug}`}
                           className="block group"
                         >
-                          <p className="font-sans text-[10px] tracking-widest uppercase text-gray-400 mb-0.5">
+                          <p className="font-sans text-[10px] tracking-widest uppercase text-gray-500 mb-0.5">
                             {a.company}
                           </p>
                           <p className="font-serif text-black text-[15px] font-bold leading-snug group-hover:text-brand-red transition-colors line-clamp-2">
@@ -74,9 +74,9 @@ export default function SpectrumBand({ articles }: { articles: ArticleMeta[] }) 
                     href={`/articles?spectrum=${bucket.key}`}
                     className="font-sans text-brand-red text-[12px] font-semibold hover:underline"
                   >
-                    All {bucket.shortLabel.toLowerCase()} →
+                    All {bucket.shortLabel.toLowerCase()} <span aria-hidden="true">→</span>
                   </Link>
-                  <span className="font-sans text-gray-400 text-[11px] ml-2">
+                  <span className="font-sans text-gray-500 text-[11px] ml-2">
                     {buckets[key].length} total
                   </span>
                 </div>

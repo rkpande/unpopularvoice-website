@@ -72,7 +72,7 @@ function CompanyColumn({
   if (!meta) {
     return (
       <div className="p-5">
-        <p className="font-sans text-gray-400 text-sm italic">Article not found.</p>
+        <p className="font-sans text-gray-500 text-sm italic">Article not found.</p>
       </div>
     )
   }
@@ -98,7 +98,7 @@ function CompanyColumn({
       <span className={`absolute top-0 left-0 right-0 h-1 ${v.stripe}`} aria-hidden />
 
       <div className="flex items-center justify-between mb-3">
-        <p className="font-sans text-[10px] tracking-[0.2em] uppercase font-semibold text-gray-400">
+        <p className="font-sans text-[10px] tracking-[0.2em] uppercase font-semibold text-gray-500">
           {COL_LABELS[index] ?? `Company ${index + 1}`}
         </p>
         <span className={`inline-flex items-center font-sans text-[10px] font-bold tracking-wider uppercase rounded-full px-2.5 py-0.5 border ${v.chip}`}>
@@ -110,22 +110,22 @@ function CompanyColumn({
         <h2 className={`font-serif text-black ${headlineSize} font-bold leading-tight mb-1 group-hover:text-brand-red transition-colors`}>
           {meta.company}
         </h2>
-        <p className="font-sans text-gray-400 text-xs mb-5 truncate">{meta.sector}</p>
+        <p className="font-sans text-gray-500 text-xs mb-5 truncate">{meta.sector}</p>
       </Link>
 
       <div className="space-y-3">
         {revenue && (
           <div>
-            <p className="font-sans text-[10px] uppercase tracking-widest text-gray-400 mb-1">{revenue.label}</p>
+            <p className="font-sans text-[10px] uppercase tracking-widest text-gray-500 mb-1">{revenue.label}</p>
             <p className={`font-serif text-black ${numberSize} font-bold leading-none`}>{revenue.value}</p>
           </div>
         )}
         {profit && (
           <div>
-            <p className="font-sans text-[10px] uppercase tracking-widest text-gray-400 mb-1">{profit.label}</p>
+            <p className="font-sans text-[10px] uppercase tracking-widest text-gray-500 mb-1">{profit.label}</p>
             <div className="flex items-baseline gap-2">
               {profitArrow && (
-                <span className={`text-base leading-none ${profitTone === 'good' ? 'text-green-700' : profitTone === 'bad' ? 'text-red-600' : 'text-gray-400'}`}>
+                <span className={`text-base leading-none ${profitTone === 'good' ? 'text-green-700' : profitTone === 'bad' ? 'text-red-600' : 'text-gray-500'}`}>
                   {profitArrow}
                 </span>
               )}
@@ -141,7 +141,7 @@ function CompanyColumn({
         href={`/${meta.slug}`}
         className="inline-flex items-center gap-1 mt-6 font-sans text-brand-red text-xs font-semibold hover:underline"
       >
-        Full {meta.company} breakdown →
+        Full {meta.company} breakdown <span aria-hidden="true">→</span>
       </Link>
     </div>
   )
@@ -161,7 +161,7 @@ export default function MatchupHeader({ metaA, metaB, metaC, category }: Matchup
       {category && (
         <div className="bg-gray-50 border-b border-gray-100 px-6 py-3 flex items-center justify-between">
           <p className="font-sans text-[10px] tracking-[0.25em] uppercase font-bold text-gray-500">{category}</p>
-          <p className="font-sans text-[10px] tracking-[0.2em] uppercase font-semibold text-gray-400">{matchupLabel}</p>
+          <p className="font-sans text-[10px] tracking-[0.2em] uppercase font-semibold text-gray-500">{matchupLabel}</p>
         </div>
       )}
       <div className={gridCls}>

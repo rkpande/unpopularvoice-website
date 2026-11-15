@@ -36,26 +36,26 @@ export default function RealityCheckIndex({ articles }: { articles: ArticleMeta[
 
                 <div className="space-y-2">
                   <div>
-                    <p className="text-white/30 font-sans text-[9px] uppercase tracking-wider">Growth</p>
+                    <p className="text-white/60 font-sans text-[9px] uppercase tracking-wider">Growth</p>
                     <p className={`font-sans font-bold text-base ${scoreColor(growthQuality)}`}>
                       {growthQuality}/10
                     </p>
                   </div>
                   <div>
-                    <p className="text-white/30 font-sans text-[9px] uppercase tracking-wider">Sustain</p>
+                    <p className="text-white/60 font-sans text-[9px] uppercase tracking-wider">Sustain</p>
                     <p className={`font-sans font-bold text-base ${scoreColor(sustainability)}`}>
                       {sustainability}/10
                     </p>
                   </div>
                   <div>
-                    <p className="text-white/30 font-sans text-[9px] uppercase tracking-wider">Profit Path</p>
+                    <p className="text-white/60 font-sans text-[9px] uppercase tracking-wider">Profit Path</p>
                     <p className={`font-sans font-bold text-base ${scoreColor(profitabilityPath)}`}>
                       {profitabilityPath}/10
                     </p>
                   </div>
                 </div>
 
-                <p className="text-white/20 font-sans text-[10px] mt-3">Full report →</p>
+                <p className="text-white/60 font-sans text-[10px] mt-3">Full report <span aria-hidden="true">→</span></p>
               </Link>
             )
           })}

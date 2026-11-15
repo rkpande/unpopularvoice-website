@@ -67,7 +67,7 @@ function CompanyCard({
             {vc.label}
           </span>
         </div>
-        <p className="font-sans text-[11px] text-gray-400 mb-4">
+        <p className="font-sans text-[11px] text-gray-500 mb-4">
           Based on {article.dataSource} · Updated {formatDisplayDate(article.updatedAt)}
         </p>
 
@@ -86,13 +86,13 @@ function CompanyCard({
 
         <div className="flex items-center justify-between gap-2">
           <Link href={`/${article.slug}#employer`} className="font-sans text-brand-red text-xs font-semibold hover:underline">
-            Full filing →
+            Full filing <span aria-hidden="true">→</span>
           </Link>
           <div className="flex items-center gap-2.5">
             <button
               onClick={onShare}
               title="Copy summary card"
-              className="flex items-center gap-1 text-gray-400 hover:text-gray-600 transition-colors"
+              className="flex items-center gap-1 text-gray-500 hover:text-gray-600 transition-colors"
             >
               {copied
                 ? <span className="font-sans text-green-700 font-semibold text-[11px]">Copied!</span>
@@ -104,7 +104,7 @@ function CompanyCard({
               className={`font-sans text-[11px] px-2.5 py-0.5 rounded-full border transition-all ${
                 selected
                   ? 'bg-black text-white border-black'
-                  : 'text-gray-400 border-gray-200 hover:border-gray-500 hover:text-gray-700'
+                  : 'text-gray-500 border-gray-200 hover:border-gray-500 hover:text-gray-700'
               }`}
             >
               {selected ? '✓ vs' : '+ vs'}
@@ -247,7 +247,7 @@ export default function EmployerSearchGrid({ companies }: Props) {
       {/* Search */}
       <div className="relative mb-5">
         <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none">
-          <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
               d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
           </svg>
@@ -257,12 +257,12 @@ export default function EmployerSearchGrid({ companies }: Props) {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search a company before joining..."
-          className="w-full pl-11 pr-4 py-4 font-sans text-base text-black placeholder-gray-400 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-black transition-colors bg-white"
+          className="w-full pl-11 pr-4 py-4 font-sans text-base text-black placeholder-gray-500 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-black transition-colors bg-white"
         />
         {query && (
           <button
             onClick={() => setQuery('')}
-            className="absolute inset-y-0 right-4 flex items-center text-gray-400 hover:text-gray-600"
+            className="absolute inset-y-0 right-4 flex items-center text-gray-500 hover:text-gray-600"
           >✕</button>
         )}
       </div>
@@ -318,14 +318,14 @@ export default function EmployerSearchGrid({ companies }: Props) {
           </p>
           {query.trim() && (
             <>
-              <p className="font-sans text-gray-400 text-xs mb-4">
+              <p className="font-sans text-gray-500 text-xs mb-4">
                 We haven&apos;t analysed &ldquo;{query}&rdquo; yet.
               </p>
               <Link
                 href="/subscribe"
                 className="inline-block bg-brand-red text-white font-sans font-semibold text-sm px-5 py-2.5 rounded hover:bg-red-800 transition-colors"
               >
-                Get notified →
+                Get notified <span aria-hidden="true">→</span>
               </Link>
             </>
           )}
@@ -335,7 +335,7 @@ export default function EmployerSearchGrid({ companies }: Props) {
       {/* Filtered: flat results */}
       {isFiltering && filtered.length > 0 && (
         <div>
-          <p className="font-sans text-gray-400 text-sm mb-5">
+          <p className="font-sans text-gray-500 text-sm mb-5">
             {filtered.length} {filtered.length === 1 ? 'company' : 'companies'}
             {verdictFilter !== 'all' && ` · ${verdictConfig[verdictFilter].label}`}
             {quickFilter === 'safest' && ' · Safest'}
@@ -355,7 +355,7 @@ export default function EmployerSearchGrid({ companies }: Props) {
               <div className="flex items-center gap-3 mb-5">
                 <span className="w-3 h-3 rounded-full bg-green-500 flex-shrink-0" />
                 <h2 className="font-serif text-black text-2xl font-bold">Solid Financial Footing</h2>
-                <span className="font-sans text-gray-400 text-sm hidden sm:block">, strong signals from the filing</span>
+                <span className="font-sans text-gray-500 text-sm hidden sm:block">, strong signals from the filing</span>
               </div>
               {renderGrid(solid)}
             </div>
@@ -365,7 +365,7 @@ export default function EmployerSearchGrid({ companies }: Props) {
               <div className="flex items-center gap-3 mb-5">
                 <span className="w-3 h-3 rounded-full bg-amber-400 flex-shrink-0" />
                 <h2 className="font-serif text-black text-2xl font-bold">Worth Watching</h2>
-                <span className="font-sans text-gray-400 text-sm hidden sm:block">, mixed signals; read the notes carefully</span>
+                <span className="font-sans text-gray-500 text-sm hidden sm:block">, mixed signals; read the notes carefully</span>
               </div>
               {renderGrid(watch)}
             </div>
@@ -375,7 +375,7 @@ export default function EmployerSearchGrid({ companies }: Props) {
               <div className="flex items-center gap-3 mb-5">
                 <span className="w-3 h-3 rounded-full bg-red-500 flex-shrink-0" />
                 <h2 className="font-serif text-black text-2xl font-bold">Proceed with Caution</h2>
-                <span className="font-sans text-gray-400 text-sm hidden sm:block">, financial risk flags in the filing</span>
+                <span className="font-sans text-gray-500 text-sm hidden sm:block">, financial risk flags in the filing</span>
               </div>
               {renderGrid(caution)}
             </div>
@@ -389,12 +389,12 @@ export default function EmployerSearchGrid({ companies }: Props) {
           <div className="flex items-center gap-1.5 font-sans text-sm">
             {compareCompanies.map((c, i) => (
               <span key={c.slug} className="flex items-center gap-1.5">
-                {i > 0 && <span className="text-white/30 font-normal mx-1">vs</span>}
+                {i > 0 && <span className="text-white/60 font-normal mx-1">vs</span>}
                 <span className="font-semibold">{c.company}</span>
               </span>
             ))}
             {compareList.length === 1 && (
-              <span className="text-white/40 ml-2">+ pick one more</span>
+              <span className="text-white/60 ml-2">+ pick one more</span>
             )}
           </div>
           {compareList.length === 2 && (
@@ -402,12 +402,12 @@ export default function EmployerSearchGrid({ companies }: Props) {
               onClick={() => router.push(`/compare?a=${compareList[0]}&b=${compareList[1]}`)}
               className="bg-brand-red text-white font-sans text-xs font-bold px-4 py-1.5 rounded-full hover:bg-red-700 transition-colors"
             >
-              Compare →
+              Compare <span aria-hidden="true">→</span>
             </button>
           )}
           <button
             onClick={() => setCompareList([])}
-            className="text-white/35 hover:text-white/70 font-sans text-sm leading-none ml-1"
+            className="text-white/60 hover:text-white font-sans text-sm leading-none ml-1"
           >✕</button>
         </div>
       )}

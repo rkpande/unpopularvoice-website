@@ -13,7 +13,7 @@ export default function TakeawayCard({
 }: TakeawayCardProps) {
   if (variant === 'light') {
     return (
-      <aside className="not-prose my-10 bg-cream border-l-[6px] border-brand-red p-6 sm:p-8 rounded-r-xl">
+      <div role="note" className="not-prose my-10 bg-cream border-l-[6px] border-brand-red p-6 sm:p-8 rounded-r-xl">
         <p className="font-sans text-[10px] tracking-[0.25em] uppercase font-bold text-brand-red mb-3">
           {eyebrow}
         </p>
@@ -25,11 +25,11 @@ export default function TakeawayCard({
             {body}
           </p>
         )}
-      </aside>
+      </div>
     )
   }
   return (
-    <aside className="not-prose my-10 bg-black p-7 sm:p-10 rounded-2xl relative overflow-hidden">
+    <div role="note" className="not-prose my-10 bg-black p-7 sm:p-10 rounded-2xl relative overflow-hidden">
       <span className="absolute top-0 left-0 w-12 h-1 bg-brand-red" aria-hidden />
       <p className="font-sans text-[10px] tracking-[0.25em] uppercase font-bold text-brand-red mb-4">
         {eyebrow}
@@ -42,6 +42,6 @@ export default function TakeawayCard({
           {body}
         </p>
       )}
-    </aside>
+    </div>
   )
 }

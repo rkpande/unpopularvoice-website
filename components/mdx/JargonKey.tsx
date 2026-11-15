@@ -15,7 +15,7 @@ const DEFAULT_TERMS: Term[] = [
 export default function JargonKey({ terms }: JargonKeyProps) {
   const list = terms && terms.length > 0 ? terms : DEFAULT_TERMS
   return (
-    <aside className="not-prose my-8 bg-amber-50 border border-amber-200 rounded-xl p-5 sm:p-6">
+    <div role="note" className="not-prose my-8 bg-amber-50 border border-amber-200 rounded-xl p-5 sm:p-6">
       <p className="font-sans text-[10px] tracking-[0.22em] uppercase font-bold text-amber-900 mb-3">
         Quick glossary
       </p>
@@ -31,6 +31,6 @@ export default function JargonKey({ terms }: JargonKeyProps) {
           </div>
         ))}
       </dl>
-    </aside>
+    </div>
   )
 }

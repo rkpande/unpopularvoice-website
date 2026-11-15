@@ -117,7 +117,7 @@ export default function ProfitabilityIndexPage() {
  </Link>
  </div>
  <div className="lg:col-span-6 lg:border-l lg:border-gray-200 lg:pl-12">
- <p className="font-sans text-gray-400 text-xs tracking-[0.25em] uppercase mb-4">The breakdown</p>
+ <p className="font-sans text-gray-500 text-xs tracking-[0.25em] uppercase mb-4">The breakdown</p>
  <div className="grid grid-cols-3 gap-3 mb-6">
  <BigStat n={counts.profitable} label="Profitable" tone="green" />
  <BigStat n={counts.improving} label="Loss narrowing" tone="amber" />
@@ -170,7 +170,7 @@ export default function ProfitabilityIndexPage() {
  <p className="font-serif text-white text-2xl sm:text-3xl lg:text-4xl leading-[1.3] font-medium max-w-3xl mx-auto">
   {profitablePct}% of the startups in this index reported a profit on their latest audited filing. The other {lossPct}% are funded by capital, not yet by operations.
  </p>
- <p className="font-sans text-white/40 text-xs uppercase tracking-[0.25em] mt-8">
+ <p className="font-sans text-white/60 text-xs uppercase tracking-[0.25em] mt-8">
   Source: latest available audited annual financial statements
  </p>
  </div>
@@ -226,7 +226,7 @@ export default function ProfitabilityIndexPage() {
  <h2 className="font-serif text-green-900 text-3xl sm:text-4xl font-bold leading-tight">
   Companies that crossed loss → profit
  </h2>
- <p className="font-sans text-green-800/80 text-sm mt-2 max-w-2xl">
+ <p className="font-sans text-green-800 text-sm mt-2 max-w-2xl">
   A loss after tax in the prior year, a profit after tax in the latest audited filing.
  </p>
  </div>
@@ -320,7 +320,7 @@ export default function ProfitabilityIndexPage() {
  }))}
  />
  </div>
- <p className="font-sans text-gray-400 text-xs text-center mt-8 max-w-2xl mx-auto leading-relaxed">
+ <p className="font-sans text-gray-500 text-xs text-center mt-8 max-w-2xl mx-auto leading-relaxed">
   Each company is counted once, from its primary teardown: revenue from operations and profit after tax for the period and basis
   (consolidated or standalone) that article leads with. Where a brand operates through several entities, the article specifies which one each number covers.
  </p>
@@ -416,7 +416,7 @@ export default function ProfitabilityIndexPage() {
  {/* ── CROSS-LINKS ───────────────────────── */}
  <div className="bg-black">
  <div className="max-w-7xl mx-auto px-4 sm:px-8 py-14">
- <p className="font-sans text-white/40 text-xs tracking-[0.25em] uppercase mb-6">Other ways to slice the data</p>
+ <p className="font-sans text-white/60 text-xs tracking-[0.25em] uppercase mb-6">Other ways to slice the data</p>
  <div className="grid sm:grid-cols-3 gap-4">
  <CrossLink href="/startup-jobs" title="Startup Jobs Index" body="Runway, payroll trends, employment stability before you join." />
  <CrossLink href="/employer-check" title="Employer Check" body="Five-dimension employer rating across Indian startups." />
@@ -447,7 +447,7 @@ export default function ProfitabilityIndexPage() {
  <p className="font-sans text-white/80 text-sm">Get notified when a company moves up, down, or out of a category.</p>
  </div>
  <Link href="/subscribe" className="flex-shrink-0 bg-white text-brand-red font-sans font-bold text-sm px-6 py-3 rounded hover:bg-yellow-50 transition-colors">
-  Subscribe →
+  Subscribe <span aria-hidden="true">→</span>
  </Link>
  </div>
  </div>

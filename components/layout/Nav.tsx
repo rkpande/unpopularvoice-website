@@ -176,7 +176,7 @@ export default function Nav() {
         <div className="sm:hidden bg-black border-t border-white/10 px-4 py-3">
           {GROUPS.map((group) => (
             <div key={group.label} className="mb-3">
-              <p className="font-sans text-white/40 text-[10px] tracking-[0.25em] uppercase font-semibold py-2">
+              <p className="font-sans text-white/60 text-[10px] tracking-[0.25em] uppercase font-semibold py-2">
                 {group.label}
               </p>
               <ul className="border-t border-white/5">

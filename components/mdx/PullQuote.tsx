@@ -10,7 +10,7 @@ export default function PullQuote({ quote, attribution }: PullQuoteProps) {
         &ldquo;{quote}&rdquo;
       </p>
       {attribution && (
-        <cite className="block mt-3 font-sans text-xs text-gray-400 uppercase tracking-widest not-italic">
+        <cite className="block mt-3 font-sans text-xs text-gray-500 uppercase tracking-widest not-italic">
           {attribution}
         </cite>
       )}

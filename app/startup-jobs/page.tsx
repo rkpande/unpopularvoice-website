@@ -52,7 +52,7 @@ export default function StartupJobsPage() {
  ].map(({ n, label }) => (
  <div key={label}>
  <p className="font-serif text-brand-red text-3xl font-bold">{n}</p>
- <p className="font-sans text-white/40 text-xs uppercase tracking-widest mt-1">{label}</p>
+ <p className="font-sans text-white/60 text-xs uppercase tracking-widest mt-1">{label}</p>
  </div>
  ))}
  </div>
@@ -62,7 +62,7 @@ export default function StartupJobsPage() {
  {/* Instant takeaway band */}
  <div className="bg-gray-900 border-y border-white/5">
  <div className="max-w-7xl mx-auto px-4 sm:px-8 py-10">
- <p className="font-sans text-white/40 text-xs uppercase tracking-[0.25em] mb-4 text-center">The headline takeaways</p>
+ <p className="font-sans text-white/60 text-xs uppercase tracking-[0.25em] mb-4 text-center">The headline takeaways</p>
  <div className="grid sm:grid-cols-3 gap-4">
  <Takeaway
   big={`${lossPct}%`}
@@ -136,8 +136,8 @@ export default function StartupJobsPage() {
   title="Buffer (months)"
   body="Closing net worth divided by the latest annual loss after tax. A balance-sheet ratio, not a cash forecast. Shown only for loss-making companies with positive net worth."
   tiers={[
- { color: 'text-green-600', text: '3+ years: comfortable' },
- { color: 'text-amber-600', text: '12–36 months: monitor' },
+ { color: 'text-green-700', text: '3+ years: comfortable' },
+ { color: 'text-amber-700', text: '12–36 months: monitor' },
  { color: 'text-red-600', text: 'Under 12 months: high risk' },
  ]}
  />
@@ -145,8 +145,8 @@ export default function StartupJobsPage() {
   title="Profitability trajectory"
   body="Is the company moving toward or away from profit? Derived from loss ratio trend across two years of audited filings."
   tiers={[
- { color: 'text-green-600', text: 'Profitable: already there' },
- { color: 'text-amber-600', text: 'Improving: losses narrowing' },
+ { color: 'text-green-700', text: 'Profitable: already there' },
+ { color: 'text-amber-700', text: 'Improving: losses narrowing' },
  { color: 'text-red-600', text: 'Worsening: losses deepening' },
  ]}
  />
@@ -154,8 +154,8 @@ export default function StartupJobsPage() {
   title="Payroll growth (YoY %)"
   body="Year-on-year change in employee benefit expenses. Rising = hiring or pay increases. Falling = headcount cuts or pay freezes."
   tiers={[
- { color: 'text-green-600', text: '+20%+: active hiring' },
- { color: 'text-amber-600', text: '0–20%: stable' },
+ { color: 'text-green-700', text: '+20%+: active hiring' },
+ { color: 'text-amber-700', text: '0–20%: stable' },
  { color: 'text-red-600', text: 'Negative: contracting' },
  ]}
  />
@@ -163,17 +163,17 @@ export default function StartupJobsPage() {
   title="Career upside"
   body="A composite read of growth + finances + ESOP potential. High = you have meaningful financial upside if it works. Limited = upside doesn't outweigh the risk."
   tiers={[
- { color: 'text-green-600', text: 'High: growth + stable financials + ESOP potential' },
- { color: 'text-amber-600', text: 'Moderate: growth visible, trade-offs present' },
+ { color: 'text-green-700', text: 'High: growth + stable financials + ESOP potential' },
+ { color: 'text-amber-700', text: 'Moderate: growth visible, trade-offs present' },
  { color: 'text-red-600', text: 'Limited: weak growth + weak financials' },
  ]}
  />
  </div>
- <p className="font-sans text-gray-400 text-xs">
+ <p className="font-sans text-gray-500 text-xs">
   The buffer is a ratio, not a countdown. Funding raised after year-end resets it, and parent support or a narrower loss changes it.
   Use it as a signal, not a deadline.{' '}
- <Link href="/employer-check" className="text-brand-red hover:underline">
-  Full employer check →
+ <Link href="/employer-check" className="text-brand-red underline underline-offset-4 hover:text-black">
+  Full employer check <span aria-hidden="true">→</span>
  </Link>
  </p>
  </div>
@@ -218,7 +218,7 @@ export default function StartupJobsPage() {
  </p>
  </div>
  <Link href="/employer-check" className="flex-shrink-0 bg-black text-white font-sans font-semibold text-sm px-6 py-3 rounded hover:bg-gray-800 transition-colors">
-  Employer Check →
+  Employer Check <span aria-hidden="true">→</span>
  </Link>
  </div>
  </div>
@@ -244,7 +244,7 @@ export default function StartupJobsPage() {
  <p className="font-sans text-white/50 text-sm">We read every filing so you know what the numbers say before you sign.</p>
  </div>
  <Link href="/subscribe" className="flex-shrink-0 bg-brand-red text-white font-sans font-semibold text-sm px-6 py-3 rounded hover:bg-red-800 transition-colors">
-  Get notified →
+  Get notified <span aria-hidden="true">→</span>
  </Link>
  </div>
  </div>

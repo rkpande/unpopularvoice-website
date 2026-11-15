@@ -46,11 +46,12 @@ function CompanyPicker({
 }) {
   return (
     <div>
-      <p className="font-sans text-[10px] font-bold tracking-widest uppercase text-gray-400 mb-2">{label}</p>
+      <p className="font-sans text-[10px] font-bold tracking-widest uppercase text-gray-500 mb-2">{label}</p>
       <select
+        aria-label={label}
         value={selected}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full font-sans text-sm text-black border-2 border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-black transition-colors bg-white appearance-none cursor-pointer"
+        className="w-full font-sans text-sm text-black border-2 border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 focus:border-black transition-colors bg-white appearance-none cursor-pointer"
       >
         <option value="">Select a company…</option>
         {companies.map((c) => (
@@ -134,7 +135,7 @@ export default function ComparePanel({ companies }: Props) {
             onClick={swap}
             disabled={!slugA && !slugB}
             title="Swap companies"
-            className="mb-px flex-shrink-0 w-10 h-10 flex items-center justify-center border-2 border-gray-200 rounded-xl text-gray-400 hover:border-gray-400 hover:text-gray-700 disabled:opacity-30 transition-all"
+            className="mb-px flex-shrink-0 w-10 h-10 flex items-center justify-center border-2 border-gray-200 rounded-xl text-gray-500 hover:border-gray-400 hover:text-gray-700 disabled:opacity-30 transition-all"
           >
             ⇄
           </button>
@@ -145,10 +146,10 @@ export default function ComparePanel({ companies }: Props) {
       {!slugA && !slugB && (
         <div className="text-center py-16 border border-dashed border-gray-200 rounded-xl">
           <p className="font-serif text-black text-xl font-bold mb-2">Pick two companies to compare</p>
-          <p className="font-sans text-gray-400 text-sm">
+          <p className="font-sans text-gray-500 text-sm">
             Or{' '}
             <Link href="/employer-check" className="text-brand-red font-semibold hover:underline">
-              browse all companies →
+              browse all companies <span aria-hidden="true">→</span>
             </Link>
           </p>
         </div>
@@ -157,7 +158,7 @@ export default function ComparePanel({ companies }: Props) {
       {/* Partial selection */}
       {(slugA || slugB) && !bothSelected && (
         <div className="text-center py-10 border border-dashed border-gray-200 rounded-xl">
-          <p className="font-sans text-gray-400 text-sm">Now pick a second company to see the comparison.</p>
+          <p className="font-sans text-gray-500 text-sm">Now pick a second company to see the comparison.</p>
         </div>
       )}
 
@@ -167,17 +168,17 @@ export default function ComparePanel({ companies }: Props) {
           {/* Header row */}
           <div className="grid grid-cols-[1fr_1fr_1fr] bg-black">
             <div className="px-5 py-4 border-r border-white/10">
-              <p className="font-sans text-white/40 text-[10px] uppercase tracking-widest mb-1">Company A</p>
+              <p className="font-sans text-white/60 text-[10px] uppercase tracking-widest mb-1">Company A</p>
               <p className="font-serif text-white text-lg font-bold leading-snug">{companyA.company}</p>
-              <p className="font-sans text-white/30 text-[10px] mt-1">{companyA.dataSource}</p>
+              <p className="font-sans text-white/60 text-[10px] mt-1">{companyA.dataSource}</p>
             </div>
             <div className="px-5 py-4 flex items-center justify-center">
-              <span className="font-sans text-white/20 text-3xl font-light">vs</span>
+              <span className="font-sans text-white/60 text-3xl font-light">vs</span>
             </div>
             <div className="px-5 py-4 border-l border-white/10 text-right">
-              <p className="font-sans text-white/40 text-[10px] uppercase tracking-widest mb-1">Company B</p>
+              <p className="font-sans text-white/60 text-[10px] uppercase tracking-widest mb-1">Company B</p>
               <p className="font-serif text-white text-lg font-bold leading-snug">{companyB.company}</p>
-              <p className="font-sans text-white/30 text-[10px] mt-1">{companyB.dataSource}</p>
+              <p className="font-sans text-white/60 text-[10px] mt-1">{companyB.dataSource}</p>
             </div>
           </div>
 
@@ -189,7 +190,7 @@ export default function ComparePanel({ companies }: Props) {
               </span>
             </div>
             <div className="px-5 py-3 flex items-center justify-center">
-              <span className="font-sans text-gray-400 text-[10px] uppercase tracking-widest">Overall</span>
+              <span className="font-sans text-gray-500 text-[10px] uppercase tracking-widest">Overall</span>
             </div>
             <div className="px-5 py-3 flex items-center justify-end">
               <span className={`border rounded-full px-3 py-1 font-sans text-[10px] font-bold tracking-wider uppercase ${verdictConfig[companyB.employerScore!.verdict].badge}`}>
@@ -217,7 +218,7 @@ export default function ComparePanel({ companies }: Props) {
                 </div>
                 <div className="px-4 py-3.5 flex flex-col items-center justify-center text-center">
                   <p className="font-sans text-xs font-semibold text-black">{label}</p>
-                  <p className="font-sans text-[10px] text-gray-400 mt-0.5">{sub}</p>
+                  <p className="font-sans text-[10px] text-gray-500 mt-0.5">{sub}</p>
                 </div>
                 <div className="px-5 py-3.5 flex items-center justify-end">
                   <LabelChip dimension={key as EmployerDimension} value={vB} highlight={highlightB} />
@@ -229,11 +230,11 @@ export default function ComparePanel({ companies }: Props) {
           {/* Notes row */}
           <div className="grid grid-cols-2 divide-x divide-gray-100 bg-gray-50 border-t border-gray-200">
             <div className="px-5 py-4">
-              <p className="font-sans text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-1.5">Notes</p>
+              <p className="font-sans text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-1.5">Notes</p>
               <p className="font-sans text-xs text-gray-600 leading-relaxed">{companyA.employerScore!.notes}</p>
             </div>
             <div className="px-5 py-4">
-              <p className="font-sans text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-1.5">Notes</p>
+              <p className="font-sans text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-1.5">Notes</p>
               <p className="font-sans text-xs text-gray-600 leading-relaxed">{companyB.employerScore!.notes}</p>
             </div>
           </div>
@@ -244,11 +245,11 @@ export default function ComparePanel({ companies }: Props) {
               href={`/${companyA.slug}#employer`}
               className="font-sans text-brand-red text-xs font-semibold hover:underline"
             >
-              {companyA.company} full filing →
+              {companyA.company} full filing <span aria-hidden="true">→</span>
             </Link>
             <button
               onClick={handleShare}
-              className="flex items-center gap-1.5 font-sans text-xs text-gray-400 hover:text-gray-700 transition-colors"
+              className="flex items-center gap-1.5 font-sans text-xs text-gray-500 hover:text-gray-700 transition-colors"
             >
               {copied ? (
                 <span className="text-green-700 font-semibold">Copied link!</span>
@@ -266,7 +267,7 @@ export default function ComparePanel({ companies }: Props) {
               href={`/${companyB.slug}#employer`}
               className="font-sans text-brand-red text-xs font-semibold hover:underline text-right"
             >
-              {companyB.company} full filing →
+              {companyB.company} full filing <span aria-hidden="true">→</span>
             </Link>
           </div>
         </div>

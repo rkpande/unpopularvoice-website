@@ -46,9 +46,9 @@ function Side({
       <p className={`font-sans text-[10px] tracking-[0.22em] uppercase font-bold mb-2 ${LABEL_CLS[tone]}`}>
         {label}
       </p>
-      <h4 className="font-serif text-black text-xl sm:text-2xl font-bold leading-tight mb-3">
+      <h3 className="font-serif text-black text-xl sm:text-2xl font-bold leading-tight mb-3">
         {headline}
-      </h4>
+      </h3>
       <p className="font-sans text-gray-700 text-sm sm:text-[15px] leading-relaxed">
         {body}
       </p>
@@ -83,7 +83,7 @@ export default function SplitView({
         {conclusion && (
           <div className="border-t border-gray-100 bg-gray-50 px-5 sm:px-7 py-4">
             <p className="font-sans text-gray-800 text-sm sm:text-[15px] leading-relaxed">
-              <span className="font-bold text-black">→ </span>
+              <span aria-hidden="true" className="font-bold text-black">→ </span>
               {conclusion}
             </p>
           </div>

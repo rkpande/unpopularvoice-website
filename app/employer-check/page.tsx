@@ -40,7 +40,7 @@ export default function EmployerCheckPage() {
  ].map(({ n, label }) => (
  <div key={label}>
  <p className="font-serif text-brand-red text-3xl font-bold">{n}</p>
- <p className="font-sans text-white/40 text-xs uppercase tracking-widest mt-1">{label}</p>
+ <p className="font-sans text-white/60 text-xs uppercase tracking-widest mt-1">{label}</p>
  </div>
  ))}
  </div>
@@ -53,7 +53,7 @@ export default function EmployerCheckPage() {
  <div className="flex flex-wrap items-baseline gap-3 mb-6">
  <h2 className="font-serif text-black text-2xl font-bold">How we assess each company</h2>
  <Link href="/methodology" className="font-sans text-brand-red text-sm hover:underline">
-  Full methodology →
+  Full methodology <span aria-hidden="true">→</span>
  </Link>
  </div>
  <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-3">
@@ -70,8 +70,8 @@ export default function EmployerCheckPage() {
  </div>
  ))}
  </div>
- <p className="font-sans text-gray-400 text-xs mt-4">
-  Labels: <span className="text-green-700 font-semibold">Strong / Achieved / Low / High</span> · <span className="text-amber-600 font-semibold">Moderate / Improving / High Variance</span> · <span className="text-orange-600 font-semibold">Stretched / Weak / Limited</span> · <span className="text-red-600 font-semibold">Critical / Loss-Deepening / Uncertain</span>
+ <p className="font-sans text-gray-500 text-xs mt-4">
+  Labels: <span className="text-green-700 font-semibold">Strong / Achieved / Low / High</span> · <span className="text-amber-700 font-semibold">Moderate / Improving / High Variance</span> · <span className="text-orange-700 font-semibold">Stretched / Weak / Limited</span> · <span className="text-red-600 font-semibold">Critical / Loss-Deepening / Uncertain</span>
  </p>
  </div>
  </div>
@@ -106,10 +106,10 @@ export default function EmployerCheckPage() {
  </div>
  ))}
  </div>
- <p className="font-sans text-yellow-600 text-xs border-t border-yellow-200 pt-4">
+ <p className="font-sans text-yellow-700 text-xs border-t border-yellow-200 pt-4">
   Scores are based on the most recent available audited filing. Filings are typically 6–18 months behind real time, a company&apos;s financial position may have changed materially since the filing date.
   UnpopularVoice is not affiliated with any company on this page and has no commercial relationship with any of them.{' '}
- <Link href="/methodology" className="underline hover:text-yellow-800">Full scoring methodology →</Link>
+ <Link href="/methodology" className="underline hover:text-yellow-800">Full scoring methodology <span aria-hidden="true">→</span></Link>
  </p>
  </div>
  </div>
@@ -122,7 +122,7 @@ export default function EmployerCheckPage() {
  <p className="font-sans text-white/50 text-sm">public filings are published year-round. We read them and update scores.</p>
  </div>
  <Link href="/subscribe" className="flex-shrink-0 bg-brand-red text-white font-sans font-semibold text-sm px-6 py-3 rounded hover:bg-red-800 transition-colors">
-  Get notified →
+  Get notified <span aria-hidden="true">→</span>
  </Link>
  </div>
  </div>

@@ -83,7 +83,7 @@ export default function EditorialStandardsPage() {
             Many teardowns include a claims table that separates what the accounts state from what we
             read into them. Each claim in it carries one of three labels:
           </p>
-          <ul className="list-disc pl-5 space-y-2 marker:text-gray-400">
+          <ul className="list-disc pl-5 space-y-2 marker:text-gray-500">
             <li>
               <strong className="text-black">Fact:</strong> stated in the audited accounts, with the
               line it comes from.

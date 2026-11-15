@@ -87,7 +87,7 @@ export default function ArticleTOC() {
         ${showToc ? 'opacity-100' : 'opacity-0 pointer-events-none'}
       `}
     >
-      <p className="font-sans text-[9px] font-bold tracking-widest uppercase text-gray-300 mb-3">
+      <p className="font-sans text-[9px] font-bold tracking-widest uppercase text-gray-500 mb-3">
         On this page
       </p>
       <ul className="space-y-0.5">
@@ -103,7 +103,7 @@ export default function ArticleTOC() {
                 block font-sans text-[11px] leading-snug py-1 pl-3 border-l-2 transition-all duration-150
                 ${activeId === item.id
                   ? 'border-red-700 text-gray-900 font-semibold'
-                  : 'border-gray-200 text-gray-400 hover:text-gray-600 hover:border-gray-400'
+                  : 'border-gray-200 text-gray-500 hover:text-gray-600 hover:border-gray-400'
                 }
               `}
             >

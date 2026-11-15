@@ -62,7 +62,7 @@ export default function EmployerScore({
   Filing: {filingPeriod}
  </span>
  </span>
- <span className="font-sans text-white/35 text-[10px]">audited public data</span>
+ <span className="font-sans text-white/60 text-[10px]">audited public data</span>
  </div>
  </div>
  <div className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full border ${vc.bg} ${vc.border}`}>
@@ -90,32 +90,32 @@ export default function EmployerScore({
 
  {/* Notes */}
  <div className="px-6 py-4 bg-gray-50 border-t border-gray-100">
- <p className="font-sans text-[10px] font-bold tracking-widest uppercase text-gray-400 mb-2">Notes</p>
+ <p className="font-sans text-[10px] font-bold tracking-widest uppercase text-gray-500 mb-2">Notes</p>
  <p className="font-sans text-sm text-gray-700 leading-relaxed">{notes}</p>
  </div>
 
  {/* Filing signals + risks */}
  <div className="grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-gray-100 border-t border-gray-100">
  <div className="px-6 py-4 bg-white">
- <p className="font-sans text-[10px] font-bold tracking-widest uppercase text-gray-400 mb-2.5">
+ <p className="font-sans text-[10px] font-bold tracking-widest uppercase text-gray-500 mb-2.5">
   What the filing confirms
  </p>
  <ul className="space-y-1.5">
  {signals.map((s, i) => (
  <li key={i} className="flex gap-2 font-sans text-xs text-gray-600">
- <span className="text-green-700 font-bold flex-shrink-0">✓</span>{s}
+ <span aria-hidden="true" className="text-green-700 font-bold flex-shrink-0">✓</span>{s}
  </li>
  ))}
  </ul>
  </div>
  <div className="px-6 py-4 bg-white">
- <p className="font-sans text-[10px] font-bold tracking-widest uppercase text-gray-400 mb-2.5">
+ <p className="font-sans text-[10px] font-bold tracking-widest uppercase text-gray-500 mb-2.5">
   Risk flags from filing
  </p>
  <ul className="space-y-1.5">
  {risks.map((r, i) => (
  <li key={i} className="flex gap-2 font-sans text-xs text-gray-600">
- <span className="text-red-600 font-bold flex-shrink-0">–</span>{r}
+ <span aria-hidden="true" className="text-red-600 font-bold flex-shrink-0">–</span>{r}
  </li>
  ))}
  </ul>

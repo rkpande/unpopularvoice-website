@@ -77,7 +77,7 @@ export default function AuthorPage({ params }: { params: { slug: string } }) {
       <div className="bg-black">
         <div className="max-w-4xl mx-auto px-4 sm:px-8 pt-16 pb-14">
           <nav aria-label="Breadcrumb" className="mb-6">
-            <ol className="flex items-center gap-2 font-sans text-xs text-white/40">
+            <ol className="flex items-center gap-2 font-sans text-xs text-white/60">
               <li><Link href="/" className="hover:text-white/80 transition-colors">Home</Link></li>
               <li aria-hidden="true"><span>/</span></li>
               <li className="text-white/80">Authors</li>
@@ -119,7 +119,7 @@ export default function AuthorPage({ params }: { params: { slug: string } }) {
                   </h3>
                 </Link>
               </div>
-              <p className="font-sans text-xs text-gray-400 shrink-0">{article.readTime} read</p>
+              <p className="font-sans text-xs text-gray-500 shrink-0">{article.readTime} read</p>
             </div>
           ))}
         </div>

@@ -45,13 +45,13 @@ export default function FeaturedArticle({ article }: { article: ArticleMeta }) {
             </div>
           ) : (
             <div className="bg-gray-100 rounded-lg aspect-[16/10] flex items-center justify-center">
-              <p className="text-gray-400 font-sans text-sm">[ Financial chart / company visual ]</p>
+              <p className="text-gray-500 font-sans text-sm">[ Financial chart / company visual ]</p>
             </div>
           )}
 
           {/* Content */}
           <div>
-            <p className="font-sans text-gray-400 text-xs mb-3">
+            <p className="font-sans text-gray-500 text-xs mb-3">
               {article.sector.toUpperCase()}&nbsp;&nbsp;·&nbsp;&nbsp;
               {formatDisplayDate(article.updatedAt)}
             </p>
@@ -83,7 +83,7 @@ export default function FeaturedArticle({ article }: { article: ArticleMeta }) {
               href={`/${article.slug}`}
               className="font-sans font-semibold text-brand-red text-sm hover:underline"
             >
-              Read Full Breakdown →
+              Read Full Breakdown <span aria-hidden="true">→</span>
             </Link>
           </div>
         </div>

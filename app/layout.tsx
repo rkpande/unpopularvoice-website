@@ -111,6 +111,9 @@ export default function RootLayout({
   return (
  <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
  <body className="font-sans bg-white text-black antialiased">
+        <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:bg-black focus:text-white focus:px-4 focus:py-3 focus:rounded-md font-sans text-sm font-semibold">
+          Skip to content
+        </a>
  <script
   type="application/ld+json"
   dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationLd) }}
@@ -120,7 +123,7 @@ export default function RootLayout({
   dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteLd) }}
  />
  <Nav />
- <main>{children}</main>
+ <main id="main" tabIndex={-1} className="focus:outline-none">{children}</main>
  <Footer />
  <Script
   src="https://www.googletagmanager.com/gtag/js?id=G-GRDDSSV3Y9"

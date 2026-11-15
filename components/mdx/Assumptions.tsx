@@ -19,20 +19,20 @@ const statusConfig: Record<AssumptionStatus, { label: string; bg: string }> = {
 export default function Assumptions({ items }: AssumptionsProps) {
   return (
     <div className="not-prose my-10">
-      <p className="font-sans text-[10px] font-bold tracking-widest uppercase text-gray-400 mb-3">
+      <p className="font-sans text-[10px] font-bold tracking-widest uppercase text-gray-500 mb-3">
         Transparency Layer, What We Know vs. What We Infer
       </p>
       <div className="border border-gray-200 rounded-xl overflow-hidden">
         <table className="w-full text-sm border-collapse">
           <thead>
             <tr className="bg-gray-50 border-b border-gray-200">
-              <th className="text-left font-sans text-[10px] font-bold uppercase tracking-wider text-gray-400 px-4 py-3 w-[45%]">
+              <th className="text-left font-sans text-[10px] font-bold uppercase tracking-wider text-gray-500 px-4 py-3 w-[45%]">
                 Claim in Article
               </th>
-              <th className="text-left font-sans text-[10px] font-bold uppercase tracking-wider text-gray-400 px-4 py-3 w-[15%]">
+              <th className="text-left font-sans text-[10px] font-bold uppercase tracking-wider text-gray-500 px-4 py-3 w-[15%]">
                 Type
               </th>
-              <th className="text-left font-sans text-[10px] font-bold uppercase tracking-wider text-gray-400 px-4 py-3">
+              <th className="text-left font-sans text-[10px] font-bold uppercase tracking-wider text-gray-500 px-4 py-3">
                 Basis
               </th>
             </tr>

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 function scoreColor(score: number) {
   if (score >= 7) return 'text-green-700'
-  if (score >= 5) return 'text-yellow-600'
+  if (score >= 5) return 'text-yellow-700'
   return 'text-brand-red'
 }
 
@@ -56,12 +56,12 @@ export default function RealityCheckPage() {
           </p>
           {[
             { range: '8-10', label: 'Strong', color: 'text-green-700' },
-            { range: '5–7', label: 'Watch', color: 'text-yellow-600' },
+            { range: '5–7', label: 'Watch', color: 'text-yellow-700' },
             { range: '1–4', label: 'Concern', color: 'text-brand-red' },
           ].map((item) => (
             <div key={item.range} className="flex items-center gap-2">
               <span className={`font-sans font-bold text-sm ${item.color}`}>{item.range}</span>
-              <span className="font-sans text-gray-400 text-xs">{item.label}</span>
+              <span className="font-sans text-gray-500 text-xs">{item.label}</span>
             </div>
           ))}
         </div>
@@ -70,7 +70,7 @@ export default function RealityCheckPage() {
       {/* Scores table */}
       <div className="max-w-7xl mx-auto px-8 py-12">
         {sorted.length === 0 ? (
-          <p className="font-sans text-gray-400 text-center py-24 text-lg">No articles published yet.</p>
+          <p className="font-sans text-gray-500 text-center py-24 text-lg">No articles published yet.</p>
         ) : (
           <>
             {/* Desktop table */}
@@ -84,7 +84,7 @@ export default function RealityCheckPage() {
                     <th className="px-6 py-4 text-center font-semibold text-xs tracking-wide">Sustainability</th>
                     <th className="px-6 py-4 text-center font-semibold text-xs tracking-wide">Profit Path</th>
                     <th className="px-6 py-4 text-center font-semibold text-xs tracking-wide">Updated</th>
-                    <th className="px-6 py-4 text-right font-semibold text-xs tracking-wide" />
+                    <th className="px-6 py-4 text-right font-semibold text-xs tracking-wide"><span className="sr-only">Article</span></th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-100">
@@ -111,10 +111,10 @@ export default function RealityCheckPage() {
                           {a.realityScore.profitabilityPath}/10
                         </span>
                       </td>
-                      <td className="px-6 py-4 text-center text-gray-400 text-xs">{formatDisplayDate(a.updatedAt)}</td>
+                      <td className="px-6 py-4 text-center text-gray-500 text-xs">{formatDisplayDate(a.updatedAt)}</td>
                       <td className="px-6 py-4 text-right">
                         <Link href={`/${a.slug}`} className="font-semibold text-brand-red text-xs hover:underline">
-                          Full report →
+                          Full report <span aria-hidden="true">→</span>
                         </Link>
                       </td>
                     </tr>
@@ -134,9 +134,9 @@ export default function RealityCheckPage() {
                   <div className="flex justify-between items-start mb-3">
                     <div>
                       <p className="font-sans font-bold text-black">{a.company}</p>
-                      <p className="font-sans text-gray-400 text-xs">{a.sector}</p>
+                      <p className="font-sans text-black/60 text-xs">{a.sector}</p>
                     </div>
-                    <span className="font-sans font-semibold text-brand-red text-xs">Full report →</span>
+                    <span className="font-sans font-semibold text-brand-red text-xs">Full report <span aria-hidden="true">→</span></span>
                   </div>
                   <div className="grid grid-cols-3 gap-2">
                     {[
@@ -145,7 +145,7 @@ export default function RealityCheckPage() {
                       { label: 'Profit', score: a.realityScore.profitabilityPath },
                     ].map((d) => (
                       <div key={d.label}>
-                        <p className="font-sans text-[9px] text-gray-400 uppercase tracking-wide">{d.label}</p>
+                        <p className="font-sans text-[9px] text-black/60 uppercase tracking-wide">{d.label}</p>
                         <p className={`font-sans font-bold text-lg ${scoreColor(d.score)}`}>{d.score}/10</p>
                       </div>
                     ))}

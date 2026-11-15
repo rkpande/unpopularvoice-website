@@ -12,6 +12,7 @@ import ForensicFinds from '@/components/home/ForensicFinds'
 import WordmarkGrid from '@/components/home/WordmarkGrid'
 import IndexesPanel from '@/components/home/IndexesPanel'
 import NewsletterCTA from '@/components/home/NewsletterCTA'
+import TeardownDirectory from '@/components/home/TeardownDirectory'
 
 export const metadata: Metadata = {
   title: 'Indian Startup Revenue & Profit (From Filings, Not PR)',
@@ -111,6 +112,8 @@ export default function HomePage() {
  <WordmarkGrid articles={all} />
 
  <IndexesPanel />
+
+ <TeardownDirectory articles={all} />
 
  <StatsTicker articles={all} />
 

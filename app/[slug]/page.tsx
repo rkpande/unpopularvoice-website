@@ -13,6 +13,9 @@ import { getAuthor, getPrimaryAuthor } from '@/lib/authors'
 import { lastModified, sortedCorrections } from '@/lib/corrections'
 import { signTone, toneText } from '@/lib/tone'
 import CorrectionsNote from '@/components/CorrectionsNote'
+import ArticleContents from '@/components/ArticleContents'
+import ReadingProgress from '@/components/ReadingProgress'
+import { getArticleToc } from '@/lib/toc'
 import Link from 'next/link'
 import FinancialTable from '@/components/mdx/FinancialTable'
 import RealityScore from '@/components/mdx/RealityScore'
@@ -116,6 +119,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
   const latestCorrection = sortedCorrections(article.corrections)[0]
   // Job seekers come for the employer read; give them a jump to it from the byline.
   const hasEmployerSignal = article.content.includes('<EmployerScore')
+  const toc = getArticleToc(article.content)
 
   // Auto-generated "More from this sector" — 4 most-recent articles in same sector, excluding this one
   const relatedArticles = getArticlesBySector(sectorName)
@@ -268,14 +272,17 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
           </span>
         </div>
 
+        <ArticleContents items={toc} />
+
       </div>
 
       {/* Sticky TOC, floats on right, desktop only */}
       <ArticleTOC />
+      <ReadingProgress targetId="article-body" />
 
       {/* MDX content, CenterpieceTable black header continues right off the author bar */}
       <div className="article-col pb-16 pt-0">
-        <div className="prose prose-lg max-w-none font-sans">
+        <div id="article-body" className="prose prose-lg max-w-none font-sans">
           <MDXRemote
             source={article.content}
             components={mdxComponents}

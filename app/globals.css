@@ -60,6 +60,12 @@
     color: #15803d;
   }
 
+  /* In-page jumps (contents list, TOC, #corrections) land below the 72px
+     sticky nav instead of underneath it. */
+  .prose :is(h2, h3, h4)[id] {
+    scroll-margin-top: 88px;
+  }
+
   /* Scrollable tables take focus so keyboard users can scroll them. */
   [role='region'][tabindex='0']:focus-visible {
     outline-offset: -2px;

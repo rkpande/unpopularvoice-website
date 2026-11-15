@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.13",
+    "github-slugger": "2.0.0",
     "gray-matter": "^4.0.3",
     "next": "^14.2.0",
     "next-mdx-remote": "^6.0.0",

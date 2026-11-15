@@ -13,10 +13,16 @@ interface RelatedArticlesProps {
 }
 
 export default function RelatedArticles({ articles, slugs }: RelatedArticlesProps) {
-  let resolved: RelatedArticle[] = articles ?? []
+  const all = getAllArticles()
+  // A link to one of our own articles always shows that article's current
+  // headline. Hand-typed titles went stale after retitles and corrections
+  // (all 32 did by Nov 2026), so the typed title is only a fallback.
+  let resolved: RelatedArticle[] = (articles ?? []).map((a) => {
+    const target = all.find((x) => `/${x.slug}` === a.href)
+    return target ? { ...a, title: target.title } : a
+  })
 
   if (slugs && slugs.length > 0) {
-    const all = getAllArticles()
     resolved = slugs
       .map((slug) => all.find((a) => a.slug === slug))
       .filter((a): a is NonNullable<typeof a> => a != null)

@@ -52,7 +52,7 @@ export default function Leaderboard({ title, subtitle, entries, accent }: Leader
                     {e.article.company}
                   </span>
                   {e.metricSub && (
-                    <span className="block font-sans text-gray-500 text-[11px] truncate">{e.metricSub}</span>
+                    <span className="block font-sans text-gray-500 text-xs truncate">{e.metricSub}</span>
                   )}
                 </span>
                 <span className={`font-serif font-bold text-base whitespace-nowrap ${a.metric}`}>

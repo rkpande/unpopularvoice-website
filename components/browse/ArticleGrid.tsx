@@ -72,7 +72,7 @@ export default function ArticleGrid({ articles, pageSize }: Props) {
  <span className="font-sans text-[10px] font-semibold text-brand-red uppercase tracking-widest">
  {topSector(article.sector)}
  </span>
- <span className="font-sans text-gray-500 text-[10px]">
+ <span className="font-sans text-gray-500 text-xs">
  {formatDisplayDate(article.updatedAt)}
  </span>
  </div>

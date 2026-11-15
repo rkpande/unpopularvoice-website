@@ -170,7 +170,7 @@ export default function ComparePanel({ companies }: Props) {
             <div className="px-5 py-4 border-r border-white/10">
               <p className="font-sans text-white/60 text-[10px] uppercase tracking-widest mb-1">Company A</p>
               <p className="font-serif text-white text-lg font-bold leading-snug">{companyA.company}</p>
-              <p className="font-sans text-white/60 text-[10px] mt-1">{companyA.dataSource}</p>
+              <p className="font-sans text-white/60 text-xs mt-1">{companyA.dataSource}</p>
             </div>
             <div className="px-5 py-4 flex items-center justify-center">
               <span className="font-sans text-white/60 text-3xl font-light">vs</span>
@@ -178,7 +178,7 @@ export default function ComparePanel({ companies }: Props) {
             <div className="px-5 py-4 border-l border-white/10 text-right">
               <p className="font-sans text-white/60 text-[10px] uppercase tracking-widest mb-1">Company B</p>
               <p className="font-serif text-white text-lg font-bold leading-snug">{companyB.company}</p>
-              <p className="font-sans text-white/60 text-[10px] mt-1">{companyB.dataSource}</p>
+              <p className="font-sans text-white/60 text-xs mt-1">{companyB.dataSource}</p>
             </div>
           </div>
 
@@ -218,7 +218,7 @@ export default function ComparePanel({ companies }: Props) {
                 </div>
                 <div className="px-4 py-3.5 flex flex-col items-center justify-center text-center">
                   <p className="font-sans text-xs font-semibold text-black">{label}</p>
-                  <p className="font-sans text-[10px] text-gray-500 mt-0.5">{sub}</p>
+                  <p className="font-sans text-xs text-gray-500 mt-0.5">{sub}</p>
                 </div>
                 <div className="px-5 py-3.5 flex items-center justify-end">
                   <LabelChip dimension={key as EmployerDimension} value={vB} highlight={highlightB} />

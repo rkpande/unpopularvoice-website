@@ -46,7 +46,7 @@ export default function EmployerScore({
   const values = { growthMomentum, stability, profitability, fundingDependence, careerUpside }
 
   return (
- <div className="not-prose my-10 border border-gray-200 rounded-xl overflow-hidden shadow-sm">
+ <div id="employer-signal" className="not-prose my-10 border border-gray-200 rounded-xl overflow-hidden shadow-sm scroll-mt-24">
 
  {/* Header */}
  <div className="bg-black px-6 py-5">
@@ -58,11 +58,11 @@ export default function EmployerScore({
  <p className="font-serif text-white text-lg font-bold leading-snug">{company}</p>
  <div className="flex items-center gap-2 mt-1.5">
  <span className="inline-flex items-center gap-1.5 bg-white/10 border border-white/15 rounded-full px-2.5 py-0.5">
- <span className="font-sans text-white/80 text-[10px] font-semibold tracking-wide">
+ <span className="font-sans text-white/80 text-xs font-semibold tracking-wide">
   Filing: {filingPeriod}
  </span>
  </span>
- <span className="font-sans text-white/60 text-[10px]">audited public data</span>
+ <span className="font-sans text-white/60 text-xs">audited public data</span>
  </div>
  </div>
  <div className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full border ${vc.bg} ${vc.border}`}>

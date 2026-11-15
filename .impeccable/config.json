@@ -11,6 +11,18 @@
         ],
         "createdAt": "2026-11-14T15:29:27.885Z",
         "reason": "Claude, from DESIGN.md: red top border on dark panels is a documented system motif (Dark hero card, stripe on dark panels)"
+      },
+      {
+        "rule": "border-accent-on-rounded",
+        "value": "*",
+        "files": [
+          "app/methodology/page.tsx",
+          "components/home/Hero.tsx",
+          "components/home/RealityCheckIndex.tsx",
+          "components/home/SpectrumBand.tsx"
+        ],
+        "createdAt": "2026-11-15T10:37:37.125Z",
+        "reason": "Claude, from DESIGN.md: 4px Auditor's Red top rule on cards is a documented motif (Dark hero card); top corners are square (rounded-b-lg only), so the rule does not bend"
       }
     ]
   }

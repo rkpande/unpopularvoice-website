@@ -63,12 +63,12 @@ export default function Predictions({ predictions, asOf }: PredictionsProps) {
           <span className="font-sans text-[10px] font-bold tracking-widest uppercase text-white/60">
             Predictions
           </span>
-          <span className="font-sans text-[11px] text-white/60">
+          <span className="font-sans text-xs text-white/60">
             {asOf ?? 'derived from filing analysis'}
           </span>
         </div>
         {validated > 0 && (
-          <span className="font-sans text-[10px] text-green-700">
+          <span className="font-sans text-xs text-green-700">
             {validated}/{predictions.length} validated
           </span>
         )}
@@ -125,7 +125,7 @@ export default function Predictions({ predictions, asOf }: PredictionsProps) {
 
       {/* Footer */}
       <div className="px-6 py-3 bg-gray-50 border-t border-gray-100">
-        <p className="font-sans text-[10px] text-gray-500">
+        <p className="font-sans text-xs text-gray-500">
           Predictions are editorial assessments based on public filings. Validated outcomes are based on publicly available information after the filing date.
         </p>
       </div>

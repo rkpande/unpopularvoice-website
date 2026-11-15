@@ -46,7 +46,7 @@ export default function ContradictionCards({ articles }: { articles: ArticleMeta
                 </p>
               </div>
               <p
-                className={`font-sans text-[11px] font-semibold mt-6 ${
+                className={`font-sans text-xs font-semibold mt-6 ${
                   i === 0 ? 'text-white/80' : 'text-brand-red'
                 } group-hover:underline`}
               >

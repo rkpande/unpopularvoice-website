@@ -100,7 +100,7 @@ export default function ArticleTOC() {
                 document.getElementById(item.id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
               }}
               className={`
-                block font-sans text-[11px] leading-snug py-1 pl-3 border-l-2 transition-all duration-150
+                block font-sans text-xs leading-snug py-1 pl-3 border-l-2 transition-all duration-150
                 ${activeId === item.id
                   ? 'border-red-700 text-gray-900 font-semibold'
                   : 'border-gray-200 text-gray-500 hover:text-gray-600 hover:border-gray-400'

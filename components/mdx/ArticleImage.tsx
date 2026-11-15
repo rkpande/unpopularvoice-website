@@ -40,7 +40,7 @@ export default function ArticleImage({
             </span>
           )}
           {credit && (
-            <span className="font-sans text-[11px] text-gray-500 whitespace-nowrap shrink-0">
+            <span className="font-sans text-xs text-gray-500 whitespace-nowrap shrink-0">
               {creditUrl ? (
                 <a
                   href={creditUrl}

@@ -33,7 +33,7 @@ export default function Hero({ topArticles }: HeroProps) {
  <Link
   key={a.slug}
   href={`/${a.slug}`}
-  className="bg-white/5 hover:bg-white/10 transition-colors rounded-lg p-5 border-t-4 border-brand-red group flex flex-col gap-3"
+  className="bg-white/5 hover:bg-white/10 transition-colors rounded-b-lg p-5 border-t-4 border-brand-red group flex flex-col gap-3"
  >
  <p className="font-sans font-bold text-white/50 text-[9px] uppercase tracking-widest">
  {a.company}

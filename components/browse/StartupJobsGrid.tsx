@@ -128,7 +128,7 @@ function JobsCard({ article }: { article: ArticleMeta }) {
             </span>
           )}
         </div>
-        <p className="font-sans text-[11px] text-gray-500 mb-4">
+        <p className="font-sans text-xs text-gray-500 mb-4">
           {article.sector} · {formatDisplayDate(article.updatedAt)}
         </p>
 
@@ -137,19 +137,19 @@ function JobsCard({ article }: { article: ArticleMeta }) {
           <div className="bg-gray-50 rounded-lg p-2.5">
             <p className="font-sans text-[9px] text-gray-500 uppercase tracking-widest mb-1">Buffer</p>
             <p className={`font-serif text-base font-bold leading-tight ${runway.color}`}>{runway.text}</p>
-            <p className="font-sans text-[9px] text-gray-500 mt-0.5 leading-tight">{runway.sub}</p>
+            <p className="font-sans text-xs text-gray-500 mt-0.5 leading-tight">{runway.sub}</p>
           </div>
           <div className="bg-gray-50 rounded-lg p-2.5">
             <p className="font-sans text-[9px] text-gray-500 uppercase tracking-widest mb-1">Profitability</p>
             <p className={`font-serif text-base font-bold leading-tight ${trend?.color ?? 'text-gray-500'}`}>
               {trend?.text ?? 'N/A'}
             </p>
-            <p className="font-sans text-[9px] text-gray-500 mt-0.5 leading-tight">trajectory</p>
+            <p className="font-sans text-xs text-gray-500 mt-0.5 leading-tight">trajectory</p>
           </div>
           <div className="bg-gray-50 rounded-lg p-2.5">
             <p className="font-sans text-[9px] text-gray-500 uppercase tracking-widest mb-1">Payroll</p>
             <p className={`font-serif text-base font-bold leading-tight ${growth.color}`}>{growth.text}</p>
-            <p className="font-sans text-[9px] text-gray-500 mt-0.5 leading-tight">cost YoY</p>
+            <p className="font-sans text-xs text-gray-500 mt-0.5 leading-tight">cost YoY</p>
           </div>
         </div>
 
@@ -159,7 +159,7 @@ function JobsCard({ article }: { article: ArticleMeta }) {
             <span className="font-sans text-xs text-gray-500">Career upside</span>
             <div className="text-right">
               <span className="font-sans text-xs font-semibold text-gray-700">{upside}</span>
-              {upsideSub && <p className="font-sans text-[10px] text-gray-500">{upsideSub}</p>}
+              {upsideSub && <p className="font-sans text-xs text-gray-500">{upsideSub}</p>}
             </div>
           </div>
         )}

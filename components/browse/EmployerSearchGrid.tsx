@@ -67,7 +67,7 @@ function CompanyCard({
             {vc.label}
           </span>
         </div>
-        <p className="font-sans text-[11px] text-gray-500 mb-4">
+        <p className="font-sans text-xs text-gray-500 mb-4">
           Based on {article.dataSource} · Updated {formatDisplayDate(article.updatedAt)}
         </p>
 
@@ -95,13 +95,13 @@ function CompanyCard({
               className="flex items-center gap-1 text-gray-500 hover:text-gray-600 transition-colors"
             >
               {copied
-                ? <span className="font-sans text-green-700 font-semibold text-[11px]">Copied!</span>
+                ? <span className="font-sans text-green-700 font-semibold text-xs">Copied!</span>
                 : <ShareIcon />
               }
             </button>
             <button
               onClick={onToggleSelect}
-              className={`font-sans text-[11px] px-2.5 py-0.5 rounded-full border transition-all ${
+              className={`font-sans text-xs px-2.5 py-0.5 rounded-full border transition-all ${
                 selected
                   ? 'bg-black text-white border-black'
                   : 'text-gray-500 border-gray-200 hover:border-gray-500 hover:text-gray-700'

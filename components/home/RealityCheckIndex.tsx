@@ -30,7 +30,7 @@ export default function RealityCheckIndex({ articles }: { articles: ArticleMeta[
               <Link
                 key={a.slug}
                 href={`/${a.slug}`}
-                className={`bg-[#0d0d0d] rounded-lg p-5 border-t-4 ${scoreBorder(growthQuality)} hover:bg-white/5 transition-colors`}
+                className={`bg-[#0d0d0d] rounded-b-lg p-5 border-t-4 ${scoreBorder(growthQuality)} hover:bg-white/5 transition-colors`}
               >
                 <p className="font-sans font-semibold text-white text-sm mb-3">{a.company}</p>
 
@@ -55,7 +55,7 @@ export default function RealityCheckIndex({ articles }: { articles: ArticleMeta[
                   </div>
                 </div>
 
-                <p className="text-white/60 font-sans text-[10px] mt-3">Full report <span aria-hidden="true">→</span></p>
+                <p className="text-white/60 font-sans text-xs mt-3">Full report <span aria-hidden="true">→</span></p>
               </Link>
             )
           })}

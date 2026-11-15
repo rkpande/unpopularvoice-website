@@ -21,7 +21,7 @@ export default function SpectrumBand({ articles }: { articles: ArticleMeta[] }) 
             Working models, scaling models, in-progress, restructuring, broken. The audited
             filings sort companies into one of five categories. Pick a column to see who fits.
           </p>
-          <p className="font-sans text-gray-500 text-[11px] mt-3 sm:hidden">
+          <p className="font-sans text-gray-500 text-xs mt-3 sm:hidden">
             Swipe to see all five <span aria-hidden="true">→</span>
           </p>
         </div>
@@ -76,7 +76,7 @@ export default function SpectrumBand({ articles }: { articles: ArticleMeta[] }) 
                   >
                     All {bucket.shortLabel.toLowerCase()} <span aria-hidden="true">→</span>
                   </Link>
-                  <span className="font-sans text-gray-500 text-[11px] ml-2">
+                  <span className="font-sans text-gray-500 text-xs ml-2">
                     {buckets[key].length} total
                   </span>
                 </div>

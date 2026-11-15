@@ -113,6 +113,8 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
   const isoDate = parseUpdatedAt(article.updatedAt).toISOString()
   const modifiedIso = lastModified(article.updatedAt, article.corrections).toISOString()
   const latestCorrection = sortedCorrections(article.corrections)[0]
+  // Job seekers come for the employer read; give them a jump to it from the byline.
+  const hasEmployerSignal = article.content.includes('<EmployerScore')
 
   // Auto-generated "More from this sector" — 4 most-recent articles in same sector, excluding this one
   const relatedArticles = getArticlesBySector(sectorName)
@@ -190,7 +192,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
           <li aria-hidden="true"><span>/</span></li>
           <li className="font-bold text-brand-red uppercase tracking-wide">{article.company}</li>
           <li className="hidden sm:inline" aria-hidden="true"><span>/</span></li>
-          <li className="hidden sm:inline">Source: {article.dataSource}</li>
+          <li className="hidden sm:inline min-w-0 truncate max-w-[44ch]" title={article.dataSource}>Source: {article.dataSource}</li>
           <li className="ml-auto shrink-0">
             {latestCorrection ? (
               <a href="#corrections" className="hover:text-black underline-offset-4 hover:underline">
@@ -252,7 +254,17 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
               {author.name}
             </Link>
           </span>
-          <span className="font-sans text-gray-500 text-sm whitespace-nowrap">{article.readTime} read</span>
+          <span className="font-sans text-gray-500 text-sm whitespace-nowrap">
+            {hasEmployerSignal && (
+              <>
+                <a href="#employer-signal" className="text-black underline underline-offset-4 decoration-gray-300 hover:decoration-black">
+                  Employer signal
+                </a>
+                <span aria-hidden="true"> · </span>
+              </>
+            )}
+            {article.readTime} read
+          </span>
         </div>
 
       </div>

@@ -113,7 +113,7 @@ export default function MethodologyPage() {
  { n: '02', name: 'Sustainability', sub: 'Can the business sustain itself without emergency capital?' },
  { n: '03', name: 'Profitability Path', sub: 'Is there a filing-evidenced trajectory to profit?' },
  ].map(({ n, name, sub }) => (
- <div key={n} className="border-t-4 border-brand-red bg-gray-50 rounded-lg p-5">
+ <div key={n} className="border-t-4 border-brand-red bg-gray-50 rounded-b-lg p-5">
  <p className="font-sans text-brand-red text-xs font-bold tracking-widest uppercase mb-2">{n}</p>
  <p className="font-serif text-black text-lg font-bold mb-1">{name}</p>
  <p className="font-sans text-gray-500 text-sm">{sub}</p>

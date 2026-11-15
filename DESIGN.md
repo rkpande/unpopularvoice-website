@@ -281,7 +281,13 @@ The article's screenshot line. Centered black panel (12px radius, 56px vertical 
 Evidence, side by side. Two panes inside a bordered 12px container: tinted left pane, white right pane, each with a tracked label, a direction glyph (▲ ▼ or a hyphen placeholder), and a serif value toned gain, loss, or neutral black.
 
 ### EmployerScore (signature)
-A scorecard instrument. Black header with red eyebrow, serif company name, and a verdict pill; white rows of dimension and label chip; a grey notes band; two columns of signals (green ✓) and risks (red marks); a pale yellow disclaimer footer.
+A scorecard instrument. Black header with red eyebrow, serif company name, and a verdict pill; white rows of dimension and label chip; a grey notes band; two columns of signals (green ✓) and risks (red marks); a pale yellow disclaimer footer. Carries `id="employer-signal"`; the article byline links to it.
+
+### InsightBox, KeyMetrics, ChartBlock
+- **InsightBox:** a tinted panel with a 1px border in the same hue and a typed badge (Red Flag, Watch, Positive, Insight). The badge names the type; no side stripe.
+- **KeyMetrics:** 2 columns on phones, 3 from md. The last tile stretches across whatever its row leaves empty, so odd counts never end on a lone tile.
+- **ChartBlock:** bars scale by magnitude around a zero line (gains above, losses and outflows below). Values are exposed to screen readers as a list inside a `figure`.
+- **Small text:** sentence text never goes below 12px (`text-xs`); 9-10px is for uppercase labels only.
 
 ## Do's and Don'ts
 

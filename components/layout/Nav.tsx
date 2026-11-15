@@ -129,7 +129,7 @@ export default function Nav() {
                                 {item.label}
                               </p>
                               {item.hint && (
-                                <p className="font-sans text-[11px] text-gray-500 mt-0.5">
+                                <p className="font-sans text-xs text-gray-500 mt-0.5">
                                   {item.hint}
                                 </p>
                               )}

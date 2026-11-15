@@ -10,25 +10,25 @@ interface InsightBoxProps {
 
 const typeConfig: Record<InsightType, { border: string; badge: string; badgeText: string; icon: string }> = {
   flag: {
-    border: 'border-l-red-600 bg-red-50',
+    border: 'border-red-200 bg-red-50',
     badge: 'bg-red-600 text-white',
     badgeText: 'Red Flag',
     icon: '⚑',
   },
   warning: {
-    border: 'border-l-amber-500 bg-amber-50',
+    border: 'border-amber-200 bg-amber-50',
     badge: 'bg-amber-700 text-white',
     badgeText: 'Watch',
     icon: '⚠',
   },
   positive: {
-    border: 'border-l-green-600 bg-green-50',
+    border: 'border-green-200 bg-green-50',
     badge: 'bg-green-700 text-white',
     badgeText: 'Positive',
     icon: '✓',
   },
   insight: {
-    border: 'border-l-black bg-gray-50',
+    border: 'border-gray-200 bg-gray-50',
     badge: 'bg-black text-white',
     badgeText: 'Insight',
     icon: '→',
@@ -39,7 +39,7 @@ export default function InsightBox({ type = 'insight', number, label, title, chi
   const config = typeConfig[type]
   const displayLabel = label ?? config.badgeText
   return (
-    <div className={`not-prose my-6 border-l-4 rounded-r-lg p-6 ${config.border}`}>
+    <div className={`not-prose my-6 border rounded-lg p-6 ${config.border}`}>
       <div className="flex items-start gap-4">
         {number && (
           <span className="font-sans font-bold text-2xl text-gray-500 leading-none mt-0.5 select-none min-w-[2rem]">

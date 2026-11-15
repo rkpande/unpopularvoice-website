@@ -155,8 +155,8 @@ function Card({ article }: { article: ArticleMeta }) {
 
         {/* Read indicator */}
         <div className="pt-3 border-t border-gray-100 flex items-center justify-between">
-          <span className="font-sans text-gray-500 text-[11px]">{getFinancials(article)?.period ?? 'Latest'} audited</span>
-          <span className="font-sans text-brand-red text-[11px] font-semibold group-hover:underline">Read analysis <span aria-hidden="true">→</span></span>
+          <span className="font-sans text-gray-500 text-xs">{getFinancials(article)?.period ?? 'Latest'} audited</span>
+          <span className="font-sans text-brand-red text-xs font-semibold group-hover:underline">Read analysis <span aria-hidden="true">→</span></span>
         </div>
       </div>
     </Link>

@@ -7,7 +7,7 @@ import { signTone, toneText } from '@/lib/tone'
 
 export function ProseTable({ children }: { children?: ReactNode }) {
   return (
-    <div className="overflow-x-auto -mx-1 px-1" tabIndex={0} role="region" aria-label="Table">
+    <div className="overflow-x-auto -mx-1 px-1" tabIndex={0} role="group" aria-label="Scrollable table">
       <table>{children}</table>
     </div>
   )

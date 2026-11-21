@@ -67,7 +67,8 @@
   }
 
   /* Scrollable tables take focus so keyboard users can scroll them. */
-  [role='region'][tabindex='0']:focus-visible {
+  [role='region'][tabindex='0']:focus-visible,
+  [role='group'][tabindex='0']:focus-visible {
     outline-offset: -2px;
   }
 }

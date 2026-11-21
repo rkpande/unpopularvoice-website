@@ -36,6 +36,7 @@ import ContrastRow from '@/components/mdx/ContrastRow'
 import VersusBlock from '@/components/mdx/VersusBlock'
 import SplitView from '@/components/mdx/SplitView'
 import JargonKey from '@/components/mdx/JargonKey'
+import { ProseTable, ProseCell } from '@/components/mdx/ProseTable'
 
 const mdxComponents = {
   FinancialTable,
@@ -57,6 +58,8 @@ const mdxComponents = {
   VersusBlock,
   SplitView,
   JargonKey,
+  table: ProseTable,
+  td: ProseCell,
 }
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://unpopularvoice.com'
@@ -121,9 +124,11 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
   const hasEmployerSignal = article.content.includes('<EmployerScore')
   const toc = getArticleToc(article.content)
 
-  // Auto-generated "More from this sector" — 4 most-recent articles in same sector, excluding this one
+  // Same-sector reading: 4 most recent articles about other companies. Pieces on
+  // the same company are listed separately so the sector block always widens.
+  const sameCompany = getAllArticles().filter((a) => a.company === article.company && a.slug !== article.slug)
   const relatedArticles = getArticlesBySector(sectorName)
-    .filter((a) => a.slug !== article.slug)
+    .filter((a) => a.slug !== article.slug && a.company !== article.company)
     .slice(0, 4)
 
   const author = (article.author && getAuthor(article.author)) || getPrimaryAuthor()
@@ -336,17 +341,32 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
         </div>
       </div>
 
+      {sameCompany.length > 0 && (
+        <div className="border-t border-gray-100 bg-white">
+          <div className="max-w-3xl mx-auto px-6 sm:px-8 py-10">
+            <h2 className="font-serif text-black text-2xl font-bold mb-4">More on {article.company}</h2>
+            <ul className="divide-y divide-gray-100 border-y border-gray-100">
+              {sameCompany.map((rel) => (
+                <li key={rel.slug}>
+                  <Link href={`/${rel.slug}`} className="group flex items-baseline justify-between gap-4 py-3">
+                    <span className="font-serif text-black text-base font-bold leading-snug group-hover:text-brand-red transition-colors">
+                      {rel.title}
+                    </span>
+                    <span className="font-sans text-xs text-gray-500 shrink-0">{rel.readTime} read</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      )}
+
       {/* Auto-related articles — same sector, drives internal linking + gives Google topic-cluster signals */}
       {relatedArticles.length > 0 && (
         <div className="border-t border-gray-100 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-8 py-12">
             <div className="flex items-baseline justify-between mb-6 flex-wrap gap-2">
-              <div>
-                <p className="font-sans text-brand-red text-xs tracking-[0.25em] uppercase font-bold mb-1">
-                  More from {sectorName}
-                </p>
-                <h2 className="font-serif text-black text-2xl font-bold">Other audited teardowns in the same sector</h2>
-              </div>
+              <h2 className="font-serif text-black text-2xl font-bold">More {sectorName} teardowns</h2>
               <Link
                 href={`/sector/${sectorSlug(sectorName)}`}
                 className="font-sans text-sm font-semibold text-brand-red hover:underline shrink-0"

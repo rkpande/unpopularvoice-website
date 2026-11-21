@@ -313,9 +313,9 @@ Use these instead of long paragraphs in comparison MDX and analysis articles:
 
 - `<VersusBlock>` — single-metric A vs B with optional direction arrow and tone color
 - `<SplitView>` — narrative A vs B with bold headline, body paragraph, color tone
-- `<ContrastRow>` — stark single-line claim cards (green / red bordered)
+- `<ContrastRow>` — two short claims side by side, neutral (black rule, grey labels; red and green are reserved for a figure's sign)
 - `<TakeawayCard>` — magazine-style hero pull-out (dark or light variant)
-- `<JargonKey>` — amber glossary panel for abbreviations (use when 3+ technical abbreviations appear)
+- `<JargonKey>` — collapsed glossary ("Terms used here: ...") for abbreviations (use when 3+ technical abbreviations appear)
 
 All require flat string props or tuple arrays (object literals don't parse in MDX).
 

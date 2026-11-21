@@ -84,8 +84,9 @@ export default function ArticleTOC() {
         fixed top-1/2 -translate-y-1/2 right-6 2xl:right-12
         w-48 z-40
         transition-opacity duration-300
-        ${showToc ? 'opacity-100' : 'opacity-0 pointer-events-none'}
+        ${showToc ? 'opacity-100 visible' : 'opacity-0 pointer-events-none invisible'}
       `}
+      aria-hidden={!showToc}
     >
       <p className="font-sans text-[9px] font-bold tracking-widest uppercase text-gray-500 mb-3">
         On this page

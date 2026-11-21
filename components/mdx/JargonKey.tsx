@@ -15,22 +15,24 @@ const DEFAULT_TERMS: Term[] = [
 export default function JargonKey({ terms }: JargonKeyProps) {
   const list = terms && terms.length > 0 ? terms : DEFAULT_TERMS
   return (
-    <div role="note" className="not-prose my-8 bg-amber-50 border border-amber-200 rounded-xl p-5 sm:p-6">
-      <p className="font-sans text-[10px] tracking-[0.22em] uppercase font-bold text-amber-900 mb-3">
-        Quick glossary
-      </p>
-      <dl className="space-y-3">
+    <details className="not-prose group my-8 border border-gray-200 rounded-xl bg-white">
+      <summary className="flex items-center justify-between gap-4 min-h-[44px] px-5 py-3 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+        <span className="font-sans text-sm text-gray-800">
+          <span className="font-semibold text-black">Terms used here: </span>
+          {list.map(([abbr]) => abbr).join(', ')}
+        </span>
+        <span aria-hidden="true" className="font-sans text-gray-500 transition-transform group-open:rotate-45">+</span>
+      </summary>
+      <dl className="space-y-3 px-5 pb-5 pt-1">
         {list.map(([abbr, full, meaning]) => (
           <div key={abbr} className="flex flex-col sm:flex-row sm:gap-4">
-            <dt className="font-sans text-amber-900 font-bold text-sm shrink-0 sm:w-44 sm:break-words">
-              {abbr}
-            </dt>
-            <dd className="font-sans text-amber-950/90 text-sm leading-relaxed sm:flex-1 sm:min-w-0">
+            <dt className="font-sans text-black font-bold text-sm shrink-0 sm:w-44 sm:break-words">{abbr}</dt>
+            <dd className="font-sans text-gray-800 text-sm leading-relaxed sm:flex-1 sm:min-w-0">
               <span className="font-semibold">{full}</span>, {meaning}
             </dd>
           </div>
         ))}
       </dl>
-    </div>
+    </details>
   )
 }

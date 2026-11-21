@@ -277,7 +277,7 @@ Black 72px sticky bar. Serif "UnpopularVoice" wordmark left, turns red on hover.
 The one line the section exists to prove. **Dark** variant: black, 16px radius, red bar top-left, red tracked eyebrow, white serif Pullout, white/70 body. **Light** variant: warm cream with the 6px red left border.
 
 ### SignatureLine (signature)
-The article's screenshot line. Centered black panel (12px radius, 56px vertical padding), a 32px red bar, a "The core insight" label in white/40, and the line in white serif Pullout.
+The article's screenshot line. Centered black panel (12px radius, 56px vertical padding, 24px side padding on phones), a 32px red bar, and the line in white serif Pullout. No label: a fixed eyebrow repeated on nearly every article read as template, and the line carries itself.
 
 ### VersusBlock (signature)
 Evidence, side by side. Two panes inside a bordered 12px container: tinted left pane, white right pane, each with a tracked label, a direction glyph (▲ ▼ or a hyphen placeholder), and a serif value toned gain, loss, or neutral black.

@@ -1,3 +1,5 @@
+import { signTone, toneText } from '@/lib/tone'
+
 interface CenterpieceTableProps {
   rows: [string, string, string][]
   title?: string
@@ -57,9 +59,9 @@ export default function CenterpieceTable({ rows, title }: CenterpieceTableProps)
                 >
                   {metric}
                 </th>
-                {/* Reported: large bold serif, the "headline number" */}
+                {/* Reported: large bold serif, the "headline number", coloured by sign (lib/tone.ts) */}
                 <td
-                  className={`block sm:table-cell mt-1.5 sm:mt-0 sm:px-4 sm:py-4 font-serif text-[1.35rem] sm:text-[1.4rem] font-bold text-black leading-tight ${
+                  className={`block sm:table-cell mt-1.5 sm:mt-0 sm:px-4 sm:py-4 font-serif text-[1.35rem] sm:text-[1.4rem] font-bold leading-tight ${toneText[signTone(reported, metric)]} ${
                     isFigure(reported) ? 'whitespace-nowrap' : ''
                   }`}
                 >

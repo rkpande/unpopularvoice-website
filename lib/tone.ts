@@ -18,7 +18,9 @@ export function signTone(value: string | number | null | undefined, label = ''):
   if (value === null || value === undefined) return 'neutral'
   // A label's subject decides, not its aside: "Founder pay (36% of the loss)"
   // is about pay, not the loss.
-  const subject = label.replace(/\([^)]*\)/g, ' ')
+  // Nor does what follows "beyond", "excluding" or "versus": "Equity added
+  // beyond profit" is about equity.
+  const subject = label.replace(/\([^)]*\)/g, ' ').replace(/\b(beyond|excluding|excl\.|versus|vs\.?)\s.*$/i, ' ')
   if (typeof value === 'number') {
     if (value < 0) return 'loss'
     if (value > 0 && PROFIT_WORDS.test(subject) && !LOSS_WORDS.test(subject)) return 'gain'
@@ -28,12 +30,15 @@ export function signTone(value: string | number | null | undefined, label = ''):
   if (!v) return 'neutral'
   // A transition ("-₹44 → -₹20 Cr") is coloured by where it ends.
   if (/→|->/.test(v)) v = v.split(/→|->/).pop()!.trim()
+  // Two different figures in one cell ("₹2,136 Cr revenue; −₹1,534 Cr loss")
+  // cannot share one colour.
+  if (v.includes(';')) return 'neutral'
   // Only figures take colour; a sentence in a table cell stays neutral even if
   // it mentions a loss ("Peak revenue. Highest loss.").
   if (!/^\(?\s*[-−–+]?\s*(₹|Rs\.?\s?|\$)?\s*[-−–]?\s*\d/.test(v)) return 'neutral'
   if (/^[^1-9]*$/.test(v.replace(/(₹|Rs\.?|Cr|Lakh)/g, ''))) return 'neutral' // ₹0, 0.00: nothing to colour
   // A short trailing word can say what the figure is: "+₹58 Cr more loss" is a loss.
-  const words = v.replace(/\b(Cr|Lakh|Rs|bn|mn|crore|lakh)\b/gi, '').replace(/[^A-Za-z]+/g, ' ').trim()
+  const words = v.replace(/\b(Cr|Lakhs?|Rs|bn|mn|crores?)\b/gi, '').replace(/[^A-Za-z]+/g, ' ').trim()
   if (words && LOSS_WORDS.test(words) && words.split(' ').length <= 3) return 'loss'
   // Explicit sign: minus, en dash or hyphen used as minus, or (accounting) brackets.
   if (/^\(?\s*[-−–]\s*(₹|Rs\.?\s?|\$)?\s*\d/.test(v) || /^(₹|Rs\.?\s?|\$)\s*[-−–]\s*\d/.test(v)) return 'loss'

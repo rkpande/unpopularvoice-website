@@ -14,11 +14,26 @@ const byCompany = new Map()
 const withoutBlock = [] // published teardowns not yet exported from the database
 
 const isNum = (v) => typeof v === 'number' && Number.isFinite(v)
+const moneyValues = (s) =>
+  [...s.matchAll(/(?:₹|Rs\.?\s?)\s?-?([\d,]*\d(?:\.\d+)?)\s*(Cr|crore|Lakh|lakh)?/gi)].map((m) => {
+    const n = Number(m[1].replace(/,/g, ''))
+    return m[2] && /^l/i.test(m[2]) ? n / 100 : n
+  })
+const close = (a, b) => Math.abs(a - b) <= Math.max(0.6, 0.006 * Math.max(a, b))
 
 for (const file of fs.readdirSync(DIR).filter((f) => f.endsWith('.mdx'))) {
   const slug = file.replace(/\.mdx$/, '')
   const { data } = matter(fs.readFileSync(path.join(DIR, file), 'utf-8'))
   if (data.published === false) continue
+  // Repetition guard: a hero tile should add a fact, not restate the title.
+  // (The design review found headline figures stated 7 to 13 times above the first section.)
+  for (const h of data.heroNumbers || []) {
+    const v = moneyValues(String(h.value))
+    if (v.some((x) => moneyValues(String(data.title || '')).some((t) => close(x, t)))) {
+      warnings.push(`${slug}: hero figure ${h.value} repeats a figure already in the title`)
+    }
+    if (String(h.label || '').length > 32) warnings.push(`${slug}: hero label longer than 32 characters: "${h.label}"`)
+  }
   const f = data.financials
   if (!f) {
     if (data.employerScore) withoutBlock.push({ slug, company: String(data.company || '').trim().toLowerCase() })

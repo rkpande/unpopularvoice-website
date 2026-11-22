@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { getAuthor, getAllAuthors, authorJsonLd, PRIMARY_AUTHOR_SLUG } from '@/lib/authors'
-import { getAllArticles, leadSentences } from '@/lib/articles'
+import { getAllArticles, leadSentences, parseUpdatedAt } from '@/lib/articles'
 import { getAllComparisons } from '@/lib/comparisons'
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://unpopularvoice.com'
@@ -67,6 +67,20 @@ export default function AuthorPage({ params }: { params: { slug: string } }) {
     mainEntity: { '@id': `${SITE_URL}/author/${author.slug}#person` },
   }
 
+  // Track record, computed from the published pieces so it never goes stale.
+  const companies = new Set(articles.map((a) => a.company)).size
+  const sectors = new Set(articles.map((a) => a.sector.split('/')[0].trim().toLowerCase())).size
+  const firstDate = articles
+    .map((a) => parseUpdatedAt(a.publishedAt ?? a.updatedAt))
+    .sort((x, y) => x.getTime() - y.getTime())[0]
+  const since = firstDate ? firstDate.toLocaleDateString('en-GB', { month: 'long', year: 'numeric' }) : null
+  const record: [string, string][] = [
+    [String(articles.length), articles.length === 1 ? 'teardown' : 'teardowns'],
+    [String(companies), companies === 1 ? 'company' : 'companies'],
+    [String(sectors), sectors === 1 ? 'sector' : 'sectors'],
+    ...(since ? ([[since, 'writing since']] as [string, string][]) : []),
+  ]
+
   return (
     <div className="min-h-[calc(100vh-72px)]">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personLd) }} />
@@ -91,6 +105,15 @@ export default function AuthorPage({ params }: { params: { slug: string } }) {
             {author.name}
           </h1>
           <p className="font-sans text-white/70 text-lg leading-relaxed max-w-2xl">{author.bio}</p>
+          <dl className="mt-8 flex flex-wrap gap-x-10 gap-y-4">
+            {record.map(([value, label]) => (
+              <div key={label}>
+                <dt className="sr-only">{label}</dt>
+                <dd className="font-serif text-white text-2xl font-bold tabular-nums">{value}</dd>
+                <dd aria-hidden="true" className="font-sans text-white/60 text-xs mt-0.5">{label}</dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </div>
 

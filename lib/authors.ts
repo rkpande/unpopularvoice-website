@@ -12,6 +12,9 @@ export interface Author {
   // Public profile URLs — used for Person.sameAs in JSON-LD. Add only URLs
   // that are publicly accessible (not per-user URLs like linkedin.com/feed).
   sameAs?: string[]
+  // Subjects the author's published work covers (Person.knowsAbout). Only
+  // topics the articles demonstrably treat; never qualifications.
+  knowsAbout?: string[]
 }
 
 const AUTHORS: Record<string, Author> = {
@@ -19,7 +22,8 @@ const AUTHORS: Record<string, Author> = {
     slug: 'parthsarthy-p',
     name: 'ParthSarthy P',
     role: 'Founder & Editor, UnpopularVoice',
-    bio: 'ParthSarthy P reads what the audit says, not what the press release claims. He writes forensic teardowns of Indian startups on UnpopularVoice, starting with the balance sheet and ending where the numbers stop.',
+    bio: 'ParthSarthy P founded UnpopularVoice and has written most of its teardowns: more than 80 Indian companies, from PhonePe and Flipkart to Zerodha and Meesho, each read from its audited accounts. His focus is where reported results and cash part ways: stock-based pay, deferred tax, group restructurings and standalone versus group accounts.',
+    knowsAbout: ['Financial statement analysis', 'Indian startups', 'Indian Accounting Standards (Ind AS)', 'Stock-based compensation', 'Group restructuring and reverse flips'],
     sameAs: [
       'https://www.linkedin.com/in/unpopular-voice/',
       'https://x.com/UnpopularV83586',
@@ -60,6 +64,7 @@ export function authorJsonLd(author: Author, siteUrl: string) {
     jobTitle: author.role,
     description: author.bio,
     worksFor: { '@id': `${siteUrl}/#organization` },
+    ...(author.knowsAbout?.length ? { knowsAbout: author.knowsAbout } : {}),
     ...(author.sameAs && author.sameAs.length ? { sameAs: author.sameAs } : {}),
   }
 }

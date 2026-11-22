@@ -28,8 +28,8 @@ export const POST = handleSchedule(async (metadata) => {
 
   const candidates = [
     ...getAllArticles()
-      .filter((a) => a.published !== false && !known.has(a.slug) && fresh(a.updatedAt))
-      .map((a) => ({ slug: a.slug, path: `/${a.slug}`, title: a.title, company: a.company, tldr: a.tldr || [], date: a.updatedAt })),
+      .filter((a) => a.published !== false && !known.has(a.slug) && fresh(a.publishedAt ?? a.updatedAt))
+      .map((a) => ({ slug: a.slug, path: `/${a.slug}`, title: a.title, company: a.company, tldr: a.tldr || [], date: a.publishedAt ?? a.updatedAt })),
     ...getAllComparisons()
       .filter((c) => !known.has(`compare/${c.slug}`) && fresh(c.updatedAt))
       .map((c) => ({ slug: `compare/${c.slug}`, path: `/compare/${c.slug}`, title: c.title, company: 'Comparison', tldr: (c as { tldr?: string[] }).tldr || [], date: c.updatedAt })),

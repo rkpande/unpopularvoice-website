@@ -63,6 +63,9 @@ export default function Footer() {
  <Link href="/employer-check" className="block py-2 text-white/50 text-sm font-sans hover:text-white/80 transition-colors">
   Employer Check
  </Link>
+ <Link href="/about" className="block py-2 text-white/50 text-sm font-sans hover:text-white/80 transition-colors">
+  About
+ </Link>
  <Link href="/methodology" className="block py-2 text-white/50 text-sm font-sans hover:text-white/80 transition-colors">
   Methodology
  </Link>

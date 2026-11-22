@@ -8,7 +8,7 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://unpopularvoice.com
 
 export const metadata: Metadata = {
   title: 'Indian Startup Financials, From Filings, Not PR',
-  description: 'Indian startups. Revenue, profit, and debt from audited public filings. What the numbers actually say, not press releases. Zerodha, Razorpay, PhonePe, Porter, Rapido, UltraHuman and more.',
+  description: 'Every UnpopularVoice teardown of an Indian startup, by sector: revenue, profit, cash and debt read from audited accounts, not press releases.',
   alternates: {
   canonical: 'https://unpopularvoice.com/articles',
  },

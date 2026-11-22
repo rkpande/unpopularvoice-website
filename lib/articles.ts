@@ -50,11 +50,28 @@ export function bestMetaDescription(article: {
   excerpt?: string
   tldr?: string[]
 }): string {
-  if (article.metaDescription && article.metaDescription.length <= 165) {
-    return article.metaDescription
+  const md = article.metaDescription?.trim()
+  if (md && md.length >= 90 && md.length <= 165) return md
+  // A search snippet needs substance: take whole sentences from the excerpt
+  // (then the first summary bullet) until there are about 110 to 160 characters.
+  const source = [md && md.length < 90 ? md : '', article.excerpt, ...(article.tldr || [])].filter(Boolean).join(' ')
+  return leadSentences(source, 110, 160)
+}
+
+export function leadSentences(text: string, min = 110, max = 160): string {
+  const sentences = (text || '').trim().split(/(?<=[.?!])\s+/)
+  let out = ''
+  const seen = new Set<string>()
+  for (const raw of sentences) {
+    const s = raw.trim()
+    if (!s || seen.has(s)) continue
+    seen.add(s)
+    const next = out ? `${out} ${s}` : s
+    if (next.length > max) continue // too long to add whole; a later, shorter sentence may fit
+    out = next
+    if (out.length >= min) break
   }
-  const source = article.excerpt || article.tldr?.[0] || article.metaDescription || ''
-  return firstSentence(source, 155)
+  return out || firstSentence(text, max)
 }
 
 export interface RealityScoreData {
@@ -94,6 +111,7 @@ export interface ArticleMeta {
   sector: string
   dataSource: string
   updatedAt: string
+  publishedAt?: string // first publication; updatedAt moves with edits, this never does
   corrections?: import('./corrections').Correction[]
   readTime: string
   tldr: string[]
@@ -126,7 +144,7 @@ export function getAllArticles(): ArticleMeta[] {
       return { slug, ...data } as ArticleMeta
     })
     .filter((a) => a.published !== false)
-    .sort((a, b) => parseArticleDate(b.updatedAt) - parseArticleDate(a.updatedAt))
+    .sort((a, b) => parseArticleDate(b.publishedAt ?? b.updatedAt) - parseArticleDate(a.publishedAt ?? a.updatedAt))
 }
 
 export function getArticleBySlug(slug: string): Article | null {

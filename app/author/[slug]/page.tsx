@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { getAuthor, getAllAuthors, authorJsonLd, PRIMARY_AUTHOR_SLUG } from '@/lib/authors'
-import { getAllArticles } from '@/lib/articles'
+import { getAllArticles, leadSentences } from '@/lib/articles'
 import { getAllComparisons } from '@/lib/comparisons'
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://unpopularvoice.com'
@@ -21,11 +21,11 @@ export async function generateMetadata({
   const canonical = `${SITE_URL}/author/${author.slug}`
   return {
     title: `${author.name}, ${author.role}`,
-    description: author.bio,
+    description: leadSentences(author.bio, 90, 160),
     alternates: { canonical },
     openGraph: {
       title: `${author.name}, ${author.role}`,
-      description: author.bio,
+      description: leadSentences(author.bio, 90, 160),
       url: canonical,
       type: 'profile',
     },

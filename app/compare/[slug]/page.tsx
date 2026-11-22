@@ -9,7 +9,7 @@ import remarkGfm from 'remark-gfm'
 export const revalidate = 86400
 
 import { getAllComparisons, getComparisonBySlug } from '@/lib/comparisons'
-import { formatDisplayDate, parseUpdatedAt, firstSentence } from '@/lib/articles'
+import { formatDisplayDate, parseUpdatedAt, firstSentence, leadSentences } from '@/lib/articles'
 import { getPrimaryAuthor, getAuthor } from '@/lib/authors'
 import { lastModified, bylineCorrection } from '@/lib/corrections'
 import CorrectionsNote from '@/components/CorrectionsNote'
@@ -49,8 +49,9 @@ const mdxComponents = {
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://unpopularvoice.com'
 
 function bestCompareDesc(cmp: { metaDescription?: string; excerpt?: string; thesis: string }): string {
-  if (cmp.metaDescription && cmp.metaDescription.length <= 165) return cmp.metaDescription
-  return firstSentence(cmp.excerpt || cmp.thesis || cmp.metaDescription || '', 155)
+  const md = cmp.metaDescription?.trim()
+  if (md && md.length >= 90 && md.length <= 165) return md
+  return leadSentences([md && md.length < 90 ? md : '', cmp.excerpt, cmp.thesis].filter(Boolean).join(' '), 110, 160)
 }
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {

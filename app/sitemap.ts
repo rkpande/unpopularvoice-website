@@ -60,6 +60,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     },
     {
+      url: `${SITE_URL}/about`,
+      lastModified: new Date('2026-11-22'),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
       url: `${SITE_URL}/editorial-standards`,
       lastModified: new Date('2026-11-14'),
       changeFrequency: 'monthly',

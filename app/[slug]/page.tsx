@@ -103,7 +103,7 @@ export async function generateMetadata({
       description: desc,
       url: canonicalUrl,
       type: 'article',
-      publishedTime: parseUpdatedAt(article.updatedAt).toISOString(),
+      publishedTime: parseUpdatedAt(article.publishedAt ?? article.updatedAt).toISOString(),
       modifiedTime: lastModified(article.updatedAt, article.corrections).toISOString(),
       authors: [((article.author && getAuthor(article.author)) || getPrimaryAuthor()).name],
       tags: [article.sector, article.company, 'Indian startups', 'financial analysis'],
@@ -145,9 +145,21 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
   // Same-sector reading: 4 most recent articles about other companies. Pieces on
   // the same company are listed separately so the sector block always widens.
   const sameCompany = getAllArticles().filter((a) => a.company === article.company && a.slug !== article.slug)
-  const relatedArticles = getArticlesBySector(sectorName)
-    .filter((a) => a.slug !== article.slug && a.company !== article.company)
-    .slice(0, 4)
+  // Read-next links rotate through a fixed order rather than always showing the
+  // newest pieces, so every teardown is linked from about four peers (older
+  // ones were otherwise only reachable from index pages). Same sector first;
+  // small sectors are topped up from the rest of the site.
+  const cyclic = <T extends { slug: string }>(list: T[]): T[] => {
+    const sorted = [...list].sort((x, y) => x.slug.localeCompare(y.slug))
+    const at = sorted.findIndex((x) => x.slug > article.slug)
+    const start = at === -1 ? 0 : at
+    return [...sorted.slice(start), ...sorted.slice(0, start)]
+  }
+  const eligible = (a: { slug: string; company: string }) => a.slug !== article.slug && a.company !== article.company
+  const sectorPicks = cyclic(getArticlesBySector(sectorName).filter(eligible)).slice(0, 4)
+  const fill = cyclic(getAllArticles().filter((a) => eligible(a) && !sectorPicks.some((p) => p.slug === a.slug)))
+  const relatedArticles = [...sectorPicks, ...fill].slice(0, 4)
+  const relatedAllSector = sectorPicks.length === relatedArticles.length
 
   const author = (article.author && getAuthor(article.author)) || getPrimaryAuthor()
 
@@ -165,7 +177,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
       jobTitle: author.role,
     },
     publisher: { '@id': `${SITE_URL}/#organization` },
-    datePublished: isoDate,
+    datePublished: parseUpdatedAt(article.publishedAt ?? article.updatedAt).toISOString(),
     dateModified: modifiedIso,
     url: canonical,
     mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
@@ -386,7 +398,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
         <div className="border-t border-gray-100 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-8 py-12">
             <div className="flex items-baseline justify-between mb-6 flex-wrap gap-2">
-              <h2 className="font-serif text-black text-2xl font-bold">More {sectorName} teardowns</h2>
+              <h2 className="font-serif text-black text-2xl font-bold">{relatedAllSector ? `More ${sectorName} teardowns` : 'Read next'}</h2>
               <Link
                 href={`/sector/${sectorSlug(sectorName)}`}
                 className="font-sans text-sm font-semibold text-brand-red hover:underline shrink-0"

@@ -282,6 +282,10 @@ Every index page reads ONLY the `financials:` frontmatter block. It never parses
 3. **Reconcile before publishing.** The article's headline revenue, PAT and net worth must match the exported block. If they differ, the filing wins: fix the article, not the block.
 4. **One company, one block.** Follow-up pieces (debt registers, group maps, founder comp) get no block, so the company is counted once. Add their slug to `SECONDARY` in `dataextraction/export_financials.py`. The prebuild check fails if two articles of the same company carry a block.
 
+## Dates: publishedAt never moves
+
+Every article has `publishedAt` (first publication; feeds datePublished in structured data and the order of article lists) and `updatedAt` (last substantive change; feeds dateModified, the sitemap and the byline). Set both on a new article. When editing, change only `updatedAt`. Never rewrite `publishedAt`: moving publication dates en masse misstates the record to search engines.
+
 ## Corrections: never change a published figure silently
 
 When a published article's figure, label or headline turns out to be wrong, fix it AND add a dated entry to its frontmatter (articles and comparisons alike):

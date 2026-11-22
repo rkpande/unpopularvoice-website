@@ -7,7 +7,7 @@ import { indexSummary, bufferMonths, isProfitable } from '@/lib/financials'
 export const metadata: Metadata = {
   title: 'Check Your Offer Before Accepting It | Startup Jobs Index',
   description:
- 'Most startups don\'t show you this before you join. Profitability, balance-sheet buffer, payroll trends, and stability for Indian startups, from audited public filings.',
+ 'Before you join an Indian startup: its profitability, balance-sheet buffer, payroll trend and stability, read from audited accounts.',
   alternates: {
   canonical: 'https://unpopularvoice.com/startup-jobs',
  },

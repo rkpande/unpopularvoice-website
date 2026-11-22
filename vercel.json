@@ -1,0 +1,15 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "functions": {
+    "app/api/newsletter/route.ts": {
+      "experimentalTriggers": [{ "type": "schedule/v1beta" }]
+    }
+  },
+  "schedules": {
+    "newsletter": {
+      "schedule": "0 9 * * *",
+      "timezone": "Asia/Kolkata",
+      "function": "api/newsletter"
+    }
+  }
+}

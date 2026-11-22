@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { addContact, emailConfigured, sendEmail, welcomeEmail } from '@/lib/email'
 
 export async function POST(request: NextRequest) {
   let email: string
@@ -11,32 +12,24 @@ export async function POST(request: NextRequest) {
   }
 
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    return NextResponse.json({ error: 'Invalid email address' }, { status: 400 })
+    return NextResponse.json({ error: 'That does not look like an email address.' }, { status: 400 })
   }
 
-  const apiKey = process.env.RESEND_API_KEY
-  const audienceId = process.env.RESEND_AUDIENCE_ID
-
-  // If Resend is not configured, log and return success so the UX works
-  if (!apiKey || !audienceId) {
-    console.warn('[subscribe] RESEND_API_KEY or RESEND_AUDIENCE_ID not set, skipping email capture')
-    return NextResponse.json({ ok: true })
+  // Never report success for an address we did not keep.
+  if (!emailConfigured()) {
+    console.error('[subscribe] RESEND_API_KEY or RESEND_AUDIENCE_ID not set')
+    return NextResponse.json({ error: 'Sign-up is unavailable right now. Please try again later.' }, { status: 503 })
   }
 
-  const res = await fetch(`https://api.resend.com/audiences/${audienceId}/contacts`, {
-    method: 'POST',
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ email, unsubscribed: false }),
-  })
-
-  if (!res.ok) {
-    const text = await res.text()
-    console.error('[subscribe] Resend error:', res.status, text)
-    return NextResponse.json({ error: 'Subscription failed. Please try again.' }, { status: 500 })
+  const added = await addContact(email)
+  if (!added.ok) {
+    console.error('[subscribe] Resend contact error:', added.status, JSON.stringify(added.data))
+    return NextResponse.json({ error: 'Sign-up did not go through. Please try again.' }, { status: 502 })
   }
+
+  // The welcome email is a courtesy: if it fails, the sign-up still stands.
+  const sent = await sendEmail(email, welcomeEmail(email))
+  if (!sent.ok) console.error('[subscribe] welcome email failed:', sent.status, JSON.stringify(sent.data))
 
   return NextResponse.json({ ok: true })
 }

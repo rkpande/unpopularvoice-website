@@ -1,6 +1,6 @@
 import { getAllArticles, parseUpdatedAt } from '@/lib/articles'
 import { getAllComparisons } from '@/lib/comparisons'
-import { getAllSectors } from '@/lib/sectors'
+import { getAllSectors, MIN_INDEXABLE_SECTOR } from '@/lib/sectors'
 import { getAllAuthors } from '@/lib/authors'
 import { lastModified } from '@/lib/corrections'
 import type { MetadataRoute } from 'next'
@@ -89,7 +89,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly' as const,
       priority: 0.85,
     })),
-    ...getAllSectors().map((sector) => ({
+    ...getAllSectors()
+      .filter((sector) => sector.count >= MIN_INDEXABLE_SECTOR)
+      .map((sector) => ({
       url: `${SITE_URL}/sector/${sector.slug}`,
       lastModified: latest,
       changeFrequency: 'weekly' as const,

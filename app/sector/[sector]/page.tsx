@@ -5,6 +5,7 @@ import {
   getAllSectors,
   getSectorBySlug,
   getArticlesBySector,
+  MIN_INDEXABLE_SECTOR,
 } from '@/lib/sectors'
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://unpopularvoice.com'
@@ -27,6 +28,7 @@ export async function generateMetadata({
     title: `${sector.label} startups: audited financials`,
     description: desc,
     alternates: { canonical },
+    ...(sector.count < MIN_INDEXABLE_SECTOR ? { robots: { index: false, follow: true } } : {}),
     openGraph: {
       title: `${sector.label} startups: audited financials`,
       description: desc,

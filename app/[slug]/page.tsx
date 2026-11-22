@@ -13,6 +13,7 @@ import { getAuthor, getPrimaryAuthor } from '@/lib/authors'
 import { lastModified, bylineCorrection } from '@/lib/corrections'
 import { signTone, toneText } from '@/lib/tone'
 import CorrectionsNote from '@/components/CorrectionsNote'
+import ArticleSubscribe from '@/components/ArticleSubscribe'
 import ArticleContents from '@/components/ArticleContents'
 import ReadingProgress from '@/components/ReadingProgress'
 import { getArticleToc } from '@/lib/toc'
@@ -297,6 +298,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
           />
         </div>
         <CorrectionsNote corrections={article.corrections} />
+        <ArticleSubscribe company={article.company} />
         <div className="not-prose flex flex-wrap items-center gap-x-6 gap-y-2 pt-6 mt-12 border-t border-gray-200">
           <span className="font-sans text-sm font-semibold text-black">Share this teardown</span>
           <a

@@ -1,6 +1,12 @@
 import { getAllArticles } from './articles'
 import type { ArticleMeta } from './articles'
 
+// A sector page earns a place in Google's index once it gathers this many
+// teardowns. Below that it is a thin list of one or two links: still served and
+// linked for readers (noindex, follow), but kept out of the index and sitemap so
+// the site is judged on its substantial pages.
+export const MIN_INDEXABLE_SECTOR = 3
+
 export interface SectorInfo {
   slug: string
   label: string

@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import rehypeSlug from 'rehype-slug'
+import rehypeFigures from '@/lib/rehypeFigures'
 import remarkGfm from 'remark-gfm'
 
 export const revalidate = 86400
@@ -187,7 +188,7 @@ export default function ComparisonPage({ params }: { params: { slug: string } })
             options={{
               blockJS: false,
               mdxOptions: {
-                rehypePlugins: [rehypeSlug],
+                rehypePlugins: [rehypeSlug, rehypeFigures],
                 remarkPlugins: [remarkGfm],
               },
             }}

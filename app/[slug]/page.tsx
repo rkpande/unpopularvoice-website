@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import rehypeSlug from 'rehype-slug'
+import rehypeFigures from '@/lib/rehypeFigures'
 import remarkGfm from 'remark-gfm'
 import ArticleTOC from '@/components/mdx/ArticleTOC'
 
@@ -16,6 +17,7 @@ import CorrectionsNote from '@/components/CorrectionsNote'
 import ArticleSubscribe from '@/components/ArticleSubscribe'
 import ArticleContents from '@/components/ArticleContents'
 import ReadingProgress from '@/components/ReadingProgress'
+import ArticleContentsButton from '@/components/ArticleContentsButton'
 import { getArticleToc } from '@/lib/toc'
 import Link from 'next/link'
 import FinancialTable from '@/components/mdx/FinancialTable'
@@ -287,6 +289,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
       {/* Sticky TOC, floats on right, desktop only */}
       <ArticleTOC />
       <ReadingProgress targetId="article-body" />
+      <ArticleContentsButton items={toc} targetId="article-body" />
 
       {/* MDX content, CenterpieceTable black header continues right off the author bar */}
       <div className="article-col pb-16 pt-0">
@@ -294,7 +297,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
           <MDXRemote
             source={article.content}
             components={mdxComponents}
-            options={{ blockJS: false, mdxOptions: { remarkPlugins: [remarkGfm], rehypePlugins: [rehypeSlug] } }}
+            options={{ blockJS: false, mdxOptions: { remarkPlugins: [remarkGfm], rehypePlugins: [rehypeSlug, rehypeFigures] } }}
           />
         </div>
         <CorrectionsNote corrections={article.corrections} />

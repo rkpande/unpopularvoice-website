@@ -304,7 +304,7 @@ export default function ProfitabilityIndexGrid({ companies }: { companies: Artic
         <ul className="font-sans text-gray-600 text-xs leading-relaxed space-y-1.5 list-disc pl-4">
           <li>All numbers are from the latest available audited annual financial statements at the legal entity that operates the brand.</li>
           <li>Where a brand operates through both a parent and subsidiary, the article specifies which entity the numbers cover.</li>
-          <li>FY2025 covers the year ending March 31, 2025. Filings typically arrive 6&ndash;15 months after the year-end.</li>
+          <li>Each company is shown on its latest audited year: FY2026 (year ending March 31, 2026) where those accounts are out, otherwise FY2025 or earlier. The year is shown on every row. Filings typically arrive 6&ndash;15 months after the year-end.</li>
           <li>Categories reflect the most recent year only. Multi-year trajectory is in each article.</li>
           <li>Subscribe to be alerted when a company moves between categories at the next filing.</li>
         </ul>

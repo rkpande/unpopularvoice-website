@@ -104,7 +104,7 @@ export default function ProfitabilityIndexPage() {
  <div className="bg-white border-b border-gray-200">
  <div className="max-w-7xl mx-auto px-4 sm:px-8 py-12 lg:py-20 grid lg:grid-cols-12 gap-8 items-center">
  <div className="lg:col-span-6">
- <p className="font-sans text-brand-red text-xs tracking-[0.25em] uppercase mb-4">FY2025 audited reality</p>
+ <p className="font-sans text-brand-red text-xs tracking-[0.25em] uppercase mb-4">Latest audited year</p>
  <h1 className="font-serif text-black text-4xl sm:text-5xl lg:text-7xl font-bold leading-[0.95] mb-6">
  {lossPct}% of the startups we cover are still losing money.
  </h1>

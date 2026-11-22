@@ -10,8 +10,10 @@ interface CenterpieceTableProps {
 // Cells can arrive as numbers or elements from MDX; only plain strings are tested.
 function isFigure(value: unknown): boolean {
   if (typeof value !== 'string') return false
-  return /^[\s(~≈+\-−]*[₹$]?\s?[\d.,]+\s*(%|x|Cr|Lakh|bn|mn)?\.?$/i.test(value.trim()) ||
-    /^[\s(~≈+\-−]*₹/.test(value)
+  const v = value.trim()
+  // A single figure, not a phrase or two figures in one cell.
+  return v.length <= 18 && !/[;,]\s|\s(and|vs|or)\s/i.test(v) &&
+    (/^[\s(~≈+\-−]*[₹$]?\s?[\d.,]+\s*(%|x|Cr|Lakh|bn|mn)?\.?$/i.test(v) || /^[\s(~≈+\-−]*₹/.test(v))
 }
 
 const VISIBLE_ROWS = 6

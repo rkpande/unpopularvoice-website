@@ -42,6 +42,19 @@ import JargonKey from '@/components/mdx/JargonKey'
 import { ProseTable, ProseCell } from '@/components/mdx/ProseTable'
 import VideoEmbed from '@/components/mdx/VideoEmbed'
 
+
+// Hero figures never wrap (a lone "Cr" on its own line misreads). On phones a
+// tile in the two-column grid is about 165px wide, so long figures step down a
+// size; a tile that spans the full row keeps the large size.
+function heroSize(value: string, i: number, n: number): string {
+  const spansRow = n % 2 === 1 && i === 0
+  const len = String(value).length
+  const phone = spansRow || len <= 9 ? 'text-[1.75rem]' : len <= 11 ? 'text-[1.45rem]' : 'text-[1.25rem]'
+  // From md up the tiles share one row (3 or 4 across the article column).
+  const wide = len <= 9 || n <= 2 ? 'md:text-[2rem]' : len <= 11 ? 'md:text-[1.75rem]' : len <= 13 ? 'md:text-[1.5rem]' : 'md:text-[1.3rem]'
+  return `${phone} ${wide}`
+}
+
 const mdxComponents = {
   FinancialTable,
   RealityScore,
@@ -240,7 +253,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
                   i === 0 && article.heroNumbers!.length % 2 === 1 ? 'col-span-2 md:col-span-1' : ''
                 }`}
               >
-                <div className={`font-serif text-[1.75rem] md:text-[2rem] font-bold leading-none mb-2 break-words ${toneText[signTone(value, label)]}`}>
+                <div className={`font-serif ${heroSize(value, i, article.heroNumbers!.length)} font-bold leading-none mb-2 whitespace-nowrap ${toneText[signTone(value, label)]}`}>
                   {value}
                 </div>
                 <div className="font-sans text-xs text-gray-500 uppercase tracking-wider leading-snug">

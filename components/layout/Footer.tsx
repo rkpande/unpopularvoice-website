@@ -31,6 +31,17 @@ export default function Footer() {
  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
  </svg>
  </a>
+ <a
+  href="https://www.youtube.com/@YourUnpopularVoice"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="UnpopularVoice on YouTube"
+  className="inline-flex items-center justify-center w-11 h-11 rounded-full border border-white/20 text-white/70 hover:text-white hover:bg-white/10 hover:border-white/40 active:bg-white/20 transition-colors"
+ >
+ <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+ <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+ </svg>
+ </a>
  </div>
  <p className="text-white/60 text-xs font-sans mt-4 leading-relaxed">
   All financial data comes from annual audited filings submitted to India&apos;s Ministry of Corporate Affairs,
@@ -91,6 +102,14 @@ export default function Footer() {
   className="block py-2 text-white/60 text-xs font-sans hover:text-white transition-colors"
  >
   X (Twitter)
+ </a>
+ <a
+  href="https://www.youtube.com/@YourUnpopularVoice"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="block py-2 text-white/60 text-xs font-sans hover:text-white transition-colors"
+ >
+  YouTube
  </a>
  <a
   href="https://fazier.com/launches/unpopularvoice.com"

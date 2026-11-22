@@ -10,7 +10,7 @@ export const revalidate = 86400
 import { getAllComparisons, getComparisonBySlug } from '@/lib/comparisons'
 import { formatDisplayDate, parseUpdatedAt, firstSentence } from '@/lib/articles'
 import { getPrimaryAuthor, getAuthor } from '@/lib/authors'
-import { lastModified, sortedCorrections } from '@/lib/corrections'
+import { lastModified, bylineCorrection } from '@/lib/corrections'
 import CorrectionsNote from '@/components/CorrectionsNote'
 
 import FinancialTable from '@/components/mdx/FinancialTable'
@@ -93,7 +93,7 @@ export default function ComparisonPage({ params }: { params: { slug: string } })
   const companies = [cmp.metaA, cmp.metaB, cmp.metaC].filter(Boolean) as Array<{ company: string; slug: string }>
   const isoDate = parseUpdatedAt(cmp.updatedAt).toISOString()
   const modifiedIso = lastModified(cmp.updatedAt, cmp.corrections).toISOString()
-  const latestCorrection = sortedCorrections(cmp.corrections)[0]
+  const latestCorrection = bylineCorrection(cmp.updatedAt, cmp.corrections)
 
   const breadcrumbLd = {
     '@context': 'https://schema.org',

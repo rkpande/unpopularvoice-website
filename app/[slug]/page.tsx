@@ -10,7 +10,7 @@ export const revalidate = 86400
 import { getAllArticles, getArticleBySlug, formatDisplayDate, parseUpdatedAt, bestMetaDescription } from '@/lib/articles'
 import { sectorSlug, primarySector, getArticlesBySector } from '@/lib/sectors'
 import { getAuthor, getPrimaryAuthor } from '@/lib/authors'
-import { lastModified, sortedCorrections } from '@/lib/corrections'
+import { lastModified, bylineCorrection } from '@/lib/corrections'
 import { signTone, toneText } from '@/lib/tone'
 import CorrectionsNote from '@/components/CorrectionsNote'
 import ArticleContents from '@/components/ArticleContents'
@@ -37,6 +37,7 @@ import VersusBlock from '@/components/mdx/VersusBlock'
 import SplitView from '@/components/mdx/SplitView'
 import JargonKey from '@/components/mdx/JargonKey'
 import { ProseTable, ProseCell } from '@/components/mdx/ProseTable'
+import VideoEmbed from '@/components/mdx/VideoEmbed'
 
 const mdxComponents = {
   FinancialTable,
@@ -58,6 +59,7 @@ const mdxComponents = {
   VersusBlock,
   SplitView,
   JargonKey,
+  VideoEmbed,
   table: ProseTable,
   td: ProseCell,
 }
@@ -119,7 +121,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
   const sectorName = primarySector(article.sector)
   const isoDate = parseUpdatedAt(article.updatedAt).toISOString()
   const modifiedIso = lastModified(article.updatedAt, article.corrections).toISOString()
-  const latestCorrection = sortedCorrections(article.corrections)[0]
+  const latestCorrection = bylineCorrection(article.updatedAt, article.corrections)
   // Job seekers come for the employer read; give them a jump to it from the byline.
   const hasEmployerSignal = article.content.includes('<EmployerScore')
   const toc = getArticleToc(article.content)

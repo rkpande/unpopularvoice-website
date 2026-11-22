@@ -49,3 +49,11 @@ export function getCorrectionsLog(): CorrectionEntry[] {
       x.title.localeCompare(y.title),
   )
 }
+
+/** The latest correction, if it is the most recent change to the piece (same day or later than the update). */
+export function bylineCorrection(updatedAt: string, corrections?: Correction[]): Correction | undefined {
+  const latest = sortedCorrections(corrections)[0]
+  if (!latest) return undefined
+  const day = (d: Date) => Math.floor((d.getTime() + 5.5 * 3600 * 1000) / 86400000)
+  return day(parseUpdatedAt(latest[0])) >= day(parseUpdatedAt(updatedAt)) ? latest : undefined
+}

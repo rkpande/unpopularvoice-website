@@ -23,6 +23,7 @@ const AUTHORS: Record<string, Author> = {
     sameAs: [
       'https://www.linkedin.com/in/unpopular-voice/',
       'https://x.com/UnpopularV83586',
+      'https://www.youtube.com/@YourUnpopularVoice',
     ],
   },
   'anjali-m': {

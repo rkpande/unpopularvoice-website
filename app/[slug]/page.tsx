@@ -41,6 +41,7 @@ import SplitView from '@/components/mdx/SplitView'
 import JargonKey from '@/components/mdx/JargonKey'
 import { ProseTable, ProseCell } from '@/components/mdx/ProseTable'
 import VideoEmbed from '@/components/mdx/VideoEmbed'
+import BridgeChart from '@/components/mdx/BridgeChart'
 
 
 // Hero figures never wrap (a lone "Cr" on its own line misreads). On phones a
@@ -76,6 +77,7 @@ const mdxComponents = {
   SplitView,
   JargonKey,
   VideoEmbed,
+  BridgeChart,
   table: ProseTable,
   td: ProseCell,
 }

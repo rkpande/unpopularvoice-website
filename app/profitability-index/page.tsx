@@ -97,8 +97,23 @@ export default function ProfitabilityIndexPage() {
   const winningSector = sectorEntries[0]
   const laggingSector = sectorEntries[sectorEntries.length - 1]
 
+  const datasetLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Dataset',
+    name: 'UnpopularVoice Profitability Index of Indian startups',
+    description: `Audited revenue, profit after tax and net worth for ${counts.profitable + counts.improving + counts.worsening} Indian startups, one row per company, from each company's latest audited accounts. ${lossPct}% are still losing money.`,
+    url: 'https://unpopularvoice.com/profitability-index',
+    keywords: ['Indian startups', 'startup profitability', 'audited financials', 'profit after tax', 'revenue'],
+    isAccessibleForFree: true,
+    license: 'https://creativecommons.org/licenses/by/4.0/',
+    creator: { '@type': 'Organization', name: 'UnpopularVoice', url: 'https://unpopularvoice.com' },
+    spatialCoverage: 'India',
+    distribution: [{ '@type': 'DataDownload', encodingFormat: 'text/csv', contentUrl: 'https://unpopularvoice.com/profitability-index.csv' }],
+  }
+
   return (
  <div className="min-h-[calc(100vh-72px)]">
+ <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(datasetLd) }} />
 
  {/* ── HERO: aggressive hook ──────────────────────────── */}
  <div className="bg-white border-b border-gray-200">
@@ -115,6 +130,9 @@ export default function ProfitabilityIndexPage() {
   Jump to leaderboards
  <span aria-hidden>→</span>
  </Link>
+ <p className="font-sans text-sm text-gray-600 mt-4">
+  <a href="/profitability-index.csv" className="underline underline-offset-2 hover:text-black">Download the data (CSV)</a>, free to reuse with credit.
+ </p>
  </div>
  <div className="lg:col-span-6 lg:border-l lg:border-gray-200 lg:pl-12">
  <p className="font-sans text-gray-500 text-xs tracking-[0.25em] uppercase mb-4">The breakdown</p>

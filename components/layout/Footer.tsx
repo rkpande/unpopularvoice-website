@@ -78,10 +78,10 @@ export default function Footer() {
  <Link href="/subscribe" className="inline-flex items-center min-h-[44px] text-white/60 text-sm font-sans hover:text-white/80 transition-colors">
   Subscribe
  </Link>
- <Link href="/sector/Fintech" className="inline-flex items-center min-h-[44px] text-white/60 text-sm font-sans hover:text-white/80 transition-colors">
+ <Link href="/sector/fintech" className="inline-flex items-center min-h-[44px] text-white/60 text-sm font-sans hover:text-white/80 transition-colors">
   Fintech
  </Link>
- <Link href="/sector/Consumer" className="inline-flex items-center min-h-[44px] text-white/60 text-sm font-sans hover:text-white/80 transition-colors">
+ <Link href="/sector/consumer" className="inline-flex items-center min-h-[44px] text-white/60 text-sm font-sans hover:text-white/80 transition-colors">
   Consumer
  </Link>
  </div>

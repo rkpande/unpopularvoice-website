@@ -24,9 +24,29 @@ export function sectorSlug(label: string): string {
     .replace(/^-+|-+$/g, '')
 }
 
-// The primary segment of an article's sector (before the first "/").
+// One name per sector. Articles were labelled over time with different words
+// for the same thing ("Direct-to-Consumer" and "D2C"; "Healthcare", "Health
+// Tech", "Diagnostics"), which split one sector across several thin pages.
+// Merged sectors keep their old URLs as permanent redirects (next.config.mjs,
+// SECTOR_REDIRECTS), so no link breaks.
+const SECTOR_ALIASES: Record<string, string> = {
+  'direct-to-consumer': 'D2C',
+  healthcare: 'Healthtech',
+  'health tech': 'Healthtech',
+  'health & wellness': 'Healthtech',
+  diagnostics: 'Healthtech',
+  'e-pharmacy': 'Healthtech',
+  'b2b commerce': 'B2B',
+  'b2b seafood': 'B2B',
+  payments: 'Fintech',
+  'wealth management': 'Fintech',
+}
+
+// The primary segment of an article's sector (before the first "/"), under
+// its one canonical name.
 export function primarySector(sector: string): string {
-  return sector.split('/')[0].trim()
+  const raw = sector.split('/')[0].trim()
+  return SECTOR_ALIASES[raw.toLowerCase()] ?? raw
 }
 
 // Enumerate every sector present in the published corpus with article counts.
@@ -57,13 +77,8 @@ export function getSectorBySlug(slug: string): SectorInfo | null {
   return getAllSectors().find((s) => s.slug === target) || null
 }
 
-// Articles whose primary sector matches the given label (case-insensitive).
+// Articles whose primary sector (after merging aliases) is the given sector.
 export function getArticlesBySector(label: string): ArticleMeta[] {
-  const target = label.toLowerCase()
-  return getAllArticles().filter((a) => {
-    const s = a.sector.toLowerCase()
-    return (
-      s === target || s.startsWith(target + '/') || s.startsWith(target + ' /')
-    )
-  })
+  const target = sectorSlug(primarySector(label))
+  return getAllArticles().filter((a) => sectorSlug(primarySector(a.sector)) === target)
 }

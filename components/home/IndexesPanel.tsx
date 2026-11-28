@@ -64,7 +64,7 @@ export default function IndexesPanel() {
               <p className="font-sans text-gray-600 text-[14px] leading-relaxed">
                 {c.description}
               </p>
-              <p className="font-sans text-brand-red text-[12px] font-semibold mt-5 group-hover:underline">
+              <p className="font-sans text-brand-red text-sm font-semibold mt-5 group-hover:underline">
                 {c.cta} <span aria-hidden="true">→</span>
               </p>
             </Link>

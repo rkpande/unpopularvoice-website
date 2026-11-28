@@ -45,6 +45,12 @@ typography:
     fontSize: "2rem"
     fontWeight: 700
     lineHeight: 1
+  wordmark:
+    fontFamily: "Playfair Display, Georgia, serif"
+    fontSize: "1.375rem"
+    fontWeight: 700
+    lineHeight: 1
+    letterSpacing: "-0.01em"
   title:
     fontFamily: "Playfair Display, Georgia, serif"
     fontSize: "1.5rem"
@@ -66,6 +72,12 @@ typography:
     fontWeight: 700
     lineHeight: 1.3
     letterSpacing: "0.25em"
+  label-card:
+    fontFamily: "Inter, system-ui, sans-serif"
+    fontSize: "0.6875rem"
+    fontWeight: 600
+    lineHeight: 1.35
+    letterSpacing: "0.1em"
 rounded:
   sm: "4px"
   md: "8px"
@@ -209,10 +221,12 @@ Monochrome newsprint with one masthead red, plus a strictly separated data palet
 - **Headline** (700, 3rem, 1.1): article titles.
 - **Pullout** (700, 2.25rem on desktop, 1.5rem on mobile, 1.1): TakeawayCard and SignatureLine statements, the screenshot lines.
 - **Figure** (700, 1.75 to 2rem, line-height 1): hero numbers on articles and the leading figure on cards. Always serif, always black unless it carries a gain/loss tone.
+- **Wordmark** (700, 1.375rem): the "UnpopularVoice" logotype in the nav only.
 - **Title** (700, 1.5rem, 1.2): section headings inside cards and related-articles blocks; prose h2/h3 inherit Playfair through the typography plugin.
 - **Body** (400, 1.0625rem, 1.75): article prose in Body Ink, held to a 760px measure.
 - **UI** (500 to 600, 0.875rem): nav items, buttons, inputs, share links.
-- **Label** (700, 0.625rem, tracking 0.25em, uppercase): eyebrows, figure captions, metadata. Card captions drop to 9px with 0.1em tracking.
+- **Label** (700, 0.625rem, tracking 0.25em, uppercase): section eyebrows and metadata.
+- **Card label** (600, 0.6875rem, tracking 0.1em, uppercase): company names and figure captions on cards and hero figure cards. 11px is the floor for any text a reader needs; nothing renders at 9px.
 
 ### Named Rules
 **The Figures Are Headlines Rule.** Any number the article is about is set in the display serif at Figure size or larger. Numbers in Inter are supporting data only.
@@ -252,9 +266,11 @@ The light TakeawayCard is the one asymmetric shape: square on the left with a 6p
 ### Buttons
 Restrained and solid.
 - **Shape:** gently squared (4px).
-- **Primary:** Auditor's Red with white semibold Inter, 12px by 24px (40px min height in the nav). Hover deepens to Auditor's Red Deep with a color transition only.
+- **Primary:** Auditor's Red with white semibold Inter, 12px by 24px (44px min height everywhere, the nav included). Hover deepens to Auditor's Red Deep with a color transition only.
 - **Secondary:** white with a Rule Gray border and Caption Ink text; border darkens to grey-400 on hover. Used for "load more" style actions.
-- **Text link:** Auditor's Red semibold with an arrow ("Read →"), underline on hover.
+- **Text link:** Auditor's Red semibold with an arrow ("Read the breakdown →"), underline on hover. One wording per action across the site.
+
+**The Thumb Rule.** Every link, button and summary a reader taps is at least 44px tall, site-wide, including footer links, "see all" links and the wordmark. Most readers arrive on a phone; a target they miss is a page they leave.
 
 ### Chips
 - **Filter chips:** pill, white with Rule Gray border and Caption Ink text; the active chip inverts to black with white text.
@@ -263,15 +279,18 @@ Restrained and solid.
 
 ### Cards / Containers
 - **Article card:** white, 8px radius, Hairline border that darkens on hover, 20px padding. Order: red company eyebrow, grey date, then a serif figure pair split by a vertical hairline (second figure toned gain/loss), serif title that turns red on hover, and a red "Read →" footer.
-- **Dark hero card:** white at 5% on black, top border 4px Auditor's Red, brightening to 10% on hover.
+- **Dark hero card:** white at 5% on black, top border 4px Auditor's Red, brightening to 10% on hover. On phones each card is one row (company label, then the leading figure with its caption); the second figure shows from `sm`. Figures never wrap.
 
 ### Inputs / Fields
-- **Email input:** white, 1px grey-300 border, 4px radius on the outer edge only, joined flush to the primary button to form one control.
-- **Focus:** border shifts to Auditor's Red; no glow.
-- **Error:** a single line of Loss Red text below the control.
+- **Email sign-up** (`components/home/SubscribeForm.tsx`, `ArticleSubscribe.tsx`): a 48px email input and a 48px Auditor's Red button reading "Get the next teardown", side by side from `sm`, stacked full width on phones. Paper variant: white input, grey-300 border. Black variant (homepage hero): white at 10% with a white/30 border and white/60 placeholder. One short hint line below ("Unsubscribe any time."). The homepage asks three times: in the hero, after the featured teardown, and in the closing band.
+- **Focus:** border shifts to black on paper and white on black; no glow.
+- **Error:** the server's own message in one line of Loss Red text below the control, announced with role="alert"; success replaces the form with one line, announced with role="status".
 
 ### Navigation
 Black 72px sticky bar. Serif "UnpopularVoice" wordmark left, turns red on hover. Grouped items in 14px Inter at white/70, white on hover or open. Dropdowns are white panels (8px radius, menu shadow) whose items carry a semibold label and an 11px grey hint. The Subscribe button always shows. On mobile a hamburger opens a black sheet with uppercase grey group labels and 44px rows.
+
+### Who Reads the Accounts (homepage closing band)
+White band under a 2px black rule. Left: the serif heading "Who reads the accounts", one paragraph of method that promises only what /editorial-standards keeps, the bylined authors from `lib/authors.ts` (serif name over grey role), a live line of counts and last-updated date computed from the articles, and underlined links to methodology, editorial standards, corrections and About. Right, behind a hairline from `lg`: the closing sign-up. Never add testimonials, subscriber counts or press logos the site cannot show.
 
 ### TakeawayCard (signature)
 The one line the section exists to prove. **Dark** variant: black, 16px radius, red bar top-left, red tracked eyebrow, white serif Pullout, white/70 body. **Light** variant: warm cream with the 6px red left border.
@@ -298,7 +317,8 @@ A scorecard instrument. Black header with red eyebrow, serif company name, and a
 - **Do** set every headline figure in Playfair Display at Figure size or larger, with Gain Green or Loss Red only when the value carries a direction.
 - **Do** use Masthead Black panels for the single line the reader should remember, at most one or two per article.
 - **Do** keep article prose at 1.0625rem / 1.75 in Body Ink within the 760px column.
-- **Do** use tiny uppercase tracked labels (10px, 0.25em) for eyebrows and captions.
+- **Do** use tiny uppercase tracked labels (10px, 0.25em) for section eyebrows, and 11px card labels for company names and figure captions.
+- **Do** keep every tap target at least 44px tall and check every homepage change at 360px and 390px wide.
 - **Do** use the verdict triplets exactly (green / amber / red background, border, text) for Solid / Watch / Caution.
 
 ### Don't:

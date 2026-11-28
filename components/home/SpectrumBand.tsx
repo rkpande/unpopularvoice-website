@@ -61,7 +61,7 @@ export default function SpectrumBand({ articles }: { articles: ArticleMeta[] }) 
                           <p className="font-sans text-[11px] tracking-widest uppercase text-gray-500 mb-0.5">
                             {a.company}
                           </p>
-                          <p className="font-serif text-black text-[15px] font-bold leading-snug group-hover:text-brand-red transition-colors line-clamp-2">
+                          <p className="font-serif text-black text-[1.0625rem] font-bold leading-snug group-hover:text-brand-red transition-colors line-clamp-2">
                             {a.title}
                           </p>
                         </Link>

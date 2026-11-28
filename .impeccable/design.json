@@ -1,50 +1,238 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-14T00:00:00Z",
+  "generatedAt": "2026-11-28T11:30:42Z",
   "title": "Design System: UnpopularVoice",
   "extensions": {
     "colorMeta": {
-      "auditors-red": { "role": "primary", "displayName": "Auditor's Red", "canonical": "#B22222", "tonalRamp": ["#3B0B0B", "#5C1111", "#7F1818", "#B22222", "#D24A4A", "#E68585", "#F3C0C0", "#FBEAEA"] },
-      "auditors-red-deep": { "role": "primary", "displayName": "Auditor's Red Deep", "canonical": "#991B1B" },
-      "masthead-black": { "role": "neutral", "displayName": "Masthead Black", "canonical": "#000000", "tonalRamp": ["#000000", "#0D0D0D", "#1F2937", "#374151", "#6B7280", "#9CA3AF", "#E5E7EB", "#F9FAFB"] },
-      "ink-panel": { "role": "neutral", "displayName": "Ink Panel", "canonical": "#0D0D0D" },
-      "newsprint-white": { "role": "neutral", "displayName": "Newsprint White", "canonical": "#FFFFFF" },
-      "warm-cream": { "role": "neutral", "displayName": "Warm Cream", "canonical": "#FAF6EF", "tonalRamp": ["#3A3326", "#5E5440", "#8A7D63", "#B8AA8C", "#DDD2BB", "#EDE5D5", "#F5EFE3", "#FAF6EF"] },
-      "panel-gray": { "role": "neutral", "displayName": "Panel Gray", "canonical": "#F9FAFB" },
-      "hairline": { "role": "neutral", "displayName": "Hairline", "canonical": "#F3F4F6" },
-      "rule-gray": { "role": "neutral", "displayName": "Rule Gray", "canonical": "#E5E7EB" },
-      "muted-ink": { "role": "neutral", "displayName": "Muted Ink", "canonical": "#9CA3AF" },
-      "caption-ink": { "role": "neutral", "displayName": "Caption Ink", "canonical": "#6B7280" },
-      "body-ink": { "role": "neutral", "displayName": "Body Ink", "canonical": "#374151" },
-      "gain-green": { "role": "tertiary", "displayName": "Gain Green", "canonical": "#15803D", "tonalRamp": ["#052E16", "#14532D", "#15803D", "#16A34A", "#22C55E", "#86EFAC", "#BBF7D0", "#F0FDF4"] },
-      "loss-red": { "role": "tertiary", "displayName": "Loss Red", "canonical": "#DC2626", "tonalRamp": ["#450A0A", "#7F1D1D", "#B91C1C", "#DC2626", "#EF4444", "#FCA5A5", "#FECACA", "#FEF2F2"] },
-      "verdict-watch-text": { "role": "tertiary", "displayName": "Watch Amber", "canonical": "#B45309", "tonalRamp": ["#451A03", "#78350F", "#B45309", "#D97706", "#F59E0B", "#FCD34D", "#FDE68A", "#FFFBEB"] }
+      "auditors-red": {
+        "role": "primary",
+        "displayName": "Auditor's Red",
+        "canonical": "#B22222",
+        "tonalRamp": [
+          "#3B0B0B",
+          "#5C1111",
+          "#7F1818",
+          "#B22222",
+          "#D24A4A",
+          "#E68585",
+          "#F3C0C0",
+          "#FBEAEA"
+        ]
+      },
+      "auditors-red-deep": {
+        "role": "primary",
+        "displayName": "Auditor's Red Deep",
+        "canonical": "#991B1B"
+      },
+      "masthead-black": {
+        "role": "neutral",
+        "displayName": "Masthead Black",
+        "canonical": "#000000",
+        "tonalRamp": [
+          "#000000",
+          "#0D0D0D",
+          "#1F2937",
+          "#374151",
+          "#6B7280",
+          "#9CA3AF",
+          "#E5E7EB",
+          "#F9FAFB"
+        ]
+      },
+      "ink-panel": {
+        "role": "neutral",
+        "displayName": "Ink Panel",
+        "canonical": "#0D0D0D"
+      },
+      "newsprint-white": {
+        "role": "neutral",
+        "displayName": "Newsprint White",
+        "canonical": "#FFFFFF"
+      },
+      "warm-cream": {
+        "role": "neutral",
+        "displayName": "Warm Cream",
+        "canonical": "#FAF6EF",
+        "tonalRamp": [
+          "#3A3326",
+          "#5E5440",
+          "#8A7D63",
+          "#B8AA8C",
+          "#DDD2BB",
+          "#EDE5D5",
+          "#F5EFE3",
+          "#FAF6EF"
+        ]
+      },
+      "panel-gray": {
+        "role": "neutral",
+        "displayName": "Panel Gray",
+        "canonical": "#F9FAFB"
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#F3F4F6"
+      },
+      "rule-gray": {
+        "role": "neutral",
+        "displayName": "Rule Gray",
+        "canonical": "#E5E7EB"
+      },
+      "muted-ink": {
+        "role": "neutral",
+        "displayName": "Muted Ink",
+        "canonical": "#9CA3AF"
+      },
+      "caption-ink": {
+        "role": "neutral",
+        "displayName": "Caption Ink",
+        "canonical": "#6B7280"
+      },
+      "body-ink": {
+        "role": "neutral",
+        "displayName": "Body Ink",
+        "canonical": "#374151"
+      },
+      "gain-green": {
+        "role": "tertiary",
+        "displayName": "Gain Green",
+        "canonical": "#15803D",
+        "tonalRamp": [
+          "#052E16",
+          "#14532D",
+          "#15803D",
+          "#16A34A",
+          "#22C55E",
+          "#86EFAC",
+          "#BBF7D0",
+          "#F0FDF4"
+        ]
+      },
+      "loss-red": {
+        "role": "tertiary",
+        "displayName": "Loss Red",
+        "canonical": "#DC2626",
+        "tonalRamp": [
+          "#450A0A",
+          "#7F1D1D",
+          "#B91C1C",
+          "#DC2626",
+          "#EF4444",
+          "#FCA5A5",
+          "#FECACA",
+          "#FEF2F2"
+        ]
+      },
+      "verdict-watch-text": {
+        "role": "tertiary",
+        "displayName": "Watch Amber",
+        "canonical": "#B45309",
+        "tonalRamp": [
+          "#451A03",
+          "#78350F",
+          "#B45309",
+          "#D97706",
+          "#F59E0B",
+          "#FCD34D",
+          "#FDE68A",
+          "#FFFBEB"
+        ]
+      }
     },
     "typographyMeta": {
-      "display": { "displayName": "Display", "purpose": "Homepage hero headline only." },
-      "headline": { "displayName": "Headline", "purpose": "Article titles." },
-      "pullout": { "displayName": "Pullout", "purpose": "TakeawayCard and SignatureLine statements; the screenshot line." },
-      "figure": { "displayName": "Figure", "purpose": "Headline numbers: article hero numbers and card lead figures." },
-      "title": { "displayName": "Title", "purpose": "Section and card headings; prose h2/h3." },
-      "body": { "displayName": "Body", "purpose": "Article prose within the 760px column." },
-      "ui": { "displayName": "UI", "purpose": "Nav, buttons, inputs, share links." },
-      "label": { "displayName": "Label", "purpose": "Uppercase tracked eyebrows, captions, metadata." }
+      "display": {
+        "displayName": "Display",
+        "purpose": "Homepage hero headline only."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Article titles."
+      },
+      "pullout": {
+        "displayName": "Pullout",
+        "purpose": "TakeawayCard and SignatureLine statements; the screenshot line."
+      },
+      "figure": {
+        "displayName": "Figure",
+        "purpose": "Headline numbers: article hero numbers and card lead figures."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Section and card headings; prose h2/h3."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Article prose within the 760px column."
+      },
+      "ui": {
+        "displayName": "UI",
+        "purpose": "Nav, buttons, inputs, share links."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Section eyebrows and metadata."
+      },
+      "label-card": {
+        "displayName": "Card label",
+        "purpose": "Company names and figure captions on cards; 11px floor for text a reader needs."
+      },
+      "wordmark": {
+        "displayName": "Wordmark",
+        "purpose": "The UnpopularVoice logotype in the nav only."
+      }
     },
     "shadows": [
-      { "name": "resting-card", "value": "0 1px 2px 0 rgba(0,0,0,0.05)", "purpose": "Self-contained instruments (EmployerScore, newsletter form)." },
-      { "name": "hover-lift", "value": "0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1)", "purpose": "Some browse cards on hover only." },
-      { "name": "menu", "value": "0 25px 50px -12px rgba(0,0,0,0.25), 0 0 0 1px rgba(0,0,0,0.1)", "purpose": "Nav dropdown, the only floating layer." }
+      {
+        "name": "resting-card",
+        "value": "0 1px 2px 0 rgba(0,0,0,0.05)",
+        "purpose": "Self-contained instruments (EmployerScore, newsletter form)."
+      },
+      {
+        "name": "hover-lift",
+        "value": "0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1)",
+        "purpose": "Some browse cards on hover only."
+      },
+      {
+        "name": "menu",
+        "value": "0 25px 50px -12px rgba(0,0,0,0.25), 0 0 0 1px rgba(0,0,0,0.1)",
+        "purpose": "Nav dropdown, the only floating layer."
+      }
     ],
     "motion": [
-      { "name": "color-transition", "value": "color, background-color, border-color 150ms cubic-bezier(0.4, 0, 0.2, 1)", "purpose": "All hover states; the system animates color only." },
-      { "name": "menu-close-delay", "value": "120ms", "purpose": "Grace period before a nav dropdown closes on mouse leave." },
-      { "name": "ticker", "value": "translateX(0 to -50%) 300s linear infinite", "purpose": "Homepage stats ticker." }
+      {
+        "name": "color-transition",
+        "value": "color, background-color, border-color 150ms cubic-bezier(0.4, 0, 0.2, 1)",
+        "purpose": "All hover states; the system animates color only."
+      },
+      {
+        "name": "menu-close-delay",
+        "value": "120ms",
+        "purpose": "Grace period before a nav dropdown closes on mouse leave."
+      },
+      {
+        "name": "ticker",
+        "value": "translateX(0 to -50%) 300s linear infinite",
+        "purpose": "Homepage stats ticker."
+      }
     ],
     "breakpoints": [
-      { "name": "sm", "value": "640px" },
-      { "name": "md", "value": "768px" },
-      { "name": "lg", "value": "1024px" },
-      { "name": "xl", "value": "1280px" }
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      },
+      {
+        "name": "xl",
+        "value": "1280px"
+      }
     ]
   },
   "components": [
@@ -54,7 +242,7 @@
       "refersTo": "button-primary",
       "description": "Subscribe and primary calls to action.",
       "html": "<button class=\"ds-btn-primary\">Subscribe</button>",
-      "css": ".ds-btn-primary { background: #B22222; color: #fff; font-family: Inter, system-ui, sans-serif; font-weight: 600; font-size: 14px; padding: 12px 24px; border: none; border-radius: 4px; cursor: pointer; transition: background-color 150ms cubic-bezier(0.4,0,0.2,1); } .ds-btn-primary:hover { background: #991B1B; } .ds-btn-primary:focus-visible { outline: 2px solid #B22222; outline-offset: 2px; }"
+      "css": ".ds-btn-primary { background: #B22222; color: #fff; font-family: Inter, system-ui, sans-serif; font-weight: 600; font-size: 14px; padding: 12px 24px; min-height: 44px; border: none; border-radius: 4px; cursor: pointer; transition: background-color 150ms cubic-bezier(0.4,0,0.2,1); } .ds-btn-primary:hover { background: #991B1B; } .ds-btn-primary:focus-visible { outline: 2px solid #B22222; outline-offset: 2px; }"
     },
     {
       "name": "Secondary Button",
@@ -68,9 +256,9 @@
       "name": "Email Signup",
       "kind": "input",
       "refersTo": "input-email",
-      "description": "Email field joined flush to the primary button.",
-      "html": "<form class=\"ds-signup\"><input class=\"ds-input\" type=\"email\" placeholder=\"you@example.com\"><button class=\"ds-signup-btn\" type=\"button\">Subscribe</button></form>",
-      "css": ".ds-signup { display: flex; max-width: 28rem; box-shadow: 0 1px 2px rgba(0,0,0,0.05); } .ds-input { flex: 1; padding: 14px 16px; font-family: Inter, system-ui, sans-serif; font-size: 14px; border: 1px solid #D1D5DB; border-right: none; border-radius: 6px 0 0 6px; outline: none; transition: border-color 150ms; } .ds-input:focus { border-color: #B22222; } .ds-signup-btn { background: #B22222; color: #fff; font-family: Inter, system-ui, sans-serif; font-weight: 600; font-size: 14px; padding: 14px 24px; border: none; border-radius: 0 6px 6px 0; cursor: pointer; transition: background-color 150ms; } .ds-signup-btn:hover { background: #991B1B; }"
+      "description": "48px email field and 48px red button reading 'Get the next teardown'; side by side from sm, stacked on phones. Paper and black variants.",
+      "html": "<form class=\"ds-signup\"><input class=\"ds-input\" type=\"email\" placeholder=\"you@example.com\" aria-label=\"Email address\"><button class=\"ds-signup-btn\" type=\"button\">Get the next teardown</button></form><p class=\"ds-signup-hint\">Unsubscribe any time.</p>",
+      "css": ".ds-signup { display: flex; flex-wrap: wrap; gap: 8px; max-width: 28rem; } .ds-input { flex: 1 1 14rem; min-height: 48px; padding: 0 16px; font-family: Inter, system-ui, sans-serif; font-size: 16px; color: #000; background: #fff; border: 1px solid #D1D5DB; border-radius: 4px; outline: none; transition: border-color 150ms; } .ds-input::placeholder { color: #6B7280; } .ds-input:focus { border-color: #000; } .ds-signup-btn { min-height: 48px; padding: 0 24px; background: #B22222; color: #fff; font-family: Inter, system-ui, sans-serif; font-weight: 600; font-size: 16px; border: none; border-radius: 4px; cursor: pointer; white-space: nowrap; transition: background-color 150ms; } .ds-signup-btn:hover { background: #991B1B; } .ds-signup-btn:focus-visible { outline: 2px solid #000; outline-offset: 2px; } .ds-signup-hint { margin-top: 8px; font-family: Inter, system-ui, sans-serif; font-size: 14px; color: #6B7280; }"
     },
     {
       "name": "Navigation Bar",
@@ -119,6 +307,14 @@
       "description": "Two-pane evidence comparison with direction glyphs and toned serif values.",
       "html": "<div class=\"ds-vs\"><p class=\"ds-vs-metric\">Net loss</p><div class=\"ds-vs-panes\"><div class=\"ds-vs-pane ds-vs-left\"><p class=\"ds-vs-label\">FY2024</p><p class=\"ds-vs-val ds-loss\"><span>▼</span>-₹110 Cr</p></div><div class=\"ds-vs-pane\"><p class=\"ds-vs-label\">FY2025</p><p class=\"ds-vs-val ds-gain\"><span>▲</span>-₹38 Cr</p></div></div></div>",
       "css": ".ds-vs { border: 1px solid #E5E7EB; border-radius: 12px; overflow: hidden; max-width: 640px; } .ds-vs-metric { margin: 0; padding: 12px 20px; font-family: Inter, system-ui, sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #6B7280; border-bottom: 1px solid #E5E7EB; } .ds-vs-panes { display: grid; grid-template-columns: 1fr 1fr; } .ds-vs-pane { padding: 24px; background: #fff; } .ds-vs-left { background: rgba(249,250,251,0.4); border-right: 1px solid #E5E7EB; } .ds-vs-label { margin: 0 0 8px; font-family: Inter, system-ui, sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #6B7280; } .ds-vs-val { margin: 0; display: flex; align-items: baseline; gap: 8px; font-family: 'Playfair Display', Georgia, serif; font-size: 30px; font-weight: 700; line-height: 1; } .ds-vs-val span { font-size: 16px; } .ds-loss { color: #DC2626; } .ds-gain { color: #15803D; }"
+    },
+    {
+      "name": "Who Reads Band",
+      "kind": "custom",
+      "refersTo": "who-reads",
+      "description": "Homepage closing band: method, bylined authors, live counts and standards links; real facts only.",
+      "html": "<section class=\"ds-who\"><h2 class=\"ds-who-h\">Who reads the accounts</h2><p class=\"ds-who-p\">Every figure comes from a company's audited annual accounts, checked against the source before it is published.</p><a class=\"ds-who-author\" href=\"#\"><span class=\"ds-who-name\">ParthSarthy P</span><span class=\"ds-who-role\">Founder &amp; Editor</span></a><p class=\"ds-who-meta\">104 teardowns · 91 companies · updated 28 November 2026</p><a class=\"ds-who-link\" href=\"#\">Corrections</a></section>",
+      "css": ".ds-who { background: #fff; border-top: 2px solid #000; padding: 40px 16px; max-width: 36rem; } .ds-who-h { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 32px; line-height: 1.15; color: #000; margin: 0; } .ds-who-p { margin-top: 16px; font-family: Inter, system-ui, sans-serif; font-size: 16px; line-height: 1.6; color: #374151; } .ds-who-author { display: flex; flex-direction: column; justify-content: center; min-height: 44px; margin-top: 20px; text-decoration: none; } .ds-who-name { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 18px; color: #000; } .ds-who-author:hover .ds-who-name { color: #B22222; } .ds-who-role { font-family: Inter, system-ui, sans-serif; font-size: 14px; color: #6B7280; } .ds-who-meta { margin-top: 20px; font-family: Inter, system-ui, sans-serif; font-size: 14px; color: #6B7280; } .ds-who-link { display: inline-flex; align-items: center; min-height: 44px; font-family: Inter, system-ui, sans-serif; font-size: 14px; font-weight: 600; color: #000; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: #D1D5DB; } .ds-who-link:hover { color: #B22222; text-decoration-color: #B22222; } .ds-who-link:focus-visible { outline: 2px solid #000; outline-offset: 2px; }"
     }
   ],
   "narrative": {
@@ -133,29 +329,78 @@
       "Flat surfaces; hairline borders do the structural work."
     ],
     "rules": [
-      { "name": "The Masthead Ink Rule", "body": "Auditor's Red is identity, never data. A loss figure in Auditor's Red is a bug; it must be Loss Red.", "section": "colors" },
-      { "name": "The Two Reds Rule", "body": "Brand red (#B22222, darker, brick) and loss red (#DC2626, brighter) must never sit adjacent as if interchangeable. If a reader could confuse \"brand accent\" with \"this number is bad,\" change one of them.", "section": "colors" },
-      { "name": "The Monochrome Ground Rule", "body": "Pages are black and white first. Color appears as a mark (bar, eyebrow, chip, value), never as a large tinted surface, with two exceptions: the pale newsletter band and the cream takeaway panel.", "section": "colors" },
-      { "name": "The Figures Are Headlines Rule", "body": "Any number the article is about is set in the display serif at Figure size or larger. Numbers in Inter are supporting data only.", "section": "typography" },
-      { "name": "The Whisper Label Rule", "body": "Eyebrows and captions are tiny, uppercase, widely tracked, and grey or red. They never compete with the serif above or below them.", "section": "typography" },
-      { "name": "The Single Column Rule", "body": "Article bodies never go multi-column. Comparison components (VersusBlock, SplitView) may split into two panes inside the column, and collapse to stacked panes below sm.", "section": "layout" },
-      { "name": "The Inversion Over Shadow Rule", "body": "To make something stand out, turn it black. Don't raise it.", "section": "elevation" }
+      {
+        "name": "The Masthead Ink Rule",
+        "body": "Auditor's Red is identity, never data. A loss figure in Auditor's Red is a bug; it must be Loss Red.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Reds Rule",
+        "body": "Brand red (#B22222, darker, brick) and loss red (#DC2626, brighter) must never sit adjacent as if interchangeable. If a reader could confuse \"brand accent\" with \"this number is bad,\" change one of them.",
+        "section": "colors"
+      },
+      {
+        "name": "The Sign Rule",
+        "body": "Red and green describe a number, never a judgement about it. Red: a negative figure, or an unsigned rupee figure whose label's subject is a loss, deficit, burn or outflow. Green: an explicitly \"+\" figure, or an unsigned rupee figure whose label's subject is a profit. Everything else is black: revenue, costs, cash, borrowings, valuations, ratios, and sentences in table cells. A cost is not a loss; a narrowing loss is still red; a transition (\"−₹44 → −₹20 Cr\") takes the colour of where it ends. Components derive this in `lib/tone.ts` (KeyMetrics, ChartBlock, FinancialTable, VersusBlock, hero figures); articles never choose red or green, and losses are entered as negative numbers in chart data. Direction arrows stay neutral. Ratings and categories (EmployerScore chips, RealityScore, InsightBox types, timeline events) keep their own palettes because they are not numbers.",
+        "section": "colors"
+      },
+      {
+        "name": "The Contrast Floor Rule",
+        "body": "Every piece of text clears 4.5:1 (3:1 for 24px+ bold) on its actual ground; axe runs across every sitemap URL before a deploy. On paper, the lightest text is gray-500 (#6B7280); gray-300/400 are for rules and borders only. On black, the faintest text is white at 60%, except pure separators (\"·\"), which carry `aria-hidden` and may stay at 30%. On a tinted surface (red-50 band, score-tinted cards), secondary text takes the foreground at 60% (`text-black/60`) or the surface's own deep hue, never gray-500. Amber, yellow and orange text use their -700 shades.",
+        "section": "colors"
+      },
+      {
+        "name": "The Dark Ground Rule",
+        "body": "Auditor's Red, Loss Red and Profit Green are tuned for paper and fall under 4.5:1 on black. `app/globals.css` lifts them automatically inside any `.bg-black` / `.bg-gray-900` ground: brand red to #EB6B6B, loss red to #F87171, profit green to #4ADE80 (all at least 4.9:1 on #000 to #1D2432), and returns them to paper values inside a light panel or pale chip nested in that ground. Write the normal classes (`text-brand-red`, `text-red-600`, `text-green-700`); never hand-pick a dark variant per component.",
+        "section": "colors"
+      },
+      {
+        "name": "The Monochrome Ground Rule",
+        "body": "Pages are black and white first. Color appears as a mark (bar, eyebrow, chip, value), never as a large tinted surface, with two exceptions: the pale newsletter band and the cream takeaway panel.",
+        "section": "colors"
+      },
+      {
+        "name": "The Figures Are Headlines Rule",
+        "body": "Any number the article is about is set in the display serif at Figure size or larger. Numbers in Inter are supporting data only.",
+        "section": "typography"
+      },
+      {
+        "name": "The Whisper Label Rule",
+        "body": "Eyebrows and captions are tiny, uppercase, widely tracked, and grey or red. They never compete with the serif above or below them.",
+        "section": "typography"
+      },
+      {
+        "name": "The Single Column Rule",
+        "body": "Article bodies never go multi-column. Comparison components (VersusBlock, SplitView) may split into two panes inside the column, and collapse to stacked panes below `sm`.",
+        "section": "layout"
+      },
+      {
+        "name": "The Inversion Over Shadow Rule",
+        "body": "To make something stand out, turn it black. Don't raise it.",
+        "section": "elevation & depth"
+      },
+      {
+        "name": "The Thumb Rule",
+        "body": "Every link, button and summary a reader taps is at least 44px tall, site-wide, including footer links, \"see all\" links and the wordmark. Most readers arrive on a phone; a target they miss is a page they leave.",
+        "section": "components"
+      }
     ],
     "dos": [
-      "Do put the 48px by 4px Auditor's Red bar above every page-level headline and at the top-left of dark panels.",
-      "Do set every headline figure in Playfair Display at Figure size or larger, with Gain Green or Loss Red only when the value carries a direction.",
-      "Do use Masthead Black panels for the single line the reader should remember, at most one or two per article.",
-      "Do keep article prose at 1.0625rem / 1.75 in Body Ink within the 760px column.",
-      "Do use tiny uppercase tracked labels (10px, 0.25em) for eyebrows and captions.",
-      "Do use the verdict triplets exactly (green / amber / red background, border, text) for Solid / Watch / Caution."
+      "**Do** put the 48px by 4px Auditor's Red bar above every page-level headline and at the top-left of dark panels.",
+      "**Do** set every headline figure in Playfair Display at Figure size or larger, with Gain Green or Loss Red only when the value carries a direction.",
+      "**Do** use Masthead Black panels for the single line the reader should remember, at most one or two per article.",
+      "**Do** keep article prose at 1.0625rem / 1.75 in Body Ink within the 760px column.",
+      "**Do** use tiny uppercase tracked labels (10px, 0.25em) for section eyebrows, and 11px card labels for company names and figure captions.",
+      "**Do** keep every tap target at least 44px tall and check every homepage change at 360px and 390px wide.",
+      "**Do** use the verdict triplets exactly (green / amber / red background, border, text) for Solid / Watch / Caution."
     ],
     "donts": [
-      "Don't use Auditor's Red (#B22222) for a negative number; negatives are Loss Red (#DC2626).",
-      "Don't use em dashes anywhere in UI copy, labels, or placeholders; use a comma, or a hyphen for empty-value placeholders.",
-      "Don't add gradients, photography, illustration, or large tinted surfaces; contrast does the work.",
-      "Don't lift elements with heavy shadows; invert them to black instead.",
-      "Don't set article bodies in more than one column.",
-      "Don't introduce a second accent hue for identity; Auditor's Red is the only brand color."
+      "**Don't** use Auditor's Red (#B22222) for a negative number; negatives are Loss Red (#DC2626).",
+      "**Don't** use em dashes anywhere in UI copy, labels, or placeholders; use a comma, or a hyphen for empty-value placeholders.",
+      "**Don't** add gradients, photography, illustration, or large tinted surfaces; contrast does the work.",
+      "**Don't** lift elements with heavy shadows; invert them to black instead.",
+      "**Don't** set article bodies in more than one column.",
+      "**Don't** introduce a second accent hue for identity; Auditor's Red is the only brand color."
     ]
   }
 }

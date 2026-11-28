@@ -38,7 +38,7 @@ export default function ContradictionCards({ articles }: { articles: ArticleMeta
                   {a.company}
                 </p>
                 <p
-                  className={`font-serif text-2xl sm:text-[26px] font-bold leading-[1.15] ${
+                  className={`font-serif text-2xl font-bold leading-[1.15] ${
                     i === 0 ? 'group-hover:text-white' : 'group-hover:text-brand-red'
                   } transition-colors`}
                 >

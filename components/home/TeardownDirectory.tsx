@@ -43,7 +43,7 @@ export default function TeardownDirectory({ articles }: { articles: ArticleMeta[
                 className={`group border-t border-gray-200 py-1 ${i >= MOBILE_SHOWN ? 'hidden md:block group-has-[#more-sectors:checked]/dir:block' : ''}`}
               >
                 <summary className="flex items-baseline justify-between gap-4 cursor-pointer list-none min-h-[44px] items-center [&::-webkit-details-marker]:hidden">
-                  <span className="font-sans text-[15px] font-semibold text-black">{s.label}</span>
+                  <span className="font-sans text-[1.0625rem] font-semibold text-black">{s.label}</span>
                   <span className="font-sans text-sm text-gray-500 tabular-nums">
                     {list.length}
                     <span aria-hidden="true" className="inline-block ml-2 transition-transform group-open:rotate-45">+</span>

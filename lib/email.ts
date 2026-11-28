@@ -3,17 +3,21 @@
 import { createHmac, timingSafeEqual } from 'crypto'
 
 const API = 'https://api.resend.com'
+// Stored settings can carry a stray newline (the audience id did, which made every
+// broadcast fail with a 500 while contact sign-ups still worked). Always trim.
+const KEY = () => (process.env.RESEND_API_KEY || '').trim()
+const AUDIENCE = () => (process.env.RESEND_AUDIENCE_ID || '').trim()
 export const SITE_URL = 'https://unpopularvoice.com'
 export const FROM = 'UnpopularVoice <editor@unpopularvoice.com>'
 
 export function emailConfigured(): boolean {
-  return Boolean(process.env.RESEND_API_KEY && process.env.RESEND_AUDIENCE_ID)
+  return Boolean(KEY() && AUDIENCE())
 }
 
 async function resend(path: string, init: { method?: string; body?: unknown } = {}) {
   const res = await fetch(`${API}${path}`, {
     method: init.method ?? 'GET',
-    headers: { Authorization: `Bearer ${process.env.RESEND_API_KEY}`, 'Content-Type': 'application/json' },
+    headers: { Authorization: `Bearer ${KEY()}`, 'Content-Type': 'application/json' },
     body: init.body === undefined ? undefined : JSON.stringify(init.body),
   })
   const text = await res.text()
@@ -29,14 +33,14 @@ async function resend(path: string, init: { method?: string; body?: unknown } = 
 // ---------- contacts ----------
 
 export async function addContact(email: string) {
-  return resend(`/audiences/${process.env.RESEND_AUDIENCE_ID}/contacts`, {
+  return resend(`/audiences/${AUDIENCE()}/contacts`, {
     method: 'POST',
     body: { email, unsubscribed: false },
   })
 }
 
 export async function unsubscribeContact(email: string) {
-  return resend(`/audiences/${process.env.RESEND_AUDIENCE_ID}/contacts/${encodeURIComponent(email)}`, {
+  return resend(`/audiences/${AUDIENCE()}/contacts/${encodeURIComponent(email)}`, {
     method: 'PATCH',
     body: { unsubscribed: true },
   })
@@ -45,7 +49,7 @@ export async function unsubscribeContact(email: string) {
 // Unsubscribe links in the welcome email carry an HMAC of the address, so a
 // link only unsubscribes the person it was sent to.
 function unsubscribeToken(email: string): string {
-  return createHmac('sha256', `${process.env.RESEND_API_KEY}:unsubscribe`).update(email).digest('hex').slice(0, 32)
+  return createHmac('sha256', `${KEY()}:unsubscribe`).update(email).digest('hex').slice(0, 32)
 }
 export function unsubscribeUrl(email: string): string {
   return `${SITE_URL}/unsubscribe?e=${encodeURIComponent(email)}&t=${unsubscribeToken(email)}`
@@ -138,7 +142,7 @@ export async function broadcastNames(): Promise<Set<string>> {
 export async function sendBroadcast(name: string, msg: { subject: string; html: string; text: string }) {
   const created = await resend('/broadcasts', {
     method: 'POST',
-    body: { audience_id: process.env.RESEND_AUDIENCE_ID, from: FROM, name, subject: msg.subject, html: msg.html, text: msg.text },
+    body: { audience_id: AUDIENCE(), from: FROM, name, subject: msg.subject, html: msg.html, text: msg.text },
   })
   if (!created.ok) throw new Error(`Resend broadcast create failed: ${created.status} ${JSON.stringify(created.data)}`)
   const id = created.data?.id

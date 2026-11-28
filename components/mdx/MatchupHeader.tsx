@@ -6,6 +6,7 @@ interface MatchupHeaderProps {
   metaB: ArticleMeta | null
   metaC?: ArticleMeta | null
   category?: string
+  stats?: [string, string, string, string][]
 }
 
 function pickStat(meta: ArticleMeta | null, predicate: (h: HeroNumber) => boolean): HeroNumber | undefined {
@@ -63,11 +64,13 @@ function CompanyColumn({
   index,
   total,
   compact,
+  override,
 }: {
   meta: ArticleMeta | null
   index: number
   total: number
   compact: boolean
+  override?: [string, string, string, string]
 }) {
   if (!meta) {
     return (
@@ -76,8 +79,12 @@ function CompanyColumn({
       </div>
     )
   }
-  const revenue = pickStat(meta, isRevenue) || meta.heroNumbers?.[0]
-  const profit = pickStat(meta, isProfitOrLoss) || meta.heroNumbers?.[1]
+  const revenue = override
+    ? { label: override[0], value: override[1] }
+    : pickStat(meta, isRevenue) || meta.heroNumbers?.[0]
+  const profit = override
+    ? { label: override[2], value: override[3] }
+    : pickStat(meta, isProfitOrLoss) || meta.heroNumbers?.[1]
   const verdict = meta.employerScore?.verdict
   const v = (verdict && VERDICT_META[verdict]) || NEUTRAL_META
 
@@ -147,7 +154,7 @@ function CompanyColumn({
   )
 }
 
-export default function MatchupHeader({ metaA, metaB, metaC, category }: MatchupHeaderProps) {
+export default function MatchupHeader({ metaA, metaB, metaC, category, stats }: MatchupHeaderProps) {
   const metas = [metaA, metaB, ...(metaC ? [metaC] : [])]
   const total = metas.length
   const isThreeWay = total >= 3
@@ -166,7 +173,7 @@ export default function MatchupHeader({ metaA, metaB, metaC, category }: Matchup
       )}
       <div className={gridCls}>
         {metas.map((m, i) => (
-          <CompanyColumn key={i} meta={m} index={i} total={total} compact={isThreeWay} />
+          <CompanyColumn key={i} meta={m} index={i} total={total} compact={isThreeWay} override={stats?.[i]} />
         ))}
       </div>
     </div>

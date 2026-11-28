@@ -22,6 +22,11 @@ export interface ComparisonMeta {
   published?: boolean
   excerpt?: string
   author?: string                 // optional author slug override; defaults to primary author
+  // Optional header figures per company, in companyA/B/C order, as
+  // [revenueLabel, revenueValue, profitLabel, profitValue]. Use when the linked
+  // articles lead with different years or bases, so the header compares like
+  // with like.
+  matchupStats?: [string, string, string, string][]
 }
 
 export interface Comparison extends ComparisonMeta {

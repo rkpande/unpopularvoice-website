@@ -28,6 +28,7 @@ import SplitView from '@/components/mdx/SplitView'
 import TakeawayCard from '@/components/mdx/TakeawayCard'
 import ContrastRow from '@/components/mdx/ContrastRow'
 import TripleView from '@/components/mdx/TripleView'
+import BridgeChart from '@/components/mdx/BridgeChart'
 
 const mdxComponents = {
   FinancialTable,
@@ -44,6 +45,7 @@ const mdxComponents = {
   TakeawayCard,
   ContrastRow,
   TripleView,
+  BridgeChart,
 }
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://unpopularvoice.com'
@@ -180,7 +182,7 @@ export default function ComparisonPage({ params }: { params: { slug: string } })
 
       {/* Body */}
       <article className="max-w-4xl mx-auto px-4 sm:px-8 py-10 sm:py-14">
-        <MatchupHeader metaA={cmp.metaA} metaB={cmp.metaB} metaC={cmp.metaC} category={cmp.category} />
+        <MatchupHeader metaA={cmp.metaA} metaB={cmp.metaB} metaC={cmp.metaC} category={cmp.category} stats={cmp.matchupStats} />
 
         <div className="prose prose-lg max-w-none font-sans mt-10">
           <MDXRemote

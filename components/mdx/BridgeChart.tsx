@@ -77,14 +77,20 @@ export default function BridgeChart({
                 <div className="absolute inset-y-0 w-px bg-gray-300" style={{ left: `${zero}%` }} />
                 <div
                   className="absolute top-1 bottom-1 rounded-[2px]"
-                  style={{ left: `${left}%`, width: `${width}%`, background: toneFill[tone], opacity: r.total ? 1 : 0.85 }}
+                  style={{ left: `${left}%`, width: `${width}%`, background: toneFill[tone] }}
                 />
+                {/* Label beside the bar where there is room (right, else left);
+                    a bar spanning most of the row carries its label inside. */}
                 <span
-                  className="absolute top-1/2 -translate-y-1/2 font-sans text-[12px] font-semibold tabular-nums whitespace-nowrap text-black"
+                  className={`absolute top-1/2 -translate-y-1/2 font-sans text-[12px] font-semibold tabular-nums whitespace-nowrap ${
+                    left + width <= 62 || left >= 22 ? 'text-black' : 'text-white'
+                  }`}
                   style={
-                    left + width > 62
-                      ? { right: `${100 - left + 1}%` }
-                      : { left: `${left + width + 1}%` }
+                    left + width <= 62
+                      ? { left: `${left + width + 1}%` }
+                      : left >= 22
+                        ? { right: `${100 - left + 1}%` }
+                        : { right: `${100 - (left + width) + 1.5}%` }
                   }
                 >
                   {`${!r.total && r.v > 0 ? '+' : ''}${r.shown}`}

@@ -14,7 +14,7 @@ const CARDS: IndexCard[] = [
     question: "Who's actually making money?",
     product: 'Profitability Index',
     description:
-      'Every covered startup ranked by audited PAT, OCF, and net-margin trajectory. The list updates with every new filing.',
+      'Every covered startup ranked by audited profit, cash from operations and margin. The list updates with every new teardown.',
     cta: 'See the rankings',
   },
   {
@@ -22,7 +22,7 @@ const CARDS: IndexCard[] = [
     question: 'Where is it safe to work?',
     product: 'Jobs Index',
     description:
-      'Filing-derived employer signals: cash, runway, OCF, employee-cost growth. Not gossip, not LinkedIn surveys.',
+      'Employer signals from the audited accounts: cash, runway, cash from operations, staff-cost growth. Not gossip, not surveys.',
     cta: 'Browse the index',
   },
   {
@@ -30,7 +30,7 @@ const CARDS: IndexCard[] = [
     question: 'Is the salary safe?',
     product: 'Employer Check',
     description:
-      'Look up any covered startup. Get the financial floor read in 30 seconds. Audited filings only.',
+      'Look up any covered startup and get its financial floor in 30 seconds. Audited accounts only.',
     cta: 'Run a check',
   },
 ]

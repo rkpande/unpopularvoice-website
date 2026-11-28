@@ -3,11 +3,11 @@ import Link from 'next/link'
 export default function Footer() {
   return (
  <footer id="site-footer" className="bg-black border-t-[3px] border-brand-red">
- <div className="max-w-7xl mx-auto px-8 py-12">
+ <div className="max-w-7xl mx-auto px-4 sm:px-8 py-12">
  <div className="flex flex-col md:flex-row justify-between items-start gap-8">
  <div className="max-w-sm">
  <p className="font-serif font-bold text-white text-xl mb-2">UnpopularVoice</p>
- <p className="text-white/50 text-sm font-sans">Financial intelligence for everyone.</p>
+ <p className="text-white/60 text-sm font-sans">Trust the filing more than the narrative.</p>
  <div className="flex items-center gap-3 mt-4">
  <a
   href="https://www.linkedin.com/in/unpopular-voice/"
@@ -50,38 +50,38 @@ export default function Footer() {
  </p>
  </div>
 
- <div className="flex flex-wrap gap-x-6 gap-y-3">
- <Link href="/articles" className="block py-2 text-white/50 text-sm font-sans hover:text-white/80 transition-colors">
+ <div className="flex flex-wrap gap-x-6">
+ <Link href="/articles" className="inline-flex items-center min-h-[44px] text-white/60 text-sm font-sans hover:text-white/80 transition-colors">
   All Articles
  </Link>
- <Link href="/profitability-index" className="block py-2 text-white/50 text-sm font-sans hover:text-white/80 transition-colors">
+ <Link href="/profitability-index" className="inline-flex items-center min-h-[44px] text-white/60 text-sm font-sans hover:text-white/80 transition-colors">
   Profitability Index
  </Link>
- <Link href="/startup-jobs" className="block py-2 text-white/50 text-sm font-sans hover:text-white/80 transition-colors">
+ <Link href="/startup-jobs" className="inline-flex items-center min-h-[44px] text-white/60 text-sm font-sans hover:text-white/80 transition-colors">
   Jobs Index
  </Link>
- <Link href="/employer-check" className="block py-2 text-white/50 text-sm font-sans hover:text-white/80 transition-colors">
+ <Link href="/employer-check" className="inline-flex items-center min-h-[44px] text-white/60 text-sm font-sans hover:text-white/80 transition-colors">
   Employer Check
  </Link>
- <Link href="/about" className="block py-2 text-white/50 text-sm font-sans hover:text-white/80 transition-colors">
+ <Link href="/about" className="inline-flex items-center min-h-[44px] text-white/60 text-sm font-sans hover:text-white/80 transition-colors">
   About
  </Link>
- <Link href="/methodology" className="block py-2 text-white/50 text-sm font-sans hover:text-white/80 transition-colors">
+ <Link href="/methodology" className="inline-flex items-center min-h-[44px] text-white/60 text-sm font-sans hover:text-white/80 transition-colors">
   Methodology
  </Link>
- <Link href="/editorial-standards" className="block py-2 text-white/50 text-sm font-sans hover:text-white/80 transition-colors">
+ <Link href="/editorial-standards" className="inline-flex items-center min-h-[44px] text-white/60 text-sm font-sans hover:text-white/80 transition-colors">
   Editorial Standards
  </Link>
- <Link href="/corrections" className="block py-2 text-white/50 text-sm font-sans hover:text-white/80 transition-colors">
+ <Link href="/corrections" className="inline-flex items-center min-h-[44px] text-white/60 text-sm font-sans hover:text-white/80 transition-colors">
   Corrections
  </Link>
- <Link href="/subscribe" className="block py-2 text-white/50 text-sm font-sans hover:text-white/80 transition-colors">
+ <Link href="/subscribe" className="inline-flex items-center min-h-[44px] text-white/60 text-sm font-sans hover:text-white/80 transition-colors">
   Subscribe
  </Link>
- <Link href="/sector/Fintech" className="block py-2 text-white/50 text-sm font-sans hover:text-white/80 transition-colors">
+ <Link href="/sector/Fintech" className="inline-flex items-center min-h-[44px] text-white/60 text-sm font-sans hover:text-white/80 transition-colors">
   Fintech
  </Link>
- <Link href="/sector/Consumer" className="block py-2 text-white/50 text-sm font-sans hover:text-white/80 transition-colors">
+ <Link href="/sector/Consumer" className="inline-flex items-center min-h-[44px] text-white/60 text-sm font-sans hover:text-white/80 transition-colors">
   Consumer
  </Link>
  </div>
@@ -94,7 +94,7 @@ export default function Footer() {
   href="https://www.linkedin.com/in/unpopular-voice/"
   target="_blank"
   rel="noopener noreferrer"
-  className="block py-2 text-white/60 text-xs font-sans hover:text-white transition-colors"
+  className="inline-flex items-center min-h-[44px] text-white/60 text-xs font-sans hover:text-white transition-colors"
  >
   LinkedIn
  </a>
@@ -102,7 +102,7 @@ export default function Footer() {
   href="https://x.com/UnpopularV83586"
   target="_blank"
   rel="noopener noreferrer"
-  className="block py-2 text-white/60 text-xs font-sans hover:text-white transition-colors"
+  className="inline-flex items-center min-h-[44px] text-white/60 text-xs font-sans hover:text-white transition-colors"
  >
   X (Twitter)
  </a>
@@ -110,7 +110,7 @@ export default function Footer() {
   href="https://www.youtube.com/@YourUnpopularVoice"
   target="_blank"
   rel="noopener noreferrer"
-  className="block py-2 text-white/60 text-xs font-sans hover:text-white transition-colors"
+  className="inline-flex items-center min-h-[44px] text-white/60 text-xs font-sans hover:text-white transition-colors"
  >
   YouTube
  </a>
@@ -119,7 +119,7 @@ export default function Footer() {
   target="_blank"
   rel="noopener noreferrer"
   aria-label="UnpopularVoice on Fazier"
-  className="inline-flex items-center opacity-70 hover:opacity-100 transition-opacity"
+  className="inline-flex items-center min-h-[44px] opacity-70 hover:opacity-100 transition-opacity"
  >
  {/* eslint-disable-next-line @next/next/no-img-element */}
  <img

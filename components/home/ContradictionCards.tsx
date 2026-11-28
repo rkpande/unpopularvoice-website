@@ -11,7 +11,7 @@ export default function ContradictionCards({ articles }: { articles: ArticleMeta
       <div className="max-w-7xl mx-auto px-4 sm:px-8 py-16">
         <div className="mb-10 max-w-3xl">
           <p className="font-sans text-brand-red text-xs tracking-[0.25em] uppercase font-bold mb-2">
-            This week's contradictions
+            Contradictions in the accounts
           </p>
           <h2 className="font-serif text-black text-3xl sm:text-4xl font-bold leading-tight">
             Two-sentence headlines. The data does the rest.
@@ -31,7 +31,7 @@ export default function ContradictionCards({ articles }: { articles: ArticleMeta
             >
               <div>
                 <p
-                  className={`font-sans text-[10px] tracking-[0.25em] uppercase font-semibold mb-4 ${
+                  className={`font-sans text-[11px] tracking-[0.25em] uppercase font-semibold mb-4 ${
                     i === 0 ? 'text-white/60' : 'text-gray-500'
                   }`}
                 >

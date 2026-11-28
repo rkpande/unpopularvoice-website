@@ -46,8 +46,9 @@ const GROUPS: NavGroup[] = [
   {
     label: 'About',
     items: [
-      { label: 'Methodology', href: '/methodology', hint: 'How we score' },
-      { label: 'Reality Check', href: '/reality-check', hint: 'How we read filings' },
+      { label: 'About UnpopularVoice', href: '/about', hint: 'Who reads the accounts' },
+      { label: 'Methodology', href: '/methodology', hint: 'How we read the accounts' },
+      { label: 'Reality Check', href: '/reality-check', hint: 'Hype against the audit' },
     ],
   },
 ]
@@ -79,7 +80,7 @@ export default function Nav() {
       <div className="max-w-7xl mx-auto px-4 sm:px-8 h-[72px] flex items-center justify-between">
         <Link
           href="/"
-          className="font-serif font-bold text-white text-[22px] tracking-tight hover:text-brand-red transition-colors"
+          className="inline-flex items-center min-h-[44px] font-serif font-bold text-white text-[22px] tracking-tight hover:text-brand-red transition-colors"
         >
           UnpopularVoice
         </Link>
@@ -146,7 +147,7 @@ export default function Nav() {
 
           <Link
             href="/subscribe"
-            className="inline-flex items-center bg-brand-red text-white font-sans font-semibold text-xs px-4 py-2.5 min-h-[40px] rounded hover:bg-red-800 transition-colors ml-1"
+            className="inline-flex items-center bg-brand-red text-white font-sans font-semibold text-xs px-4 py-2.5 min-h-[44px] rounded hover:bg-red-800 transition-colors ml-1"
           >
             Subscribe
           </Link>

@@ -1,18 +1,16 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { getAllArticles, getFeaturedArticle } from '@/lib/articles'
+import { getAllArticles, getFeaturedArticle, formatDisplayDate, parseUpdatedAt } from '@/lib/articles'
 import { getAllComparisons } from '@/lib/comparisons'
 import { onePerCompany } from '@/lib/financials'
+import { getContradictionArticles } from '@/lib/spectrum'
 import Hero from '@/components/home/Hero'
-import StatsTicker from '@/components/home/StatsTicker'
 import FeaturedArticle from '@/components/home/FeaturedArticle'
 import ContradictionCards from '@/components/home/ContradictionCards'
 import SpectrumBand from '@/components/home/SpectrumBand'
-import ForensicFinds from '@/components/home/ForensicFinds'
-import WordmarkGrid from '@/components/home/WordmarkGrid'
 import IndexesPanel from '@/components/home/IndexesPanel'
-import NewsletterCTA from '@/components/home/NewsletterCTA'
 import TeardownDirectory from '@/components/home/TeardownDirectory'
+import WhoReads from '@/components/home/WhoReads'
 
 export const metadata: Metadata = {
   title: 'Indian Startup Revenue & Profit (From Filings, Not PR)',
@@ -23,7 +21,23 @@ export const metadata: Metadata = {
 export default function HomePage() {
   const all = getAllArticles()
   const featured = getFeaturedArticle()
-  const comparisons = getAllComparisons().slice(0, 6)
+  const comparisons = getAllComparisons().slice(0, 3)
+  const teardownCount = all.length
+  const companyCount = onePerCompany(all).length
+  const lastUpdated = formatDisplayDate(
+    all.reduce((m, a) => (parseUpdatedAt(a.updatedAt) > parseUpdatedAt(m) ? a.updatedAt : m), all[0]?.updatedAt ?? ''),
+  )
+
+  // Each company appears once above the directory: the hero's three, then
+  // contradictions without them, then the Spectrum without either.
+  const heroArticles = all.slice(0, 3)
+  const shown = new Set(heroArticles.map((a) => a.company))
+  // One article per company (the newest) for the curated rows.
+  const newestPerCompany = all.filter((a, i) => all.findIndex((b) => b.company === a.company) === i)
+  const contradictionPool = newestPerCompany.filter((a) => !shown.has(a.company))
+  getContradictionArticles(contradictionPool, 4).forEach((a) => shown.add(a.company))
+  if (featured) shown.add(featured.company)
+  const spectrumPool = newestPerCompany.filter((a) => !shown.has(a.company))
 
   // Navigation ItemList hints Google about the main site sections for potential sitelinks
   const siteNavLd = {
@@ -45,37 +59,31 @@ export default function HomePage() {
   return (
  <>
  <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteNavLd) }} />
- <Hero topArticles={all.slice(0, 3)} />
+ <Hero topArticles={heroArticles} teardownCount={teardownCount} companyCount={companyCount} />
 
- <ContradictionCards articles={all} />
-
- <SpectrumBand articles={all} />
+ <ContradictionCards articles={contradictionPool} />
 
  {featured && <FeaturedArticle article={featured} />}
 
- <ForensicFinds articles={all} />
+ <SpectrumBand articles={spectrumPool} />
 
  {comparisons.length > 0 && (
  <section className="bg-gray-50 border-b border-gray-100">
- <div className="max-w-7xl mx-auto px-4 sm:px-8 py-16">
+ <div className="max-w-7xl mx-auto px-4 sm:px-8 py-14 sm:py-16">
  <div className="flex items-baseline justify-between flex-wrap gap-3 mb-8">
  <div className="max-w-3xl">
  <p className="font-sans text-brand-red text-xs tracking-[0.25em] uppercase font-bold mb-2">
-  Editorial matchups
+  Matchups
  </p>
  <h2 className="font-serif text-black text-3xl sm:text-4xl font-bold leading-tight">
   Two companies. Same business. Different ending.
  </h2>
- <p className="font-sans text-gray-500 text-sm mt-3 max-w-2xl">
-  Two rivals in the same category, compared on their audited filings. Same
-  revenue base, different outcomes.
- </p>
  </div>
  <Link
   href="/compare"
-  className="font-sans font-semibold text-brand-red text-sm hover:underline hidden sm:block"
+  className="inline-flex items-center min-h-[44px] font-sans font-semibold text-brand-red text-sm hover:underline"
  >
-  All matchups <span aria-hidden="true">→</span>
+  All {getAllComparisons().length} matchups <span aria-hidden="true">→</span>
  </Link>
  </div>
  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -83,59 +91,26 @@ export default function HomePage() {
  <Link
   key={c.slug}
   href={`/compare/${c.slug}`}
-  className="group block bg-white border border-gray-200 rounded-xl p-5 hover:border-black hover:shadow-md transition-all"
+  className="group block bg-white border border-gray-200 rounded-lg p-5 hover:border-black transition-colors"
  >
- <p className="font-sans text-[10px] tracking-[0.2em] uppercase font-semibold text-gray-500 mb-3">
- {c.category}
- </p>
- <p className="font-serif text-black text-xl font-bold leading-snug mb-3 group-hover:text-brand-red transition-colors">
+ <p className="font-serif text-black text-xl font-bold leading-snug mb-3 group-hover:text-brand-red transition-colors text-balance">
  {c.title}
  </p>
- <p className="font-sans text-gray-500 text-sm leading-relaxed line-clamp-3">
+ <p className="font-sans text-gray-600 text-sm leading-relaxed line-clamp-3">
  {c.thesis}
- </p>
- <p className="font-sans text-brand-red text-xs font-semibold mt-4 group-hover:underline">
-  Read the comparison <span aria-hidden="true">→</span>
  </p>
  </Link>
  ))}
- </div>
- <div className="mt-6 sm:hidden">
- <Link href="/compare" className="font-sans font-semibold text-brand-red text-sm hover:underline">
-  All matchups <span aria-hidden="true">→</span>
- </Link>
  </div>
  </div>
  </section>
  )}
 
- <WordmarkGrid articles={all} />
-
  <IndexesPanel />
 
  <TeardownDirectory articles={all} />
 
- <StatsTicker articles={all} />
-
- <section className="bg-white border-b border-gray-100">
- <div className="max-w-7xl mx-auto px-4 sm:px-8 py-10">
- <div className="grid grid-cols-2 sm:grid-cols-4 gap-8">
- {[
- { value: `${onePerCompany(all).length}`, label: 'Companies analysed' },
- { value: 'FY2025', label: 'Primary dataset' },
- { value: 'Audited', label: 'Audited public source' },
- { value: 'Zero', label: 'Press releases used' },
- ].map(({ value, label }) => (
- <div key={label} className="border-l-2 border-brand-red pl-4">
- <p className="font-serif text-black text-3xl sm:text-4xl font-bold">{value}</p>
- <p className="font-sans text-gray-500 text-xs uppercase tracking-widest mt-1">{label}</p>
- </div>
- ))}
- </div>
- </div>
- </section>
-
- <NewsletterCTA />
+ <WhoReads teardownCount={teardownCount} companyCount={companyCount} lastUpdated={lastUpdated} />
  </>
  )
 }

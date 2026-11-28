@@ -36,19 +36,19 @@ export default function SpectrumBand({ articles }: { articles: ArticleMeta[] }) 
                 className={`flex-shrink-0 w-[82%] sm:w-auto snap-start bg-white border-t-4 ${bucket.borderClass} border-x border-b border-gray-200 rounded-b-lg flex flex-col`}
               >
                 <div className="px-4 pt-4 pb-3 border-b border-gray-100">
-                  <p className="font-sans text-[10px] tracking-[0.2em] uppercase font-semibold text-gray-500 mb-1">
+                  <p className="font-sans text-[11px] tracking-[0.2em] uppercase font-semibold text-gray-500 mb-1">
                     {bucket.shortLabel}
                   </p>
                   <p className="font-serif text-black text-lg font-bold leading-snug">
                     {bucket.label}
                   </p>
-                  <p className="font-sans text-gray-500 text-[12px] leading-relaxed mt-2">
+                  <p className="font-sans text-gray-500 text-sm leading-relaxed mt-2">
                     {bucket.description}
                   </p>
                 </div>
                 <ul className="px-4 py-3 space-y-2 flex-1">
                   {items.length === 0 ? (
-                    <li className="font-sans text-[12px] text-gray-500 italic">
+                    <li className="font-sans text-sm text-gray-500 italic">
                       No articles yet.
                     </li>
                   ) : (
@@ -58,7 +58,7 @@ export default function SpectrumBand({ articles }: { articles: ArticleMeta[] }) 
                           href={`/${a.slug}`}
                           className="block group"
                         >
-                          <p className="font-sans text-[10px] tracking-widest uppercase text-gray-500 mb-0.5">
+                          <p className="font-sans text-[11px] tracking-widest uppercase text-gray-500 mb-0.5">
                             {a.company}
                           </p>
                           <p className="font-serif text-black text-[15px] font-bold leading-snug group-hover:text-brand-red transition-colors line-clamp-2">
@@ -72,7 +72,7 @@ export default function SpectrumBand({ articles }: { articles: ArticleMeta[] }) 
                 <div className="px-4 py-3 border-t border-gray-100">
                   <Link
                     href={`/articles?spectrum=${bucket.key}`}
-                    className="font-sans text-brand-red text-[12px] font-semibold hover:underline"
+                    className="inline-flex items-center min-h-[44px] font-sans text-brand-red text-sm font-semibold hover:underline"
                   >
                     All {bucket.shortLabel.toLowerCase()} <span aria-hidden="true">→</span>
                   </Link>
